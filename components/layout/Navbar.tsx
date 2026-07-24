@@ -22,11 +22,14 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close menus on navigation
-  useEffect(() => {
+  // Close menus on navigation — state reset during render, per React docs,
+  // instead of a cascading effect.
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setMobileOpen(false);
     setVenturesOpen(false);
-  }, [pathname]);
+  }
 
   // Close ventures dropdown on outside click / Escape
   useEffect(() => {

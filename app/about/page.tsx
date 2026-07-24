@@ -85,7 +85,7 @@ export default function AboutPage() {
                 quiet, exact, built to age — so we made a run of three hundred
                 and put our name inside the collar. Dubzz Wear sold out in nine
                 days and taught us the group&apos;s founding lesson: the standard
-                travels. It doesn&apos;t care what industry it's applied to.
+                travels. It doesn&apos;t care what industry it&apos;s applied to.
               </p>
             </FadeReveal>
             <FadeReveal delay={160}>

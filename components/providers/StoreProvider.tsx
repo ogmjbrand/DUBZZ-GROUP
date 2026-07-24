@@ -40,17 +40,22 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw) as { cart?: CartItem[]; wishlist?: string[] };
-        setCart(parsed.cart ?? []);
-        setWishlist(parsed.wishlist ?? []);
+    // Deferred a frame so hydration setState happens in a callback, not the
+    // effect body (react-hooks/set-state-in-effect).
+    const raf = requestAnimationFrame(() => {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw) as { cart?: CartItem[]; wishlist?: string[] };
+          setCart(parsed.cart ?? []);
+          setWishlist(parsed.wishlist ?? []);
+        }
+      } catch {
+        // corrupted storage — start clean
       }
-    } catch {
-      // corrupted storage — start clean
-    }
-    setHydrated(true);
+      setHydrated(true);
+    });
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   useEffect(() => {

@@ -17,10 +17,8 @@ export default function FadeReveal({ children, className = "", delay = 0 }: Fade
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setVisible(true);
-      return;
-    }
+    // Reduced-motion users still get the reveal — globals.css collapses the
+    // transition to ~0ms, so observing unconditionally is safe.
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
