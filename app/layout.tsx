@@ -3,6 +3,8 @@ import { Inter, Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SmoothScroll from "@/components/motion/SmoothScroll";
+import LuxuryCursor from "@/components/motion/LuxuryCursor";
 import { StoreProvider } from "@/components/providers/StoreProvider";
 import { site } from "@/lib/data/site";
 
@@ -54,6 +56,8 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <StoreProvider>
+          <SmoothScroll />
+          <LuxuryCursor />
           <a
             href="#main"
             className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-gold focus:px-4 focus:py-2 focus:font-label focus:text-xs focus:font-semibold focus:uppercase focus:tracking-widest focus:text-background"

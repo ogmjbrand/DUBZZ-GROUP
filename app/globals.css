@@ -38,6 +38,68 @@
   --animate-fade-in: fade-in 1.2s ease both;
   --animate-marquee: marquee 40s linear infinite;
   --animate-shimmer: shimmer 2.5s linear infinite;
+
+  /* ——— MOTION HIERARCHY ———
+     One vocabulary of easing so every surface decelerates the same way.
+     `luxe` is the house curve: a long, confident settle with no overshoot. */
+  --ease-luxe: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-entrance: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ease-precise: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --duration-instant: 120ms;
+  --duration-quick: 260ms;
+  --duration-base: 460ms;
+  --duration-slow: 900ms;
+  --duration-cinematic: 1400ms;
+
+  /* ——— SHADOW HIERARCHY ———
+     Near-black rather than grey: on a #050505 ground, grey shadows read as haze. */
+  --shadow-lift: 0 12px 32px -16px rgba(0, 0, 0, 0.85);
+  --shadow-raise: 0 24px 48px -24px rgba(0, 0, 0, 0.9);
+  --shadow-float: 0 40px 80px -32px rgba(0, 0, 0, 0.95);
+  --shadow-gold-glow: 0 8px 32px -8px rgba(212, 175, 55, 0.5);
+  --shadow-gold-halo: 0 0 60px -12px rgba(212, 175, 55, 0.35);
+}
+
+/* ——— GLASS HIERARCHY ———
+   Three weights. Heavier blur = closer to the viewer, per the depth model. */
+@utility glass-sm {
+  background-color: color-mix(in srgb, #ffffff 2.5%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid color-mix(in srgb, #ffffff 5%, transparent);
+}
+
+@utility glass-lg {
+  background-color: color-mix(in srgb, #ffffff 6%, transparent);
+  backdrop-filter: blur(28px) saturate(140%);
+  border: 1px solid color-mix(in srgb, #ffffff 12%, transparent);
+}
+
+/* ——— LIGHTING HIERARCHY ———
+   Light in this system always falls from a single warm source. These place it. */
+@utility light-above {
+  background: radial-gradient(
+    80% 60% at 50% -10%,
+    color-mix(in srgb, var(--color-gold) 14%, transparent) 0%,
+    transparent 70%
+  );
+}
+
+@utility light-below {
+  background: radial-gradient(
+    70% 100% at 50% 120%,
+    color-mix(in srgb, var(--color-gold) 16%, transparent) 0%,
+    transparent 60%
+  );
+}
+
+@utility light-edge {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, #ffffff 7%, transparent) 0%,
+    transparent 18%
+  );
 }
 
 @keyframes fade-up {
@@ -110,6 +172,19 @@
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
+}
+
+/* Lenis owns scrolling once mounted. Native smooth scrolling has to yield or
+   the two animate the same anchor jump against each other. */
+html.lenis-active {
+  scroll-behavior: auto;
+}
+
+html.lenis-active,
+html.lenis-active body {
+  /* Lenis transforms the content; letting the browser also chain scroll
+     produces a double-bounce at the document ends. */
+  overscroll-behavior: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
