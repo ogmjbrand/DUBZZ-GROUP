@@ -6,6 +6,10 @@ export interface Post {
   readTime: string;
   dek: string;
   visual: string;
+  /** Editorial photography under /public. Optional — the backdrop carries the card until one exists. */
+  image?: string;
+  /** Alt text for `image`. Required whenever `image` is set. */
+  imageAlt?: string;
   body: string[];
 }
 
@@ -19,6 +23,9 @@ export const posts: Post[] = [
     dek: "Why the most expensive decision in luxury is the one you don't make — and how restraint became the operating system of every Dubzz venture.",
     visual:
       "linear-gradient(140deg, #14110a 0%, #0a0806 50%, #050505 100%), radial-gradient(70% 50% at 80% 20%, rgba(212,175,55,0.2) 0%, transparent 60%)",
+    image: "/imagery/post-restraint.webp",
+    imageAlt:
+      "A sweeping board-formed concrete staircase curving through an empty gallery, lit by a single shaft of warm daylight.",
     body: [
       "Every brand says less is more. Almost none can afford to prove it. Restraint is expensive — it means declining the collaboration, cutting the third colourway, ending the campaign one film early. It means building a hotel with fewer rooms than the land allows.",
       "At Dubzz, restraint is not an aesthetic preference; it is a governance rule. Each venture operates under a standard we call the single-regret test: every element that ships must be one we would regret removing, not one we would survive removing. The difference sounds subtle. Applied over five ventures and a decade, it compounds into identity.",

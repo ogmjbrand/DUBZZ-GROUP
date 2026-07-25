@@ -5,8 +5,12 @@ export interface CaseStudy {
   year: string;
   discipline: string;
   summary: string;
-  /** CSS background standing in for hero photography */
+  /** Art-directed CSS backdrop. Sits behind `image`, and stands alone without it. */
   visual: string;
+  /** Hero photography under /public. Optional — the backdrop carries the card until one exists. */
+  image?: string;
+  /** Alt text for `image`. Required whenever `image` is set. */
+  imageAlt?: string;
   accent: string;
   challenge: string;
   approach: string;
@@ -26,6 +30,9 @@ export const caseStudies: CaseStudy[] = [
       "A complete identity rebuild for a private wealth firm managing three generations of quiet money — from wordmark to motion system to a 200-page brand codex.",
     visual:
       "linear-gradient(135deg, #1a1409 0%, #0d0a04 40%, #050505 100%), radial-gradient(80% 60% at 80% 10%, rgba(212,175,55,0.25) 0%, transparent 60%)",
+    image: "/imagery/case-aureum.webp",
+    imageAlt:
+      "Brand collateral arranged on a dark walnut boardroom table — gold-edged black cards, a brass paperweight and an open codex under a single warm light.",
     accent: "var(--color-gold)",
     challenge:
       "Aureum's equity was invisible by design — a firm that had spent forty years cultivating discretion suddenly needed presence without volume. The brief demanded a brand that could sit beside centuries-old private banks and feel inevitable, not new.",
@@ -50,6 +57,9 @@ export const caseStudies: CaseStudy[] = [
       "A global launch campaign for a limited-run hypercar that was never allowed to be photographed in daylight — twelve films, one city, zero sunrises.",
     visual:
       "linear-gradient(160deg, #0b0d14 0%, #060710 45%, #050505 100%), radial-gradient(70% 50% at 20% 20%, rgba(74,109,140,0.3) 0%, transparent 60%)",
+    image: "/imagery/case-nightshade.webp",
+    imageAlt:
+      "A deserted rain-slicked city street before dawn, sodium streetlight reflecting off wet asphalt through thin fog.",
     accent: "var(--color-trade)",
     challenge:
       "The client's constraint was absolute: the car exists only at night. Every frame, every asset, every activation had to be composed inside darkness while still rendering £2.1M of carbon and titanium legible to an audience of 40 collectors.",
@@ -74,6 +84,9 @@ export const caseStudies: CaseStudy[] = [
       "A fully explorable real-time 3D twin of a £30M penthouse, built for buyers who tour by night from three time zones away.",
     visual:
       "linear-gradient(150deg, #12100d 0%, #0a0908 45%, #050505 100%), radial-gradient(90% 60% at 75% 15%, rgba(212,175,55,0.18) 0%, transparent 55%)",
+    image: "/imagery/case-penthouse.webp",
+    imageAlt:
+      "A dark penthouse interior at dusk, floor-to-ceiling glass overlooking a distant city grid, lit by one warm floor lamp.",
     accent: "var(--color-gold)",
     challenge:
       "The penthouse existed only as drawings; the buyers existed only on other continents. Meridian needed a sales instrument that could carry a £30M decision across a screen without a single physical viewing.",

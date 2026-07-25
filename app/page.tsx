@@ -242,7 +242,12 @@ export default function Home() {
                 <Card innerClassName="bg-surface">
                   <Visual
                     background={cs.visual}
+                    src={cs.image}
+                    alt={cs.imageAlt}
+                    scrim
                     zoomOnHover
+                    priority={i === 0}
+                    sizes={i === 0 ? "(max-width: 768px) 100vw, 1280px" : "(max-width: 768px) 100vw, 640px"}
                     className={i === 0 ? "h-[320px] sm:h-[420px]" : "h-[260px] sm:h-[300px]"}
                   >
                     <div className="flex h-full flex-col justify-end p-8 sm:p-10">
@@ -318,7 +323,14 @@ export default function Home() {
             <FadeReveal key={p.slug} delay={i * 100}>
               <Link href={`/blog/${p.slug}`} className="group block h-full">
                 <Card className="h-full" innerClassName="flex flex-col">
-                  <Visual background={p.visual} zoomOnHover className="h-44" />
+                  <Visual
+                    background={p.visual}
+                    src={p.image}
+                    alt={p.imageAlt}
+                    zoomOnHover
+                    sizes="(max-width: 768px) 100vw, 420px"
+                    className="h-44"
+                  />
                   <div className="flex flex-1 flex-col p-7">
                     <p className="overline-label text-gold">{p.category}</p>
                     <h3 className="mt-3 font-display text-xl leading-snug text-white transition-colors group-hover:text-gold-bright">
