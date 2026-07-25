@@ -5,7 +5,7 @@ import Visual from "@/components/ui/Visual";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
-import GoldShaderBackground from "@/components/effects/GoldShaderBackground";
+import CinematicVideo from "@/components/effects/CinematicVideo";
 import EcosystemCanvas from "@/components/effects/EcosystemCanvas";
 import { divisions } from "@/lib/data/divisions";
 import { caseStudies } from "@/lib/data/case-studies";
@@ -25,7 +25,9 @@ export default function Home() {
     <>
       {/* ——— HERO ——— */}
       <section className="relative flex min-h-svh flex-col justify-end overflow-hidden">
-        <GoldShaderBackground />
+        {/* Base layer: the flagship film. Decorative, so it carries no label —
+            the headline below states everything the footage says. */}
+        <CinematicVideo name="hero-film" poster="/posters/hero-film.jpg" />
         <EcosystemCanvas />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
         <div aria-hidden className="grain absolute inset-0" />

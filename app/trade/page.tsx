@@ -5,6 +5,7 @@ import Visual from "@/components/ui/Visual";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
+import CinematicVideo from "@/components/effects/CinematicVideo";
 import { commodities, tradeCorridors, tradeStats } from "@/lib/data/trade";
 
 export const metadata: Metadata = {
@@ -24,6 +25,8 @@ export default function TradePage() {
     <>
       {/* Hero */}
       <section className="relative flex min-h-[85svh] flex-col justify-end overflow-hidden">
+        {/* The film opens on this same gradient, so it is also the poster-less
+            first paint and the reduced-motion floor. */}
         <div
           aria-hidden
           className="absolute inset-0"
@@ -32,6 +35,7 @@ export default function TradePage() {
               "linear-gradient(155deg, #0b1017 0%, #070a0f 45%, #050505 100%), radial-gradient(75% 55% at 80% 10%, rgba(74,109,140,0.25) 0%, transparent 60%)",
           }}
         />
+        <CinematicVideo name="trade-film" poster="/posters/trade-film.jpg" />
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>

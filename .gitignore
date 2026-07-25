@@ -43,3 +43,8 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# Remotion masters — 1080p/4K renders are deterministic output of the
+# compositions in remotion/. Regenerate with `npm run film:all`; only the
+# derived web deliverables in public/videos are committed.
+remotion/out/
