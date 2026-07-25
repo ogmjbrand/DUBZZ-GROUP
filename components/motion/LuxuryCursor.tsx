@@ -13,7 +13,6 @@ import { spring } from "@/lib/motion/tokens";
  * the pointer feel broken rather than stylish. This trails it instead.
  */
 export default function LuxuryCursor() {
-  const [enabled, setEnabled] = useState(false);
   const [active, setActive] = useState(false);
   const [visible, setVisible] = useState(false);
 
@@ -24,11 +23,12 @@ export default function LuxuryCursor() {
 
   useEffect(() => {
     // Fine pointer only: on touch there is no cursor to accompany, and
-    // reduced-motion users get nothing that trails.
+    // reduced-motion users get nothing that trails. Bailing before the
+    // listeners attach leaves `visible` false, so the ring stays at opacity 0
+    // and inert -- no enabled flag needed, and no setState during the effect.
     const fine = window.matchMedia("(pointer: fine)");
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (!fine.matches || reduced.matches) return;
-    setEnabled(true);
 
     const onMove = (e: PointerEvent) => {
       x.set(e.clientX);
@@ -49,8 +49,6 @@ export default function LuxuryCursor() {
       document.removeEventListener("pointerleave", onLeave);
     };
   }, [x, y]);
-
-  if (!enabled) return null;
 
   return (
     <motion.div
