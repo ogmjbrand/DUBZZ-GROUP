@@ -82,12 +82,21 @@ Shorter ambient films that sit behind pages the visitor is *reading*. Unlike `He
 | --- | --- | --- | --- |
 | `TradeFilm` | 600 (20s) | `#4a6d8c` | Drifting graticule, bowed shipping corridors, cargo in transit, market-pulse ticker |
 | `ResortFilm` | 600 (20s) | `#9e3a4d` / `#e8b45f` | Golden-hour sun over water, noise-driven reflection bands, evening particulate |
+| `MediaFilm` | 600 (20s) | `#b7bcc7` | A page laying itself out — 12-column baseline, cells reflowing on independent cycles, registration marks |
+| `WearFilm` | 600 (20s) | `#e8e3d8` | Hanging textiles under a single raking key light, noise-driven drape edges |
 
-Both **loop by construction**: every value is a function of `frame / DURATION` evaluated on a closed cycle, so there is no seam to match at the ends and no equivalent of the `HeroFilm` loop-seam rule to preserve.
+All **loop by construction**: every value is a function of `frame / DURATION` evaluated on a closed cycle, so there is no seam to match at the ends and no equivalent of the `HeroFilm` loop-seam rule to preserve.
+
+Two conventions these share, worth keeping in any new division film:
+
+- **Use a triangle wave, not a sawtooth, for per-element cycles.** `1 - |phase * 2 - 1|` is continuous at the wrap point; a raw `phase` jumps from 1 to 0 and puts a visible pop in the loop.
+- **Restrain the gold.** Only `HeroFilm` uses gold as its primary. Division films carry their own tint and spend gold sparingly or not at all — `WearFilm` allows it only as a handful of motes, which is the house rule about gold applied to film.
 
 ```bash
 npm run film:trade   && npm run film:trade:webm   && npm run film:trade:poster
 npm run film:resort  && npm run film:resort:webm  && npm run film:resort:poster
+npm run film:media   && npm run film:media:webm   && npm run film:media:poster
+npm run film:wear    && npm run film:wear:webm    && npm run film:wear:poster
 ```
 
 ## Consuming a film on the site

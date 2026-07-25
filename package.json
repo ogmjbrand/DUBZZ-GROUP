@@ -18,7 +18,13 @@
     "film:trade:poster": "remotion still remotion/index.ts TradeFilm public/posters/trade-film.jpg --frame=300 --jpeg-quality=88",
     "film:resort": "remotion render remotion/index.ts ResortFilm public/videos/resort-film-1080.mp4",
     "film:resort:webm": "remotion render remotion/index.ts ResortFilm public/videos/resort-film-1080.webm --codec=vp9",
-    "film:resort:poster": "remotion still remotion/index.ts ResortFilm public/posters/resort-film.jpg --frame=300 --jpeg-quality=88"
+    "film:resort:poster": "remotion still remotion/index.ts ResortFilm public/posters/resort-film.jpg --frame=300 --jpeg-quality=88",
+    "film:media": "remotion render remotion/index.ts MediaFilm public/videos/media-film-1080.mp4",
+    "film:media:webm": "remotion render remotion/index.ts MediaFilm public/videos/media-film-1080.webm --codec=vp9",
+    "film:media:poster": "remotion still remotion/index.ts MediaFilm public/posters/media-film.jpg --frame=200 --jpeg-quality=88",
+    "film:wear": "remotion render remotion/index.ts WearFilm public/videos/wear-film-1080.mp4",
+    "film:wear:webm": "remotion render remotion/index.ts WearFilm public/videos/wear-film-1080.webm --codec=vp9",
+    "film:wear:poster": "remotion still remotion/index.ts WearFilm public/posters/wear-film.jpg --frame=200 --jpeg-quality=88"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

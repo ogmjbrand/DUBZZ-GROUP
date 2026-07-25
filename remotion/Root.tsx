@@ -2,6 +2,8 @@ import { Composition } from "remotion";
 import { HeroFilm } from "./compositions/HeroFilm";
 import { TradeFilm, TRADE_DURATION } from "./compositions/TradeFilm";
 import { ResortFilm, RESORT_DURATION } from "./compositions/ResortFilm";
+import { MediaFilm, MEDIA_DURATION } from "./compositions/MediaFilm";
+import { WearFilm, WEAR_DURATION } from "./compositions/WearFilm";
 import { FPS, HERO_DURATION } from "./lib/tokens";
 
 /**
@@ -43,6 +45,24 @@ export const RemotionRoot: React.FC = () => {
         id="ResortFilm"
         component={ResortFilm}
         durationInFrames={RESORT_DURATION}
+        fps={FPS}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="MediaFilm"
+        component={MediaFilm}
+        durationInFrames={MEDIA_DURATION}
+        fps={FPS}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="WearFilm"
+        component={WearFilm}
+        durationInFrames={WEAR_DURATION}
         fps={FPS}
         width={1920}
         height={1080}
