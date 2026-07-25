@@ -84,8 +84,13 @@ export const GoldParticles: React.FC<{
   count?: number;
   opacity?: number;
   drift?: number;
-}> = ({ count = 70, opacity = 1, drift = 40 }) => {
+  /** Mote colour. Defaults to the house gold; division films pass their tint. */
+  color?: string;
+  /** Halo colour. Defaults to `color`. */
+  glow?: string;
+}> = ({ count = 70, opacity = 1, drift = 40, color = palette.goldBright, glow }) => {
   const frame = useCurrentFrame();
+  const halo = glow ?? color;
 
   return (
     <AbsoluteFill style={{ pointerEvents: "none", opacity }}>
@@ -117,9 +122,9 @@ export const GoldParticles: React.FC<{
               width: scale * 3,
               height: scale * 3,
               borderRadius: "50%",
-              background: palette.goldBright,
+              background: color,
               opacity: twinkle,
-              boxShadow: `0 0 ${scale * 8}px ${palette.gold}`,
+              boxShadow: `0 0 ${scale * 8}px ${halo}`,
               translate: `${dx}px ${dy}px`,
             }}
           />

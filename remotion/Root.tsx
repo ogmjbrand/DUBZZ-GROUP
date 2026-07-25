@@ -1,5 +1,7 @@
 import { Composition } from "remotion";
 import { HeroFilm } from "./compositions/HeroFilm";
+import { TradeFilm, TRADE_DURATION } from "./compositions/TradeFilm";
+import { ResortFilm, RESORT_DURATION } from "./compositions/ResortFilm";
 import { FPS, HERO_DURATION } from "./lib/tokens";
 
 /**
@@ -15,13 +17,36 @@ import { FPS, HERO_DURATION } from "./lib/tokens";
  */
 export const RemotionRoot: React.FC = () => {
   return (
-    <Composition
-      id="HeroFilm"
-      component={HeroFilm}
-      durationInFrames={HERO_DURATION}
-      fps={FPS}
-      width={1920}
-      height={1080}
-    />
+    <>
+      <Composition
+        id="HeroFilm"
+        component={HeroFilm}
+        durationInFrames={HERO_DURATION}
+        fps={FPS}
+        width={1920}
+        height={1080}
+      />
+
+      {/* Division loops. Shorter than HeroFilm and deliberately without a
+          narrative arc — these sit behind pages the visitor is reading, so they
+          hold a continuous state instead of pulling focus through a story. */}
+      <Composition
+        id="TradeFilm"
+        component={TradeFilm}
+        durationInFrames={TRADE_DURATION}
+        fps={FPS}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="ResortFilm"
+        component={ResortFilm}
+        durationInFrames={RESORT_DURATION}
+        fps={FPS}
+        width={1920}
+        height={1080}
+      />
+    </>
   );
 };

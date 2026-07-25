@@ -7,7 +7,7 @@ Every moving background on this site is **generated from our own design system**
 ## Where things live
 
 | Path | Contents |
-|---|---|
+| --- | --- |
 | `remotion/index.ts` | Remotion entry point (`registerRoot`) |
 | `remotion/Root.tsx` | Composition registry |
 | `remotion/lib/tokens.ts` | Palette, easing curves, chapter map, fps |
@@ -51,7 +51,7 @@ npx remotion still remotion/index.ts HeroFilm out/check.png --frame=900 --scale=
 `HeroFilm` — 1260 frames at 30fps (42s), 1920×1080, seamlessly loopable.
 
 | # | Chapter | Frames | Beat |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | I | Darkness | 0–120 | Holds true black. Earns the first photon. |
 | II | Ignition | 90–270 | One light source, anamorphic streak. |
 | III | Geometry | 240–450 | Order emerges — concentric rings draw on. |
@@ -72,6 +72,22 @@ Verify with:
 ```bash
 npx remotion still remotion/index.ts HeroFilm out/first.png --frame=0
 npx remotion still remotion/index.ts HeroFilm out/last.png  --frame=1259
+```
+
+## Division loops
+
+Shorter ambient films that sit behind pages the visitor is *reading*. Unlike `HeroFilm` they carry no narrative arc — they hold a continuous state, stay legible at a glance, and never pull focus.
+
+| Composition | Frames | Division tint | Content |
+| --- | --- | --- | --- |
+| `TradeFilm` | 600 (20s) | `#4a6d8c` | Drifting graticule, bowed shipping corridors, cargo in transit, market-pulse ticker |
+| `ResortFilm` | 600 (20s) | `#9e3a4d` / `#e8b45f` | Golden-hour sun over water, noise-driven reflection bands, evening particulate |
+
+Both **loop by construction**: every value is a function of `frame / DURATION` evaluated on a closed cycle, so there is no seam to match at the ends and no equivalent of the `HeroFilm` loop-seam rule to preserve.
+
+```bash
+npm run film:trade   && npm run film:trade:webm   && npm run film:trade:poster
+npm run film:resort  && npm run film:resort:webm  && npm run film:resort:poster
 ```
 
 ## Consuming a film on the site
@@ -104,6 +120,7 @@ Use `components/effects/CinematicVideo.tsx`. Never drop a raw `<video>` into a p
 - **No CSS transitions or animations in compositions.** They do not render correctly. Animate from `useCurrentFrame()` through `interpolate()`.
 - **Keep motion deterministic.** Use Remotion's seeded `random()` and `noise2D`, never `Math.random()`. Frame N must render identically on every pass or distributed and resumed renders break.
 - **Pin font weights** in `remotion/lib/fonts.ts`. A bare `loadFont()` pulls every weight and subset — around 200 requests, paid on every frame.
+- **Wrap bare `<svg>` in `<AbsoluteFill>`.** A raw `<svg>` is static, in-flow content, and in-flow content paints in an *earlier* stacking layer than positioned siblings. An `AbsoluteFill` background declared above it in the JSX will therefore paint straight over it, and the scene renders black no matter how bright the strokes are. Positioning the svg puts it in the same layer, where DOM order decides. This cost a full debugging pass on `TradeFilm`; `Network` currently relies on the old behaviour (its `Bloom` intentionally tints over the graph), so check the render before "fixing" it.
 
 ## Repository weight
 
