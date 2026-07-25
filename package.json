@@ -6,11 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "film:studio": "remotion studio remotion/index.ts",
+    "film:render": "remotion render remotion/index.ts HeroFilm public/videos/hero-film-1080.mp4",
+    "film:render:webm": "remotion render remotion/index.ts HeroFilm public/videos/hero-film-1080.webm --codec=vp9",
+    "film:render:4k": "remotion render remotion/index.ts HeroFilm public/videos/hero-film-2160.mp4 --scale=2",
+    "film:poster": "remotion still remotion/index.ts HeroFilm public/posters/hero-film.jpg --frame=700 --jpeg-quality=88",
+    "film:all": "npm run film:render && npm run film:render:webm && npm run film:poster"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
+    "@remotion/cli": "^4.0.499",
+    "@remotion/google-fonts": "4.0.499",
+    "@remotion/noise": "^4.0.499",
+    "@remotion/shapes": "^4.0.499",
     "@supabase/ssr": "^0.12.3",
     "@supabase/supabase-js": "^2.110.8",
     "gsap": "^3.15.0",
@@ -19,6 +29,7 @@
     "next": "16.2.11",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "remotion": "^4.0.499",
     "three": "^0.185.1"
   },
   "devDependencies": {
