@@ -6,6 +6,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import GoldShaderBackground from "@/components/effects/GoldShaderBackground";
+import EcosystemCanvas from "@/components/effects/EcosystemCanvas";
 import { divisions } from "@/lib/data/divisions";
 import { caseStudies } from "@/lib/data/case-studies";
 import { posts } from "@/lib/data/posts";
@@ -25,6 +26,7 @@ export default function Home() {
       {/* ——— HERO ——— */}
       <section className="relative flex min-h-svh flex-col justify-end overflow-hidden">
         <GoldShaderBackground />
+        <EcosystemCanvas />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
         <div aria-hidden className="grain absolute inset-0" />
 

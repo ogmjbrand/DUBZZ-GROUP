@@ -8,7 +8,14 @@ export interface Division {
   tagline: string;
   description: string;
   href: string;
+  /** CSS custom-property reference, for use in stylesheets and inline styles. */
   accent: string;
+  /**
+   * The same colour as a literal hex. WebGL and canvas contexts cannot resolve
+   * `var(--color-*)`, so anything drawing outside the DOM reads this instead.
+   * Must be kept in step with the matching token in globals.css.
+   */
+  accentHex: string;
   facets: string[];
 }
 
@@ -23,6 +30,7 @@ export const divisions: Division[] = [
       "The corporate heart of the ecosystem — strategy, capital, and a single uncompromising standard applied across every venture we build.",
     href: "/group/story",
     accent: "var(--color-gold)",
+    accentHex: "#d4af37",
     facets: ["Strategy", "Capital", "Governance"],
   },
   {
@@ -35,6 +43,7 @@ export const divisions: Division[] = [
       "A creative agency operating at the intersection of film, brand, and technology — building identities and campaigns for names that intend to last.",
     href: "/media",
     accent: "var(--color-media)",
+    accentHex: "#b7bcc7",
     facets: ["Brand", "Film", "Digital"],
   },
   {
@@ -47,6 +56,7 @@ export const divisions: Division[] = [
       "A fashion house built on restraint — limited runs, architectural silhouettes, and fabrics chosen the way collectors choose art.",
     href: "/wear",
     accent: "var(--color-wear)",
+    accentHex: "#e8e3d8",
     facets: ["Apparel", "Limited Runs", "Atelier"],
   },
   {
@@ -59,6 +69,7 @@ export const divisions: Division[] = [
       "An estate of vineyards, sanctuaries, and fine dining — hospitality composed like cinema, poured like a rare vintage.",
     href: "/wine-resort",
     accent: "var(--color-wine)",
+    accentHex: "#9e3a4d",
     facets: ["Estate", "Dining", "Experiences"],
   },
   {
@@ -71,6 +82,7 @@ export const divisions: Division[] = [
       "Global sourcing, export, and logistics — moving premium commodities between markets with executive precision and total traceability.",
     href: "/trade",
     accent: "var(--color-trade)",
+    accentHex: "#4a6d8c",
     facets: ["Commodities", "Logistics", "Export"],
   },
 ];
