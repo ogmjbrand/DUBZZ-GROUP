@@ -15,7 +15,7 @@ const EcosystemScene = dynamic(() => import("./EcosystemScene"), {
  * Capability gate for the 3D hero centrepiece.
  *
  * The scene is an enhancement, never the content: the hero reads completely
- * without it, carried by GoldShaderBackground underneath. So this refuses to
+ * without it, carried by the CinematicVideo film underneath. So this refuses to
  * load it wherever it would cost more than it returns — and the refusal is
  * silent, because a degraded 3D scene looks worse than none at all.
  */
@@ -25,7 +25,7 @@ export default function EcosystemCanvas() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    // Phones and small tablets get the shader alone. A five-mesh scene is
+    // Phones and small tablets get the film alone. A five-mesh scene is
     // affordable there, but it competes with LCP on exactly the connections
     // least able to absorb another ~150KB of JS.
     if (window.innerWidth < 1024) return;
