@@ -29,7 +29,7 @@ export default function WineResortPage() {
               "linear-gradient(165deg, #1b0d12 0%, #0e070a 45%, #050505 100%), radial-gradient(80% 60% at 70% 10%, rgba(158,58,77,0.28) 0%, transparent 60%)",
           }}
         />
-        <CinematicVideo name="resort-film-1080" poster="/posters/resort-film.jpg" />
+        <CinematicVideo name="resort-film" poster="/posters/resort-film.jpg" />
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-28 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>

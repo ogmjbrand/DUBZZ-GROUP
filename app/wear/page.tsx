@@ -25,7 +25,7 @@ export default function WearPage() {
               "linear-gradient(150deg, #171613 0%, #0c0b0a 45%, #050505 100%), radial-gradient(70% 55% at 20% 10%, rgba(232,227,216,0.1) 0%, transparent 60%)",
           }}
         />
-        <CinematicVideo name="wear-film-1080" poster="/posters/wear-film.jpg" />
+        <CinematicVideo name="wear-film" poster="/posters/wear-film.jpg" />
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>

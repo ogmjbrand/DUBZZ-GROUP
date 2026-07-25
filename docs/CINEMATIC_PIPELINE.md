@@ -16,7 +16,9 @@ Every moving background on this site is **generated from our own design system**
 | `remotion/scenes/*.tsx` | One file per chapter |
 | `remotion/compositions/HeroFilm.tsx` | Chapter assembly + grade |
 | `remotion.config.ts` | Render settings (CRF, image format, GL renderer) |
-| `public/videos/` | Rendered masters (committed) |
+| `remotion/out/` | 1080p masters (**gitignored** — regenerate with `npm run film:all`) |
+| `scripts/derive-web-assets.mjs` | Master → committed web deliverable encode |
+| `public/videos/` | 720p web deliverables, mp4 + webm (committed) |
 | `public/posters/` | Poster frames pulled from the film timeline (committed) |
 
 ## The design system boundary
@@ -29,14 +31,38 @@ This means the two files must be changed together. If you change `--color-gold` 
 
 ```bash
 npm run film:studio        # Interactive editor at localhost:3000
-npm run film:render        # 1080p H.264 master  → public/videos/hero-film-1080.mp4
-npm run film:render:webm   # 1080p VP9           → public/videos/hero-film-1080.webm
-npm run film:render:4k     # 2160p master (--scale=2)
-npm run film:poster        # Poster frame        → public/posters/hero-film.jpg
-npm run film:all           # mp4 + webm + poster
+npm run film:all           # Render all five 1080p masters → remotion/out/  (gitignored)
+npm run film:web           # Derive committed deliverables → public/videos/
+npm run film:<name>        # One master: render | trade | resort | media | wear
+npm run film:<name>:poster # Poster frame → public/posters/<name>-film.jpg
+npm run film:render:4k     # 2160p hero master (--scale=2)
 ```
 
 Rendering is **not** part of `npm run build`. The Next.js build never invokes Remotion; it only consumes the committed files in `public/`. Re-render deliberately, review the output, and commit the result.
+
+## Masters are not committed
+
+The pipeline is master/delivery:
+
+```
+remotion render  →  remotion/out/<film>.mp4          1080p CRF18, gitignored
+npm run film:web →  public/videos/<film>.{mp4,webm}  720p, committed
+```
+
+Masters stay out of git because **every film is procedural and deterministic** — `npm run film:wear` reproduces one from source. Committing them was storing ~24MB of something the repo can already generate, and git keeps every superseded copy forever. Only what the browser fetches is versioned.
+
+The split cut the committed footprint from **39MB to 6.5MB**, and cut what a visitor downloads by rather more — the Wear loop went from a 7.0MB master to a 0.32MB WebM.
+
+### The encode settings are load-bearing
+
+`scripts/derive-web-assets.mjs` encodes at **720p, CRF 21, `-tune grain`**. Each part was chosen against the hero's bloom, the worst banding case in the set (a wide gold falloff on a `#050505` ground):
+
+- **720p** — these are full-bleed backgrounds behind a vignette, a gradient mask and a grain pass. The extra vertical resolution wasn't survivable detail, it was bitrate.
+- **`-tune grain`** — counter-intuitively lands *smaller* than plain CRF 21 **and** visibly cleaner. It preserves the grain the films already carry, and that grain dithers the gradient. Plain CRF 21 at 720p put concentric rings in the bloom halo; with the tune, they're gone.
+
+Don't "optimise" by dropping `-tune grain`. Measured on the hero: 1080p CRF21 → 3.56MB, 720p CRF18 → 2.81MB, 720p CRF21 + tune grain → **1.85MB and the best-looking of the three**.
+
+Note that `Config.setCrf(18)` in `remotion.config.ts` governs the **master** only. That's deliberate — masters stay near-lossless so the delivery encode has clean source to work from.
 
 ### Inspecting a single frame
 
@@ -93,10 +119,10 @@ Two conventions these share, worth keeping in any new division film:
 - **Restrain the gold.** Only `HeroFilm` uses gold as its primary. Division films carry their own tint and spend gold sparingly or not at all — `WearFilm` allows it only as a handful of motes, which is the house rule about gold applied to film.
 
 ```bash
-npm run film:trade   && npm run film:trade:webm   && npm run film:trade:poster
-npm run film:resort  && npm run film:resort:webm  && npm run film:resort:poster
-npm run film:media   && npm run film:media:webm   && npm run film:media:poster
-npm run film:wear    && npm run film:wear:webm    && npm run film:wear:poster
+npm run film:trade   && npm run film:trade:poster
+npm run film:resort  && npm run film:resort:poster
+npm run film:media   && npm run film:media:poster
+npm run film:wear    && npm run film:wear:poster
 ```
 
 ## Consuming a film on the site
@@ -108,7 +134,7 @@ Use `components/effects/CinematicVideo.tsx`. Never drop a raw `<video>` into a p
 - **Save-Data.** Honoured the same way as reduced motion.
 
 ```tsx
-<CinematicVideo name="hero-film-1080" poster="/posters/hero-film.jpg" />
+<CinematicVideo name="hero-film" poster="/posters/hero-film.jpg" />
 ```
 
 `name` is the basename under `public/videos/`; the component offers `.webm` first and falls back to `.mp4`.

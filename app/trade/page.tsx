@@ -35,7 +35,7 @@ export default function TradePage() {
               "linear-gradient(155deg, #0b1017 0%, #070a0f 45%, #050505 100%), radial-gradient(75% 55% at 80% 10%, rgba(74,109,140,0.25) 0%, transparent 60%)",
           }}
         />
-        <CinematicVideo name="trade-film-1080" poster="/posters/trade-film.jpg" />
+        <CinematicVideo name="trade-film" poster="/posters/trade-film.jpg" />
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>

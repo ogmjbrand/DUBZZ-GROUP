@@ -57,7 +57,7 @@ export default function MediaPage() {
               "linear-gradient(160deg, #101116 0%, #0a0a0d 45%, #050505 100%), radial-gradient(70% 60% at 80% 10%, rgba(183,188,199,0.14) 0%, transparent 60%)",
           }}
         />
-        <CinematicVideo name="media-film-1080" poster="/posters/media-film.jpg" />
+        <CinematicVideo name="media-film" poster="/posters/media-film.jpg" />
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>

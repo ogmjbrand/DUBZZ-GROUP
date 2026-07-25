@@ -27,7 +27,7 @@ export default function Home() {
       <section className="relative flex min-h-svh flex-col justify-end overflow-hidden">
         {/* Base layer: the flagship film. Decorative, so it carries no label —
             the headline below states everything the footage says. */}
-        <CinematicVideo name="hero-film-1080" poster="/posters/hero-film.jpg" />
+        <CinematicVideo name="hero-film" poster="/posters/hero-film.jpg" />
         <EcosystemCanvas />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
         <div aria-hidden className="grain absolute inset-0" />
