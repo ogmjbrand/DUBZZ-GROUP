@@ -42,7 +42,7 @@ export default function AfterDarkPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(160deg, #150f1c 0%, #0b070f 45%, #050505 100%), radial-gradient(75% 60% at 25% 10%, rgba(122,90,156,0.28) 0%, transparent 60%)",
+              "linear-gradient(160deg, #141414 0%, #0a0a0a 45%, #000000 100%), radial-gradient(75% 60% at 25% 10%, rgba(138,109,29,0.30) 0%, transparent 60%)",
           }}
         />
         <div aria-hidden className="grain absolute inset-0" />

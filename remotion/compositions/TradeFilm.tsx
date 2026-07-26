@@ -3,8 +3,8 @@ import { noise2D } from "@remotion/noise";
 import { Bloom, GoldParticles, Grain, Vignette } from "../lib/Atmosphere";
 import { palette } from "../lib/tokens";
 
-const TRADE = "#4a6d8c";
-const TRADE_BRIGHT = "#8fb4d4";
+const TRADE = "#a8a8a8";
+const TRADE_BRIGHT = "#e4e4e4";
 
 /** Ports, placed to read as a plate-carrée world map rather than a random scatter. */
 const ports = [
@@ -68,11 +68,11 @@ export const TradeFilm: React.FC = () => {
   const drift = (frame / DURATION) * 60;
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#070a0f" }}>
+    <AbsoluteFill style={{ backgroundColor: "#0a0a0a" }}>
       <AbsoluteFill
         style={{
           background:
-            "linear-gradient(155deg, #0b1017 0%, #070a0f 45%, #050505 100%)",
+            "linear-gradient(155deg, #141414 0%, #0a0a0a 45%, #000000 100%)",
         }}
       />
       <Bloom x={78} y={14} size={85} intensity={0.24} color={TRADE} />

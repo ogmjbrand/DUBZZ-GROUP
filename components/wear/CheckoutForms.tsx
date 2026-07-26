@@ -236,7 +236,7 @@ export function PaymentForm() {
       </div>
 
       {/* Card visual */}
-      <div className="relative overflow-hidden rounded-lg border border-gold/25 bg-[linear-gradient(135deg,#14110a_0%,#0a0906_60%,#050505_100%)] p-7">
+      <div className="relative overflow-hidden rounded-lg border border-gold/25 bg-[linear-gradient(135deg,#14110a_0%,#0a0906_60%,#000000_100%)] p-7">
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative flex h-36 flex-col justify-between">
           <div className="flex items-center justify-between">

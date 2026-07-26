@@ -35,7 +35,7 @@ export default function ProfilePage() {
       <div className="mt-14 grid gap-8 lg:grid-cols-12">
         {/* Membership card */}
         <FadeReveal delay={100} className="lg:col-span-5">
-          <div className="relative overflow-hidden rounded-lg border border-gold/30 bg-[linear-gradient(135deg,#16120a_0%,#0b0906_60%,#050505_100%)] p-8">
+          <div className="relative overflow-hidden rounded-lg border border-gold/30 bg-[linear-gradient(135deg,#16120a_0%,#0b0906_60%,#000000_100%)] p-8">
             <div aria-hidden className="grain absolute inset-0" />
             <div className="relative">
               <div className="flex items-center justify-between">

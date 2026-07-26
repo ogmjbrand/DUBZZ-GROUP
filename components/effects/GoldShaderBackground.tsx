@@ -159,7 +159,7 @@ export default function GoldShaderBackground({ className = "" }: { className?: s
     <canvas
       ref={canvasRef}
       aria-hidden
-      className={`pointer-events-none absolute inset-0 h-full w-full bg-[radial-gradient(90%_70%_at_50%_30%,#1a1409_0%,#0a0805_50%,#050505_100%)] ${className}`}
+      className={`pointer-events-none absolute inset-0 h-full w-full bg-[radial-gradient(90%_70%_at_50%_30%,#1a1409_0%,#0a0805_50%,#000000_100%)] ${className}`}
     />
   );
 }

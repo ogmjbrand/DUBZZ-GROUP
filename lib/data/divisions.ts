@@ -44,7 +44,7 @@ export const divisions: Division[] = [
       "The Group's flagship creative business, and the foundation it was built on — visual storytelling, strategic branding, and digital content for businesses, institutions, and entrepreneurs.",
     href: "/media",
     accent: "var(--color-media)",
-    accentHex: "#b7bcc7",
+    accentHex: "#ffffff",
     facets: ["Brand", "Film", "Digital"],
   },
   {
@@ -57,7 +57,7 @@ export const divisions: Division[] = [
       "The lifestyle fashion division — premium apparel drawn from simplicity, functionality, and contemporary African culture, made for people who move with confidence.",
     href: "/wear",
     accent: "var(--color-wear)",
-    accentHex: "#e8e3d8",
+    accentHex: "#f0d98c",
     facets: ["Apparel", "Accessories", "Limited Editions"],
   },
   {
@@ -70,7 +70,7 @@ export const divisions: Division[] = [
       "The hospitality and lifestyle division — premium destinations where luxury, wine culture, leisure, and meaningful experiences come together.",
     href: "/wine-resort",
     accent: "var(--color-wine)",
-    accentHex: "#9e3a4d",
+    accentHex: "#d4af37",
     facets: ["Hospitality", "Wine Culture", "Events"],
   },
   {
@@ -83,7 +83,7 @@ export const divisions: Division[] = [
       "The international trade division — building trusted supply chains between African producers and buyers across regional and global markets.",
     href: "/trade",
     accent: "var(--color-trade)",
-    accentHex: "#4a6d8c",
+    accentHex: "#a8a8a8",
     facets: ["Commodities", "Export", "Sourcing"],
   },
   {
@@ -96,7 +96,7 @@ export const divisions: Division[] = [
       "The Group's signature entertainment and lifestyle experience platform — curated nights where music, fashion, food, creativity, and connection meet.",
     href: "/after-dark",
     accent: "var(--color-afterdark)",
-    accentHex: "#7a5a9c",
+    accentHex: "#8a6d1d",
     facets: ["Experiences", "Culture", "Nightlife"],
   },
 ];

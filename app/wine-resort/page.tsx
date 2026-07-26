@@ -26,7 +26,7 @@ export default function WineResortPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(165deg, #1b0d12 0%, #0e070a 45%, #050505 100%), radial-gradient(80% 60% at 70% 10%, rgba(158,58,77,0.28) 0%, transparent 60%)",
+              "linear-gradient(165deg, #141414 0%, #0a0a0a 45%, #000000 100%), radial-gradient(80% 60% at 70% 10%, rgba(212,175,55,0.22) 0%, transparent 60%)",
           }}
         />
         <CinematicVideo name="resort-film" poster="/posters/resort-film.jpg" />
@@ -184,7 +184,7 @@ export default function WineResortPage() {
 
       {/* CTA */}
       <section className="relative overflow-hidden border-t border-white/5">
-        <div aria-hidden className="absolute inset-0 bg-[radial-gradient(70%_100%_at_50%_120%,rgba(158,58,77,0.18)_0%,transparent_60%)]" />
+        <div aria-hidden className="absolute inset-0 bg-[radial-gradient(70%_100%_at_50%_120%,rgba(212,175,55,0.16)_0%,transparent_60%)]" />
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto max-w-4xl px-6 py-32 text-center">
           <FadeReveal>

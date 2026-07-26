@@ -31,7 +31,7 @@ export default function TradePage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(155deg, #0b1017 0%, #070a0f 45%, #050505 100%), radial-gradient(75% 55% at 80% 10%, rgba(74,109,140,0.25) 0%, transparent 60%)",
+              "linear-gradient(155deg, #141414 0%, #0a0a0a 45%, #000000 100%), radial-gradient(75% 55% at 80% 10%, rgba(168,168,168,0.16) 0%, transparent 60%)",
           }}
         />
         <CinematicVideo name="trade-film" poster="/posters/trade-film.jpg" />

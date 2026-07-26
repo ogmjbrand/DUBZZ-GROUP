@@ -12,7 +12,7 @@
  * generate. Only the deliverables the browser actually fetches are versioned.
  *
  * Encode settings were chosen empirically against the hero's bloom, which is
- * the worst banding case in the set (a wide gold falloff on a #050505 ground):
+ * the worst banding case in the set (a wide gold falloff on a #000000 ground):
  *
  *   - 720p. These are full-bleed backgrounds behind a vignette, a gradient
  *     mask and a grain pass. The extra vertical resolution was not survivable
@@ -34,14 +34,28 @@ const FILMS = ["hero", "trade", "resort", "media", "wear"];
 const MASTER_DIR = "remotion/out";
 const OUT_DIR = "public/videos";
 
-// Resolve the platform binary directly rather than going through a shell.
-// `shell: true` with an argument array concatenates instead of escaping, which
-// Node flags as a security footgun (DEP0190) and which would break on any path
-// containing a space — this repo's own path has one.
-const NPX = process.platform === "win32" ? "npx.cmd" : "npx";
+// Spawn the Remotion CLI's JS entry with the running Node binary.
+//
+// Two constraints meet here. `shell: true` is out: with an argument array it
+// concatenates instead of escaping, which Node flags as a footgun (DEP0190)
+// and which breaks on any path containing a space — this repo's own path has
+// one. But going through `npx.cmd` is also out: since the CVE-2024-27980
+// patch Node refuses to spawn a `.cmd` without a shell, so `execFileSync`
+// throws EINVAL on Windows. That is a catch-22 only if you insist on the
+// shim.
+//
+// Resolving the CLI's plain `.js` entry escapes it — `process.execPath` is a
+// real executable, the argument array stays escaped, and nothing is
+// platform-specific.
+//
+// Joined by hand rather than `require.resolve`d: @remotion/cli's `exports`
+// map does not publish this subpath, so resolving it throws
+// ERR_PACKAGE_PATH_NOT_EXPORTED. Every other path here is repo-root-relative
+// anyway.
+const REMOTION_CLI = join("node_modules", "@remotion", "cli", "remotion-cli.js");
 
 const ff = (args) =>
-  execFileSync(NPX, ["remotion", "ffmpeg", ...args], {
+  execFileSync(process.execPath, [REMOTION_CLI, "ffmpeg", ...args], {
     stdio: ["ignore", "ignore", "pipe"],
   });
 

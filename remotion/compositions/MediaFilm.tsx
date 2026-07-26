@@ -3,8 +3,8 @@ import { noise2D } from "@remotion/noise";
 import { Grain, Vignette } from "../lib/Atmosphere";
 import { easeLuxe, palette } from "../lib/tokens";
 
-const MEDIA = "#b7bcc7";
-const MEDIA_BRIGHT = "#e6e9ef";
+const MEDIA = "#ffffff";
+const MEDIA_BRIGHT = "#ffffff";
 
 const DURATION = 600;
 
@@ -55,10 +55,10 @@ export const MediaFilm: React.FC = () => {
   const cellH = (fieldH - GUTTER * (ROWS - 1)) / ROWS;
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#0a0a0d" }}>
+    <AbsoluteFill style={{ backgroundColor: "#0a0a0a" }}>
       <AbsoluteFill
         style={{
-          background: "linear-gradient(160deg, #101116 0%, #0a0a0d 45%, #050505 100%)",
+          background: "linear-gradient(160deg, #141414 0%, #0a0a0a 45%, #000000 100%)",
         }}
       />
 

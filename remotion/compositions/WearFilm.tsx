@@ -3,8 +3,8 @@ import { noise2D } from "@remotion/noise";
 import { Bloom, GoldParticles, Grain, Vignette } from "../lib/Atmosphere";
 import { palette } from "../lib/tokens";
 
-const WEAR = "#e8e3d8";
-const WEAR_DEEP = "#8c8578";
+const WEAR = "#f0d98c";
+const WEAR_DEEP = "#8a6d1d";
 
 const DURATION = 600;
 
@@ -65,10 +65,10 @@ export const WearFilm: React.FC = () => {
   const t = frame / DURATION;
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#0c0b0a" }}>
+    <AbsoluteFill style={{ backgroundColor: "#0a0a0a" }}>
       <AbsoluteFill
         style={{
-          background: "linear-gradient(150deg, #171613 0%, #0c0b0a 45%, #050505 100%)",
+          background: "linear-gradient(150deg, #141414 0%, #0a0a0a 45%, #000000 100%)",
         }}
       />
 

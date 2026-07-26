@@ -42,7 +42,7 @@ export default function MediaPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(160deg, #101116 0%, #0a0a0d 45%, #050505 100%), radial-gradient(70% 60% at 80% 10%, rgba(183,188,199,0.14) 0%, transparent 60%)",
+              "linear-gradient(160deg, #141414 0%, #0a0a0a 45%, #000000 100%), radial-gradient(70% 60% at 80% 10%, rgba(255,255,255,0.13) 0%, transparent 60%)",
           }}
         />
         <CinematicVideo name="media-film" poster="/posters/media-film.jpg" />

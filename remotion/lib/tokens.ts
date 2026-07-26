@@ -14,7 +14,7 @@ import { Easing } from "remotion";
  */
 
 export const palette = {
-  background: "#050505",
+  background: "#000000",
   surface: "#0d0d0d",
   surface2: "#141414",
   gold: "#d4af37",
@@ -27,10 +27,10 @@ export const palette = {
 /** Division tints, in narrative order. Mirrors the accents in lib/data/divisions.ts. */
 export const divisionTints = [
   { name: "Group", hex: "#d4af37" },
-  { name: "Media", hex: "#b7bcc7" },
-  { name: "Wear", hex: "#e8e3d8" },
-  { name: "Wine Resort", hex: "#9e3a4d" },
-  { name: "Trade", hex: "#4a6d8c" },
+  { name: "Media", hex: "#ffffff" },
+  { name: "Wear", hex: "#f0d98c" },
+  { name: "Wines Resort", hex: "#d4af37" },
+  { name: "Trade", hex: "#a8a8a8" },
 ] as const;
 
 /**

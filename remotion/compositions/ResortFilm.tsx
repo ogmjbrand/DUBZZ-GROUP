@@ -3,9 +3,9 @@ import { noise2D } from "@remotion/noise";
 import { Bloom, GoldParticles, Grain, Vignette } from "../lib/Atmosphere";
 import { palette } from "../lib/tokens";
 
-const WINE = "#9e3a4d";
-const WINE_LIGHT = "#d98fa0";
-const SUN = "#e8b45f";
+const WINE = "#d4af37";
+const WINE_LIGHT = "#f0d98c";
+const SUN = "#f0d98c";
 
 const DURATION = 600;
 const HORIZON = 430;
@@ -32,11 +32,11 @@ export const ResortFilm: React.FC = () => {
   const t = frame / DURATION;
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#0e070a" }}>
+    <AbsoluteFill style={{ backgroundColor: "#0a0a0a" }}>
       {/* Sky */}
       <AbsoluteFill
         style={{
-          background: `linear-gradient(180deg, #12070b 0%, #2a1018 42%, ${WINE}55 72%, ${SUN}44 100%)`,
+          background: `linear-gradient(180deg, #000000 0%, #1c1710 42%, ${WINE}55 72%, ${SUN}44 100%)`,
           height: HORIZON,
         }}
       />
@@ -52,7 +52,7 @@ export const ResortFilm: React.FC = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          background: `linear-gradient(180deg, ${SUN}30 0%, ${WINE}22 22%, #0e070a 78%, ${palette.background} 100%)`,
+          background: `linear-gradient(180deg, ${SUN}30 0%, ${WINE}22 22%, #0a0a0a 78%, ${palette.background} 100%)`,
         }}
       />
 

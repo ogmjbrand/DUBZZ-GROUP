@@ -22,7 +22,7 @@ export default function WearPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(150deg, #171613 0%, #0c0b0a 45%, #050505 100%), radial-gradient(70% 55% at 20% 10%, rgba(232,227,216,0.1) 0%, transparent 60%)",
+              "linear-gradient(150deg, #141414 0%, #0a0a0a 45%, #000000 100%), radial-gradient(70% 55% at 20% 10%, rgba(240,217,140,0.14) 0%, transparent 60%)",
           }}
         />
         <CinematicVideo name="wear-film" poster="/posters/wear-film.jpg" />

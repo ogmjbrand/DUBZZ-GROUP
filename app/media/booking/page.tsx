@@ -17,7 +17,7 @@ const expectations = [
 export default function MediaBookingPage() {
   return (
     <div className="relative overflow-hidden">
-      <div aria-hidden className="absolute inset-0 bg-[radial-gradient(70%_50%_at_80%_0%,rgba(183,188,199,0.08)_0%,transparent_60%)]" />
+      <div aria-hidden className="absolute inset-0 bg-[radial-gradient(70%_50%_at_80%_0%,rgba(255,255,255,0.09)_0%,transparent_60%)]" />
       <div className="relative mx-auto grid w-full max-w-7xl gap-16 px-6 pb-28 pt-44 sm:px-10 lg:grid-cols-12 lg:px-16">
         <div className="lg:col-span-5">
           <FadeReveal>

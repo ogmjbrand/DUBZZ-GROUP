@@ -1,24 +1,37 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Cinematic Noir palette */
-  --color-background: #050505;
-  --color-surface: #0d0d0d;
-  --color-surface-2: #141414;
-  --color-surface-3: #1a1a1a;
+  /* ——— GOLD · MIDNIGHT BLACK · PURE WHITE ———
+     The entire brand system. Only the gold family carries hue; everything
+     else sits on the black-to-white axis with no colour cast. */
+
+  --color-background: #000000; /* midnight black */
+  --color-surface: #0a0a0a;
+  --color-surface-2: #121212;
+  --color-surface-3: #1c1c1c;
+
   --color-gold: #d4af37;
   --color-gold-bright: #f0d98c;
   --color-gold-deep: #8a6d1d;
-  --color-neutral: #a1a1aa;
+
+  --color-white: #ffffff; /* pure white */
+  --color-neutral: #a8a8a8; /* neutral grey — was #a1a1aa, which carried a blue cast */
+
+  /* Functional states only. Kept off-palette on purpose: an error that is not
+     red stops reading as an error, and form validation is not brand surface. */
   --color-success: #10b981;
   --color-error: #ef4444;
 
-  /* Division tints — muted, executive */
-  --color-wine: #9e3a4d;
-  --color-trade: #4a6d8c;
-  --color-media: #b7bcc7;
-  --color-wear: #e8e3d8;
-  --color-afterdark: #7a5a9c;
+  /* ——— DIVISION ACCENTS ———
+     Token names are unchanged so every `text-wine` / `text-trade` class keeps
+     working, but the hues are gone. Five divisions now separate by *value*
+     inside the gold-white-black system rather than by colour:
+     white → champagne → gold → deep gold, plus one neutral grey. */
+  --color-media: #ffffff; /* pure white — the editorial one */
+  --color-wear: #f0d98c; /* champagne */
+  --color-wine: #d4af37; /* core gold */
+  --color-trade: #a8a8a8; /* neutral grey */
+  --color-afterdark: #8a6d1d; /* deep gold */
 
   /* Typography */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -203,14 +216,14 @@ html.lenis-active body {
 
 body {
   background: var(--color-background);
-  color: #fafafa;
+  color: var(--color-white);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
   background: color-mix(in srgb, var(--color-gold) 85%, transparent);
-  color: #050505;
+  color: #000000;
 }
 
 :focus-visible {
@@ -222,7 +235,7 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
   background: #262626;

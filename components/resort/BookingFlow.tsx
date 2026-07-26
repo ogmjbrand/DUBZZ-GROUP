@@ -74,7 +74,7 @@ export function BookingShell({ step, children }: { step: 0 | 1 | 2; children: Re
                       className={[
                         "flex h-8 w-8 items-center justify-center rounded-full border font-label text-[10px] font-bold",
                         state === "current"
-                          ? "border-wine text-wine shadow-[0_0_16px_rgba(158,58,77,0.4)]"
+                          ? "border-wine text-wine shadow-[0_0_16px_rgba(212,175,55,0.4)]"
                           : "border-white/15 text-white/30",
                       ].join(" ")}
                     >
@@ -150,7 +150,7 @@ export function SanctuaryStep() {
               className={[
                 "group overflow-hidden rounded-lg border text-left transition-all duration-300",
                 active
-                  ? "border-wine bg-wine/5 shadow-[0_0_32px_-8px_rgba(158,58,77,0.5)]"
+                  ? "border-wine bg-wine/5 shadow-[0_0_32px_-8px_rgba(212,175,55,0.5)]"
                   : "border-white/10 hover:border-white/30",
               ].join(" ")}
             >
