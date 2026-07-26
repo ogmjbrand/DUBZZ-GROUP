@@ -7,7 +7,7 @@ import FadeReveal from "@/components/motion/FadeReveal";
 import { diningVenues } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
-  title: "Dining — Dubzz Wine Resort",
+  title: "Dining — Dubzz Wines Resort",
   description:
     "Meridian fine dining, vineyard long-tables, and the quietest wine bar on the estate.",
 };
@@ -18,7 +18,7 @@ export default function DiningPage() {
       <section className="px-6 pb-8 pt-44 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <FadeReveal>
-            <p className="overline-label text-wine">Wine Resort · Dining</p>
+            <p className="overline-label text-wine">Wines Resort · Dining</p>
             <h1 className="mt-8 max-w-3xl font-display text-5xl leading-[1.02] text-white sm:text-7xl">
               Three rooms, one kitchen garden.
             </h1>

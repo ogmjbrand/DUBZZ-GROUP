@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import FadeReveal from "@/components/motion/FadeReveal";
 import ContactForm from "@/components/forms/ContactForm";
+import { contact } from "@/lib/data/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -8,19 +9,19 @@ export const metadata: Metadata = {
     "Start a conversation with Dubzz Group — media commissions, trade inquiries, resort reservations, or anything in between.",
 };
 
+/**
+ * Only what the Group publishes.
+ *
+ * Previously listed three further inboxes (studio@ / trade@ / reservations@)
+ * and four offices — London, Accra, Porto, and an estate — none of which
+ * exist. The profile gives one head office and one address, and even that is
+ * marked "to be activated".
+ */
 const directLines = [
-  { label: "General", value: "hello@dubzzgroup.com" },
-  { label: "Media & Commissions", value: "studio@dubzzgroup.com" },
-  { label: "Trade Desk", value: "trade@dubzzgroup.com" },
-  { label: "The Estate", value: "reservations@dubzzgroup.com" },
+  { label: "General Enquiries", value: contact.email },
 ];
 
-const offices = [
-  { city: "London", role: "Group & Media", zone: "GMT" },
-  { city: "Accra", role: "Trade Operations", zone: "GMT" },
-  { city: "Porto", role: "Wear Atelier", zone: "WET" },
-  { city: "The Estate", role: "Wine Resort", zone: "CET" },
-];
+const enquiryTypes = contact.enquiries;
 
 export default function ContactPage() {
   return (
@@ -55,16 +56,31 @@ export default function ContactPage() {
           </FadeReveal>
 
           <FadeReveal delay={250} className="mt-12">
-            <p className="overline-label mb-5 text-white/45">Offices</p>
-            <div className="grid grid-cols-2 gap-4">
-              {offices.map((o) => (
-                <div key={o.city} className="rounded-lg border border-white/8 p-4">
-                  <p className="font-display text-lg text-white">{o.city}</p>
-                  <p className="mt-1 text-xs text-neutral">{o.role}</p>
-                  <p className="mt-2 font-label text-[9px] font-semibold uppercase tracking-[0.2em] text-white/30">{o.zone}</p>
-                </div>
+            <p className="overline-label mb-5 text-white/45">Head Office</p>
+            <address className="rounded-lg border border-white/8 p-6 not-italic">
+              <p className="font-display text-xl text-white">{contact.company}</p>
+              <p className="mt-2 text-sm leading-relaxed text-neutral">
+                {contact.city}
+                <br />
+                {contact.region}
+                <br />
+                {contact.country}
+              </p>
+            </address>
+          </FadeReveal>
+
+          <FadeReveal delay={320} className="mt-12">
+            <p className="overline-label mb-5 text-white/45">Business Enquiries</p>
+            <ul className="flex flex-wrap gap-2">
+              {enquiryTypes.map((e) => (
+                <li
+                  key={e}
+                  className="rounded-full border border-white/10 px-4 py-1.5 font-label text-[9px] font-semibold uppercase tracking-[0.16em] text-white/45"
+                >
+                  {e}
+                </li>
               ))}
-            </div>
+            </ul>
           </FadeReveal>
         </div>
 

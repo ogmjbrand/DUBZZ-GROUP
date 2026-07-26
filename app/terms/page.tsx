@@ -22,7 +22,7 @@ export default function TermsPage() {
         {
           heading: "The Services",
           paragraphs: [
-            "Dubzz Wear sells physical goods in numbered runs; availability is genuinely limited and orders are accepted in sequence. Dubzz Wine Resort accepts reservations subject to its booking conditions provided at the time of booking. Dubzz Media engagements and Dubzz Trade contracts are governed by their own signed agreements, which prevail over these terms where they differ.",
+            "Dubzz Wear sells physical goods in numbered runs; availability is genuinely limited and orders are accepted in sequence. Dubzz Wines Resort accepts reservations subject to its booking conditions provided at the time of booking. Dubzz Media engagements and Dubzz Trade contracts are governed by their own signed agreements, which prevail over these terms where they differ.",
           ],
         },
         {

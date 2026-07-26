@@ -9,7 +9,7 @@ import CinematicVideo from "@/components/effects/CinematicVideo";
 import { sanctuaries, experiences, resortEvents, diningVenues } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
-  title: "Dubzz Wine Resort — Luxury Hospitality",
+  title: "Dubzz Wines Resort — Luxury Hospitality",
   description:
     "An estate of vineyards, sanctuaries, and fine dining — hospitality composed like cinema, poured like a rare vintage.",
 };
@@ -33,7 +33,7 @@ export default function WineResortPage() {
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-28 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>
-            <p className="overline-label text-wine">Dubzz Wine Resort · 04</p>
+            <p className="overline-label text-wine">Dubzz Wines Resort · 04</p>
             <h1 className="mt-8 max-w-4xl font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.98] text-white">
               Where the vine meets
               <span className="italic text-wine"> the horizon.</span>

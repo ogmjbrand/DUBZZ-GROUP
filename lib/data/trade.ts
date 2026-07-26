@@ -1,3 +1,15 @@
+/**
+ * Dubzz Trade.
+ *
+ * Content is bound to the 2026 Corporate Profile. The earlier version of this
+ * file carried an invented commodity list (coffee, cashew, shea, sesame, fine
+ * wine), fabricated performance metrics ("42 active corridors", "99.2% on-spec
+ * delivery"), and a live shipment ledger with made-up consignment IDs. None of
+ * it was real, and a live operations view is the most misleading thing a
+ * pre-operational trade desk can publish. Replaced with what the Group has
+ * actually stated.
+ */
+
 export interface Commodity {
   id: string;
   name: string;
@@ -7,88 +19,98 @@ export interface Commodity {
   visual: string;
 }
 
+/** The profile's "Current Product Portfolio" — exactly these four. */
 export const commodities: Commodity[] = [
+  {
+    id: "palm-oil",
+    name: "Palm Oil",
+    origin: "Nigeria",
+    grade: "Crude & refined",
+    description:
+      "Sourced through producer relationships built on quality assurance and ethical sourcing, for food manufacturers and industrial buyers.",
+    visual: "linear-gradient(145deg, #1a1207 0%, #0c0806 55%, #050505 100%)",
+  },
   {
     id: "cocoa",
     name: "Cocoa",
-    origin: "Ghana · Côte d'Ivoire",
-    grade: "Premium fermented, Grade I",
+    origin: "Nigeria · West Africa",
+    grade: "Fermented beans",
     description:
-      "Single-cooperative lots with full farm-gate traceability, fermented and dried to specification for fine-flavour buyers.",
-    visual:
-      "linear-gradient(145deg, #14100a 0%, #0b0806 55%, #050505 100%)",
+      "Fermented and dried to buyer specification, moving through supply chains that prioritise transparency from farm to port.",
+    visual: "linear-gradient(145deg, #14100a 0%, #0b0806 55%, #050505 100%)",
   },
   {
-    id: "coffee",
-    name: "Coffee",
-    origin: "Ethiopia · Rwanda",
-    grade: "Specialty, 85+ cup score",
+    id: "ginger",
+    name: "Ginger",
+    origin: "Kaduna · Northern Nigeria",
+    grade: "Dried split & whole",
     description:
-      "Washed and natural microlots sourced at origin by our own agronomists, shipped in hermetic liners under temperature watch.",
-    visual:
-      "linear-gradient(150deg, #120d0a 0%, #0a0706 55%, #050505 100%)",
+      "One of Nigeria's strongest export crops, prepared for spice, beverage, and pharmaceutical buyers across regional and global markets.",
+    visual: "linear-gradient(150deg, #16130b 0%, #0a0907 55%, #050505 100%)",
   },
   {
-    id: "cashew",
-    name: "Cashew",
-    origin: "Benin · Tanzania",
-    grade: "W240 / W320",
+    id: "charcoal",
+    name: "Charcoal",
+    origin: "Nigeria",
+    grade: "Hardwood, BBQ & industrial",
     description:
-      "Raw and processed kernels with in-country value addition, moving through our own quality-control lab before port.",
-    visual:
-      "linear-gradient(145deg, #14120c 0%, #0b0a07 55%, #050505 100%)",
-  },
-  {
-    id: "shea",
-    name: "Shea",
-    origin: "Northern Ghana",
-    grade: "Unrefined, cosmetic grade",
-    description:
-      "Women's-cooperative shea butter with certified fair pricing, batch-tested for cosmetic and food applications.",
-    visual:
-      "linear-gradient(150deg, #14110d 0%, #0b0908 55%, #050505 100%)",
-  },
-  {
-    id: "sesame",
-    name: "Sesame",
-    origin: "Nigeria · Sudan",
-    grade: "99.5% purity, hulled",
-    description:
-      "Machine-cleaned and colour-sorted sesame for food manufacturers, contracted against forward positions to stabilise supply.",
-    visual:
-      "linear-gradient(145deg, #13110b 0%, #0a0907 55%, #050505 100%)",
-  },
-  {
-    id: "fine-wine",
-    name: "Fine Wine",
-    origin: "Dubzz Estate & partners",
-    grade: "Allocation only",
-    description:
-      "The estate's own vintages and a brokered cellar of partner producers, moving under bonded, temperature-controlled custody.",
-    visual:
-      "linear-gradient(150deg, #170b0e 0%, #0c0608 55%, #050505 100%)",
+      "Hardwood charcoal for barbecue and industrial use, sourced under the same reliability and long-term partnership standards as every line.",
+    visual: "linear-gradient(145deg, #0f0e0d 0%, #090808 55%, #050505 100%)",
   },
 ];
 
-export const tradeCorridors = [
-  { from: "Accra", to: "Rotterdam", cargo: "Cocoa", transit: "18 days" },
-  { from: "Addis Ababa", to: "Hamburg", cargo: "Coffee", transit: "24 days" },
-  { from: "Lagos", to: "Shenzhen", cargo: "Sesame", transit: "31 days" },
-  { from: "Dar es Salaam", to: "Ho Chi Minh", cargo: "Cashew", transit: "22 days" },
-  { from: "Tema", to: "New Jersey", cargo: "Shea", transit: "16 days" },
+/** Core Focus Areas, per the profile. */
+export const tradeFocusAreas = [
+  {
+    title: "Agricultural Commodities",
+    body: "Sourcing quality African agricultural produce for regional and international buyers.",
+  },
+  {
+    title: "Export Development",
+    body: "Building the routes, documentation, and relationships that move product out of origin markets.",
+  },
+  {
+    title: "Supply Chain Coordination",
+    body: "Coordinating producers, processors, and logistics so a contract behaves the way it was written.",
+  },
+  {
+    title: "International Procurement",
+    body: "Acting for international buyers who need reliable access to African supply.",
+  },
+  {
+    title: "Market Development",
+    body: "Opening new destination markets for African commodities and expanding producer access.",
+  },
+  {
+    title: "Strategic Trade Partnerships",
+    body: "Long-term partnerships with producers, cooperatives, and trade organisations.",
+  },
 ];
 
-export const tradeStats = [
-  { value: 42, suffix: "", label: "Active trade corridors" },
-  { value: 14, suffix: "", label: "Origin & destination markets" },
-  { value: 99.2, suffix: "%", label: "On-spec delivery rate" },
-  { value: 100, suffix: "%", label: "Farm-gate traceability" },
+/**
+ * Operating Principles — what the profile says every trading relationship is
+ * built on. These replace the fabricated metric counters: the Group is early
+ * enough that its standards are the honest thing to lead with, not its numbers.
+ */
+export const operatingPrinciples = [
+  {
+    title: "Quality Assurance",
+    body: "Product is graded and checked against specification before it moves.",
+  },
+  {
+    title: "Ethical Sourcing",
+    body: "Producer relationships that support local growers rather than squeeze them.",
+  },
+  {
+    title: "Operational Reliability",
+    body: "Doing what the contract says, on the timeline the contract says.",
+  },
+  {
+    title: "Transparency",
+    body: "Both sides of a trade can see the same picture at the same time.",
+  },
+  {
+    title: "Long-Term Partnership",
+    body: "We trade to build a relationship, not to clear a single cargo.",
+  },
 ];
-
-export const shipments = [
-  { id: "DZT-4821", cargo: "Cocoa · 250MT", route: "Accra → Rotterdam", eta: "Aug 02", status: "In transit" },
-  { id: "DZT-4819", cargo: "Coffee · 40MT", route: "Addis → Hamburg", eta: "Aug 11", status: "In transit" },
-  { id: "DZT-4816", cargo: "Cashew · 120MT", route: "Dar → Ho Chi Minh", eta: "Jul 30", status: "Customs" },
-  { id: "DZT-4812", cargo: "Shea · 60MT", route: "Tema → New Jersey", eta: "Jul 26", status: "Arriving" },
-  { id: "DZT-4808", cargo: "Sesame · 180MT", route: "Lagos → Shenzhen", eta: "Delivered", status: "Complete" },
-] as const;

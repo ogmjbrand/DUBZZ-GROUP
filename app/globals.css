@@ -18,6 +18,7 @@
   --color-trade: #4a6d8c;
   --color-media: #b7bcc7;
   --color-wear: #e8e3d8;
+  --color-afterdark: #7a5a9c;
 
   /* Typography */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;

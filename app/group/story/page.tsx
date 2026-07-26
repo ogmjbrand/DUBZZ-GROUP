@@ -3,6 +3,7 @@ import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
+import { founder } from "@/lib/data/site";
 import GoldShaderBackground from "@/components/effects/GoldShaderBackground";
 import { divisions } from "@/lib/data/divisions";
 
@@ -55,14 +56,13 @@ export default function GroupStoryPage() {
         <div className="mx-auto max-w-3xl">
           <FadeReveal>
             <p className="overline-label text-gold">From the Founder&apos;s Desk</p>
+            {/* The founder's own words, from the 2026 Corporate Profile.
+                Replaces an invented quote attributed to an initial. */}
             <blockquote className="mt-8 font-display text-2xl leading-relaxed text-white/85 sm:text-3xl">
-              &ldquo;We are often asked when we will raise, exit, or franchise.
-              The honest answer is that the group is structured to make those
-              questions optional forever. Patient capital is not a constraint we
-              tolerate — it is the moat.&rdquo;
+              &ldquo;{founder.quote}&rdquo;
             </blockquote>
             <p className="mt-8 font-label text-[11px] font-semibold uppercase tracking-[0.24em] text-white/40">
-              — D. · A Letter on the Next Decade, 2026
+              — {founder.name} · {founder.role}
             </p>
             <div className="mt-8">
               <Button href="/blog/investor-letter-2026" variant="secondary" size="sm">

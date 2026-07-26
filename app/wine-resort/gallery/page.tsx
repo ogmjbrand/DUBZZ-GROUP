@@ -6,7 +6,7 @@ import FadeReveal from "@/components/motion/FadeReveal";
 import { galleryScenes } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
-  title: "Gallery — Dubzz Wine Resort",
+  title: "Gallery — Dubzz Wines Resort",
   description: "Scenes from the estate — first light on the east slope to midnight on the terrace.",
 };
 
@@ -22,7 +22,7 @@ export default function GalleryPage() {
       <section className="px-6 pb-8 pt-44 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <FadeReveal>
-            <p className="overline-label text-wine">Wine Resort · Gallery</p>
+            <p className="overline-label text-wine">Wines Resort · Gallery</p>
             <h1 className="mt-8 max-w-3xl font-display text-5xl leading-[1.02] text-white sm:text-7xl">
               Scenes from the estate.
             </h1>

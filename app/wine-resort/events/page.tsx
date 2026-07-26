@@ -6,7 +6,7 @@ import FadeReveal from "@/components/motion/FadeReveal";
 import { resortEvents } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
-  title: "Events — Dubzz Wine Resort",
+  title: "Events — Dubzz Wines Resort",
   description:
     "Vintage releases, harvest weekends, and single-table dinners — the estate's calendar of nights worth crossing borders for.",
 };
@@ -17,7 +17,7 @@ export default function EventsPage() {
       <section className="px-6 pb-8 pt-44 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <FadeReveal>
-            <p className="overline-label text-wine">Wine Resort · Events</p>
+            <p className="overline-label text-wine">Wines Resort · Events</p>
             <h1 className="mt-8 max-w-3xl font-display text-5xl leading-[1.02] text-white sm:text-7xl">
               The calendar keeps its promises.
             </h1>

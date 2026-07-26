@@ -7,7 +7,7 @@ import FadeReveal from "@/components/motion/FadeReveal";
 import { experiences } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
-  title: "Experiences — Dubzz Wine Resort",
+  title: "Experiences — Dubzz Wines Resort",
   description:
     "Barrel tastings, harvest immersions, spa rituals, and cellar dinners — the estate, up close.",
 };
@@ -18,7 +18,7 @@ export default function ExperiencesPage() {
       <section className="px-6 pb-8 pt-44 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <FadeReveal>
-            <p className="overline-label text-wine">Wine Resort · Experiences</p>
+            <p className="overline-label text-wine">Wines Resort · Experiences</p>
             <h1 className="mt-8 max-w-3xl font-display text-5xl leading-[1.02] text-white sm:text-7xl">
               The estate, up close.
             </h1>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 // Mock profile — bound to Supabase auth + profiles once sign-in ships.
 const privileges = [
-  { division: "Wine Resort", perk: "Event priority & cellar allocations", state: "Active" },
+  { division: "Wines Resort", perk: "Event priority & cellar allocations", state: "Active" },
   { division: "Wear", perk: "First access to numbered runs", state: "Active" },
   { division: "Media", perk: "Studio previews & screening invitations", state: "Active" },
   { division: "Trade", perk: "Desk introductions on request", state: "By request" },

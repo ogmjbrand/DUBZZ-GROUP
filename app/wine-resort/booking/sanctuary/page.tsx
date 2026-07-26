@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BookingShell, SanctuaryStep } from "@/components/resort/BookingFlow";
 
 export const metadata: Metadata = {
-  title: "Select Your Sanctuary — Wine Resort Booking",
+  title: "Select Your Sanctuary — Wines Resort Booking",
   description: "Choose your residence on the estate and set your dates.",
 };
 

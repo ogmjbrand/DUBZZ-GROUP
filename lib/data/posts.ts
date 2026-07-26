@@ -36,7 +36,7 @@ export const posts: Post[] = [
   {
     slug: "harvest-notes-first-vintage",
     title: "Harvest Notes: The First Vintage",
-    category: "Wine Resort",
+    category: "Wines Resort",
     date: "2026-06-14",
     readTime: "5 min",
     dek: "Notes from the estate's first full harvest — early mornings, obsessive sorting tables, and the vintage we almost didn't bottle.",

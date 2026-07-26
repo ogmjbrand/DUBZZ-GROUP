@@ -79,7 +79,7 @@ export default function ContactForm() {
       </div>
       <div className="grid gap-8 sm:grid-cols-2">
         <Field label="Division" htmlFor="contact-division">
-          <Select id="contact-division" name="division" defaultValue="group">
+          <Select id="contact-division" name="division" defaultValue="media">
             {divisions.map((d) => (
               <option key={d.key} value={d.key}>
                 {d.name}

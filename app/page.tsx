@@ -4,20 +4,27 @@ import Card from "@/components/ui/Card";
 import Visual from "@/components/ui/Visual";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
-import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import CinematicVideo from "@/components/effects/CinematicVideo";
 import EcosystemCanvas from "@/components/effects/EcosystemCanvas";
 import { divisions } from "@/lib/data/divisions";
-import { caseStudies } from "@/lib/data/case-studies";
 import { posts } from "@/lib/data/posts";
-import { groupStats, testimonials } from "@/lib/data/site";
+import { milestones } from "@/lib/data/site";
 
+/**
+ * The profile's Five-Year Strategic Roadmap.
+ *
+ * Replaces an invented corporate history (a 2016 founding, a 2019 sell-out
+ * run, a corridor opened in 2022, an estate acquired in 2024). The Group is
+ * in its foundation year: Wear is preparing to launch and the resort is still
+ * being developed, so a past-tense timeline was fiction. Forward-looking
+ * phases are what the Group has actually published.
+ */
 const timeline = [
-  { year: "2016", event: "Dubzz is founded as a single creative studio with an unreasonable standard." },
-  { year: "2019", event: "Dubzz Wear launches its first numbered run. It sells out in nine days." },
-  { year: "2022", event: "Dubzz Trade opens its first corridor — Accra to Rotterdam, fully traceable." },
-  { year: "2024", event: "The estate is acquired. Dubzz Wine Resort breaks ground among the vines." },
-  { year: "2026", event: "Five ventures, fourteen markets, one standard. The ecosystem comes online." },
+  { year: "2026", event: "Foundation — establish operations, strengthen Dubzz Media, prepare the launch of Dubzz Wear, and introduce the first After Dark experiences." },
+  { year: "2027", event: "Expansion — grow across Nigeria through stronger partnerships, brand visibility, and momentum in every division." },
+  { year: "2028", event: "Regional Growth — enter key African markets while building hospitality, lifestyle experiences, and export." },
+  { year: "2029", event: "Institutional Growth — flagship hospitality developments and larger-scale entertainment, under operational excellence." },
+  { year: "2030", event: "Global Positioning — one of Africa's leading creative and lifestyle holding companies." },
 ];
 
 export default function Home() {
@@ -228,84 +235,33 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ——— FEATURED WORK ——— */}
+      {/* ——— MILESTONES ———
+          Replaces a "Featured Work" grid of invented case studies, a counter
+          row of invented metrics, and three invented client testimonials. The
+          Group is early-stage; what it has are foundations laid, and the
+          profile states them plainly. Restore richer proof here only when
+          there is real work to show. */}
       <Section className="border-t border-white/5">
         <SectionHeading
-          overline="Featured Work"
-          title="Made to be remembered."
-          lede="Selected commissions from Dubzz Media — the craft that carries the whole house."
+          overline="Key Milestones"
+          title="Building momentum."
+          lede="Every enduring institution begins with deliberate progress. These are the foundations already in place."
         />
-        <div className="grid gap-6 md:grid-cols-2">
-          {caseStudies.map((cs, i) => (
-            <FadeReveal
-              key={cs.slug}
-              delay={i * 100}
-              className={i === 0 ? "md:col-span-2" : ""}
-            >
-              <Link href={`/media/case-studies/${cs.slug}`} className="group block">
-                <Card innerClassName="bg-surface">
-                  <Visual
-                    background={cs.visual}
-                    src={cs.image}
-                    alt={cs.imageAlt}
-                    scrim
-                    zoomOnHover
-                    priority={i === 0}
-                    sizes={i === 0 ? "(max-width: 768px) 100vw, 1280px" : "(max-width: 768px) 100vw, 640px"}
-                    className={i === 0 ? "h-[320px] sm:h-[420px]" : "h-[260px] sm:h-[300px]"}
-                  >
-                    <div className="flex h-full flex-col justify-end p-8 sm:p-10">
-                      <p className="overline-label text-gold">{cs.discipline} · {cs.year}</p>
-                      <h3 className={`mt-3 font-display text-white ${i === 0 ? "text-3xl sm:text-5xl" : "text-2xl sm:text-3xl"}`}>
-                        {cs.title}
-                      </h3>
-                      <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/60">
-                        {cs.summary}
-                      </p>
-                    </div>
-                  </Visual>
-                </Card>
-              </Link>
-            </FadeReveal>
-          ))}
-        </div>
-      </Section>
-
-      {/* ——— STATISTICS ——— */}
-      <Section className="border-t border-white/5">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          {groupStats.map((s, i) => (
-            <FadeReveal key={s.label} delay={i * 90} className="border-l border-gold/25 pl-6">
-              <p className="font-display text-5xl text-white sm:text-6xl">
-                <AnimatedCounter value={s.value} suffix={s.suffix} />
-              </p>
-              <p className="mt-3 max-w-[180px] text-sm text-neutral">{s.label}</p>
-            </FadeReveal>
-          ))}
-        </div>
-      </Section>
-
-      {/* ——— TESTIMONIALS ——— */}
-      <Section className="border-t border-white/5">
-        <SectionHeading overline="In Their Words" title="The company we keep." align="center" />
-        <div className="grid gap-6 lg:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <FadeReveal key={t.name} delay={i * 110}>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {milestones.map((m, i) => (
+            <FadeReveal key={m.area} delay={i * 90}>
               <Card static className="h-full">
-                <figure className="flex h-full flex-col p-9">
-                  <span aria-hidden className="font-display text-6xl leading-none text-gold/40">
-                    &ldquo;
-                  </span>
-                  <blockquote className="mt-2 flex-1 font-display text-lg leading-relaxed text-white/85">
-                    {t.quote}
-                  </blockquote>
-                  <figcaption className="mt-8 border-t border-white/10 pt-5">
-                    <p className="font-label text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
-                      {t.name}
-                    </p>
-                    <p className="mt-1 text-xs text-white/40">{t.role}</p>
-                  </figcaption>
-                </figure>
+                <div className="flex h-full flex-col p-9">
+                  <p className="overline-label text-gold">{m.area}</p>
+                  <ul className="mt-6 space-y-4">
+                    {m.items.map((item) => (
+                      <li key={item} className="flex gap-4 text-sm leading-relaxed text-neutral">
+                        <span aria-hidden className="mt-2 h-px w-5 shrink-0 bg-gold/40" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </Card>
             </FadeReveal>
           ))}

@@ -1,4 +1,18 @@
-export type DivisionKey = "group" | "media" | "wear" | "wine-resort" | "trade";
+/**
+ * The Group's operating businesses.
+ *
+ * Per the 2026 Corporate Profile, Dubzz Group is the *holding company* — it
+ * sits above these five and is not itself one of them. An earlier version
+ * listed "Dubzz Group" as division 01, which contradicted the Group's own
+ * structure; corporate pages now live under /group/* without a division entry.
+ */
+
+export type DivisionKey =
+  | "media"
+  | "wear"
+  | "wine-resort"
+  | "trade"
+  | "after-dark";
 
 export interface Division {
   key: DivisionKey;
@@ -21,26 +35,13 @@ export interface Division {
 
 export const divisions: Division[] = [
   {
-    key: "group",
-    index: "01",
-    name: "Dubzz Group",
-    short: "Group",
-    tagline: "The house above the houses.",
-    description:
-      "The corporate heart of the ecosystem — strategy, capital, and a single uncompromising standard applied across every venture we build.",
-    href: "/group/story",
-    accent: "var(--color-gold)",
-    accentHex: "#d4af37",
-    facets: ["Strategy", "Capital", "Governance"],
-  },
-  {
     key: "media",
-    index: "02",
+    index: "01",
     name: "Dubzz Media",
     short: "Media",
     tagline: "Stories engineered to be unforgettable.",
     description:
-      "A creative agency operating at the intersection of film, brand, and technology — building identities and campaigns for names that intend to last.",
+      "The Group's flagship creative business, and the foundation it was built on — visual storytelling, strategic branding, and digital content for businesses, institutions, and entrepreneurs.",
     href: "/media",
     accent: "var(--color-media)",
     accentHex: "#b7bcc7",
@@ -48,42 +49,55 @@ export const divisions: Division[] = [
   },
   {
     key: "wear",
-    index: "03",
+    index: "02",
     name: "Dubzz Wear",
     short: "Wear",
-    tagline: "Quiet luxury, cut sharp.",
+    tagline: "Fashion inspired by purpose.",
     description:
-      "A fashion house built on restraint — limited runs, architectural silhouettes, and fabrics chosen the way collectors choose art.",
+      "The lifestyle fashion division — premium apparel drawn from simplicity, functionality, and contemporary African culture, made for people who move with confidence.",
     href: "/wear",
     accent: "var(--color-wear)",
     accentHex: "#e8e3d8",
-    facets: ["Apparel", "Limited Runs", "Atelier"],
+    facets: ["Apparel", "Accessories", "Limited Editions"],
   },
   {
     key: "wine-resort",
-    index: "04",
-    name: "Dubzz Wine Resort",
-    short: "Wine Resort",
-    tagline: "Where the vine meets the horizon.",
+    index: "03",
+    name: "Dubzz Wines Resort",
+    short: "Wines Resort",
+    tagline: "Redefining hospitality through lifestyle and experience.",
     description:
-      "An estate of vineyards, sanctuaries, and fine dining — hospitality composed like cinema, poured like a rare vintage.",
+      "The hospitality and lifestyle division — premium destinations where luxury, wine culture, leisure, and meaningful experiences come together.",
     href: "/wine-resort",
     accent: "var(--color-wine)",
     accentHex: "#9e3a4d",
-    facets: ["Estate", "Dining", "Experiences"],
+    facets: ["Hospitality", "Wine Culture", "Events"],
   },
   {
     key: "trade",
-    index: "05",
+    index: "04",
     name: "Dubzz Trade",
     short: "Trade",
-    tagline: "Commerce that moves continents.",
+    tagline: "Connecting African products to global markets.",
     description:
-      "Global sourcing, export, and logistics — moving premium commodities between markets with executive precision and total traceability.",
+      "The international trade division — building trusted supply chains between African producers and buyers across regional and global markets.",
     href: "/trade",
     accent: "var(--color-trade)",
     accentHex: "#4a6d8c",
-    facets: ["Commodities", "Logistics", "Export"],
+    facets: ["Commodities", "Export", "Sourcing"],
+  },
+  {
+    key: "after-dark",
+    index: "05",
+    name: "After Dark",
+    short: "After Dark",
+    tagline: "Where culture comes alive.",
+    description:
+      "The Group's signature entertainment and lifestyle experience platform — curated nights where music, fashion, food, creativity, and connection meet.",
+    href: "/after-dark",
+    accent: "var(--color-afterdark)",
+    accentHex: "#7a5a9c",
+    facets: ["Experiences", "Culture", "Nightlife"],
   },
 ];
 

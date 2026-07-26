@@ -1,9 +1,45 @@
+/**
+ * Group identity.
+ *
+ * Source of truth is the 2026 Dubzz Group Corporate Profile. Nothing in this
+ * file may be invented: the Group is early-stage, and placeholder metrics or
+ * credentials presented as fact are a liability rather than a design detail.
+ * If a number or claim is not in the profile, it does not belong here.
+ */
+
 export const site = {
   name: "Dubzz Group",
-  title: "Dubzz Group — A Multi-Venture Luxury Ecosystem",
+  title: "Dubzz Group — Building Brands. Creating Experiences. Inspiring Culture.",
   description:
-    "Dubzz Group is a multi-venture creative and lifestyle ecosystem — media, fashion, hospitality, and global trade, held to a single uncompromising standard.",
+    "Dubzz Group is a diversified creative, lifestyle, and business holding company headquartered in Abuja, Nigeria — operating across media, fashion, hospitality, entertainment, and international trade.",
   url: "https://dubzzgroup.com",
+  tagline: "Building Brands. Creating Experiences. Inspiring Culture.",
+};
+
+/** Head office, per the profile's Contact page. */
+export const contact = {
+  company: "Dubzz Group",
+  office: "Head Office",
+  city: "Abuja",
+  region: "Federal Capital Territory",
+  country: "Nigeria",
+  // Marked "to be activated" in the profile — kept because it is the address
+  // the Group publishes, but treat delivery as unverified.
+  email: "hello@dubzzgroup.com",
+  enquiries: [
+    "Partnerships",
+    "Corporate Collaborations",
+    "Investment Opportunities",
+    "Media Relations",
+    "Strategic Alliances",
+  ],
+};
+
+export const founder = {
+  name: "Prince Chidubem Nwahiri",
+  role: "Founder & Group Chief Executive Officer",
+  quote:
+    "Legacy is not measured by what we own, but by the opportunities we create and the lives we inspire.",
 };
 
 export const navLinks = [
@@ -18,11 +54,11 @@ export const footerColumns = [
   {
     heading: "Divisions",
     links: [
-      { label: "Dubzz Group", href: "/group/story" },
       { label: "Dubzz Media", href: "/media" },
       { label: "Dubzz Wear", href: "/wear" },
-      { label: "Dubzz Wine Resort", href: "/wine-resort" },
+      { label: "Dubzz Wines Resort", href: "/wine-resort" },
       { label: "Dubzz Trade", href: "/trade" },
+      { label: "After Dark", href: "/after-dark" },
     ],
   },
   {
@@ -47,37 +83,86 @@ export const footerColumns = [
   },
 ];
 
+/** Only the two channels the profile publishes. */
 export const socials = [
-  { label: "Instagram", href: "https://instagram.com", handle: "@dubzzgroup" },
+  { label: "Instagram", href: "https://instagram.com/dubzzgroup", handle: "@dubzzgroup" },
   { label: "LinkedIn", href: "https://linkedin.com", handle: "Dubzz Group" },
-  { label: "X", href: "https://x.com", handle: "@dubzzgroup" },
-  { label: "YouTube", href: "https://youtube.com", handle: "Dubzz Group" },
 ];
 
-export const groupStats = [
-  { value: 5, suffix: "", label: "Ventures, one standard" },
-  { value: 14, suffix: "", label: "Markets served worldwide" },
-  { value: 120, suffix: "+", label: "Craftspeople & specialists" },
-  { value: 98, suffix: "%", label: "Client & guest retention" },
+/**
+ * Key Milestones, verbatim in substance from the profile.
+ *
+ * These replace the invented "14 markets / 120+ specialists / 98% retention"
+ * counters. The Group states it is "in the early stages of its journey", so
+ * what it has to show is foundations laid — not performance metrics. Stated
+ * plainly, that reads as confidence; fabricated numbers read as a bluff the
+ * first time anyone asks.
+ */
+export const milestones = [
+  {
+    area: "Corporate Development",
+    items: [
+      "Established the vision and strategic direction of Dubzz Group.",
+      "Developed a diversified holding company structure.",
+      "Created the Group's long-term business ecosystem.",
+    ],
+  },
+  {
+    area: "Creative Services",
+    items: [
+      "Established Dubzz Media as the Group's flagship creative business.",
+      "Delivered creative solutions for businesses and international clients.",
+      "Continued building expertise across media production, editing, branding, and digital content.",
+    ],
+  },
+  {
+    area: "Brand Development",
+    items: [
+      "Developed the Dubzz Wear concept and brand identity.",
+      "Established the vision for Dubzz Wines Resort.",
+      "Created the After Dark entertainment platform.",
+      "Developed Dubzz Trade as the Group's international commerce division.",
+    ],
+  },
+  {
+    area: "Strategic Growth",
+    items: [
+      "Built relationships with partners across the creative, hospitality, and event industries.",
+      "Continued expanding the Group's long-term business strategy.",
+    ],
+  },
 ];
 
-export const testimonials = [
+/** The five strategic pillars from the profile's Growth Strategy. */
+export const growthPillars = [
   {
-    quote:
-      "Working with Dubzz felt less like hiring an agency and more like being admitted into a standard. Every detail arrived finished.",
-    name: "Amara Okonkwo",
-    role: "CEO, Aureum Global",
+    title: "Strengthen Our Portfolio",
+    body: "Invest in every business within the Group so each has the operational capacity, leadership, and market positioning to grow sustainably.",
   },
   {
-    quote:
-      "The estate is the rare place where the photograph undersells the experience. We came for a weekend and left with a tradition.",
-    name: "Julien Moreau",
-    role: "Guest, Wine Resort Inner Circle",
+    title: "Expand Through Strategic Partnerships",
+    body: "Partner with organizations that share our values to accelerate innovation, broaden market access, and create mutual value.",
   },
   {
-    quote:
-      "Three continents, one contract, zero surprises. Dubzz Trade moves like a firm twice its size and twice its age.",
-    name: "Elena Vasquez",
-    role: "Director of Sourcing, Meridian Foods",
+    title: "Invest in Creativity & Innovation",
+    body: "Embrace technology, creative thinking, and digital transformation to improve customer experiences and strengthen our businesses.",
   },
+  {
+    title: "Develop Exceptional Brands",
+    body: "Build every company with a clear identity, consistent quality standards, and a long-term commitment to customer trust.",
+  },
+  {
+    title: "Build an Enduring Institution",
+    body: "Lead responsibly, grow sustainably, and leave a legacy that keeps creating opportunities for generations.",
+  },
+];
+
+/** Core values, per the profile. */
+export const coreValues = [
+  { title: "Excellence", lede: "Excellence is our standard, not our ambition." },
+  { title: "Innovation", lede: "Innovation drives our future." },
+  { title: "Integrity", lede: "Integrity defines our character." },
+  { title: "Leadership", lede: "Leadership begins with responsibility." },
+  { title: "Community", lede: "Businesses succeed when communities thrive." },
+  { title: "Boldness", lede: "Progress requires courage." },
 ];

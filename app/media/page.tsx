@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
-import Visual from "@/components/ui/Visual";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
 import CinematicVideo from "@/components/effects/CinematicVideo";
-import { caseStudies } from "@/lib/data/case-studies";
 
 export const metadata: Metadata = {
   title: "Dubzz Media — Creative Agency",
@@ -33,16 +30,7 @@ const services = [
   },
 ];
 
-const clients = [
-  "AUREUM", "MERIDIAN", "NIGHTSHADE", "OBSIDIAN", "VELLUM & CO", "KESTREL", "SOLSTICE",
-];
 
-const awards = [
-  { award: "Site of the Day", body: "Awwwards", year: "2026" },
-  { award: "Gold — Craft in Film", body: "International Craft Awards", year: "2026" },
-  { award: "Best Immersive Experience", body: "Digital Design Awards", year: "2025" },
-  { award: "Brand Identity of the Year", body: "European Design Awards", year: "2025" },
-];
 
 export default function MediaPage() {
   return (
@@ -82,21 +70,6 @@ export default function MediaPage() {
         </div>
       </section>
 
-      {/* Client marquee */}
-      <div aria-hidden className="overflow-hidden border-y border-white/5 py-6">
-        <div className="animate-marquee flex w-max gap-16 whitespace-nowrap">
-          {[0, 1].map((half) => (
-            <div key={half} className="flex gap-16">
-              {clients.map((c) => (
-                <span key={c} className="font-display text-xl tracking-[0.2em] text-white/20">
-                  {c}
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Services */}
       <Section>
         <SectionHeading
@@ -118,63 +91,37 @@ export default function MediaPage() {
         </div>
       </Section>
 
-      {/* Selected work */}
+      {/* Vision & Future — replaces a "Selected Work" grid of three invented
+          case studies. Dubzz Media has delivered real client work, but the
+          profile names none of it, so nothing here can be attributed yet. */}
       <Section id="work" className="border-t border-white/5">
-        <SectionHeading
-          overline="Selected Work"
-          title="The portfolio."
-          lede="Three commissions that show the range — identity, film, and experience."
-        />
-        <div className="space-y-6">
-          {caseStudies.map((cs, i) => (
-            <FadeReveal key={cs.slug} delay={i * 80}>
-              <Link href={`/media/case-studies/${cs.slug}`} className="group block">
-                <Card>
-                  <div className={`grid lg:grid-cols-2 ${i % 2 === 1 ? "lg:[direction:rtl]" : ""}`}>
-                    <Visual background={cs.visual} zoomOnHover className="h-72 lg:h-[420px] lg:[direction:ltr]" />
-                    <div className="flex flex-col justify-center p-9 sm:p-14 lg:[direction:ltr]">
-                      <p className="overline-label text-gold">
-                        {cs.discipline} · {cs.year}
-                      </p>
-                      <h3 className="mt-5 font-display text-3xl leading-tight text-white transition-colors group-hover:text-gold-bright sm:text-4xl">
-                        {cs.title}
-                      </h3>
-                      <p className="mt-5 max-w-md leading-relaxed text-neutral">{cs.summary}</p>
-                      <div className="mt-8 flex flex-wrap gap-2">
-                        {cs.services.slice(0, 3).map((s) => (
-                          <span key={s} className="rounded-full border border-white/10 px-4 py-1.5 font-label text-[9px] font-semibold uppercase tracking-[0.16em] text-white/40">
-                            {s}
-                          </span>
-                        ))}
-                      </div>
-                      <p className="overline-label mt-10 text-[10px] text-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                        Read the case study →
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              </Link>
-            </FadeReveal>
-          ))}
+        <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+          <FadeReveal>
+            <p className="overline-label text-media">Our Vision</p>
+            <h2 className="mt-5 font-display text-4xl leading-[1.08] text-white sm:text-5xl">
+              The creative engine of the Group.
+            </h2>
+          </FadeReveal>
+          <FadeReveal delay={120} className="space-y-6 text-lg leading-relaxed text-neutral">
+            <p>
+              Dubzz Media is the flagship creative company within Dubzz Group,
+              and the foundation the Group was built on. It exists to help
+              businesses, organisations, entrepreneurs, and institutions
+              communicate their ideas — through visual storytelling, strategic
+              branding, and digital content.
+            </p>
+            <p>
+              The ambition is to become one of Africa&apos;s leading creative
+              agencies, recognised for exceptional visual content, influential
+              brands, and shaping the future of digital storytelling.
+            </p>
+            <p className="text-white">
+              We continue expanding through technology, innovation, strategic
+              partnerships, and talent development — serving clients across
+              Africa and international markets.
+            </p>
+          </FadeReveal>
         </div>
-      </Section>
-
-      {/* Awards */}
-      <Section className="border-t border-white/5">
-        <SectionHeading overline="Recognition" title="Awarded, occasionally." lede="We enter little and keep less on the shelf — these are the ones that mattered." />
-        <ul className="divide-y divide-white/8 border-y border-white/8">
-          {awards.map((a, i) => (
-            <FadeReveal key={a.award} delay={i * 60}>
-              <li className="flex flex-wrap items-baseline justify-between gap-3 py-6">
-                <span className="font-display text-2xl text-white">{a.award}</span>
-                <span className="flex items-baseline gap-6">
-                  <span className="text-sm text-neutral">{a.body}</span>
-                  <span className="font-display text-gold">{a.year}</span>
-                </span>
-              </li>
-            </FadeReveal>
-          ))}
-        </ul>
       </Section>
 
       {/* CTA */}

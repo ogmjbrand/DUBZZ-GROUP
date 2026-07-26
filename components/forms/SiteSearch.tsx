@@ -5,7 +5,6 @@ import { useMemo, useState } from "react";
 import { divisions } from "@/lib/data/divisions";
 import { products } from "@/lib/data/products";
 import { posts } from "@/lib/data/posts";
-import { caseStudies } from "@/lib/data/case-studies";
 import { sanctuaries, experiences } from "@/lib/data/resort";
 
 interface SearchEntry {
@@ -34,20 +33,14 @@ const index: SearchEntry[] = [
     description: p.dek,
     href: `/blog/${p.slug}`,
   })),
-  ...caseStudies.map((c) => ({
-    type: "Work",
-    title: c.title,
-    description: c.summary,
-    href: `/media/case-studies/${c.slug}`,
-  })),
   ...sanctuaries.map((s) => ({
-    type: "Wine Resort",
+    type: "Wines Resort",
     title: s.name,
     description: s.tagline,
     href: "/wine-resort/booking/sanctuary",
   })),
   ...experiences.map((e) => ({
-    type: "Wine Resort",
+    type: "Wines Resort",
     title: e.name,
     description: e.description,
     href: "/wine-resort/experiences",

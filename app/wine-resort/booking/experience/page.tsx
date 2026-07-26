@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BookingShell, ExperienceStep } from "@/components/resort/BookingFlow";
 
 export const metadata: Metadata = {
-  title: "Tailor Your Experience — Wine Resort Booking",
+  title: "Tailor Your Experience — Wines Resort Booking",
   description: "Add tastings, harvest days, spa rituals, and cellar dinners to your stay.",
 };
 

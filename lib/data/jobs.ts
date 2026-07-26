@@ -20,7 +20,7 @@ export const jobs: Job[] = [
   {
     id: "head-sommelier",
     title: "Head Sommelier",
-    division: "Dubzz Wine Resort",
+    division: "Dubzz Wines Resort",
     location: "The Estate",
     type: "Full-time",
     summary:

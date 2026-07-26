@@ -16,13 +16,13 @@ export default function PrivacyPage() {
         {
           heading: "Who We Are",
           paragraphs: [
-            "Dubzz Group and its divisions — Dubzz Media, Dubzz Wear, Dubzz Wine Resort, and Dubzz Trade — operate this website and the services connected to it. This policy explains what personal information we collect across the ecosystem, why we collect it, and the choices you have.",
+            "Dubzz Group and its divisions — Dubzz Media, Dubzz Wear, Dubzz Wines Resort, Dubzz Trade, and After Dark — operate this website and the services connected to it. This policy explains what personal information we collect across the ecosystem, why we collect it, and the choices you have.",
           ],
         },
         {
           heading: "What We Collect",
           paragraphs: [
-            "Information you give us directly: contact details when you write to us, order and delivery details when you purchase from Dubzz Wear, reservation details when you book with the Wine Resort, and business information when you open a trade inquiry or media commission.",
+            "Information you give us directly: contact details when you write to us, order and delivery details when you purchase from Dubzz Wear, reservation details when you book with the Wines Resort, and business information when you open a trade inquiry or media commission.",
             "Information collected automatically: standard technical data such as device type, browser, and pages visited, used to keep the site fast, secure, and improving. We keep this minimal and never sell it.",
           ],
         },

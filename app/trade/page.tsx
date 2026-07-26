@@ -4,9 +4,8 @@ import Card from "@/components/ui/Card";
 import Visual from "@/components/ui/Visual";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
-import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import CinematicVideo from "@/components/effects/CinematicVideo";
-import { commodities, tradeCorridors, tradeStats } from "@/lib/data/trade";
+import { commodities, tradeFocusAreas, operatingPrinciples } from "@/lib/data/trade";
 
 export const metadata: Metadata = {
   title: "Dubzz Trade — Global Commerce & Logistics",
@@ -53,22 +52,33 @@ export default function TradePage() {
             <Button href="/trade/inquiry" size="lg">
               Open an Inquiry
             </Button>
-            <Button href="/trade/dashboard" variant="secondary" size="lg">
-              Commerce Dashboard
+            <Button href="#focus" variant="secondary" size="lg">
+              What We Do
             </Button>
           </FadeReveal>
         </div>
       </section>
 
-      {/* Stats */}
-      <Section>
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          {tradeStats.map((s, i) => (
-            <FadeReveal key={s.label} delay={i * 90} className="border-l border-trade/40 pl-6">
-              <p className="font-display text-5xl text-white sm:text-6xl">
-                <AnimatedCounter value={s.value} suffix={s.suffix} decimals={s.value % 1 !== 0 ? 1 : 0} />
-              </p>
-              <p className="mt-3 max-w-[190px] text-sm text-neutral">{s.label}</p>
+      {/* Focus areas — replaces a counter row of invented metrics ("42 active
+          corridors", "99.2% on-spec delivery"). The desk is pre-operational;
+          what it can state truthfully is scope, not throughput. */}
+      <Section id="focus">
+        <SectionHeading
+          overline="Core Focus Areas"
+          title="What the desk does."
+        />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {tradeFocusAreas.map((f, i) => (
+            <FadeReveal key={f.title} delay={(i % 3) * 80}>
+              <Card static className="h-full">
+                <div className="flex h-full flex-col p-8">
+                  <p className="font-display text-lg text-white/25">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="mt-4 font-display text-xl text-white">{f.title}</h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral">{f.body}</p>
+                </div>
+              </Card>
             </FadeReveal>
           ))}
         </div>
@@ -79,7 +89,7 @@ export default function TradePage() {
         <SectionHeading
           overline="The Book"
           title="Commodity showcase."
-          lede="Six lines we know down to the farm gate. Grades and specifications on request."
+          lede="The current product portfolio. Grades and specifications on request."
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {commodities.map((c, i) => (
@@ -101,41 +111,26 @@ export default function TradePage() {
         </div>
       </Section>
 
-      {/* Corridors — the global map, drawn as routes */}
+      {/* Operating principles — replaces an "Active corridors" board of
+          invented origin/destination lanes and transit times. */}
       <Section className="border-t border-white/5">
         <SectionHeading
-          overline="Global Reach"
-          title="Active corridors."
-          lede="Origin to destination, with typical transit under our custody chain."
+          overline="Operating Principles"
+          title="What every trade is built on."
+          lede="The standards a counterparty can hold us to, stated before the first cargo moves."
         />
-        <div className="overflow-hidden rounded-lg border border-white/8">
-          {tradeCorridors.map((c, i) => (
-            <FadeReveal key={`${c.from}-${c.to}`} delay={i * 60}>
-              <div className="group grid grid-cols-[1fr_auto_1fr] items-center gap-4 border-b border-white/5 px-6 py-6 transition-colors last:border-b-0 hover:bg-white/[0.02] sm:px-10">
-                <div className="text-right">
-                  <p className="font-display text-xl text-white sm:text-2xl">{c.from}</p>
-                </div>
-                <div className="flex w-24 flex-col items-center gap-1.5 sm:w-40">
-                  <span className="font-label text-[8px] font-semibold uppercase tracking-[0.2em] text-trade">
-                    {c.cargo}
-                  </span>
-                  <span className="relative h-px w-full overflow-hidden bg-white/15">
-                    <span
-                      aria-hidden
-                      className="animate-shimmer absolute inset-0 bg-[linear-gradient(90deg,transparent,#4a6d8c,transparent)] bg-[length:200%_100%]"
-                    />
-                  </span>
-                  <span className="font-label text-[8px] font-semibold uppercase tracking-[0.2em] text-white/30">
-                    {c.transit}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-display text-xl text-white sm:text-2xl">{c.to}</p>
-                </div>
-              </div>
+        <ul className="divide-y divide-white/8 border-y border-white/8">
+          {operatingPrinciples.map((o, i) => (
+            <FadeReveal key={o.title} delay={i * 60}>
+              <li className="flex flex-col gap-2 py-7 sm:flex-row sm:items-baseline sm:gap-10">
+                <span className="font-display text-2xl text-white sm:w-72 sm:shrink-0">
+                  {o.title}
+                </span>
+                <span className="text-sm leading-relaxed text-neutral">{o.body}</span>
+              </li>
             </FadeReveal>
           ))}
-        </div>
+        </ul>
       </Section>
 
       {/* Trust */}
