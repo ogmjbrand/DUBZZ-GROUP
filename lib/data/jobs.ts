@@ -1,3 +1,12 @@
+/**
+ * Roles are illustrative of the kind of hiring the group's foundation year
+ * calls for, not a live requisition feed. Locations are bound to the 2026
+ * Corporate Profile's actual head office (Abuja, Nigeria) rather than the
+ * earlier placeless-European set (London, Porto, Accra, "the Estate") —
+ * offices and cities that were never in the profile. Summaries are written
+ * for a group still building each house, not one with an existing cellar,
+ * atelier, or trade corridor to hand over.
+ */
 export interface Job {
   id: string;
   title: string;
@@ -12,43 +21,43 @@ export const jobs: Job[] = [
     id: "senior-brand-designer",
     title: "Senior Brand Designer",
     division: "Dubzz Media",
-    location: "London / Remote",
+    location: "Abuja / Remote",
     type: "Full-time",
     summary:
       "Own identity systems end-to-end for clients who measure work in decades. Portfolio over CV; craft over volume.",
   },
   {
-    id: "head-sommelier",
-    title: "Head Sommelier",
+    id: "wine-programme-lead",
+    title: "Wine Programme Lead",
     division: "Dubzz Wines Resort",
-    location: "The Estate",
+    location: "Nigeria",
     type: "Full-time",
     summary:
-      "Curate a cellar that guests cross oceans for. You'll shape the list, the rituals, and the next decade of the estate's palate.",
+      "Help build the wine programme from the ground up — sourcing, cellar design, and the rituals that will define the estate once it opens.",
   },
   {
     id: "supply-chain-lead",
     title: "Supply Chain Lead",
     division: "Dubzz Trade",
-    location: "Accra",
+    location: "Lagos",
     type: "Full-time",
     summary:
-      "Run origin operations across three corridors with full custody-chain data. Precision under pressure, measured in on-spec deliveries.",
+      "Build the export routes and producer relationships for palm oil, cocoa, ginger, and charcoal — precision and reliability from the first shipment.",
   },
   {
-    id: "atelier-production-manager",
-    title: "Atelier Production Manager",
+    id: "production-manager",
+    title: "Production Manager",
     division: "Dubzz Wear",
-    location: "Porto",
+    location: "Nigeria",
     type: "Full-time",
     summary:
-      "Bring the atelier's limited runs fully in-house — from fabric sourcing to the final gold bar-tack, at a standard of one regret per zero garments.",
+      "Build the production model from the ground up — sourcing, quality control, and the standard every numbered run will be held to.",
   },
   {
     id: "executive-assistant-group",
     title: "Executive Assistant to the Founder",
     division: "Dubzz Group",
-    location: "London",
+    location: "Abuja",
     type: "Full-time",
     summary:
       "The calendar behind five ventures. Absolute discretion, surgical prioritisation, and the judgement to say no on the founder's behalf.",

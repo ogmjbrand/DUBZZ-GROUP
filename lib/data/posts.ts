@@ -1,3 +1,5 @@
+import { founder } from "./site";
+
 export interface Post {
   slug: string;
   title: string;
@@ -30,39 +32,39 @@ export const posts: Post[] = [
       "Every brand says less is more. Almost none can afford to prove it. Restraint is expensive — it means declining the collaboration, cutting the third colourway, ending the campaign one film early. It means building a hotel with fewer rooms than the land allows.",
       "At Dubzz, restraint is not an aesthetic preference; it is a governance rule. Each venture operates under a standard we call the single-regret test: every element that ships must be one we would regret removing, not one we would survive removing. The difference sounds subtle. Applied over five ventures and a decade, it compounds into identity.",
       "The gold in our identity system is governed the same way. It appears rarely enough that when it does, it means something — an accent, never a wallpaper. A precious resource, spent deliberately.",
-      "This is also why the group grows slowly. A sixth venture will exist the day it can carry the same standard without diluting the other five — and not one quarter sooner.",
+      "This is also why the group grows slowly. A sixth venture will exist the day it can carry the same standard as the first five — and not one quarter sooner.",
     ],
   },
   {
     slug: "harvest-notes-first-vintage",
-    title: "Harvest Notes: The First Vintage",
+    title: "Building Toward the First Vintage",
     category: "Wines Resort",
     date: "2026-06-14",
     readTime: "5 min",
-    dek: "Notes from the estate's first full harvest — early mornings, obsessive sorting tables, and the vintage we almost didn't bottle.",
+    dek: "What it takes to plant a wine culture before the first harvest ever happens — and why Dubzz Wines Resort is in no hurry to bottle anything.",
     visual:
       "linear-gradient(150deg, #170b0e 0%, #0c0608 50%, #050505 100%), radial-gradient(70% 55% at 25% 20%, rgba(158,58,77,0.3) 0%, transparent 60%)",
     body: [
-      "The first harvest teaches you the difference between owning a vineyard and being owned by one. For three weeks the estate ran on vineyard time: picking at 5am while the fruit was cold, sorting until the light went, tasting tank samples at hours no cellar master will admit to.",
-      "We rejected forty percent of the fruit. On paper this is madness for a first vintage; in the glass it is the entire story. What remained went into small-lot fermentations — enough variation to learn the land parcel by parcel.",
-      "The vintage we almost didn't bottle became the one we are proudest of: a single barrel from the east slope that spent the season underperforming and the winter becoming the most complete wine in the cellar.",
-      "Guests visiting this autumn will taste it in the cellar bar, unlabelled, by request. Some things should be earned in person.",
+      "A vineyard teaches patience before it teaches anything about wine. Dubzz Wines Resort is still in development — the land, the plantings, and the rituals that will define the estate are being built deliberately, in the order a serious estate is built in, not the order a launch calendar would prefer.",
+      "The vision is not a hotel with a vineyard attached. It's hospitality organised around wine culture itself — cellar, table, and terrace treated as one experience rather than three amenities bolted together.",
+      "We'd rather publish that plainly than invent a harvest we haven't had yet. When the first vintage exists, it will be told properly — sorting tables, rejected fruit, whichever barrel nobody expected to love. Until then, this is the plan, not the diary.",
+      "Guests who'd rather watch this get built than arrive after it's finished can register interest through the group — an estate remembers the people who came for the beginning.",
     ],
   },
   {
-    slug: "inside-project-nightshade",
-    title: "Inside Project Nightshade",
+    slug: "pre-visualising-in-the-dark",
+    title: "Pre-Visualising in the Dark",
     category: "Media",
     date: "2026-05-20",
-    readTime: "7 min",
-    dek: "Twelve films, one city, zero sunrises — the production diary behind our most constrained campaign to date.",
+    readTime: "5 min",
+    dek: "Why Dubzz Media storyboards every frame before a single call sheet goes out — especially on the night shoots that don't forgive a second take.",
     visual:
       "linear-gradient(160deg, #0b0d14 0%, #060710 50%, #050505 100%), radial-gradient(70% 50% at 70% 25%, rgba(74,109,140,0.35) 0%, transparent 60%)",
     body: [
-      "Constraints are gifts wearing disguises. When the client told us the car could never be filmed in daylight, the room went quiet — and then the ideas got better. Darkness stopped being a limitation and became the entire visual language.",
-      "We shot for three weeks using only light the city already owned: sodium vapour, shopfront neon, a storm we chased for two nights. No HMIs, no daylight balance, no mercy.",
-      "The discipline that saved us was pre-visualisation. Every frame of all twelve films existed as animated storyboards before a single call sheet went out. At night, you don't get second chances with weather, permits, or forty collectors' patience.",
-      "The full anthology is in our portfolio. The car, as agreed, appears nowhere in full — some reveals belong to the room they were made for.",
+      "Constraints are gifts wearing disguises. Tell a crew a film can only be shot after dark and the room goes quiet — then the ideas get better. Darkness stops being a limitation and becomes the visual language.",
+      "Night sets run on light the city already owns: sodium vapour, shopfront neon, whatever passes overhead. No HMIs, no daylight balance, no mercy — and no do-overs once the weather or the permit window closes.",
+      "The discipline that makes this survivable is pre-visualisation: every frame exists as an animated storyboard before anyone calls action. At night, you don't get second chances with weather, permits, or a client's patience.",
+      "It's a slower way to plan a film and a faster way to shoot one. Most of the hard decisions get made in a dark room with a laptop, weeks before anyone stands in the actual dark.",
     ],
   },
   {
@@ -71,14 +73,14 @@ export const posts: Post[] = [
     category: "Trade",
     date: "2026-04-08",
     readTime: "6 min",
-    dek: "Traceability used to be a compliance line-item. For Dubzz Trade, it's the product — and buyers are finally pricing it that way.",
+    dek: "Traceability used to be a compliance line-item. For Dubzz Trade, it's the product we're building around from day one.",
     visual:
       "linear-gradient(145deg, #0a0f14 0%, #06090d 50%, #050505 100%), radial-gradient(70% 55% at 30% 15%, rgba(74,109,140,0.3) 0%, transparent 60%)",
     body: [
-      "Ask a commodity buyer what they pay for and they'll say quality and reliability. Watch what they actually pay a premium for and a third answer appears: certainty of origin. The documentation is becoming the differentiation.",
-      "Every Dubzz Trade shipment carries a full custody chain from farm-gate to port to destination — not as a PDF afterthought, but as live data our partners can query mid-voyage.",
-      "This changed our economics in a way we didn't predict: disputes collapsed. When both sides of a contract watch the same data, the argument surface area approaches zero.",
-      "The next step is opening parts of that ledger to the end consumer. The bar of chocolate that can prove its own biography will not sit on the same shelf as the one that can't — or at the same price.",
+      "Ask a commodity buyer what they pay for and they'll say quality and reliability. Increasingly, a third answer appears: certainty of origin. Documentation is becoming the differentiation, not a compliance line-item.",
+      "That's the standard we're building Dubzz Trade around from the first shipment: product graded and checked against specification before it moves, producer relationships that support the growers we work with rather than squeeze them, and a contract that behaves the way it was written.",
+      "We're early. The desk is building the routes, documentation, and relationships that move palm oil, cocoa, ginger, and charcoal out of Nigeria and into the hands of buyers who need reliable access to them — transparency designed in from the start, not bolted on once something goes wrong.",
+      "The bar of chocolate that can prove its own biography will not sit on the same shelf as the one that can't — or at the same price. That's where we intend to arrive. We're telling you the route, not claiming we're already there.",
     ],
   },
   {
@@ -107,10 +109,10 @@ export const posts: Post[] = [
     visual:
       "linear-gradient(140deg, #14110a 0%, #0b0906 50%, #050505 100%), radial-gradient(80% 55% at 20% 25%, rgba(212,175,55,0.22) 0%, transparent 60%)",
     body: [
-      "Ten years ago, Dubzz was one venture and a conviction: that the standard is the strategy. Today it is five ventures, fourteen markets, and the same conviction — with better evidence.",
-      "We are often asked when we will raise, exit, or franchise. The honest answer is that the group is structured to make those questions optional forever. Patient capital is not a constraint we tolerate; it is the moat.",
-      "The next decade is about depth, not breadth: the estate's second phase, the atelier's move to full in-house production, and a media division that increasingly builds equity in what it creates rather than renting its craft.",
-      "To our partners, guests, clients, and the inner circle: the standard holds. — D.",
+      "Dubzz Group exists because one conviction kept proving itself true across every venture we tried: the standard is the strategy. We are in the foundation year of formalising that conviction into five houses — Media, Wear, Wines Resort, Trade, and After Dark — under one holding company.",
+      "We are often asked when we will raise, exit, or franchise. The honest answer is that the group is being structured to make those questions optional forever. Patient capital is not a constraint we tolerate; it is the moat we are building from year one.",
+      "The next few years are about depth, not breadth: bringing Dubzz Wear properly to launch, developing Wines Resort deliberately rather than quickly, and growing Dubzz Media and Dubzz Trade on relationships built to last rather than quarters to hit. A sixth house will exist the day it can carry the same standard as the first five — not before.",
+      `To our partners, guests, clients, and the inner circle: the standard holds. — ${founder.name}, ${founder.role}`,
     ],
   },
 ];

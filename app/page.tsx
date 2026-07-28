@@ -125,10 +125,10 @@ export default function Home() {
           <div className="lg:col-span-7">
             <FadeReveal>
               <p className="text-xl leading-relaxed text-white/80 sm:text-2xl">
-                Dubzz Group began as a single studio with a simple refusal — to
-                ship anything we wouldn&apos;t sign. A decade later, that refusal
-                has compounded into five ventures across media, fashion,
-                hospitality, and trade.
+                Dubzz Group exists on one simple refusal — to ship anything we
+                wouldn&apos;t sign. That refusal now spans five ventures across
+                media, fashion, hospitality, and trade, and the work of
+                building each one properly is only just beginning.
               </p>
               <p className="mt-6 text-base leading-relaxed text-neutral sm:text-lg">
                 Each house operates with its own identity and its own craft.

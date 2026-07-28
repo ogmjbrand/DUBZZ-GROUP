@@ -147,7 +147,7 @@ export default function SiteSearch() {
           <div>
             <p className="overline-label mb-5 text-white/40">Popular</p>
             <div className="flex flex-wrap gap-3">
-              {["Obsidian Hoodie", "Nightshade", "Harvest", "Investors", "Cocoa"].map((term) => (
+              {["Obsidian Hoodie", "Night Shoots", "Harvest", "Investors", "Cocoa"].map((term) => (
                 <button
                   key={term}
                   type="button"

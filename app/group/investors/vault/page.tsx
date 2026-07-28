@@ -10,39 +10,29 @@ export const metadata: Metadata = {
     "The expanded resource vault — reports, governance documents, and division deep-dives for Dubzz Group partners.",
 };
 
+/**
+ * Replaces a list of documents that didn't exist: a 2025 Annual Letter &
+ * Accounts, a capital note for an estate phase not yet built, a founding
+ * archive dated 2016. The group is pre-financial-close, so the honest vault
+ * is one that says what it will hold and when — not one padded with PDFs
+ * that were never written.
+ */
 const collections = [
   {
-    name: "Group Reporting",
+    name: "Available Now",
     open: true,
     items: [
-      { title: "Annual Letter & Accounts 2025", meta: "PDF · 42 pages" },
-      { title: "H1 2026 Group Performance", meta: "PDF · 18 pages" },
-      { title: "Five-Year Standard Review", meta: "PDF · 24 pages" },
+      { title: "Key Milestones & Growth Strategy", meta: "On this site" },
+      { title: "Group Structure & Governance Principles", meta: "On this site" },
     ],
   },
   {
-    name: "Governance",
-    open: true,
-    items: [
-      { title: "Governance & Standards Codex", meta: "PDF · 200 pages" },
-      { title: "The Single-Regret Test — Policy", meta: "PDF · 6 pages" },
-    ],
-  },
-  {
-    name: "Division Deep-Dives",
+    name: "Coming As The Group Matures",
     open: false,
     items: [
-      { title: "Estate Phase II — Capital Note", meta: "Partners only" },
-      { title: "Atelier In-House Production Plan", meta: "Partners only" },
-      { title: "Trade Corridor Economics 2026", meta: "Partners only" },
-    ],
-  },
-  {
-    name: "The Archive",
-    open: false,
-    items: [
-      { title: "Founding Documents, 2016", meta: "Partners only" },
-      { title: "Letters I–IX, Complete", meta: "Partners only" },
+      { title: "Annual Letter & Accounts", meta: "Not yet published" },
+      { title: "Governance & Standards Codex", meta: "Not yet published" },
+      { title: "Division Deep-Dives", meta: "Not yet published" },
     ],
   },
 ];
@@ -58,8 +48,8 @@ export default function VaultPage() {
               The resource vault.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-neutral">
-              Public documents open to everyone; partner materials unlock with
-              Inner Circle access once sign-in ships.
+              What&apos;s available today, and what IR is committed to
+              publishing as the group closes its first full financial year.
             </p>
           </FadeReveal>
         </div>
@@ -81,7 +71,7 @@ export default function VaultPage() {
                           : "border-gold/40 bg-gold/10 text-gold",
                       ].join(" ")}
                     >
-                      {col.open ? "Open" : "Partners"}
+                      {col.open ? "Available" : "Pending"}
                     </span>
                   </div>
                   <ul className="mt-6 flex-1 divide-y divide-white/6">
@@ -94,9 +84,9 @@ export default function VaultPage() {
                               <path d="M10 1v5h5" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
                             </svg>
                           ) : (
-                            <svg width="15" height="18" viewBox="0 0 15 18" fill="none" aria-hidden className="shrink-0 text-gold/70">
-                              <rect x="1" y="8" width="13" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.2" />
-                              <path d="M4 8V5.5a3.5 3.5 0 017 0V8" stroke="currentColor" strokeWidth="1.2" />
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden className="shrink-0 text-gold/70">
+                              <circle cx="8" cy="8" r="6.4" stroke="currentColor" strokeWidth="1.2" />
+                              <path d="M8 4.6V8l2.6 1.6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
                             </svg>
                           )}
                           <span className="text-sm text-white">{item.title}</span>
@@ -107,7 +97,7 @@ export default function VaultPage() {
                   </ul>
                   {!col.open ? (
                     <p className="mt-5 text-xs leading-relaxed text-white/30">
-                      Unlocks with Inner Circle sign-in — request access via IR.
+                      Publishes here as each is finalised — no sign-in required.
                     </p>
                   ) : null}
                 </div>

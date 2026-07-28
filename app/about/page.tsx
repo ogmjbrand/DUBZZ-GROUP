@@ -47,9 +47,9 @@ export default function AboutPage() {
           </FadeReveal>
           <FadeReveal delay={180}>
             <p className="mt-10 max-w-2xl text-lg leading-relaxed text-neutral">
-              The promise was simple and unreasonable: never ship anything we
-              wouldn&apos;t sign. Ten years later, that promise has five houses,
-              fourteen markets, and no expiry date.
+              The promise is simple and unreasonable: never ship anything we
+              wouldn&apos;t sign. It now has five houses under one name — and
+              no expiry date.
             </p>
           </FadeReveal>
         </div>
@@ -71,37 +71,37 @@ export default function AboutPage() {
           <div className="space-y-8 lg:col-span-8">
             <FadeReveal>
               <p className="text-lg leading-relaxed text-white/80">
-                Dubzz began in 2016 as a creative studio with one client and one
-                rule. The rule cost us work — good work, well-paid work — and it
-                was the best commercial decision we ever made. The clients who
-                stayed were the ones who wanted the standard, and they told
-                others like them.
+                Dubzz Media came first, and it is still the discipline
+                everything else measures against — visual storytelling,
+                strategic branding, and digital content for businesses,
+                institutions, and entrepreneurs who wanted work built to a
+                standard, not a deadline.
               </p>
             </FadeReveal>
             <FadeReveal delay={80}>
               <p className="leading-relaxed text-neutral">
-                The second house wasn&apos;t a strategy; it was an itch. We
-                couldn&apos;t find clothes that behaved the way our work did —
-                quiet, exact, built to age — so we made a run of three hundred
-                and put our name inside the collar. Dubzz Wear sold out in nine
-                days and taught us the group&apos;s founding lesson: the standard
-                travels. It doesn&apos;t care what industry it&apos;s applied to.
+                Wear followed as a concept before it was ever a collection —
+                premium apparel drawn from simplicity, functionality, and
+                contemporary African culture. Wines Resort and After Dark were
+                developed the same way: vision and identity established
+                deliberately, ahead of the first guest and the first night.
               </p>
             </FadeReveal>
             <FadeReveal delay={160}>
               <p className="leading-relaxed text-neutral">
-                Trade came from the supply chains we now depended on; the estate
-                came from a harvest we never intended to fall in love with. Each
-                venture was the previous one taken seriously. By the time we
-                named the group, it already existed — we were just signing it.
+                Trade is the newest of the five — an international commerce
+                division built to connect African producers of palm oil,
+                cocoa, ginger, and charcoal with the buyers who need reliable
+                access to them. Five houses, one holding company, one standard
+                applied without exception.
               </p>
             </FadeReveal>
             <FadeReveal delay={240}>
               <p className="leading-relaxed text-neutral">
-                Today, Dubzz Group is deliberately small at the top and
-                obsessively deep in each house. We do not franchise. We do not
-                license the name. We grow at the speed the standard can travel,
-                and not one quarter faster.
+                Dubzz Group is deliberately early in that story, and we would
+                rather say so plainly than borrow proof we haven&apos;t earned.
+                The group has a published five-year roadmap — we are only in
+                its first year.
               </p>
             </FadeReveal>
           </div>
