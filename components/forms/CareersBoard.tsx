@@ -6,42 +6,57 @@ import Card from "@/components/ui/Card";
 import { Field, Input, Textarea } from "@/components/ui/Field";
 import { jobs, type Job } from "@/lib/data/jobs";
 
-type Status = "idle" | "done";
+type Status = "idle" | "sending" | "done" | "error";
 
-/**
- * Role list + application form. The submit handler is UI-only for now —
- * POST /api/careers/applications expects a job_posting_id from the database,
- * so wiring happens once job postings are seeded. Handler is isolated below.
- */
+/** Role list + application form, wired to POST /api/careers/applications. */
 async function submitApplication(payload: {
-  jobId: string;
+  jobSlug: string;
   name: string;
   email: string;
   resumeUrl: string;
   coverLetter: string;
 }) {
-  // TODO(backend): swap for fetch('/api/careers/applications') once job
-  // postings exist in Supabase and expose their UUIDs to the frontend.
-  void payload;
-  await new Promise((r) => setTimeout(r, 400));
+  const res = await fetch("/api/careers/applications", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      job_slug: payload.jobSlug,
+      name: payload.name,
+      email: payload.email,
+      resume_url: payload.resumeUrl,
+      cover_letter: payload.coverLetter,
+    }),
+  });
+  if (!res.ok) {
+    const body = (await res.json().catch(() => null)) as { message?: string } | null;
+    throw new Error(body?.message ?? "Something went wrong");
+  }
 }
 
 export default function CareersBoard() {
   const [selected, setSelected] = useState<Job | null>(null);
   const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState("");
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!selected) return;
     const data = new FormData(e.currentTarget);
-    await submitApplication({
-      jobId: selected.id,
-      name: String(data.get("name") ?? ""),
-      email: String(data.get("email") ?? ""),
-      resumeUrl: String(data.get("resume") ?? ""),
-      coverLetter: String(data.get("cover") ?? ""),
-    });
-    setStatus("done");
+    setStatus("sending");
+    setError("");
+    try {
+      await submitApplication({
+        jobSlug: selected.id,
+        name: String(data.get("name") ?? ""),
+        email: String(data.get("email") ?? ""),
+        resumeUrl: String(data.get("resume") ?? ""),
+        coverLetter: String(data.get("cover") ?? ""),
+      });
+      setStatus("done");
+    } catch (err) {
+      setStatus("error");
+      setError(err instanceof Error ? err.message : "Something went wrong");
+    }
   };
 
   if (status === "done" && selected) {
@@ -108,7 +123,16 @@ export default function CareersBoard() {
             <Field label="Why you, why this house" htmlFor="apply-cover">
               <Textarea id="apply-cover" name="cover" required rows={6} placeholder="Short and honest beats long and polished." />
             </Field>
-            <Button type="submit">Submit Application</Button>
+
+            {status === "error" ? (
+              <p role="alert" className="rounded-lg border border-error/30 bg-error/10 px-4 py-3 text-sm text-error">
+                {error}
+              </p>
+            ) : null}
+
+            <Button type="submit" disabled={status === "sending"}>
+              {status === "sending" ? "Submitting…" : "Submit Application"}
+            </Button>
           </form>
         </div>
       </div>

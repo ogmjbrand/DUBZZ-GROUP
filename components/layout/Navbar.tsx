@@ -6,14 +6,18 @@ import { useEffect, useRef, useState } from "react";
 import { divisions } from "@/lib/data/divisions";
 import { navLinks } from "@/lib/data/site";
 import { useStore } from "@/components/providers/StoreProvider";
+import { useAuth } from "@/components/providers/AuthProvider";
 
 export default function Navbar() {
   const pathname = usePathname();
   const { cartCount, hydrated } = useStore();
+  const { user, profile, loading, signOut } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [venturesOpen, setVenturesOpen] = useState(false);
+  const [accountOpen, setAccountOpen] = useState(false);
   const venturesRef = useRef<HTMLDivElement>(null);
+  const accountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -29,6 +33,7 @@ export default function Navbar() {
     setPrevPathname(pathname);
     setMobileOpen(false);
     setVenturesOpen(false);
+    setAccountOpen(false);
   }
 
   // Close ventures dropdown on outside click / Escape
@@ -47,6 +52,23 @@ export default function Navbar() {
       document.removeEventListener("keydown", onKey);
     };
   }, [venturesOpen]);
+
+  // Close account dropdown on outside click / Escape
+  useEffect(() => {
+    if (!accountOpen) return;
+    const onClick = (e: MouseEvent) => {
+      if (!accountRef.current?.contains(e.target as Node)) setAccountOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setAccountOpen(false);
+    };
+    document.addEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [accountOpen]);
 
   // Lock body scroll while the mobile overlay is open
   useEffect(() => {
@@ -158,6 +180,77 @@ export default function Navbar() {
               <path d="M12.5 12.5L17 17" stroke="currentColor" strokeWidth="1.4" />
             </svg>
           </Link>
+
+          <div ref={accountRef} className="relative hidden sm:block">
+            {loading ? (
+              <span aria-hidden className="block h-[18px] w-[18px]" />
+            ) : user ? (
+              <>
+                <button
+                  type="button"
+                  aria-expanded={accountOpen}
+                  aria-haspopup="menu"
+                  aria-label="Account menu"
+                  onClick={() => setAccountOpen((v) => !v)}
+                  className={[
+                    "flex h-7 w-7 items-center justify-center rounded-full border font-label text-[10px] font-bold transition-colors",
+                    accountOpen ? "border-gold text-gold" : "border-white/25 text-white/60 hover:border-gold hover:text-gold",
+                  ].join(" ")}
+                >
+                  {(profile?.full_name?.trim()?.[0] ?? user.email?.[0] ?? "?").toUpperCase()}
+                </button>
+                <div
+                  role="menu"
+                  className={[
+                    "absolute right-0 top-full mt-4 w-64 rounded-lg glass p-2 shadow-[0_32px_64px_-24px_rgba(0,0,0,0.9)] transition-all duration-300",
+                    accountOpen
+                      ? "pointer-events-auto translate-y-0 opacity-100"
+                      : "pointer-events-none -translate-y-2 opacity-0",
+                  ].join(" ")}
+                >
+                  <div className="px-4 py-3">
+                    <p className="truncate text-sm text-white">{profile?.full_name || "Member"}</p>
+                    <p className="truncate text-xs text-white/40">{user.email}</p>
+                  </div>
+                  <div className="my-1 h-px bg-white/8" />
+                  {[
+                    { label: "Inner Circle Hub", href: "/group/profile" },
+                    { label: "Account Settings", href: "/group/settings" },
+                    { label: "Wear Account", href: "/wear/account" },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      role="menuitem"
+                      href={item.href}
+                      className="block rounded-md px-4 py-2.5 font-label text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition-colors hover:bg-white/5 hover:text-gold"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                  <div className="my-1 h-px bg-white/8" />
+                  <button
+                    type="button"
+                    role="menuitem"
+                    onClick={() => {
+                      setAccountOpen(false);
+                      void signOut();
+                    }}
+                    className="block w-full rounded-md px-4 py-2.5 text-left font-label text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition-colors hover:bg-white/5 hover:text-error"
+                  >
+                    Sign Out
+                  </button>
+                </div>
+              </>
+            ) : (
+              <Link href="/login" aria-label="Sign in" className="p-1 text-white/60 transition-colors hover:text-gold">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
+                  <circle cx="9" cy="6" r="3" stroke="currentColor" strokeWidth="1.4" />
+                  <path d="M3 16c0-3 2.5-5 6-5s6 2 6 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+                </svg>
+              </Link>
+            )}
+          </div>
+
           <Link href="/wear/bag" aria-label={`Shopping bag${hydrated && cartCount > 0 ? `, ${cartCount} items` : ""}`} className="relative p-1 text-white/60 transition-colors hover:text-gold">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
               <path d="M3 6h12l-1 10.5H4L3 6z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
@@ -229,6 +322,32 @@ export default function Navbar() {
                 {l.label}
               </Link>
             ))}
+            {!loading ? (
+              user ? (
+                <>
+                  <Link
+                    href="/group/profile"
+                    className="block py-3 font-label text-xs font-semibold uppercase tracking-[0.24em] text-white/60 transition-colors hover:text-gold"
+                  >
+                    Inner Circle Hub
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => void signOut()}
+                    className="block py-3 font-label text-xs font-semibold uppercase tracking-[0.24em] text-white/60 transition-colors hover:text-gold"
+                  >
+                    Sign Out
+                  </button>
+                </>
+              ) : (
+                <Link
+                  href="/login"
+                  className="block py-3 font-label text-xs font-semibold uppercase tracking-[0.24em] text-white/60 transition-colors hover:text-gold"
+                >
+                  Sign In
+                </Link>
+              )
+            ) : null}
           </div>
         </nav>
       </div>

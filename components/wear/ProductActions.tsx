@@ -4,10 +4,13 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Button from "@/components/ui/Button";
 import { useStore } from "@/components/providers/StoreProvider";
+import { useAuth } from "@/components/providers/AuthProvider";
+import { syncWishlist } from "@/lib/wishlist-sync";
 import type { Product } from "@/lib/data/products";
 
 export default function ProductActions({ product }: { product: Product }) {
   const router = useRouter();
+  const { user } = useAuth();
   const { addToCart, toggleWishlist, wishlist, hydrated } = useStore();
   const [size, setSize] = useState(product.sizes.length === 1 ? product.sizes[0] : "");
   const [error, setError] = useState("");
@@ -64,7 +67,10 @@ export default function ProductActions({ product }: { product: Product }) {
         </Button>
         <Button
           variant="secondary"
-          onClick={() => toggleWishlist(product.slug)}
+          onClick={() => {
+            toggleWishlist(product.slug);
+            if (user) void syncWishlist(product.slug, !wished);
+          }}
           ariaLabel={wished ? "Remove from wishlist" : "Add to wishlist"}
         >
           {wished ? "♥ Wishlisted" : "♡ Wishlist"}

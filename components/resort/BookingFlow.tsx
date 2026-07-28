@@ -7,14 +7,10 @@ import Button from "@/components/ui/Button";
 import Visual from "@/components/ui/Visual";
 import { Field, Input, Select } from "@/components/ui/Field";
 import { sanctuaries, experiences } from "@/lib/data/resort";
-
-/**
- * Booking flow is UI-only for now: POST /api/wine-resort/booking requires an
- * authenticated user and database UUIDs, so the confirm handler below is the
- * single wiring point once auth ships.
- */
+import { useAuth } from "@/components/providers/AuthProvider";
 
 const BOOKING_KEY = "dubzz-booking-v1";
+const REVIEW_PATH = "/wine-resort/booking/review";
 
 interface BookingDraft {
   sanctuary?: string;
@@ -36,11 +32,22 @@ function writeDraft(patch: Partial<BookingDraft>) {
   sessionStorage.setItem(BOOKING_KEY, JSON.stringify({ ...readDraft(), ...patch }));
 }
 
-// TODO(backend): swap for fetch('/api/wine-resort/booking') with the signed-in
-// user's session and real sanctuary/experience ids.
 async function confirmBooking(draft: BookingDraft) {
-  void draft;
-  await new Promise((r) => setTimeout(r, 700));
+  const res = await fetch("/api/wine-resort/booking", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      sanctuary_slug: draft.sanctuary,
+      check_in: draft.checkIn,
+      check_out: draft.checkOut,
+      guests: draft.guests ?? 2,
+      experience_slugs: draft.experiences ?? [],
+    }),
+  });
+  if (!res.ok) {
+    const body = (await res.json().catch(() => null)) as { message?: string } | null;
+    throw new Error(body?.message ?? "Something went wrong");
+  }
 }
 
 const steps = [
@@ -293,8 +300,10 @@ export function ExperienceStep() {
 
 export function ReviewStep() {
   const router = useRouter();
+  const { user, loading: authLoading } = useAuth();
   const [draft, setDraft] = useState<BookingDraft | null>(null);
   const [status, setStatus] = useState<"idle" | "confirming" | "done">("idle");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const raf = requestAnimationFrame(() => {
@@ -325,10 +334,20 @@ export function ReviewStep() {
   const expTotal = chosenExperiences.reduce((sum, e) => sum + e.price * guests, 0);
 
   const onConfirm = async () => {
+    if (!user) {
+      router.push(`/login?redirect=${encodeURIComponent(REVIEW_PATH)}`);
+      return;
+    }
     setStatus("confirming");
-    await confirmBooking(draft);
-    sessionStorage.removeItem(BOOKING_KEY);
-    setStatus("done");
+    setError("");
+    try {
+      await confirmBooking(draft);
+      sessionStorage.removeItem(BOOKING_KEY);
+      setStatus("done");
+    } catch (err) {
+      setStatus("idle");
+      setError(err instanceof Error ? err.message : "Something went wrong");
+    }
   };
 
   if (status === "done") {
@@ -414,9 +433,19 @@ export function ReviewStep() {
               <dd className="font-display text-2xl text-gold">${stayTotal + expTotal}</dd>
             </div>
           </dl>
+          {error ? (
+            <p role="alert" className="mt-6 rounded-lg border border-error/30 bg-error/10 px-4 py-3 text-sm text-error">
+              {error}
+            </p>
+          ) : null}
+
           <div className="mt-8 space-y-3">
-            <Button onClick={onConfirm} disabled={status === "confirming"} className="w-full">
-              {status === "confirming" ? "Sending to the House…" : "Request the Booking"}
+            <Button onClick={onConfirm} disabled={status === "confirming" || authLoading} className="w-full">
+              {status === "confirming"
+                ? "Sending to the House…"
+                : user
+                  ? "Request the Booking"
+                  : "Sign In to Request the Booking"}
             </Button>
             <Button href="/wine-resort/booking/experience" variant="ghost" className="w-full">
               ← Adjust Experiences
