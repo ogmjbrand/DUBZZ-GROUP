@@ -45,7 +45,7 @@ export default async function ProfilePage() {
 
   const displayName = profile?.full_name?.trim() || user.email?.split("@")[0] || "Member";
   const memberNumber = user.id.replace(/-/g, "").slice(0, 8).toUpperCase();
-  const since = new Date(profile?.created_at ?? user.created_at ?? Date.now()).getFullYear();
+  const since = new Date(profile?.created_at ?? user.created_at).getFullYear();
   const tier = roleLabel[profile?.role ?? "customer"] ?? "Member";
   const standing = membership?.tier ? membership.tier.replace("_", " ") : "member";
 

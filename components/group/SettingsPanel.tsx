@@ -64,12 +64,17 @@ export default function SettingsPanel() {
   const [pwError, setPwError] = useState("");
 
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(PREFS_KEY);
-      if (raw) setPrefs((p) => ({ ...p, ...JSON.parse(raw) }));
-    } catch {
-      // corrupted storage -- keep defaults
-    }
+    // Deferred a frame so the setState happens in a callback, not the effect
+    // body (react-hooks/set-state-in-effect) -- same pattern as StoreProvider.
+    const raf = requestAnimationFrame(() => {
+      try {
+        const raw = localStorage.getItem(PREFS_KEY);
+        if (raw) setPrefs((p) => ({ ...p, ...JSON.parse(raw) }));
+      } catch {
+        // corrupted storage -- keep defaults
+      }
+    });
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   const togglePref = (id: string) => {
@@ -91,15 +96,14 @@ export default function SettingsPanel() {
     setError("");
     const supabase = createClient();
 
-    const updates: Promise<{ error: { message: string } | null }>[] = [];
+    const results: { error: { message: string } | null }[] = [];
     if (fullName !== (profile?.full_name ?? "")) {
-      updates.push(supabase.from("profiles").update({ full_name: fullName }).eq("id", user.id));
+      results.push(await supabase.from("profiles").update({ full_name: fullName }).eq("id", user.id));
     }
     if (email && email !== user.email) {
-      updates.push(supabase.auth.updateUser({ email }));
+      results.push(await supabase.auth.updateUser({ email }));
     }
 
-    const results = await Promise.all(updates);
     const failed = results.find((r) => r.error);
     setSaving(false);
 

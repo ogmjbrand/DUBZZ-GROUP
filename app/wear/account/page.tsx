@@ -35,7 +35,7 @@ export default async function AccountPage() {
       sum + (o.order_items ?? []).reduce((s: number, i: { quantity: number }) => s + i.quantity, 0),
     0
   );
-  const since = new Date(profile?.created_at ?? user.created_at ?? Date.now()).getFullYear();
+  const since = new Date(profile?.created_at ?? user.created_at).getFullYear();
   const standing = roleLabel[profile?.role ?? "customer"] ?? "Member";
 
   return (
