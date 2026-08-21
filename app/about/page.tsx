@@ -159,8 +159,8 @@ export default function AboutPage() {
         />
         <div className="grid gap-px overflow-hidden rounded-lg bg-white/10 sm:grid-cols-2">
           {milestones.map((m, i) => (
-            <FadeReveal key={m.area} delay={i * 90}>
-              <div className="flex h-full flex-col bg-surface p-8 sm:p-9">
+            <div key={m.area} className="flex h-full flex-col bg-surface p-8 sm:p-9">
+              <FadeReveal delay={i * 90}>
                 <p className="overline-label text-[10px] text-gold">{m.area}</p>
                 <ul className="mt-6 space-y-4">
                   {m.items.map((item) => (
@@ -170,8 +170,8 @@ export default function AboutPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
-            </FadeReveal>
+              </FadeReveal>
+            </div>
           ))}
         </div>
       </Section>

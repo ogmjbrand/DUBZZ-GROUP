@@ -84,19 +84,19 @@ export const posts: Post[] = [
     ],
   },
   {
-    slug: "wear-ss26-obsidian",
-    title: "SS26: The Obsidian Standard",
+    slug: "designing-dubzz-wear",
+    title: "Designing Dubzz Wear",
     category: "Wear",
     date: "2026-03-11",
     readTime: "4 min",
-    dek: "The thinking behind the collection: one colour, twelve silhouettes, and a refusal to shout.",
+    dek: "The thinking behind the first collection: everyday pieces, one accent colour, and a refusal to shout.",
     visual:
       "linear-gradient(135deg, #121212 0%, #0a0a0a 50%, #050505 100%), radial-gradient(80% 60% at 75% 20%, rgba(232,227,216,0.12) 0%, transparent 60%)",
     body: [
-      "The SS26 collection began with a deletion. We removed colour from the table entirely and asked what was left to design with: weight, drape, proportion, and the way black behaves in different fibres — which, it turns out, is a full palette.",
-      "Twelve silhouettes made the cut from over sixty prototypes. Each is cut to be recognised by shape alone, at distance, in bad light — the conditions real clothes actually live in.",
-      "Gold appears exactly once per garment, usually where only the owner will find it: a hem thread, a bar-tack, the underside of a collar. Luxury that performs for an audience of one.",
-      "The collection releases in numbered runs. When a run closes, it closes — the archive is the only restock we do.",
+      "The collection began with a deletion. We took colour off the table and asked what was left to design with: weight, drape, proportion, and the way black behaves in different fabrics — which, it turns out, is a full palette.",
+      "The line is deliberately everyday. T-shirts, hoodies, polos, joggers, caps, and accessories — the pieces people actually reach for, cut to be recognised by shape alone, at distance, in bad light.",
+      "Gold appears once per garment, usually where only the owner will find it: a hem thread, a tipped collar, a cuff. An accent spent that carefully reads as confidence rather than volume.",
+      "Limited edition pieces release as numbered collections. Everything else is a standing line, because a wardrobe brand that cannot be restocked is not a wardrobe brand.",
     ],
   },
   {
@@ -109,10 +109,10 @@ export const posts: Post[] = [
     visual:
       "linear-gradient(140deg, #14110a 0%, #0b0906 50%, #050505 100%), radial-gradient(80% 55% at 20% 25%, rgba(212,175,55,0.22) 0%, transparent 60%)",
     body: [
-      "Dubzz Group exists because one conviction kept proving itself true across every venture we tried: the standard is the strategy. We are in the foundation year of formalising that conviction into five houses — Media, Wear, Wines Resort, Trade, and After Dark — under one holding company.",
-      "We are often asked when we will raise, exit, or franchise. The honest answer is that the group is being structured to make those questions optional forever. Patient capital is not a constraint we tolerate; it is the moat we are building from year one.",
-      "The next few years are about depth, not breadth: bringing Dubzz Wear properly to launch, developing Wines Resort deliberately rather than quickly, and growing Dubzz Media and Dubzz Trade on relationships built to last rather than quarters to hit. A sixth house will exist the day it can carry the same standard as the first five — not before.",
-      `To our partners, guests, clients, and the inner circle: the standard holds. — ${founder.name}, ${founder.role}`,
+      "Dubzz Group exists because one conviction kept proving itself true in the creative work we started from: the standard is the strategy. 2026 is the foundation year of formalising that conviction into five businesses — Media, Wear, Wines Resort, Trade, and After Dark — held inside one company.",
+      "The businesses were designed to strengthen one another rather than to sit beside one another. Media builds the visibility the others go to market with. Wear carries the culture. After Dark gathers the audience. Wines Resort gives that audience somewhere to go. Trade connects the Group to markets well outside the creative economy.",
+      "The next few years are about depth, not breadth: bringing Dubzz Wear properly to launch, developing Wines Resort deliberately rather than quickly, and growing Dubzz Media and Dubzz Trade on relationships built to last. The published roadmap runs to 2030, and we would rather be measured against it than against a headline.",
+      `To the partners, clients, and collaborators building this with us: the standard holds. — ${founder.name}, ${founder.role}`,
     ],
   },
 ];

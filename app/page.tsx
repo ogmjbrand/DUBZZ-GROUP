@@ -327,15 +327,18 @@ export default function Home() {
             </h2>
           </FadeReveal>
 
+          {/* The reveal sits inside each cell, not around it. Wrapping the cell
+              fades its background out too, so the grid's own separator colour
+              shows through as a solid block until the reveal fires. */}
           <ol className="mt-14 grid gap-px overflow-hidden rounded-lg bg-ink/12 md:mt-16 md:grid-cols-5">
             {growthPillars.map((pillar, i) => (
-              <FadeReveal key={pillar.title} delay={i * 70}>
-                <li className="flex h-full flex-col bg-paper p-7">
+              <li key={pillar.title} className="flex h-full flex-col bg-paper p-7">
+                <FadeReveal delay={i * 70}>
                   <span className="font-display text-sm text-ink/62">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="mt-4 font-display text-xl leading-snug text-ink">{pillar.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-soft">{pillar.body}</p>
-                </li>
-              </FadeReveal>
+                </FadeReveal>
+              </li>
             ))}
           </ol>
 
@@ -418,8 +421,8 @@ export default function Home() {
           <div className="lg:col-span-7">
             <div className="grid gap-px overflow-hidden rounded-lg bg-white/10 sm:grid-cols-2">
               {partnershipAudiences.map((audience, i) => (
-                <FadeReveal key={audience.group} delay={i * 70}>
-                  <div className="h-full bg-surface p-7">
+                <div key={audience.group} className="h-full bg-surface p-7">
+                  <FadeReveal delay={i * 70}>
                     <p className="overline-label text-[10px] text-gold">{audience.group}</p>
                     <ul className="mt-5 space-y-2.5">
                       {audience.items.map((item) => (
@@ -428,8 +431,8 @@ export default function Home() {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </FadeReveal>
+                  </FadeReveal>
+                </div>
               ))}
             </div>
           </div>
@@ -448,8 +451,12 @@ export default function Home() {
         </div>
         <div className="grid gap-px overflow-hidden rounded-lg bg-white/10 md:grid-cols-3">
           {posts.slice(0, 3).map((p, i) => (
-            <FadeReveal key={p.slug} delay={i * 100}>
-              <Link href={`/blog/${p.slug}`} className="group flex h-full flex-col bg-surface p-8">
+            <Link
+              key={p.slug}
+              href={`/blog/${p.slug}`}
+              className="group flex h-full flex-col bg-surface p-8"
+            >
+              <FadeReveal delay={i * 100} className="flex h-full flex-col">
                 <p className="overline-label text-[10px] text-gold">{p.category}</p>
                 <h3 className="mt-4 font-display text-xl leading-snug text-white transition-colors group-hover:text-gold-bright">
                   {p.title}
@@ -463,8 +470,8 @@ export default function Home() {
                   })}{" "}
                   · {p.readTime}
                 </p>
-              </Link>
-            </FadeReveal>
+              </FadeReveal>
+            </Link>
           ))}
         </div>
       </Section>
