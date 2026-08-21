@@ -15,6 +15,18 @@
   --color-gold-deep: #8a6d1d;
 
   --color-white: #ffffff; /* pure white */
+
+  /* ——— THE INVERSE SURFACE ———
+     Not a new colour: the same axis, flipped. Every section rendering on
+     midnight made the page one long uniform scroll, which is what made it
+     read as a template. Editorial sections now sit on paper with ink type
+     and the gold unchanged, so the page has rhythm without gaining a hue.
+     Paper is warmed a few points off #fff — pure white at full-section
+     scale glares against the black that precedes it. */
+  --color-paper: #f2f0eb;
+  --color-paper-2: #e6e3dc;
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #55524c;
   --color-neutral: #a8a8a8; /* neutral grey — was #a1a1aa, which carried a blue cast */
 
   /* Functional states only. Kept off-palette on purpose: an error that is not
@@ -188,6 +200,13 @@ html {
   color-scheme: dark;
 }
 
+/* The header is fixed, so an anchor jump has to stop short of it or the
+   heading it targets lands underneath the nav. Lenis applies the same offset
+   itself; this covers the reduced-motion path, where Lenis never mounts. */
+[id] {
+  scroll-margin-top: 6.5rem;
+}
+
 /* Lenis owns scrolling once mounted. Native smooth scrolling has to yield or
    the two animate the same anchor jump against each other. */
 html.lenis-active {
@@ -224,6 +243,19 @@ body {
 ::selection {
   background: color-mix(in srgb, var(--color-gold) 85%, transparent);
   color: #000000;
+}
+
+/* ——— PAPER SECTIONS ———
+   Inverted sections carry their own focus ring and selection: a gold ring on
+   paper drops to roughly 2:1 against the ground, which is not a visible focus
+   indicator. Ink is, and the gold stays where it still reads. */
+.on-paper :focus-visible {
+  outline-color: var(--color-ink);
+}
+
+.on-paper ::selection {
+  background: color-mix(in srgb, var(--color-ink) 88%, transparent);
+  color: var(--color-paper);
 }
 
 :focus-visible {

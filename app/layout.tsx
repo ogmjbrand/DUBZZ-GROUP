@@ -9,6 +9,7 @@ import { StoreProvider } from "@/components/providers/StoreProvider";
 import { AuthProvider } from "@/components/providers/AuthProvider";
 import WishlistSync from "@/components/providers/WishlistSync";
 import { site } from "@/lib/data/site";
+import { OrganizationSchema } from "@/components/seo/StructuredData";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -35,10 +36,24 @@ export const metadata: Metadata = {
     template: "%s — Dubzz Group",
   },
   description: site.description,
+  applicationName: site.name,
+  // Every page inherits a canonical derived from its own path, so the
+  // corporate content is never indexed twice under a preview domain.
+  alternates: { canonical: "./" },
   openGraph: {
     siteName: site.name,
     type: "website",
-    locale: "en_US",
+    locale: "en_NG",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
 };
 
@@ -57,6 +72,7 @@ export default function RootLayout({
       className={`${playfair.variable} ${inter.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <OrganizationSchema />
         <AuthProvider>
           <StoreProvider>
             <WishlistSync />

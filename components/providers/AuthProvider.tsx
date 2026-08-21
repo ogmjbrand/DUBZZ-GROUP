@@ -10,7 +10,7 @@ import {
   type ReactNode,
 } from "react";
 import type { User } from "@supabase/supabase-js";
-import { createClient } from "@/lib/supabase/client";
+import { createClient, supabaseConfigured } from "@/lib/supabase/client";
 import type { Database } from "@/types/database";
 
 type Profile = Database["public"]["Tables"]["profiles"]["Row"];
@@ -28,7 +28,9 @@ const AuthContext = createContext<AuthState | null>(null);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
-  const [loading, setLoading] = useState(true);
+  // With no Supabase there is never a session to resolve, so the provider
+  // starts settled rather than announcing a load that will never finish.
+  const [loading, setLoading] = useState(supabaseConfigured);
 
   const supabase = useMemo(() => createClient(), []);
 
@@ -42,12 +44,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   useEffect(() => {
-    // Without Supabase there is no session to subscribe to. Settling into a
-    // signed-out state keeps the rest of the site rendering normally.
-    if (!supabase) {
-      setLoading(false);
-      return;
-    }
+    // Without Supabase there is no session to subscribe to; the signed-out
+    // state the provider starts in is already correct.
+    if (!supabase) return;
 
     // onAuthStateChange fires once immediately with the current session (or
     // null), so it alone covers both the initial load and later changes.
