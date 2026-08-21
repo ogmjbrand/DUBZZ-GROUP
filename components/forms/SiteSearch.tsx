@@ -93,7 +93,7 @@ export default function SiteSearch() {
           viewBox="0 0 18 18"
           fill="none"
           aria-hidden
-          className="absolute left-6 top-1/2 -translate-y-1/2 text-white/40"
+          className="absolute left-6 top-1/2 -translate-y-1/2 text-white/55"
         >
           <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.4" />
           <path d="M12.5 12.5L17 17" stroke="currentColor" strokeWidth="1.4" />
@@ -105,7 +105,7 @@ export default function SiteSearch() {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search the ecosystem — products, work, journal, the estate…"
           aria-label="Search the site"
-          className="w-full rounded-full border border-white/15 bg-surface py-5 pl-14 pr-6 text-white placeholder:text-white/30 transition-[border-color,box-shadow] duration-300 focus:border-gold focus:shadow-[0_0_48px_-12px_rgba(212,175,55,0.4)] focus:outline-none"
+          className="w-full rounded-full border border-white/15 bg-surface py-5 pl-14 pr-6 text-white placeholder:text-white/50 transition-[border-color,box-shadow] duration-300 focus:border-gold focus:shadow-[0_0_48px_-12px_rgba(212,175,55,0.4)] focus:outline-none"
         />
       </div>
 
@@ -133,7 +133,7 @@ export default function SiteSearch() {
                       </span>
                       <span className="mt-1 line-clamp-1 block text-sm text-neutral">{e.description}</span>
                     </span>
-                    <svg width="18" height="14" viewBox="0 0 22 16" fill="none" aria-hidden className="shrink-0 -translate-x-1 text-white/20 transition-all group-hover:translate-x-0 group-hover:text-gold">
+                    <svg width="18" height="14" viewBox="0 0 22 16" fill="none" aria-hidden className="shrink-0 -translate-x-1 text-white/50 transition-all group-hover:translate-x-0 group-hover:text-gold">
                       <path d="M14 1l7 7-7 7M21 8H1" stroke="currentColor" strokeWidth="1.4" />
                     </svg>
                   </Link>
@@ -145,7 +145,7 @@ export default function SiteSearch() {
 
         {query.trim().length < 2 ? (
           <div>
-            <p className="overline-label mb-5 text-white/40">Popular</p>
+            <p className="overline-label mb-5 text-white/55">Popular</p>
             <div className="flex flex-wrap gap-3">
               {["Obsidian Hoodie", "Night Shoots", "Harvest", "Investors", "Cocoa"].map((term) => (
                 <button

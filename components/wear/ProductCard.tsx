@@ -16,7 +16,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <Card innerClassName="flex flex-col">
           <Visual background={product.visual} zoomOnHover className="aspect-[4/5]">
             {product.badge ? (
-              <span className="absolute left-5 top-5 rounded-full border border-gold/40 bg-background/60 px-4 py-1.5 font-label text-[9px] font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-sm">
+              <span className="absolute left-5 top-5 rounded-full border border-gold/40 bg-background/60 px-4 py-1.5 font-label text-[10px] font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-sm">
                 {product.badge}
               </span>
             ) : null}

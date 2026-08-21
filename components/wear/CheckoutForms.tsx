@@ -168,7 +168,7 @@ export function ShippingForm() {
       </div>
 
       <fieldset>
-        <legend className="overline-label mb-4 text-[10px] text-white/45">Delivery Method</legend>
+        <legend className="overline-label mb-4 text-[10px] text-white/60">Delivery Method</legend>
         <div className="space-y-3">
           {shippingMethods.map((m) => (
             <label
@@ -192,7 +192,7 @@ export function ShippingForm() {
               />
               <span className="flex-1">
                 <span className="block text-sm text-white">{m.label}</span>
-                <span className="mt-0.5 block text-xs text-white/40">{m.eta}</span>
+                <span className="mt-0.5 block text-xs text-white/55">{m.eta}</span>
               </span>
               <span className="text-sm text-gold">{m.price}</span>
             </label>
@@ -245,7 +245,7 @@ export function PaymentForm() {
             <span aria-hidden className="h-7 w-10 rounded-sm bg-gradient-to-br from-gold/80 to-gold-deep" />
           </div>
           <p className="font-mono text-lg tracking-[0.2em] text-white/80">•••• •••• •••• ••••</p>
-          <div className="flex justify-between font-label text-[9px] uppercase tracking-[0.2em] text-white/40">
+          <div className="flex justify-between font-label text-[10px] uppercase tracking-[0.2em] text-white/55">
             <span>Cardholder</span>
             <span>MM / YY</span>
           </div>
@@ -278,7 +278,7 @@ export function PaymentForm() {
       <Button type="submit" disabled={placing || cart.length === 0} className="w-full">
         {placing ? "Securing the Run Number…" : "Place Order"}
       </Button>
-      <p className="text-center text-xs text-white/30">
+      <p className="text-center text-xs text-white/50">
         By placing this order you agree to the terms of service.
       </p>
     </form>

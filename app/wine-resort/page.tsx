@@ -80,21 +80,23 @@ export default function WineResortPage() {
                 <Card className="h-full" innerClassName="flex flex-col">
                   <Visual background={s.visual} zoomOnHover className="h-60" />
                   <div className="flex flex-1 flex-col p-8">
-                    <div className="flex items-baseline justify-between gap-4">
-                      <h3 className="font-display text-2xl text-white">{s.name}</h3>
+                    {/* Stacked below sm: name and price side by side overflow a
+                        320px card once the rate carries its "indicative" note. */}
+                    <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                      <h3 className="font-display text-2xl leading-tight text-white">{s.name}</h3>
                       <p className="shrink-0 font-label text-sm font-semibold text-gold">
                         ${s.rate}
-                        <span className="ml-1 font-sans text-[10px] font-normal uppercase tracking-widest text-white/35">
+                        <span className="text-[10px] text-white/55"> /night</span>
+                        <span className="ml-2 font-sans text-[10px] font-normal uppercase tracking-widest text-white/50">
                           indicative
                         </span>
-                        <span className="text-[10px] text-white/40"> /night</span>
                       </p>
                     </div>
                     <p className="mt-2 text-sm text-neutral">{s.tagline}</p>
-                    <p className="mt-4 text-xs text-white/40">
+                    <p className="mt-4 text-xs text-white/55">
                       {s.size} · {s.occupancy}
                     </p>
-                    <p className="overline-label mt-auto pt-6 text-[9px] text-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    <p className="overline-label mt-auto pt-6 text-[10px] text-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                       Check availability →
                     </p>
                   </div>
@@ -149,14 +151,14 @@ export default function WineResortPage() {
               <Link href="/wine-resort/dining" className="group block h-full">
                 <Card className="h-full" innerClassName="flex flex-col">
                   <Visual background={v.visual} zoomOnHover className="h-44">
-                    <span className="absolute left-5 top-5 rounded-full border border-white/20 bg-background/50 px-4 py-1.5 font-label text-[9px] font-semibold uppercase tracking-[0.2em] text-white/70 backdrop-blur-sm">
+                    <span className="absolute left-5 top-5 rounded-full border border-white/20 bg-background/50 px-4 py-1.5 font-label text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70 backdrop-blur-sm">
                       {v.type}
                     </span>
                   </Visual>
                   <div className="flex flex-1 flex-col p-7">
                     <h3 className="font-display text-2xl text-white transition-colors group-hover:text-gold-bright">{v.name}</h3>
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral">{v.description}</p>
-                    <p className="mt-5 text-xs text-white/40">{v.detail}</p>
+                    <p className="mt-5 text-xs text-white/55">{v.detail}</p>
                   </div>
                 </Card>
               </Link>
@@ -187,7 +189,7 @@ export default function WineResortPage() {
                   <span className="text-sm text-white/50">
                     {new Date(ev.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
                   </span>
-                  <span className="rounded-full border border-wine/40 bg-wine/10 px-4 py-1 font-label text-[9px] font-semibold uppercase tracking-[0.18em] text-wine">
+                  <span className="rounded-full border border-wine/40 bg-wine/10 px-4 py-1 font-label text-[10px] font-semibold uppercase tracking-[0.18em] text-wine">
                     {ev.status}
                   </span>
                 </div>

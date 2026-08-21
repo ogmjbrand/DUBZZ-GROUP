@@ -91,7 +91,7 @@ export function BookingShell({ step, children }: { step: 0 | 1 | 2; children: Re
                         "flex h-8 w-8 items-center justify-center rounded-full border font-label text-[10px] font-bold",
                         state === "current"
                           ? "border-wine text-wine shadow-[0_0_16px_rgba(212,175,55,0.4)]"
-                          : "border-white/15 text-white/30",
+                          : "border-white/15 text-white/50",
                       ].join(" ")}
                     >
                       {i + 1}
@@ -99,7 +99,7 @@ export function BookingShell({ step, children }: { step: 0 | 1 | 2; children: Re
                     <span
                       className={[
                         "hidden font-label text-[10px] font-semibold uppercase tracking-[0.2em] sm:block",
-                        state === "current" ? "text-white" : "text-white/30",
+                        state === "current" ? "text-white" : "text-white/50",
                       ].join(" ")}
                     >
                       {s.label}
@@ -391,15 +391,15 @@ export function ReviewStep() {
             <p className="mt-2 text-sm text-neutral">{sanctuary.tagline}</p>
             <dl className="mt-6 grid gap-4 border-t border-white/10 pt-6 text-sm sm:grid-cols-3">
               <div>
-                <dt className="text-white/40">Arrival</dt>
+                <dt className="text-white/55">Arrival</dt>
                 <dd className="mt-1 text-white">{fmt(draft.checkIn!)}</dd>
               </div>
               <div>
-                <dt className="text-white/40">Departure</dt>
+                <dt className="text-white/55">Departure</dt>
                 <dd className="mt-1 text-white">{fmt(draft.checkOut!)}</dd>
               </div>
               <div>
-                <dt className="text-white/40">Party</dt>
+                <dt className="text-white/55">Party</dt>
                 <dd className="mt-1 text-white">
                   {guests} {guests === 1 ? "guest" : "guests"} · {nights}{" "}
                   {nights === 1 ? "night" : "nights"}
@@ -410,7 +410,7 @@ export function ReviewStep() {
         </div>
         {chosenExperiences.length > 0 ? (
           <div className="mt-6 rounded-lg border border-white/10 p-8">
-            <p className="overline-label text-white/45">Experiences</p>
+            <p className="overline-label text-white/60">Experiences</p>
             <ul className="mt-5 space-y-3">
               {chosenExperiences.map((e) => (
                 <li key={e.slug} className="flex justify-between text-sm">
@@ -425,7 +425,7 @@ export function ReviewStep() {
 
       <aside className="lg:col-span-5">
         <div className="rounded-lg glass p-8 lg:sticky lg:top-32">
-          <p className="overline-label text-white/45">Estimate</p>
+          <p className="overline-label text-white/60">Estimate</p>
           <dl className="mt-6 space-y-3.5 text-sm">
             <div className="flex justify-between">
               <dt className="text-white/50">
@@ -460,7 +460,7 @@ export function ReviewStep() {
               ← Adjust Experiences
             </Button>
           </div>
-          <p className="mt-5 text-center text-xs text-white/30">
+          <p className="mt-5 text-center text-xs text-white/50">
             Nothing is charged until the house confirms.
           </p>
         </div>

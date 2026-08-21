@@ -72,7 +72,7 @@ export default function TradePage() {
             <FadeReveal key={f.title} delay={(i % 3) * 80}>
               <Card static className="h-full">
                 <div className="flex h-full flex-col p-8">
-                  <p className="font-display text-lg text-white/25">
+                  <p className="font-display text-lg text-white/50">
                     {String(i + 1).padStart(2, "0")}
                   </p>
                   <h3 className="mt-4 font-display text-xl text-white">{f.title}</h3>
@@ -101,7 +101,7 @@ export default function TradePage() {
                   </span>
                 </Visual>
                 <div className="flex flex-1 flex-col p-6">
-                  <p className="overline-label text-[9px] text-trade">{c.origin}</p>
+                  <p className="overline-label text-[10px] text-trade">{c.origin}</p>
                   <p className="mt-2 text-xs text-gold">{c.grade}</p>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral">{c.description}</p>
                 </div>

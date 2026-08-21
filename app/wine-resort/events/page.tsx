@@ -50,11 +50,11 @@ export default function EventsPage() {
                         <p className="font-display text-5xl text-gold">
                           {date.toLocaleDateString("en-GB", { day: "2-digit" })}
                         </p>
-                        <p className="overline-label mt-1 text-[10px] text-white/45">
+                        <p className="overline-label mt-1 text-[10px] text-white/60">
                           {date.toLocaleDateString("en-GB", { month: "long", year: "numeric" })}
                         </p>
                       </div>
-                      <span className="rounded-full border border-wine/40 bg-wine/10 px-4 py-1.5 font-label text-[9px] font-semibold uppercase tracking-[0.18em] text-wine">
+                      <span className="rounded-full border border-wine/40 bg-wine/10 px-4 py-1.5 font-label text-[10px] font-semibold uppercase tracking-[0.18em] text-wine">
                         {ev.status}
                       </span>
                     </div>

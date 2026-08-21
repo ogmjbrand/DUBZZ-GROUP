@@ -85,7 +85,7 @@ export default function BagView() {
                   <button
                     type="button"
                     onClick={() => removeFromCart(item.slug, item.size)}
-                    className="font-label text-[10px] font-semibold uppercase tracking-[0.2em] text-white/35 transition-colors hover:text-error"
+                    className="font-label text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 transition-colors hover:text-error"
                   >
                     Remove
                   </button>
@@ -99,7 +99,7 @@ export default function BagView() {
       {/* Summary */}
       <aside className="lg:col-span-4">
         <div className="rounded-lg glass p-8 lg:sticky lg:top-32">
-          <p className="overline-label text-white/45">Summary</p>
+          <p className="overline-label text-white/60">Summary</p>
           <dl className="mt-6 space-y-3.5 text-sm">
             <div className="flex justify-between">
               <dt className="text-white/50">Subtotal</dt>
@@ -123,7 +123,7 @@ export default function BagView() {
               Proceed to Checkout
             </Button>
           </div>
-          <p className="mt-4 text-center text-xs text-white/30">
+          <p className="mt-4 text-center text-xs text-white/50">
             Numbered pieces are held for 30 minutes at checkout.
           </p>
         </div>

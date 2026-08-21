@@ -87,7 +87,7 @@ export default function EcosystemDiagram() {
                   <span className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                     <span className="font-display text-lg leading-tight text-white">{d.name}</span>
                     <span
-                      className="font-label text-[9px] font-semibold uppercase tracking-[0.18em]"
+                      className="font-label text-[10px] font-semibold uppercase tracking-[0.18em]"
                       style={{ color: d.accent }}
                     >
                       {flow.contribution}
@@ -180,8 +180,8 @@ export default function EcosystemDiagram() {
                 >
                   <span className="block font-display text-base leading-tight text-white">{d.name}</span>
                   <span
-                    className="mt-1 block font-label text-[9px] font-semibold uppercase tracking-[0.16em] transition-colors duration-300"
-                    style={{ color: isActive ? d.accent : "rgba(255,255,255,0.4)" }}
+                    className="mt-1 block font-label text-[10px] font-semibold uppercase tracking-[0.16em] transition-colors duration-300"
+                    style={{ color: isActive ? d.accent : "rgba(255,255,255,0.62)" }}
                   >
                     {flow.contribution}
                   </span>
@@ -243,7 +243,7 @@ export default function EcosystemDiagram() {
           {ecosystemShared.map((item) => (
             <li
               key={item}
-              className="font-label text-[10px] font-semibold uppercase tracking-[0.22em] text-white/45"
+              className="font-label text-[10px] font-semibold uppercase tracking-[0.22em] text-white/60"
             >
               {item}
             </li>

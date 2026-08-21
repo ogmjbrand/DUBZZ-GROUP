@@ -116,7 +116,7 @@ export default function SignupForm() {
         {status === "sending" ? "Creating Account…" : "Create Account"}
       </Button>
 
-      <p className="text-center text-sm text-white/40">
+      <p className="text-center text-sm text-white/55">
         Already have an account?{" "}
         <Link href={loginHref} className="text-gold hover:text-gold-bright">
           Sign in

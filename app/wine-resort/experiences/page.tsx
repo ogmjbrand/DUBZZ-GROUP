@@ -49,11 +49,11 @@ export default function ExperiencesPage() {
                     <div className="flex flex-wrap items-baseline justify-between gap-3">
                       <h2 className="font-display text-3xl text-white">{e.name}</h2>
                       <p className="font-label text-sm font-semibold text-gold">
-                        ${e.price} <span className="text-[10px] text-white/40">per person</span>
+                        ${e.price} <span className="text-[10px] text-white/55">per person</span>
                       </p>
                     </div>
                     <p className="mt-4 max-w-xl leading-relaxed text-neutral">{e.description}</p>
-                    <p className="mt-5 text-xs text-white/40">{e.duration}</p>
+                    <p className="mt-5 text-xs text-white/55">{e.duration}</p>
                     <div className="mt-7">
                       <Button href="/wine-resort/booking/experience" variant="secondary" size="sm">
                         Add to a Stay

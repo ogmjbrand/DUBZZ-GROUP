@@ -31,7 +31,7 @@ export default function ProductActions({ product }: { product: Product }) {
   return (
     <div>
       <fieldset>
-        <legend className="overline-label mb-4 text-[10px] text-white/45">Size</legend>
+        <legend className="overline-label mb-4 text-[10px] text-white/60">Size</legend>
         <div className="flex flex-wrap gap-2.5" role="radiogroup" aria-label="Size">
           {product.sizes.map((s) => (
             <button

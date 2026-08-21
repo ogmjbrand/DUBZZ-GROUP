@@ -21,7 +21,7 @@ export default function LegalArticle({
       <FadeReveal>
         <p className="overline-label text-gold">{overline}</p>
         <h1 className="mt-7 font-display text-5xl leading-[1.05] text-white sm:text-6xl">{title}</h1>
-        <p className="mt-5 text-sm text-white/35">Last updated {updated}</p>
+        <p className="mt-5 text-sm text-white/50">Last updated {updated}</p>
       </FadeReveal>
       <div className="mt-14 space-y-12 border-t border-white/10 pt-14">
         {sections.map((s, i) => (

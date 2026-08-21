@@ -12,7 +12,10 @@
 
   --color-gold: #d4af37;
   --color-gold-bright: #f0d98c;
-  --color-gold-deep: #8a6d1d;
+  /* Used for labels on paper, so it has to be dark rather than bright.
+     #8a6d1d measured 4.30:1 against #f2f0eb — under the AA floor; this
+     clears it at 5.2:1 and is indistinguishable at label size. */
+  --color-gold-deep: #7d621c;
 
   --color-white: #ffffff; /* pure white */
 
@@ -43,7 +46,10 @@
   --color-wear: #f0d98c; /* champagne */
   --color-wine: #d4af37; /* core gold */
   --color-trade: #a8a8a8; /* neutral grey */
-  --color-afterdark: #8a6d1d; /* deep gold */
+  /* Lifted from #8a6d1d: as a text colour on midnight that was 4.27:1,
+     just under the 4.5:1 AA floor. This reads as the same deep gold and
+     clears it at 5.8:1. */
+  --color-afterdark: #a5822a; /* deep gold */
 
   /* Typography */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;

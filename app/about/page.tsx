@@ -122,7 +122,7 @@ export default function AboutPage() {
             {coreValues.map((value, i) => (
               <FadeReveal key={value.title} delay={i * 70}>
                 <li className="grid gap-2 border-t border-ink/12 py-8 md:grid-cols-12 md:items-baseline md:gap-8">
-                  <span className="font-label text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/40 md:col-span-2">
+                  <span className="font-label text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/62 md:col-span-2">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="font-display text-2xl text-ink md:col-span-4 md:text-3xl">
@@ -222,12 +222,12 @@ export default function AboutPage() {
                 href={d.href}
                 className="group flex flex-col gap-2 border-b border-white/10 py-8 transition-colors duration-500 hover:bg-white/[0.02] sm:flex-row sm:items-baseline sm:gap-10"
               >
-                <span className="font-display text-base text-white/30 transition-colors group-hover:text-gold sm:w-14">
+                <span className="font-display text-base text-white/50 transition-colors group-hover:text-gold sm:w-14">
                   {d.index}
                 </span>
                 <span className="font-display text-2xl text-white sm:w-72 sm:text-3xl">{d.name}</span>
                 <span className="flex-1 text-sm leading-relaxed text-neutral">{d.description}</span>
-                <span className="overline-label hidden shrink-0 text-[9px] text-gold opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:block">
+                <span className="overline-label hidden shrink-0 text-[10px] text-gold opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:block">
                   Visit →
                 </span>
               </Link>

@@ -90,7 +90,7 @@ export default function Home() {
                 href={d.href}
                 className="group flex items-baseline gap-3 border-r border-white/5 px-6 py-5 transition-colors duration-300 last:border-r-0 hover:bg-white/[0.03] sm:px-8"
               >
-                <span className="font-display text-xs text-white/30 transition-colors group-hover:text-gold">
+                <span className="font-display text-xs text-white/50 transition-colors group-hover:text-gold">
                   {d.index}
                 </span>
                 <span className="font-label text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 transition-colors group-hover:text-white">
@@ -109,7 +109,7 @@ export default function Home() {
             <div key={half} className="flex gap-12">
               {divisions.map((d) => (
                 <span key={d.key} className="flex items-center gap-12">
-                  <span className="font-label text-[11px] font-semibold uppercase tracking-[0.4em] text-white/20">
+                  <span className="font-label text-[11px] font-semibold uppercase tracking-[0.4em] text-white/50">
                     {d.name}
                   </span>
                   <span className="h-1 w-1 rounded-full bg-gold/40" />
@@ -204,7 +204,7 @@ export default function Home() {
                     background: `radial-gradient(60% 100% at 20% 50%, color-mix(in srgb, ${d.accent} 10%, transparent) 0%, transparent 70%)`,
                   }}
                 />
-                <span className="relative font-display text-lg text-white/30 transition-colors duration-300 group-hover:text-gold sm:w-16">
+                <span className="relative font-display text-lg text-white/50 transition-colors duration-300 group-hover:text-gold sm:w-16">
                   {d.index}
                 </span>
                 <span className="relative flex-1">
@@ -217,7 +217,7 @@ export default function Home() {
                   {d.facets.map((f) => (
                     <span
                       key={f}
-                      className="rounded-full border border-white/10 px-4 py-1.5 font-label text-[9px] font-semibold uppercase tracking-[0.18em] text-white/40 transition-colors duration-300 group-hover:border-gold/30 group-hover:text-white/70"
+                      className="rounded-full border border-white/10 px-4 py-1.5 font-label text-[10px] font-semibold uppercase tracking-[0.18em] text-white/55 transition-colors duration-300 group-hover:border-gold/30 group-hover:text-white/70"
                     >
                       {f}
                     </span>
@@ -229,7 +229,7 @@ export default function Home() {
                   viewBox="0 0 22 16"
                   fill="none"
                   aria-hidden
-                  className="relative shrink-0 -translate-x-2 text-white/30 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:text-gold group-hover:opacity-100"
+                  className="relative shrink-0 -translate-x-2 text-white/50 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:text-gold group-hover:opacity-100"
                 >
                   <path d="M14 1l7 7-7 7M21 8H1" stroke="currentColor" strokeWidth="1.4" />
                 </svg>
@@ -253,7 +253,7 @@ export default function Home() {
               <FadeReveal key={statement.label} delay={i * 90}>
                 <div className="grid gap-6 border-t border-ink/12 pt-8 md:grid-cols-12 md:gap-10">
                   <div className="md:col-span-3">
-                    <p className="font-label text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/45">
+                    <p className="font-label text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/62">
                       {String(i + 1).padStart(2, "0")} — {statement.label}
                     </p>
                   </div>
@@ -268,7 +268,7 @@ export default function Home() {
           {/* Philosophy */}
           <FadeReveal delay={120}>
             <div className="mt-24 border-t border-ink/12 pt-10 md:mt-32">
-              <p className="font-label text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/45">
+              <p className="font-label text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/62">
                 Our Philosophy
               </p>
               <p className="mt-8 font-display text-[clamp(2rem,6vw,4.5rem)] leading-[1.05] tracking-tight text-ink">
@@ -301,7 +301,7 @@ export default function Home() {
             {advantages.map((item, i) => (
               <FadeReveal key={item.title} delay={i * 70}>
                 <li className="group flex gap-6 border-t border-white/10 py-8 last:border-b sm:gap-10">
-                  <span className="font-display text-sm text-white/25 transition-colors duration-500 group-hover:text-gold">
+                  <span className="font-display text-sm text-white/50 transition-colors duration-500 group-hover:text-gold">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
@@ -331,7 +331,7 @@ export default function Home() {
             {growthPillars.map((pillar, i) => (
               <FadeReveal key={pillar.title} delay={i * 70}>
                 <li className="flex h-full flex-col bg-paper p-7">
-                  <span className="font-display text-sm text-ink/30">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-display text-sm text-ink/62">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="mt-4 font-display text-xl leading-snug text-ink">{pillar.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-soft">{pillar.body}</p>
                 </li>
@@ -455,7 +455,7 @@ export default function Home() {
                   {p.title}
                 </h3>
                 <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-neutral">{p.dek}</p>
-                <p className="mt-auto pt-8 text-xs text-white/35">
+                <p className="mt-auto pt-8 text-xs text-white/50">
                   {new Date(p.date).toLocaleDateString("en-GB", {
                     day: "numeric",
                     month: "long",

@@ -70,10 +70,10 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
 
         <div className="mt-16 flex items-center justify-between border-t border-white/10 pt-8">
-          <Link href="/blog" className="overline-label text-[10px] text-white/40 transition-colors hover:text-gold">
+          <Link href="/blog" className="overline-label text-[10px] text-white/55 transition-colors hover:text-gold">
             ← All dispatches
           </Link>
-          <p className="overline-label text-[10px] text-white/25">Dubzz Journal</p>
+          <p className="overline-label text-[10px] text-white/50">Dubzz Journal</p>
         </div>
       </div>
 
@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <Card className="h-full" innerClassName="flex flex-col">
                     <Visual background={p.visual} zoomOnHover className="h-36" />
                     <div className="flex flex-1 flex-col p-6">
-                      <p className="overline-label text-[9px] text-gold">{p.category}</p>
+                      <p className="overline-label text-[10px] text-gold">{p.category}</p>
                       <h3 className="mt-2.5 font-display text-lg leading-snug text-white transition-colors group-hover:text-gold-bright">
                         {p.title}
                       </h3>

@@ -65,14 +65,14 @@ export default function RoadmapTimeline() {
             >
               <span
                 className={`block font-display text-2xl transition-colors duration-500 sm:text-3xl ${
-                  isActive ? "text-ink" : "text-ink/35 group-hover:text-ink/60"
+                  isActive ? "text-ink" : "text-ink/62 group-hover:text-ink"
                 }`}
               >
                 {phase.year}
               </span>
               <span
-                className={`mt-1 block font-label text-[9px] font-semibold uppercase tracking-[0.18em] transition-colors duration-500 ${
-                  isActive ? "text-gold-deep" : "text-ink/30 group-hover:text-ink/50"
+                className={`mt-1 block font-label text-[10px] font-semibold uppercase tracking-[0.18em] transition-colors duration-500 ${
+                  isActive ? "text-gold-deep" : "text-ink/62 group-hover:text-ink"
                 }`}
               >
                 {phase.phase}

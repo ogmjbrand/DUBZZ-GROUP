@@ -72,7 +72,7 @@ export default async function OrdersPage() {
                 <thead>
                   <tr className="border-b border-white/10">
                     {["Order", "Date", "Pieces", "Total", "Status"].map((h) => (
-                      <th key={h} className="overline-label px-6 py-4 text-[9px] text-white/40">
+                      <th key={h} className="overline-label px-6 py-4 text-[10px] text-white/55">
                         {h}
                       </th>
                     ))}
@@ -105,7 +105,7 @@ export default async function OrdersPage() {
                       </td>
                       <td className="px-6 py-5">
                         <span
-                          className={`rounded-full border px-3 py-1 text-xs capitalize ${statusStyles[o.status] ?? "border-white/15 bg-white/5 text-white/45"}`}
+                          className={`rounded-full border px-3 py-1 text-xs capitalize ${statusStyles[o.status] ?? "border-white/15 bg-white/5 text-white/60"}`}
                         >
                           {o.status}
                         </span>

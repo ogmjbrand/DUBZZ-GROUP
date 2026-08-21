@@ -118,7 +118,7 @@ export default function InvestorsPage() {
                 <span className="font-display text-2xl text-white">{r.title}</span>
                 <span className="flex items-baseline gap-6">
                   <span className="max-w-xs text-sm text-white/50">{r.body}</span>
-                  <span className="shrink-0 rounded-full border border-white/12 px-4 py-1 font-label text-[9px] font-semibold uppercase tracking-[0.18em] text-white/40">
+                  <span className="shrink-0 rounded-full border border-white/12 px-4 py-1 font-label text-[10px] font-semibold uppercase tracking-[0.18em] text-white/55">
                     Not yet published
                   </span>
                 </span>

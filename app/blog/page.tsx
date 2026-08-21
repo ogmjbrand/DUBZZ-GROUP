@@ -51,7 +51,7 @@ export default function BlogPage() {
                     {featured.title}
                   </h2>
                   <p className="mt-5 max-w-md leading-relaxed text-neutral">{featured.dek}</p>
-                  <p className="mt-8 text-xs text-white/35">
+                  <p className="mt-8 text-xs text-white/50">
                     {formatDate(featured.date)} · {featured.readTime}
                   </p>
                 </div>
@@ -73,7 +73,7 @@ export default function BlogPage() {
                       {p.title}
                     </h3>
                     <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-neutral">{p.dek}</p>
-                    <p className="mt-auto pt-6 text-xs text-white/35">
+                    <p className="mt-auto pt-6 text-xs text-white/50">
                       {formatDate(p.date)} · {p.readTime}
                     </p>
                   </div>

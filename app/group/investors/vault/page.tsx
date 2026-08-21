@@ -65,7 +65,7 @@ export default function VaultPage() {
                     <h2 className="font-display text-2xl text-white">{col.name}</h2>
                     <span
                       className={[
-                        "rounded-full border px-4 py-1 font-label text-[9px] font-semibold uppercase tracking-[0.18em]",
+                        "rounded-full border px-4 py-1 font-label text-[10px] font-semibold uppercase tracking-[0.18em]",
                         col.open
                           ? "border-success/40 bg-success/10 text-success"
                           : "border-gold/40 bg-gold/10 text-gold",
@@ -79,7 +79,7 @@ export default function VaultPage() {
                       <li key={item.title} className="flex items-center justify-between gap-4 py-4">
                         <div className="flex items-center gap-4">
                           {col.open ? (
-                            <svg width="16" height="18" viewBox="0 0 16 18" fill="none" aria-hidden className="shrink-0 text-white/40">
+                            <svg width="16" height="18" viewBox="0 0 16 18" fill="none" aria-hidden className="shrink-0 text-white/55">
                               <path d="M1 1h9l5 5v11H1V1z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
                               <path d="M10 1v5h5" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
                             </svg>
@@ -91,12 +91,12 @@ export default function VaultPage() {
                           )}
                           <span className="text-sm text-white">{item.title}</span>
                         </div>
-                        <span className="shrink-0 text-xs text-white/35">{item.meta}</span>
+                        <span className="shrink-0 text-xs text-white/50">{item.meta}</span>
                       </li>
                     ))}
                   </ul>
                   {!col.open ? (
-                    <p className="mt-5 text-xs leading-relaxed text-white/30">
+                    <p className="mt-5 text-xs leading-relaxed text-white/50">
                       Publishes here as each is finalised — no sign-in required.
                     </p>
                   ) : null}

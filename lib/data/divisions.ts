@@ -96,7 +96,7 @@ export const divisions: Division[] = [
       "The Group's signature entertainment and lifestyle experience platform — curated nights where music, fashion, food, creativity, and connection meet.",
     href: "/after-dark",
     accent: "var(--color-afterdark)",
-    accentHex: "#8a6d1d",
+    accentHex: "#a5822a",
     facets: ["Experiences", "Culture", "Nightlife"],
   },
 ];

@@ -49,7 +49,7 @@ export default function DiningPage() {
                     <p className="overline-label text-wine">{v.type}</p>
                     <h2 className="mt-4 font-display text-4xl text-white">{v.name}</h2>
                     <p className="mt-5 max-w-md leading-relaxed text-neutral">{v.description}</p>
-                    <p className="mt-6 text-xs text-white/40">{v.detail}</p>
+                    <p className="mt-6 text-xs text-white/55">{v.detail}</p>
                     <div className="mt-8">
                       <Button href="/contact" variant="secondary" size="sm">
                         Reserve a Table

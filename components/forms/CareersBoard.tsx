@@ -89,7 +89,7 @@ export default function CareersBoard() {
           <button
             type="button"
             onClick={() => setSelected(null)}
-            className="overline-label text-[10px] text-white/40 transition-colors hover:text-gold"
+            className="overline-label text-[10px] text-white/55 transition-colors hover:text-gold"
           >
             ← All roles
           </button>
@@ -98,11 +98,11 @@ export default function CareersBoard() {
           <p className="mt-6 text-sm leading-relaxed text-neutral">{selected.summary}</p>
           <dl className="mt-8 space-y-3 text-sm">
             <div className="flex justify-between border-b border-white/8 pb-3">
-              <dt className="text-white/40">Location</dt>
+              <dt className="text-white/55">Location</dt>
               <dd className="text-white">{selected.location}</dd>
             </div>
             <div className="flex justify-between border-b border-white/8 pb-3">
-              <dt className="text-white/40">Type</dt>
+              <dt className="text-white/55">Type</dt>
               <dd className="text-white">{selected.type}</dd>
             </div>
           </dl>
@@ -155,12 +155,12 @@ export default function CareersBoard() {
               <span className="mt-2 block text-sm text-neutral">{job.summary}</span>
             </span>
             <span className="flex shrink-0 flex-wrap gap-2 sm:flex-col sm:items-end sm:gap-1.5">
-              <span className="overline-label text-[9px] text-gold">{job.division}</span>
-              <span className="text-xs text-white/40">
+              <span className="overline-label text-[10px] text-gold">{job.division}</span>
+              <span className="text-xs text-white/55">
                 {job.location} · {job.type}
               </span>
             </span>
-            <svg width="20" height="14" viewBox="0 0 22 16" fill="none" aria-hidden className="hidden shrink-0 -translate-x-2 text-white/30 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-gold group-hover:opacity-100 sm:block">
+            <svg width="20" height="14" viewBox="0 0 22 16" fill="none" aria-hidden className="hidden shrink-0 -translate-x-2 text-white/50 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-gold group-hover:opacity-100 sm:block">
               <path d="M14 1l7 7-7 7M21 8H1" stroke="currentColor" strokeWidth="1.4" />
             </svg>
           </button>

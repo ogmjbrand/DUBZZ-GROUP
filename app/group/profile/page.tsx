@@ -74,12 +74,12 @@ export default async function ProfilePage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               </div>
               <p className="mt-14 font-display text-3xl capitalize text-white">{standing}</p>
-              <p className="mt-1 text-xs text-white/40">{tier} · Since {since}</p>
+              <p className="mt-1 text-xs text-white/55">{tier} · Since {since}</p>
               <div className="mt-10 flex items-end justify-between">
-                <p className="font-label text-[9px] uppercase tracking-[0.24em] text-white/35">
+                <p className="font-label text-[10px] uppercase tracking-[0.24em] text-white/50">
                   Member № {memberNumber}
                 </p>
-                <p className="font-label text-[9px] uppercase tracking-[0.24em] text-gold/70">
+                <p className="font-label text-[10px] uppercase tracking-[0.24em] text-gold/70">
                   Dubzz Group
                 </p>
               </div>
@@ -100,7 +100,7 @@ export default async function ProfilePage() {
           <FadeReveal delay={180}>
             <Card static>
               <div className="p-8">
-                <p className="overline-label text-white/45">Privileges Across the Houses</p>
+                <p className="overline-label text-white/60">Privileges Across the Houses</p>
                 <ul className="mt-6 divide-y divide-white/6">
                   {privileges.map((p) => (
                     <li key={p.division} className="flex items-center justify-between gap-4 py-4">
@@ -118,7 +118,7 @@ export default async function ProfilePage() {
           <FadeReveal delay={260}>
             <Card static>
               <div className="p-8">
-                <p className="overline-label text-white/45">Recent Activity</p>
+                <p className="overline-label text-white/60">Recent Activity</p>
                 {bookings && bookings.length > 0 ? (
                   <ol className="mt-6 space-y-5 border-l border-white/10 pl-6">
                     {bookings.map((b) => (
@@ -127,7 +127,7 @@ export default async function ProfilePage() {
                         <p className="text-sm text-white">
                           Booking requested — {(b as { sanctuaries: { name: string } | null }).sanctuaries?.name ?? "Sanctuary"}
                         </p>
-                        <p className="mt-0.5 text-xs text-white/35">
+                        <p className="mt-0.5 text-xs text-white/50">
                           {new Date(b.check_in).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })} —{" "}
                           {new Date(b.check_out).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })} · {b.status}
                         </p>

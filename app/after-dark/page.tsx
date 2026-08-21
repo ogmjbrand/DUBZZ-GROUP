@@ -114,7 +114,7 @@ export default function AfterDarkPage() {
             <FadeReveal key={e.title} delay={i * 60}>
               <Card static className="h-full">
                 <div className="flex h-full flex-col p-8">
-                  <p className="font-display text-lg text-white/25">
+                  <p className="font-display text-lg text-white/50">
                     {String(i + 1).padStart(2, "0")}
                   </p>
                   <h3 className="mt-4 font-display text-xl text-white">{e.title}</h3>

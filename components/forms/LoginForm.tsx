@@ -69,7 +69,7 @@ export default function LoginForm() {
         {status === "sending" ? "Signing In…" : "Sign In"}
       </Button>
 
-      <p className="text-center text-sm text-white/40">
+      <p className="text-center text-sm text-white/55">
         New to Dubzz Group?{" "}
         <Link href={signupHref} className="text-gold hover:text-gold-bright">
           Create an account

@@ -101,7 +101,7 @@ export default function MediaPage() {
             <FadeReveal key={s.title} delay={i * 80}>
               <Card static className="h-full">
                 <div className="flex h-full flex-col p-8">
-                  <p className="font-display text-lg text-white/25">0{i + 1}</p>
+                  <p className="font-display text-lg text-white/50">0{i + 1}</p>
                   <h3 className="mt-4 font-display text-xl text-white">{s.title}</h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral">{s.body}</p>
                 </div>

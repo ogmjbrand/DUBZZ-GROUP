@@ -36,7 +36,7 @@ export default function NotFound() {
             <Link
               key={l.href}
               href={l.href}
-              className="font-label text-[10px] font-semibold uppercase tracking-[0.24em] text-white/40 transition-colors hover:text-gold"
+              className="font-label text-[10px] font-semibold uppercase tracking-[0.24em] text-white/55 transition-colors hover:text-gold"
             >
               {l.label}
             </Link>

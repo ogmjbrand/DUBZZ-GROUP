@@ -13,7 +13,7 @@ import type {
 
 const fieldBase =
   "w-full bg-transparent border-0 border-b border-white/15 px-0 py-3 text-[15px] text-white " +
-  "placeholder:text-white/25 transition-[border-color,box-shadow] duration-300 " +
+  "placeholder:text-white/50 transition-[border-color,box-shadow] duration-300 " +
   "focus:border-gold focus:outline-none focus:shadow-[0_16px_28px_-20px_rgba(212,175,55,0.55)]";
 
 export function Label({
@@ -24,7 +24,7 @@ export function Label({
   htmlFor?: string;
 }) {
   return (
-    <label htmlFor={htmlFor} className="overline-label block text-[10px] text-white/45">
+    <label htmlFor={htmlFor} className="overline-label block text-[10px] text-white/60">
       {children}
     </label>
   );

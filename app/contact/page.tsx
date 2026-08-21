@@ -44,7 +44,7 @@ export default function ContactPage() {
           </FadeReveal>
 
           <FadeReveal delay={150} className="mt-14">
-            <p className="overline-label mb-5 text-white/45">Direct Lines</p>
+            <p className="overline-label mb-5 text-white/60">Direct Lines</p>
             <ul className="space-y-3.5">
               {directLines.map((d) => (
                 <li key={d.label} className="flex flex-wrap items-baseline justify-between gap-2 border-b border-white/8 pb-3.5">
@@ -58,7 +58,7 @@ export default function ContactPage() {
           </FadeReveal>
 
           <FadeReveal delay={250} className="mt-12">
-            <p className="overline-label mb-5 text-white/45">Head Office</p>
+            <p className="overline-label mb-5 text-white/60">Head Office</p>
             <address className="rounded-lg border border-white/8 p-6 not-italic">
               <p className="font-display text-xl text-white">{contact.company}</p>
               <p className="mt-2 text-sm leading-relaxed text-neutral">
@@ -72,12 +72,12 @@ export default function ContactPage() {
           </FadeReveal>
 
           <FadeReveal delay={320} className="mt-12">
-            <p className="overline-label mb-5 text-white/45">Business Enquiries</p>
+            <p className="overline-label mb-5 text-white/60">Business Enquiries</p>
             <ul className="flex flex-wrap gap-2">
               {enquiryTypes.map((e) => (
                 <li
                   key={e}
-                  className="rounded-full border border-white/10 px-4 py-1.5 font-label text-[9px] font-semibold uppercase tracking-[0.16em] text-white/45"
+                  className="rounded-full border border-white/10 px-4 py-1.5 font-label text-[10px] font-semibold uppercase tracking-[0.16em] text-white/60"
                 >
                   {e}
                 </li>
