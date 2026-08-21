@@ -34,6 +34,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const loadProfile = useCallback(
     async (userId: string) => {
+      if (!supabase) return;
       const { data } = await supabase.from("profiles").select("*").eq("id", userId).single();
       setProfile(data ?? null);
     },
@@ -41,6 +42,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   useEffect(() => {
+    // Without Supabase there is no session to subscribe to. Settling into a
+    // signed-out state keeps the rest of the site rendering normally.
+    if (!supabase) {
+      setLoading(false);
+      return;
+    }
+
     // onAuthStateChange fires once immediately with the current session (or
     // null), so it alone covers both the initial load and later changes.
     const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -56,7 +64,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [supabase, loadProfile]);
 
   const signOut = useCallback(async () => {
-    await supabase.auth.signOut();
+    if (supabase) await supabase.auth.signOut();
     setUser(null);
     setProfile(null);
   }, [supabase]);

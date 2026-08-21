@@ -11,6 +11,9 @@ export const metadata: Metadata = {
 
 export default async function SettingsPage() {
   const supabase = await createClient();
+  // Accounts need Supabase; without it there is no session to read.
+  if (!supabase) redirect("/login?redirect=/group/settings");
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

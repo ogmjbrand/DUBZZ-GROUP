@@ -4,6 +4,13 @@ import { productId } from "@/lib/ids";
 
 export async function GET() {
   const supabase = await createClient();
+  if (!supabase) {
+    return NextResponse.json(
+      { message: "This service is not configured yet. Please try again later." },
+      { status: 503 }
+    );
+  }
+
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -34,6 +41,13 @@ export async function POST(request: Request) {
   }
 
   const supabase = await createClient();
+  if (!supabase) {
+    return NextResponse.json(
+      { message: "This service is not configured yet. Please try again later." },
+      { status: 503 }
+    );
+  }
+
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -59,6 +73,13 @@ export async function DELETE(request: Request) {
   }
 
   const supabase = await createClient();
+  if (!supabase) {
+    return NextResponse.json(
+      { message: "This service is not configured yet. Please try again later." },
+      { status: 503 }
+    );
+  }
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

@@ -4,6 +4,14 @@ import { createClient } from "@/lib/supabase/server";
 // with their access token so the function's own `auth: "user"` check applies.
 export async function callEdgeFunction(name: string, body: unknown) {
   const supabase = await createClient();
+
+  if (!supabase) {
+    return {
+      status: 503,
+      data: { message: "This service is not configured yet. Please try again later." },
+    };
+  }
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

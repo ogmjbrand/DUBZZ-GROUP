@@ -95,6 +95,11 @@ export default function SettingsPanel() {
     setSaving(true);
     setError("");
     const supabase = createClient();
+    if (!supabase) {
+      setSaving(false);
+      setError("Account settings are unavailable right now.");
+      return;
+    }
 
     const results: { error: { message: string } | null }[] = [];
     if (fullName !== (profile?.full_name ?? "")) {
@@ -137,6 +142,11 @@ export default function SettingsPanel() {
     setPwStatus("saving");
     setPwError("");
     const supabase = createClient();
+    if (!supabase) {
+      setPwStatus("error");
+      setPwError("Account settings are unavailable right now.");
+      return;
+    }
     const { error: updateError } = await supabase.auth.updateUser({ password });
     if (updateError) {
       setPwStatus("error");

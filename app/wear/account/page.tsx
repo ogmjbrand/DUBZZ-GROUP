@@ -19,6 +19,9 @@ const roleLabel: Record<string, string> = {
 
 export default async function AccountPage() {
   const supabase = await createClient();
+  // Accounts need Supabase; without it there is no session to read.
+  if (!supabase) redirect("/login?redirect=/wear/account");
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

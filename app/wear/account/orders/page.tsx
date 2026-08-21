@@ -33,6 +33,9 @@ interface OrderRow {
 
 export default async function OrdersPage() {
   const supabase = await createClient();
+  // Accounts need Supabase; without it there is no session to read.
+  if (!supabase) redirect("/login?redirect=/wear/account/orders");
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

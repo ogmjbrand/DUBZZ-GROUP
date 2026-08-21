@@ -33,6 +33,11 @@ export default function SignupForm() {
     setStatus("sending");
     setError("");
     const supabase = createClient();
+    if (!supabase) {
+      setStatus("error");
+      setError("Accounts are not available yet. Please try again later.");
+      return;
+    }
     const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
