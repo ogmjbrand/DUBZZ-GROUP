@@ -75,7 +75,7 @@ export const footerColumns = [
     heading: "Experiences",
     links: [
       { label: "The Collection", href: "/wear" },
-      { label: "Book a Stay", href: "/wine-resort/booking/sanctuary" },
+      { label: "Register Interest", href: "/wine-resort/booking/sanctuary" },
       { label: "Start a Project", href: "/media/booking" },
       { label: "Trade Inquiry", href: "/trade/inquiry" },
       { label: "Search", href: "/search" },

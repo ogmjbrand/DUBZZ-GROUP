@@ -3,12 +3,13 @@ import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
+import StatusNote from "@/components/ui/StatusNote";
 import { resortEvents } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
   title: "Events — Dubzz Wines Resort",
   description:
-    "Vintage releases, harvest weekends, and single-table dinners — the estate's calendar of nights worth crossing borders for.",
+    "The events programme planned for Dubzz Wines Resort — corporate retreats, weddings, private events, and weekend experiences.",
 };
 
 export default function EventsPage() {
@@ -19,12 +20,19 @@ export default function EventsPage() {
           <FadeReveal>
             <p className="overline-label text-wine">Wines Resort · Events</p>
             <h1 className="mt-8 max-w-3xl font-display text-5xl leading-[1.02] text-white sm:text-7xl">
-              The calendar keeps its promises.
+              The events, as planned.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-neutral">
-              A handful of nights each year, none of them repeated. Seats are
-              deliberately few; the room matters as much as the pour.
+              Corporate retreats, weddings and private events, weekend
+              experiences, and vintage nights — the events programme the
+              destination is being designed around.
             </p>
+          </FadeReveal>
+          <FadeReveal delay={140} className="mt-10 max-w-2xl">
+            <StatusNote label="In Development">
+              Dubzz Wines Resort is a destination in development. What follows
+              is the design vision for it, not a bookable programme.
+            </StatusNote>
           </FadeReveal>
         </div>
       </section>
@@ -74,7 +82,7 @@ export default function EventsPage() {
         />
         <FadeReveal>
           <Button href="/wine-resort/booking/sanctuary" size="lg">
-            Book Your Stay
+            Register Interest
           </Button>
         </FadeReveal>
       </Section>

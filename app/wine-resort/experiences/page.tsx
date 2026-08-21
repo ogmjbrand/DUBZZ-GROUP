@@ -4,12 +4,13 @@ import Card from "@/components/ui/Card";
 import Visual from "@/components/ui/Visual";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
+import StatusNote from "@/components/ui/StatusNote";
 import { experiences } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
   title: "Experiences — Dubzz Wines Resort",
   description:
-    "Barrel tastings, harvest immersions, spa rituals, and cellar dinners — the estate, up close.",
+    "The experience programme planned for Dubzz Wines Resort — wine culture, leisure, wellness, and signature days.",
 };
 
 export default function ExperiencesPage() {
@@ -20,12 +21,19 @@ export default function ExperiencesPage() {
           <FadeReveal>
             <p className="overline-label text-wine">Wines Resort · Experiences</p>
             <h1 className="mt-8 max-w-3xl font-display text-5xl leading-[1.02] text-white sm:text-7xl">
-              The estate, up close.
+              The experiences, by design.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-neutral">
-              Nothing here is staged for visitors — you join the estate as it
-              actually runs. Numbers are small and seasons are honest.
+              The experience programme planned for the destination — built
+              around wine culture, leisure, wellness, and the kind of days
+              people travel for.
             </p>
+          </FadeReveal>
+          <FadeReveal delay={140} className="mt-10 max-w-2xl">
+            <StatusNote label="In Development">
+              Dubzz Wines Resort is a destination in development. What follows
+              is the design vision for it, not a bookable programme.
+            </StatusNote>
           </FadeReveal>
         </div>
       </section>

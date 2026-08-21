@@ -4,12 +4,13 @@ import Card from "@/components/ui/Card";
 import Visual from "@/components/ui/Visual";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
+import StatusNote from "@/components/ui/StatusNote";
 import { diningVenues } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
   title: "Dining — Dubzz Wines Resort",
   description:
-    "Meridian fine dining, vineyard long-tables, and the quietest wine bar on the estate.",
+    "The dining concept planned for Dubzz Wines Resort — fine dining, long-table service, and a wine bar.",
 };
 
 export default function DiningPage() {
@@ -23,10 +24,16 @@ export default function DiningPage() {
               Three rooms, one kitchen garden.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-neutral">
-              The menu is written each morning from what the garden, the valley,
-              and the cellar offer that day. Nothing travels far; everything
-              arrives finished.
+              Fine dining sits at the centre of the destination&apos;s design — a
+              restaurant, a long-table room, and a wine bar, each planned
+              around what the season offers.
             </p>
+          </FadeReveal>
+          <FadeReveal delay={140} className="mt-10 max-w-2xl">
+            <StatusNote label="In Development">
+              Dubzz Wines Resort is a destination in development. What follows
+              is the design vision for it, not a bookable programme.
+            </StatusNote>
           </FadeReveal>
         </div>
       </section>

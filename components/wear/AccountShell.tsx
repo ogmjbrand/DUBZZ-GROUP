@@ -18,7 +18,7 @@ export default function AccountShell({
     <div className="mx-auto w-full max-w-7xl px-6 pb-28 pt-40 sm:px-10 lg:px-16">
       <p className="overline-label text-wear">Dubzz Wear · Account</p>
       <h1 className="mt-6 font-display text-5xl leading-tight text-white sm:text-6xl">
-        Your atelier ledger.
+        Your Dubzz Wear orders.
       </h1>
       <div className="mt-14 grid gap-12 lg:grid-cols-12">
         <nav aria-label="Account" className="lg:col-span-3">

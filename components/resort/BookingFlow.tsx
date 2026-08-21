@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Button from "@/components/ui/Button";
 import Visual from "@/components/ui/Visual";
 import { Field, Input, Select } from "@/components/ui/Field";
+import StatusNote from "@/components/ui/StatusNote";
 import { sanctuaries, experiences } from "@/lib/data/resort";
 import { useAuth } from "@/components/providers/AuthProvider";
 
@@ -59,8 +60,16 @@ const steps = [
 export function BookingShell({ step, children }: { step: 0 | 1 | 2; children: ReactNode }) {
   return (
     <div className="mx-auto w-full max-w-6xl px-6 pb-28 pt-36 sm:px-10">
-      <p className="overline-label text-wine">Wine Resort · Booking</p>
-      <nav aria-label="Booking progress" className="mb-12 mt-8">
+      <p className="overline-label text-wine">Wines Resort · Register Interest</p>
+      {/* The destination is not open, so this flow registers interest ahead of
+          it rather than holding a reservation. Saying that at the top of every
+          step is cheaper than saying it once someone has arrived. */}
+      <StatusNote label="In Development" className="mt-6">
+        Dubzz Wines Resort is in development. Submitting this form registers
+        your interest ahead of opening — it does not reserve a stay or take a
+        payment, and the Group will be in touch as the destination progresses.
+      </StatusNote>
+      <nav aria-label="Booking progress" className="mb-12 mt-10">
         <ol className="flex items-center gap-2 sm:gap-4">
           {steps.map((s, i) => {
             const state = i < step ? "done" : i === step ? "current" : "todo";
@@ -444,8 +453,8 @@ export function ReviewStep() {
               {status === "confirming"
                 ? "Sending to the House…"
                 : user
-                  ? "Request the Booking"
-                  : "Sign In to Request the Booking"}
+                  ? "Register Interest"
+                  : "Sign In to Register Interest"}
             </Button>
             <Button href="/wine-resort/booking/experience" variant="ghost" className="w-full">
               ← Adjust Experiences

@@ -6,12 +6,14 @@ import Visual from "@/components/ui/Visual";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
 import CinematicVideo from "@/components/effects/CinematicVideo";
+import StatusNote from "@/components/ui/StatusNote";
 import { sanctuaries, experiences, resortEvents, diningVenues } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
-  title: "Dubzz Wines Resort — Luxury Hospitality",
+  title: "Dubzz Wines Resort — Hospitality & Lifestyle",
   description:
-    "An estate of vineyards, sanctuaries, and fine dining — hospitality composed like cinema, poured like a rare vintage.",
+    "Dubzz Wines Resort is the Group's hospitality and lifestyle division — a premium destination in development, bringing together wine culture, leisure, events, and luxury experiences.",
+  alternates: { canonical: "/wine-resort" },
 };
 
 export default function WineResortPage() {
@@ -33,22 +35,32 @@ export default function WineResortPage() {
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-28 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>
-            <p className="overline-label text-wine">Dubzz Wines Resort · 04</p>
-            <h1 className="mt-8 max-w-4xl font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.98] text-white">
-              Where the vine meets
-              <span className="italic text-wine"> the horizon.</span>
+            <p className="overline-label text-wine">Dubzz Wines Resort · 03</p>
+            <h1 className="mt-8 max-w-4xl font-display text-[clamp(2.5rem,7.4vw,6rem)] leading-[1.03] text-white">
+              Redefining hospitality
+              <span className="italic text-wine"> through experience.</span>
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-neutral">
-              A working estate of vineyards, stone sanctuaries, and a cellar
-              that rewards patience. Come for a night; leave with a tradition.
+              The Group&apos;s hospitality and lifestyle division — a premium
+              destination where wine culture, leisure, events, tourism, and
+              luxury experiences come together.
             </p>
           </FadeReveal>
-          <FadeReveal delay={200} className="mt-12 flex flex-wrap gap-4">
+          <FadeReveal delay={160} className="mt-10 max-w-2xl">
+            <StatusNote label="In Development">
+              The destination is being developed. Everything shown here is the
+              design vision for it — planned offerings include a premium wine
+              lounge, a boutique resort, fine dining, corporate retreats,
+              weddings and private events, weekend experiences, and wellness
+              packages.
+            </StatusNote>
+          </FadeReveal>
+          <FadeReveal delay={240} className="mt-10 flex flex-wrap gap-4">
             <Button href="/wine-resort/booking/sanctuary" size="lg">
-              Book Your Stay
+              Register Interest
             </Button>
             <Button href="/wine-resort/experiences" variant="secondary" size="lg">
-              The Experiences
+              The Vision
             </Button>
           </FadeReveal>
         </div>
@@ -59,7 +71,7 @@ export default function WineResortPage() {
         <SectionHeading
           overline="The Sanctuaries"
           title="Three ways to sleep inside a vineyard."
-          lede="Each residence is built from estate stone and set where the view earns its keep."
+          lede="Three residences in the design vision for the destination, each set where the view earns its keep."
         />
         <div className="grid gap-6 lg:grid-cols-3">
           {sanctuaries.map((s, i) => (
@@ -72,6 +84,9 @@ export default function WineResortPage() {
                       <h3 className="font-display text-2xl text-white">{s.name}</h3>
                       <p className="shrink-0 font-label text-sm font-semibold text-gold">
                         ${s.rate}
+                        <span className="ml-1 font-sans text-[10px] font-normal uppercase tracking-widest text-white/35">
+                          indicative
+                        </span>
                         <span className="text-[10px] text-white/40"> /night</span>
                       </p>
                     </div>

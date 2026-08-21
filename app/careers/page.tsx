@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const perks = [
   { title: "Sign Your Work", body: "Every role owns something end-to-end. Your name goes on it — literally." },
-  { title: "Cross-House Mobility", body: "Five ventures, one payroll. The atelier to the estate is an internal transfer, not a career change." },
+  { title: "Cross-Business Mobility", body: "Five businesses, one Group. Moving between them is an internal transfer, not a career change." },
   { title: "The Long Game", body: "Patient capital means no growth-at-all-costs quarters. We hire for decades." },
   { title: "The Standard", body: "You'll never be asked to ship something mediocre faster. That's the whole deal." },
 ];

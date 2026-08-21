@@ -6,7 +6,8 @@ import { contact } from "@/lib/data/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a conversation with Dubzz Group — media commissions, trade inquiries, resort reservations, or anything in between.",
+    "Contact Dubzz Group in Abuja, Nigeria — business enquiries, partnerships, corporate collaborations, investment opportunities, media relations, and strategic alliances.",
+  alternates: { canonical: "/contact" },
 };
 
 /**
@@ -33,11 +34,12 @@ export default function ContactPage() {
           <FadeReveal>
             <p className="overline-label text-gold">Contact</p>
             <h1 className="mt-7 font-display text-5xl leading-[1.05] text-white sm:text-6xl">
-              Every project starts as a conversation.
+              Build with Dubzz.
             </h1>
             <p className="mt-7 max-w-md text-base leading-relaxed text-neutral">
-              Tell us what you&apos;re building, and we&apos;ll route you to the
-              right house. Expect a considered reply, not an automated one.
+              Tell us what you&apos;re building and we&apos;ll route it to the
+              right business within the Group. Expect a considered reply, not
+              an automated one.
             </p>
           </FadeReveal>
 

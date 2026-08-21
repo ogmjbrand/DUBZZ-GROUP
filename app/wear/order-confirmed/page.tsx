@@ -27,7 +27,7 @@ export default function OrderConfirmedPage() {
         </h1>
         <p className="mx-auto mt-6 max-w-md leading-relaxed text-neutral">
           Your confirmation is on its way to your inbox with the piece&apos;s
-          number and its papers. The atelier packs on weekdays; tracking follows
+          number and its papers. Orders are packed on weekdays; tracking follows
           within 48 hours.
         </p>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">

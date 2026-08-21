@@ -7,9 +7,10 @@ import ProductCard from "@/components/wear/ProductCard";
 import { products } from "@/lib/data/products";
 
 export const metadata: Metadata = {
-  title: "Dubzz Wear — Luxury Fashion",
+  title: "Dubzz Wear — Lifestyle Fashion",
   description:
-    "Dubzz Wear — quiet luxury cut sharp. Numbered runs, architectural silhouettes, and gold spent like a precious resource.",
+    "Dubzz Wear is the Group's lifestyle fashion brand — premium T-shirts, hoodies, polos, joggers, caps, accessories, and limited edition collections built around confidence, creativity, and contemporary African culture.",
+  alternates: { canonical: "/wear" },
 };
 
 export default function WearPage() {
@@ -29,14 +30,15 @@ export default function WearPage() {
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>
-            <p className="overline-label text-wear">Dubzz Wear · 03</p>
-            <h1 className="mt-8 max-w-4xl font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.98] text-white">
-              Quiet luxury,
-              <span className="italic text-wear"> cut sharp.</span>
+            <p className="overline-label text-wear">Dubzz Wear · 02</p>
+            <h1 className="mt-8 max-w-4xl font-display text-[clamp(2.5rem,7.4vw,6rem)] leading-[1.03] text-white">
+              Fashion inspired
+              <span className="italic text-wear"> by purpose.</span>
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-neutral">
-              Numbered runs. Architectural silhouettes. Gold spent where only
-              the owner will find it. When a run closes, it closes.
+              The Group&apos;s lifestyle fashion brand — premium everyday pieces
+              drawn from simplicity, functionality, and contemporary African
+              culture, made for people who move with confidence.
             </p>
           </FadeReveal>
           <FadeReveal delay={200} className="mt-12 flex flex-wrap gap-4">
@@ -54,14 +56,14 @@ export default function WearPage() {
       <Section id="collection">
         <div className="mb-14 flex flex-wrap items-end justify-between gap-6 md:mb-20">
           <SectionHeading
-            overline="SS26 — The Obsidian Standard"
-            title="The collection."
+            overline="The Collection"
+            title="Built for every day."
             className="mb-0 md:mb-0"
           />
           <FadeReveal delay={100}>
             <p className="max-w-xs text-sm leading-relaxed text-neutral">
-              Twelve silhouettes made the cut from sixty prototypes. Eight are
-              currently live.
+              T-shirts, hoodies, polos, joggers, caps, and accessories —
+              alongside limited edition collections released as numbered runs.
             </p>
           </FadeReveal>
         </div>
@@ -78,9 +80,9 @@ export default function WearPage() {
       <Section className="border-t border-white/5">
         <div className="grid gap-10 text-center sm:grid-cols-3">
           {[
-            { title: "Numbered Runs", body: "Every piece is one of a fixed count. The archive is the only restock." },
-            { title: "Atelier Made", body: "Cut and finished in Porto by hands that sign their work." },
-            { title: "Gold for One", body: "Each garment hides its gold where only the owner will find it." },
+            { title: "Confidence", body: "Pieces designed to be worn every day by people who are building something." },
+            { title: "Simplicity", body: "Clean silhouettes and considered finishing, with nothing on a garment that has not earned its place." },
+            { title: "Culture", body: "Rooted in contemporary African style, and made to travel well beyond it." },
           ].map((e, i) => (
             <FadeReveal key={e.title} delay={i * 90}>
               <div>

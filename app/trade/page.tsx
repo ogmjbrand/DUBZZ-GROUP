@@ -38,7 +38,7 @@ export default function TradePage() {
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>
-            <p className="overline-label text-trade">Dubzz Trade · 05</p>
+            <p className="overline-label text-trade">Dubzz Trade · 04</p>
             <h1 className="mt-8 max-w-4xl font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.98] text-white">
               Commerce that moves
               <span className="italic text-trade"> continents.</span>

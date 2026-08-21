@@ -1,175 +1,263 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Button from "@/components/ui/Button";
-import Card from "@/components/ui/Card";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
+import GoldShaderBackground from "@/components/effects/GoldShaderBackground";
+import { BreadcrumbSchema } from "@/components/seo/StructuredData";
 import { divisions } from "@/lib/data/divisions";
+import { contact, coreValues, founder, milestones } from "@/lib/data/site";
+import { founderNarrative, philosophy, purpose } from "@/lib/data/group";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About the Group",
   description:
-    "The story of Dubzz Group — how one studio's refusal to compromise became a five-venture luxury ecosystem.",
+    "Dubzz Group is a diversified creative, lifestyle, and business holding company headquartered in Abuja, Nigeria — its story, values, and the foundations already in place.",
+  alternates: { canonical: "/about" },
 };
-
-const principles = [
-  {
-    title: "The Single-Regret Test",
-    body: "Everything that ships must be something we would regret removing — not something we would survive removing. Applied daily, it deletes the mediocre before it exists.",
-  },
-  {
-    title: "Gold Is a Budget",
-    body: "Our accent colour is governed like capital: spent rarely, and only where it buys meaning. The same rule applies to launches, partnerships, and words.",
-  },
-  {
-    title: "Patient Capital",
-    body: "The group is structured so that no quarter can force a decision a decade would regret. Slowness is not a weakness of the model; it is the model.",
-  },
-  {
-    title: "Craft Is Governance",
-    body: "Quality is not a department. Every venture head signs their work the way an artist signs a canvas — personally, and permanently.",
-  },
-];
 
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden px-6 pb-24 pt-44 sm:px-10 lg:px-16">
-        <div aria-hidden className="absolute inset-0 bg-[radial-gradient(80%_60%_at_70%_0%,rgba(212,175,55,0.1)_0%,transparent_60%)]" />
+      <BreadcrumbSchema trail={[{ name: "About the Group", path: "/about" }]} />
+
+      {/* ——— HERO ——— */}
+      <section className="relative flex min-h-[72svh] flex-col justify-end overflow-hidden">
+        <GoldShaderBackground />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/45 to-background" />
         <div aria-hidden className="grain absolute inset-0" />
-        <div className="relative mx-auto max-w-7xl">
+        <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-36 sm:px-10 sm:pb-24 sm:pt-40 lg:px-16">
           <FadeReveal>
-            <p className="overline-label text-gold">About Dubzz Group</p>
-            <h1 className="mt-8 max-w-4xl font-display text-5xl leading-[1.02] tracking-tight text-white sm:text-7xl">
-              We didn&apos;t set out to build an empire. We set out to keep
-              <span className="text-gradient-gold"> a promise.</span>
+            <p className="overline-label text-gold">About the Group</p>
+            <h1 className="mt-7 max-w-4xl font-display text-[clamp(2.5rem,7vw,5.5rem)] leading-[1.03] tracking-tight text-white">
+              An institution,
+              <br />
+              <span className="text-gradient-gold">built on purpose.</span>
             </h1>
           </FadeReveal>
           <FadeReveal delay={180}>
-            <p className="mt-10 max-w-2xl text-lg leading-relaxed text-neutral">
-              The promise is simple and unreasonable: never ship anything we
-              wouldn&apos;t sign. It now has five houses under one name — and
-              no expiry date.
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-neutral">
+              {purpose.statement}
             </p>
           </FadeReveal>
         </div>
       </section>
 
-      {/* Editorial story */}
+      {/* ——— THE STORY ——— */}
       <Section className="border-t border-white/5">
-        <div className="grid gap-16 lg:grid-cols-12">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-32">
               <FadeReveal>
-                <p className="overline-label text-gold">The Story</p>
+                <p className="overline-label text-gold">Our Story</p>
                 <h2 className="mt-5 font-display text-4xl leading-tight text-white">
-                  A studio that refused to stay small in spirit.
+                  It began with creative work.
                 </h2>
               </FadeReveal>
             </div>
           </div>
-          <div className="space-y-8 lg:col-span-8">
+          <div className="space-y-6 lg:col-span-8">
             <FadeReveal>
-              <p className="text-lg leading-relaxed text-white/80">
-                Dubzz Media came first, and it is still the discipline
-                everything else measures against — visual storytelling,
-                strategic branding, and digital content for businesses,
-                institutions, and entrepreneurs who wanted work built to a
-                standard, not a deadline.
+              <p className="text-lg leading-relaxed text-white/85 sm:text-xl">
+                Dubzz Media came first — visual storytelling, brand identity,
+                and digital content for businesses, institutions, and
+                entrepreneurs. It remains the Group&apos;s flagship creative
+                business and the discipline everything else is measured
+                against.
               </p>
             </FadeReveal>
             <FadeReveal delay={80}>
               <p className="leading-relaxed text-neutral">
-                Wear followed as a concept before it was ever a collection —
-                premium apparel drawn from simplicity, functionality, and
-                contemporary African culture. Wines Resort and After Dark were
-                developed the same way: vision and identity established
-                deliberately, ahead of the first guest and the first night.
+                What followed was structural. Dubzz Wear was developed as a
+                lifestyle fashion brand rooted in confidence, creativity, and
+                contemporary African culture. Dubzz Wines Resort was
+                established as a hospitality and lifestyle vision. After Dark
+                was created as the Group&apos;s entertainment and experience
+                platform. Dubzz Trade was built to connect African producers
+                with buyers in regional and international markets.
               </p>
             </FadeReveal>
             <FadeReveal delay={160}>
               <p className="leading-relaxed text-neutral">
-                Trade is the newest of the five — an international commerce
-                division built to connect African producers of palm oil,
-                cocoa, ginger, and charcoal with the buyers who need reliable
-                access to them. Five houses, one holding company, one standard
-                applied without exception.
+                Each was designed to stand on its own and to strengthen the
+                others, held inside a single holding company headquartered in{" "}
+                {contact.city}, {contact.region}. That structure is the
+                argument: shared creativity, shared audience, shared
+                infrastructure, and shared growth are worth more than five
+                separate companies would be apart.
               </p>
             </FadeReveal>
             <FadeReveal delay={240}>
               <p className="leading-relaxed text-neutral">
-                Dubzz Group is deliberately early in that story, and we would
-                rather say so plainly than borrow proof we haven&apos;t earned.
-                The group has a published five-year roadmap — we are only in
-                its first year.
+                The Group is early in that journey and says so plainly. 2026 is
+                its foundation year, and its published roadmap runs to 2030 —
+                which is a statement of intent, not of arrival.
               </p>
             </FadeReveal>
+            <FadeReveal delay={320}>
+              <div className="pt-4">
+                <Button href="/#ecosystem" variant="secondary">
+                  See the Ecosystem
+                </Button>
+              </div>
+            </FadeReveal>
           </div>
         </div>
       </Section>
 
-      {/* Principles */}
-      <Section className="border-t border-white/5">
-        <SectionHeading
-          overline="How We Operate"
-          title="Four rules, no exceptions."
-        />
-        <div className="grid gap-4 md:grid-cols-2">
-          {principles.map((p, i) => (
-            <FadeReveal key={p.title} delay={i * 90}>
-              <Card static className="h-full">
-                <div className="p-9">
-                  <p className="font-display text-lg text-white/25">0{i + 1}</p>
-                  <h3 className="mt-3 font-display text-2xl text-white">{p.title}</h3>
-                  <p className="mt-4 text-sm leading-relaxed text-neutral">{p.body}</p>
-                </div>
-              </Card>
-            </FadeReveal>
-          ))}
-        </div>
-      </Section>
+      {/* ——— VALUES ———
+          On paper, and set as a numbered index rather than six matching
+          cards: the values are a short creed, and a grid of identical boxes
+          is what makes a creed read as filler. */}
+      <section className="on-paper relative bg-paper px-6 py-24 sm:px-10 md:py-36 lg:px-16">
+        <div className="mx-auto w-full max-w-7xl">
+          <FadeReveal>
+            <p className="overline-label text-gold-deep">Core Values</p>
+            <h2 className="mt-5 max-w-3xl font-display text-4xl leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-6xl">
+              Six commitments, held without exception.
+            </h2>
+          </FadeReveal>
 
-      {/* Houses */}
-      <Section className="border-t border-white/5">
-        <SectionHeading
-          overline="The Houses"
-          title="One group, five signatures."
-          lede="Each division is led like an independent house — with the group as its patient shareholder."
-        />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {divisions.map((d, i) => (
-            <FadeReveal key={d.key} delay={i * 70}>
-              <Card className="h-full">
-                <a href={d.href} className="flex h-full flex-col p-7">
-                  <span className="font-display text-sm" style={{ color: d.accent }}>
-                    {d.index}
+          <ol className="mt-16 md:mt-20">
+            {coreValues.map((value, i) => (
+              <FadeReveal key={value.title} delay={i * 70}>
+                <li className="grid gap-2 border-t border-ink/12 py-8 md:grid-cols-12 md:items-baseline md:gap-8">
+                  <span className="font-label text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/40 md:col-span-2">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-4 font-display text-xl text-white">{d.name}</h3>
-                  <p className="mt-3 flex-1 text-xs leading-relaxed text-neutral">
-                    {d.description}
+                  <h3 className="font-display text-2xl text-ink md:col-span-4 md:text-3xl">
+                    {value.title}
+                  </h3>
+                  <p className="leading-relaxed text-ink-soft md:col-span-6 md:text-lg">
+                    {value.lede}
                   </p>
-                  <span className="overline-label mt-6 text-[9px] text-gold">Visit →</span>
-                </a>
-              </Card>
+                </li>
+              </FadeReveal>
+            ))}
+          </ol>
+
+          <FadeReveal delay={120}>
+            <div className="mt-20 border-t border-ink/12 pt-10">
+              <p className="font-display text-[clamp(1.75rem,5vw,3.5rem)] leading-[1.08] tracking-tight text-ink">
+                {philosophy.words.map((word, i) => (
+                  <span key={word} className={i === 2 ? "text-gold-deep" : undefined}>
+                    {word}{" "}
+                  </span>
+                ))}
+              </p>
+            </div>
+          </FadeReveal>
+        </div>
+      </section>
+
+      {/* ——— MILESTONES ——— */}
+      <Section className="border-t border-white/5">
+        <SectionHeading
+          overline="Key Milestones"
+          title="What is already in place."
+          lede="The Group is in the early stages of its journey. These are the foundations laid so far — stated as foundations, not as performance."
+        />
+        <div className="grid gap-px overflow-hidden rounded-lg bg-white/10 sm:grid-cols-2">
+          {milestones.map((m, i) => (
+            <FadeReveal key={m.area} delay={i * 90}>
+              <div className="flex h-full flex-col bg-surface p-8 sm:p-9">
+                <p className="overline-label text-[10px] text-gold">{m.area}</p>
+                <ul className="mt-6 space-y-4">
+                  {m.items.map((item) => (
+                    <li key={item} className="flex gap-4 text-sm leading-relaxed text-neutral">
+                      <span aria-hidden className="mt-2 h-px w-5 shrink-0 bg-gold/40" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </FadeReveal>
           ))}
         </div>
       </Section>
 
-      {/* CTA */}
-      <Section className="border-t border-white/5 text-center">
-        <FadeReveal>
-          <h2 className="mx-auto max-w-2xl font-display text-4xl leading-tight text-white sm:text-5xl">
-            The standard has room for a few more hands.
-          </h2>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button href="/careers">See Open Roles</Button>
-            <Button href="/contact" variant="secondary">
-              Get in Touch
-            </Button>
+      {/* ——— LEADERSHIP ——— */}
+      <Section className="border-t border-white/5">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionHeading
+              overline="Leadership"
+              title="Founded to outlast its founder."
+              className="mb-0 md:mb-0"
+            />
           </div>
-        </FadeReveal>
+          <div className="lg:col-span-7">
+            <FadeReveal>
+              <p className="text-lg leading-relaxed text-white/85 sm:text-xl">
+                {founderNarrative.standfirst}
+              </p>
+            </FadeReveal>
+            <FadeReveal delay={100}>
+              <p className="mt-6 leading-relaxed text-neutral">
+                {founderNarrative.paragraphs[0]}
+              </p>
+            </FadeReveal>
+            <FadeReveal delay={180}>
+              <div className="mt-10 border-l-2 border-gold pl-6">
+                <p className="font-display text-xl text-white">{founder.name}</p>
+                <p className="mt-1 font-label text-[10px] font-semibold uppercase tracking-[0.24em] text-gold">
+                  {founder.role}
+                </p>
+              </div>
+            </FadeReveal>
+          </div>
+        </div>
       </Section>
+
+      {/* ——— PORTFOLIO ——— */}
+      <Section className="border-t border-white/5">
+        <SectionHeading
+          overline="The Portfolio"
+          title="Five businesses, one institution."
+        />
+        <div className="border-t border-white/10">
+          {divisions.map((d, i) => (
+            <FadeReveal key={d.key} delay={i * 60}>
+              <Link
+                href={d.href}
+                className="group flex flex-col gap-2 border-b border-white/10 py-8 transition-colors duration-500 hover:bg-white/[0.02] sm:flex-row sm:items-baseline sm:gap-10"
+              >
+                <span className="font-display text-base text-white/30 transition-colors group-hover:text-gold sm:w-14">
+                  {d.index}
+                </span>
+                <span className="font-display text-2xl text-white sm:w-72 sm:text-3xl">{d.name}</span>
+                <span className="flex-1 text-sm leading-relaxed text-neutral">{d.description}</span>
+                <span className="overline-label hidden shrink-0 text-[9px] text-gold opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:block">
+                  Visit →
+                </span>
+              </Link>
+            </FadeReveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* ——— CTA ——— */}
+      <section className="relative overflow-hidden border-t border-white/5">
+        <div aria-hidden className="light-below absolute inset-0" />
+        <div aria-hidden className="grain absolute inset-0" />
+        <div className="relative mx-auto max-w-3xl px-6 py-28 text-center md:py-36">
+          <FadeReveal>
+            <h2 className="font-display text-4xl leading-tight text-white sm:text-5xl">
+              Build with Dubzz.
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl leading-relaxed text-neutral">
+              The Group works with partners across institutions, commerce,
+              capital, hospitality, and the creative industries.
+            </p>
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+              <Button href="/contact">Start a Partnership</Button>
+              <Button href="/careers" variant="secondary">
+                See Open Roles
+              </Button>
+            </div>
+          </FadeReveal>
+        </div>
+      </section>
     </>
   );
 }

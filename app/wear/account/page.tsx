@@ -65,7 +65,7 @@ export default async function AccountPage() {
           <div className="rounded-lg border border-white/8 p-10 text-center">
             <p className="font-display text-2xl text-white">No numbered pieces yet.</p>
             <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-neutral">
-              Pieces you order appear here once the atelier confirms them.
+              Pieces you order appear here once Dubzz Wear confirms them.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Button href="/wear">Browse the Collection</Button>

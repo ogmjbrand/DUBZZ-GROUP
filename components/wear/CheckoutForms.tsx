@@ -4,6 +4,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import Button from "@/components/ui/Button";
 import { Field, Input, Select } from "@/components/ui/Field";
+import { contact } from "@/lib/data/site";
 import { useStore } from "@/components/providers/StoreProvider";
 
 /**
@@ -101,7 +102,7 @@ export function IdentityForm() {
 const shippingMethods = [
   { id: "standard", label: "Standard — Carbon-neutral courier", eta: "3–5 days", price: "Included" },
   { id: "express", label: "Express — Next-day, signed", eta: "1 day", price: "$30" },
-  { id: "collect", label: "Atelier Collection — Porto", eta: "When you are", price: "Included" },
+  { id: "collect", label: `Collection — ${contact.city}`, eta: "When you are", price: "Included" },
 ];
 
 export function ShippingForm() {
