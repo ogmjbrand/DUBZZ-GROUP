@@ -10,6 +10,16 @@ interface CinematicVideoProps {
   /** Describes the footage for assistive tech. Decorative backdrops pass "". */
   label?: string;
   className?: string;
+  /**
+   * Seconds to start playback from, once metadata is available.
+   *
+   * The hero film opens on a chapter called Darkness that is, by design,
+   * black. That is right when the film is the whole backdrop and wrong when
+   * something is framing it and the first thing a visitor sees is that frame
+   * filled with nothing. Passing the poster's own timestamp also makes the
+   * handover from poster to first decoded frame invisible.
+   */
+  startAt?: number;
 }
 
 /**
@@ -33,6 +43,7 @@ export default function CinematicVideo({
   poster,
   label = "",
   className = "",
+  startAt,
 }: CinematicVideoProps) {
   const ref = useRef<HTMLVideoElement>(null);
   // Start as "still": render the poster on the server and on first paint, then
@@ -57,6 +68,22 @@ export default function CinematicVideo({
     const id = requestAnimationFrame(() => setWantsVideo(true));
     return () => cancelAnimationFrame(id);
   }, []);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || !wantsVideo || startAt === undefined) return;
+
+    // Seeking before metadata lands is discarded, so wait for a duration to
+    // exist. `loop` restarts at 0 rather than here, which is correct: the
+    // offset is about the first impression, not about trimming the film.
+    const seek = () => {
+      if (el.duration && startAt < el.duration) el.currentTime = startAt;
+    };
+    if (el.readyState >= 1) seek();
+    else el.addEventListener("loadedmetadata", seek, { once: true });
+
+    return () => el.removeEventListener("loadedmetadata", seek);
+  }, [wantsVideo, startAt]);
 
   useEffect(() => {
     const el = ref.current;

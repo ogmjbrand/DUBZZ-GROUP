@@ -5,6 +5,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
 import CinematicVideo from "@/components/effects/CinematicVideo";
 import EcosystemCanvas from "@/components/effects/EcosystemCanvas";
+import MosaicReveal from "@/components/effects/MosaicReveal";
 import EcosystemDiagram from "@/components/group/EcosystemDiagram";
 import RoadmapTimeline from "@/components/group/RoadmapTimeline";
 import { divisions } from "@/lib/data/divisions";
@@ -36,20 +37,46 @@ export default function Home() {
       {/* ——— HERO ———
           The opening states the Group's own philosophy rather than a
           decorative claim. Anyone landing here should know what Dubzz Group
-          is, where it is, and what it operates before scrolling once. */}
-      <section className="relative flex min-h-svh flex-col justify-end overflow-hidden">
+          is, where it is, and what it operates before scrolling once.
+
+          MosaicReveal wraps it rather than replacing it: the hero below is the
+          whole hero, rendered at full size from the first frame, and the
+          mosaic is a frame that scrolls off it. Under reduced motion the
+          wrapper returns the hero untouched. */}
+      <MosaicReveal>
+      <section className="relative flex h-svh flex-col justify-end overflow-hidden">
         {/* Decorative: the headline below carries everything the footage says. */}
-        <CinematicVideo name="hero-film" poster="/posters/hero-film.jpg" />
+        {/* 23.3s is the poster's own frame, in the film's brightest chapter —
+            so the mosaic's window opens onto something, and the poster hands
+            over to the first decoded frame without a visible cut. */}
+        <CinematicVideo name="hero-film" poster="/posters/hero-film.jpg" startAt={23.3} />
         <EcosystemCanvas />
         {/* Two scrims rather than one flat veil: a lateral wash that protects
             the type on the left, and a base fade that carries the composition
             into the division strip. A single 70% overlay was hiding the film
             it was supposed to be sitting on. */}
-        <div aria-hidden className="absolute inset-0 bg-[linear-gradient(100deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.72)_38%,rgba(0,0,0,0.25)_75%,rgba(0,0,0,0.15)_100%)]" />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent to-background" />
+        {/* Both scrims exist to hold contrast under the headline, so they
+            track `--reveal` with it. While the mosaic is closed there is no
+            type to protect and a 92% veil would only black out the window. */}
+        <div
+          aria-hidden
+          style={{ opacity: "var(--reveal, 1)" }}
+          className="absolute inset-0 bg-[linear-gradient(100deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.72)_38%,rgba(0,0,0,0.25)_75%,rgba(0,0,0,0.15)_100%)]"
+        />
+        <div
+          aria-hidden
+          style={{ opacity: "var(--reveal, 1)" }}
+          className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent to-background"
+        />
         <div aria-hidden className="grain absolute inset-0" />
 
-        <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-36 sm:px-10 sm:pb-24 sm:pt-40 lg:px-16">
+        {/* Opacity tracks MosaicReveal's `--reveal`; the fallback of 1 keeps
+            the copy visible with no JS, and under reduced motion where the
+            mosaic never mounts. */}
+        <div
+          style={{ opacity: "var(--reveal, 1)" }}
+          className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-36 sm:px-10 sm:pb-24 sm:pt-40 lg:px-16"
+        >
           <FadeReveal>
             <p className="overline-label text-gold">
               Dubzz Group · {contact.city}, {contact.country}
@@ -82,7 +109,10 @@ export default function Home() {
         </div>
 
         {/* Division index strip */}
-        <div className="relative border-t border-white/10 bg-background/40 backdrop-blur-sm">
+        <div
+          style={{ opacity: "var(--reveal, 1)" }}
+          className="relative z-10 border-t border-white/10 bg-background/40 backdrop-blur-sm"
+        >
           <div className="mx-auto grid w-full max-w-7xl grid-cols-2 sm:grid-cols-5">
             {divisions.map((d) => (
               <Link
@@ -101,6 +131,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </MosaicReveal>
 
       {/* ——— MARQUEE DIVIDER ——— */}
       <div aria-hidden className="overflow-hidden border-b border-white/5 py-5">
