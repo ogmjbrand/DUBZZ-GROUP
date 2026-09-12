@@ -8,7 +8,7 @@ import CinematicVideo from "@/components/effects/CinematicVideo";
 import { commodities, tradeFocusAreas, operatingPrinciples } from "@/lib/data/trade";
 
 export const metadata: Metadata = {
-  title: "Dubzz Trade — Global Commerce & Logistics",
+  title: "Dubbz Trade — Global Commerce & Logistics",
   description:
     "Global sourcing, export, and logistics — premium commodities moved between markets with executive precision and total traceability.",
 };
@@ -38,7 +38,7 @@ export default function TradePage() {
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>
-            <p className="overline-label text-trade">Dubzz Trade · 04</p>
+            <p className="overline-label text-trade">Dubbz Trade · 04</p>
             <h1 className="mt-8 max-w-4xl font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.98] text-white">
               Commerce that moves
               <span className="italic text-trade"> continents.</span>
@@ -135,7 +135,7 @@ export default function TradePage() {
 
       {/* Trust */}
       <Section className="border-t border-white/5">
-        <SectionHeading overline="Why Dubzz Trade" title="Certainty is the product." />
+        <SectionHeading overline="Why Dubbz Trade" title="Certainty is the product." />
         <div className="grid gap-4 lg:grid-cols-3">
           {assurances.map((a, i) => (
             <FadeReveal key={a.title} delay={i * 90}>

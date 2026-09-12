@@ -5,8 +5,8 @@ import SettingsPanel from "@/components/group/SettingsPanel";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
-  title: "Account Settings — Dubzz Group",
-  description: "Manage your Dubzz Group account — identity, correspondence, and security.",
+  title: "Account Settings — Dubbz Group",
+  description: "Manage your Dubbz Group account — identity, correspondence, and security.",
 };
 
 export default async function SettingsPage() {
@@ -23,7 +23,7 @@ export default async function SettingsPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-6 pb-28 pt-40 sm:px-10">
       <FadeReveal>
-        <p className="overline-label text-gold">Dubzz Group · Settings</p>
+        <p className="overline-label text-gold">Dubbz Group · Settings</p>
         <h1 className="mt-6 font-display text-5xl leading-tight text-white sm:text-6xl">
           Account settings.
         </h1>

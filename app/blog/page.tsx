@@ -9,7 +9,7 @@ import { posts } from "@/lib/data/posts";
 export const metadata: Metadata = {
   title: "Journal",
   description:
-    "The Dubzz Group journal — dispatches from five houses: perspective, craft, harvest notes, and the occasional letter from the founder.",
+    "The Dubbz Group journal — dispatches from five houses: perspective, craft, harvest notes, and the occasional letter from the founder.",
 };
 
 function formatDate(date: string) {

@@ -3,8 +3,8 @@ import Button from "@/components/ui/Button";
 import FadeReveal from "@/components/motion/FadeReveal";
 
 export const metadata: Metadata = {
-  title: "Order Confirmed — Dubzz Wear",
-  description: "Your Dubzz Wear order is confirmed.",
+  title: "Order Confirmed — Dubbz Wear",
+  description: "Your Dubbz Wear order is confirmed.",
 };
 
 export default function OrderConfirmedPage() {

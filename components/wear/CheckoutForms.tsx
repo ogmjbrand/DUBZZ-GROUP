@@ -13,6 +13,8 @@ import { useStore } from "@/components/providers/StoreProvider";
  * `fetch('/api/wear/checkout')` call is the single wiring point.
  */
 
+// Keeps the old spelling on purpose: this is a storage key, not brand
+// surface, and renaming it drops whatever a visitor has already saved.
 const CHECKOUT_KEY = "dubzz-checkout-v1";
 
 interface CheckoutDraft {
@@ -241,7 +243,7 @@ export function PaymentForm() {
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative flex h-36 flex-col justify-between">
           <div className="flex items-center justify-between">
-            <span className="font-label text-[10px] font-bold tracking-[0.3em] text-gold">DUBZZ PAY</span>
+            <span className="font-label text-[10px] font-bold tracking-[0.3em] text-gold">DUBBZ PAY</span>
             <span aria-hidden className="h-7 w-10 rounded-sm bg-gradient-to-br from-gold/80 to-gold-deep" />
           </div>
           <p className="font-mono text-lg tracking-[0.2em] text-white/80">•••• •••• •••• ••••</p>

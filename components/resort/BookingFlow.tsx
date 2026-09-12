@@ -10,6 +10,8 @@ import StatusNote from "@/components/ui/StatusNote";
 import { sanctuaries, experiences } from "@/lib/data/resort";
 import { useAuth } from "@/components/providers/AuthProvider";
 
+// Keeps the old spelling on purpose: this is a storage key, not brand
+// surface, and renaming it drops whatever a visitor has already saved.
 const BOOKING_KEY = "dubzz-booking-v1";
 const REVIEW_PATH = "/wine-resort/booking/review";
 
@@ -65,7 +67,7 @@ export function BookingShell({ step, children }: { step: 0 | 1 | 2; children: Re
           it rather than holding a reservation. Saying that at the top of every
           step is cheaper than saying it once someone has arrived. */}
       <StatusNote label="In Development" className="mt-6">
-        Dubzz Wines Resort is in development. Submitting this form registers
+        Dubbz Wines Resort is in development. Submitting this form registers
         your interest ahead of opening — it does not reserve a stay or take a
         payment, and the Group will be in touch as the destination progresses.
       </StatusNote>

@@ -70,7 +70,7 @@ export default function LoginForm() {
       </Button>
 
       <p className="text-center text-sm text-white/55">
-        New to Dubzz Group?{" "}
+        New to Dubbz Group?{" "}
         <Link href={signupHref} className="text-gold hover:text-gold-bright">
           Create an account
         </Link>

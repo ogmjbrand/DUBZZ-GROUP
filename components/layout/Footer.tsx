@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand + newsletter */}
           <div className="lg:col-span-5">
             <Link href="/" className="inline-flex items-baseline gap-1.5">
-              <span className="font-label text-xl font-bold tracking-[0.3em] text-white">DUBZZ</span>
+              <span className="font-label text-xl font-bold tracking-[0.3em] text-white">DUBBZ</span>
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               <span className="font-label text-[11px] font-semibold tracking-[0.3em] text-white/50">GROUP</span>
             </Link>
@@ -67,7 +67,7 @@ export default function Footer() {
         {/* Legal */}
         <div className="mt-10 flex flex-col gap-4 border-t border-white/8 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-white/50">
-            © {new Date().getFullYear()} Dubzz Group. All rights reserved.
+            © {new Date().getFullYear()} Dubbz Group. All rights reserved.
           </p>
           <div className="flex gap-8">
             <Link href="/privacy" className="text-xs text-white/50 transition-colors hover:text-white/70">

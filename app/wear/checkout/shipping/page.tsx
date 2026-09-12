@@ -4,7 +4,7 @@ import { ShippingForm } from "@/components/wear/CheckoutForms";
 
 export const metadata: Metadata = {
   title: "Checkout — Shipping",
-  description: "Dubzz Wear checkout — shipping details.",
+  description: "Dubbz Wear checkout — shipping details.",
 };
 
 export default function CheckoutShippingPage() {

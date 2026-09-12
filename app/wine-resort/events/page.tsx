@@ -7,9 +7,9 @@ import StatusNote from "@/components/ui/StatusNote";
 import { resortEvents } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
-  title: "Events — Dubzz Wines Resort",
+  title: "Events — Dubbz Wines Resort",
   description:
-    "The events programme planned for Dubzz Wines Resort — corporate retreats, weddings, private events, and weekend experiences.",
+    "The events programme planned for Dubbz Wines Resort — corporate retreats, weddings, private events, and weekend experiences.",
 };
 
 export default function EventsPage() {
@@ -30,7 +30,7 @@ export default function EventsPage() {
           </FadeReveal>
           <FadeReveal delay={140} className="mt-10 max-w-2xl">
             <StatusNote label="In Development">
-              Dubzz Wines Resort is a destination in development. What follows
+              Dubbz Wines Resort is a destination in development. What follows
               is the design vision for it, not a bookable programme.
             </StatusNote>
           </FadeReveal>

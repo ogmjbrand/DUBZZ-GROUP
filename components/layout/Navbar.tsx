@@ -97,9 +97,9 @@ export default function Navbar() {
         {/* Wide tracking is most of the wordmark's width, so it steps down
             below sm — at 320px the full lockup plus the action row overran
             the bar by ~10px. */}
-        <Link href="/" aria-label="Dubzz Group — home" className="group flex shrink-0 items-baseline gap-1 sm:gap-1.5">
+        <Link href="/" aria-label="Dubbz Group — home" className="group flex shrink-0 items-baseline gap-1 sm:gap-1.5">
           <span className="font-label text-base font-bold tracking-[0.2em] text-white sm:text-lg sm:tracking-[0.3em]">
-            DUBZZ
+            DUBBZ
           </span>
           <span className="h-1.5 w-1.5 rounded-full bg-gold transition-transform duration-300 group-hover:scale-125" />
           <span className="font-label text-[10px] font-semibold tracking-[0.2em] text-white/50 sm:text-[10px] sm:tracking-[0.3em]">
@@ -307,7 +307,7 @@ export default function Navbar() {
                 ].join(" ")}
               >
                 <span className="font-display text-sm text-white/50">{d.index}</span>
-                <span className="font-display text-3xl text-white">{d.name.replace("Dubzz ", "")}</span>
+                <span className="font-display text-3xl text-white">{d.name.replace("Dubbz ", "")}</span>
               </Link>
             ))}
           </div>

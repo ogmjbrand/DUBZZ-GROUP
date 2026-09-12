@@ -32,6 +32,8 @@ interface StoreState {
 
 const StoreContext = createContext<StoreState | null>(null);
 
+// Keeps the old spelling on purpose: this is a storage key, not brand
+// surface, and renaming it drops whatever a visitor has already saved.
 const STORAGE_KEY = "dubzz-store-v1";
 
 export function StoreProvider({ children }: { children: ReactNode }) {

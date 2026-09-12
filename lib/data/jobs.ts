@@ -20,7 +20,7 @@ export const jobs: Job[] = [
   {
     id: "senior-brand-designer",
     title: "Senior Brand Designer",
-    division: "Dubzz Media",
+    division: "Dubbz Media",
     location: "Abuja / Remote",
     type: "Full-time",
     summary:
@@ -29,7 +29,7 @@ export const jobs: Job[] = [
   {
     id: "wine-programme-lead",
     title: "Wine Programme Lead",
-    division: "Dubzz Wines Resort",
+    division: "Dubbz Wines Resort",
     location: "Nigeria",
     type: "Full-time",
     summary:
@@ -38,7 +38,7 @@ export const jobs: Job[] = [
   {
     id: "supply-chain-lead",
     title: "Supply Chain Lead",
-    division: "Dubzz Trade",
+    division: "Dubbz Trade",
     location: "Lagos",
     type: "Full-time",
     summary:
@@ -47,7 +47,7 @@ export const jobs: Job[] = [
   {
     id: "production-manager",
     title: "Production Manager",
-    division: "Dubzz Wear",
+    division: "Dubbz Wear",
     location: "Nigeria",
     type: "Full-time",
     summary:
@@ -56,7 +56,7 @@ export const jobs: Job[] = [
   {
     id: "executive-assistant-group",
     title: "Executive Assistant to the Founder",
-    division: "Dubzz Group",
+    division: "Dubbz Group",
     location: "Abuja",
     type: "Full-time",
     summary:

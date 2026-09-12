@@ -12,7 +12,7 @@ import { founderNarrative, philosophy, purpose } from "@/lib/data/group";
 export const metadata: Metadata = {
   title: "About the Group",
   description:
-    "Dubzz Group is a diversified creative, lifestyle, and business holding company headquartered in Abuja, Nigeria — its story, values, and the foundations already in place.",
+    "Dubbz Group is a diversified creative, lifestyle, and business holding company headquartered in Abuja, Nigeria — its story, values, and the foundations already in place.",
   alternates: { canonical: "/about" },
 };
 
@@ -59,7 +59,7 @@ export default function AboutPage() {
           <div className="space-y-6 lg:col-span-8">
             <FadeReveal>
               <p className="text-lg leading-relaxed text-white/85 sm:text-xl">
-                Dubzz Media came first — visual storytelling, brand identity,
+                Dubbz Media came first — visual storytelling, brand identity,
                 and digital content for businesses, institutions, and
                 entrepreneurs. It remains the Group&apos;s flagship creative
                 business and the discipline everything else is measured
@@ -68,12 +68,12 @@ export default function AboutPage() {
             </FadeReveal>
             <FadeReveal delay={80}>
               <p className="leading-relaxed text-neutral">
-                What followed was structural. Dubzz Wear was developed as a
+                What followed was structural. Dubbz Wear was developed as a
                 lifestyle fashion brand rooted in confidence, creativity, and
-                contemporary African culture. Dubzz Wines Resort was
+                contemporary African culture. Dubbz Wines Resort was
                 established as a hospitality and lifestyle vision. After Dark
                 was created as the Group&apos;s entertainment and experience
-                platform. Dubzz Trade was built to connect African producers
+                platform. Dubbz Trade was built to connect African producers
                 with buyers in regional and international markets.
               </p>
             </FadeReveal>
@@ -243,7 +243,7 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-3xl px-6 py-28 text-center md:py-36">
           <FadeReveal>
             <h2 className="font-display text-4xl leading-tight text-white sm:text-5xl">
-              Build with Dubzz.
+              Build with Dubbz.
             </h2>
             <p className="mx-auto mt-6 max-w-xl leading-relaxed text-neutral">
               The Group works with partners across institutions, commerce,

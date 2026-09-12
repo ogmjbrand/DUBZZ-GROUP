@@ -8,9 +8,9 @@ import StatusNote from "@/components/ui/StatusNote";
 import { experiences } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
-  title: "Experiences — Dubzz Wines Resort",
+  title: "Experiences — Dubbz Wines Resort",
   description:
-    "The experience programme planned for Dubzz Wines Resort — wine culture, leisure, wellness, and signature days.",
+    "The experience programme planned for Dubbz Wines Resort — wine culture, leisure, wellness, and signature days.",
 };
 
 export default function ExperiencesPage() {
@@ -31,7 +31,7 @@ export default function ExperiencesPage() {
           </FadeReveal>
           <FadeReveal delay={140} className="mt-10 max-w-2xl">
             <StatusNote label="In Development">
-              Dubzz Wines Resort is a destination in development. What follows
+              Dubbz Wines Resort is a destination in development. What follows
               is the design vision for it, not a bookable programme.
             </StatusNote>
           </FadeReveal>

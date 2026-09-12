@@ -51,7 +51,7 @@ const drapePath = (
 };
 
 /**
- * Dubzz Wear — ambient loop.
+ * Dubbz Wear — ambient loop.
  *
  * Floating textiles under a single raking light. Bone and warm grey only: the
  * house rule is that gold is spent where only the owner finds it, so the

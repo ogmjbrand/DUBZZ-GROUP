@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 /**
  * A stated development status.
  *
- * The corporate profile describes Dubzz Wines Resort as a vision with future
- * concepts, and puts the launch of Dubzz Wear inside the 2026 foundation
+ * The corporate profile describes Dubbz Wines Resort as a vision with future
+ * concepts, and puts the launch of Dubbz Wear inside the 2026 foundation
  * year. Both sections of this site are built out as if they were already
  * trading, which reads as confidence right up until a visitor tries to
  * arrive somewhere.

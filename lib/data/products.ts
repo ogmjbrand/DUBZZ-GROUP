@@ -1,5 +1,5 @@
 /**
- * The Dubzz Wear collection.
+ * The Dubbz Wear collection.
  *
  * The product line is the one the corporate profile publishes: premium
  * T-shirts, hoodies, polo shirts, joggers, caps, accessories, and limited
@@ -37,7 +37,7 @@ export const products: Product[] = [
     category: "Hoodies",
     colorway: "Midnight Black",
     description:
-      "The anchor of the collection. A heavyweight hoodie cut with a relaxed body and a structured hood, finished with a tonal Dubzz wordmark that reads as texture before it reads as a logo.",
+      "The anchor of the collection. A heavyweight hoodie cut with a relaxed body and a structured hood, finished with a tonal Dubbz wordmark that reads as texture before it reads as a logo.",
     details: [
       "Heavyweight brushed-back fleece",
       "Relaxed fit, dropped shoulder",
@@ -93,7 +93,7 @@ export const products: Product[] = [
     category: "T-Shirts",
     colorway: "Obsidian",
     description:
-      "Built for the loud version of the brand. A heavier tee in deep black with an oversized front graphic drawn from the Dubzz mark — confidence worn plainly.",
+      "Built for the loud version of the brand. A heavier tee in deep black with an oversized front graphic drawn from the Dubbz mark — confidence worn plainly.",
     details: [
       "Heavier-weight combed cotton",
       "Oversized front graphic",

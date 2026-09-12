@@ -6,8 +6,8 @@ import FadeReveal from "@/components/motion/FadeReveal";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
-  title: "Inner Circle Hub — Dubzz Group",
-  description: "Your guest profile across the Dubzz ecosystem — standing, privileges, and activity.",
+  title: "Inner Circle Hub — Dubbz Group",
+  description: "Your guest profile across the Dubbz ecosystem — standing, privileges, and activity.",
 };
 
 /** Program description, not a per-user entitlement claim -- nothing here implies it's active for this account yet. */
@@ -55,7 +55,7 @@ export default async function ProfilePage() {
   return (
     <div className="mx-auto w-full max-w-7xl px-6 pb-28 pt-40 sm:px-10 lg:px-16">
       <FadeReveal>
-        <p className="overline-label text-gold">Dubzz Group · Inner Circle</p>
+        <p className="overline-label text-gold">Dubbz Group · Inner Circle</p>
         <h1 className="mt-6 font-display text-5xl leading-tight text-white sm:text-6xl">
           Welcome back, {displayName}.
         </h1>
@@ -80,7 +80,7 @@ export default async function ProfilePage() {
                   Member № {memberNumber}
                 </p>
                 <p className="font-label text-[10px] uppercase tracking-[0.24em] text-gold/70">
-                  Dubzz Group
+                  Dubbz Group
                 </p>
               </div>
             </div>

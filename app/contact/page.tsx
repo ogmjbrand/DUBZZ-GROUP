@@ -6,7 +6,7 @@ import { contact } from "@/lib/data/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Dubzz Group in Abuja, Nigeria — business enquiries, partnerships, corporate collaborations, investment opportunities, media relations, and strategic alliances.",
+    "Contact Dubbz Group in Abuja, Nigeria — business enquiries, partnerships, corporate collaborations, investment opportunities, media relations, and strategic alliances.",
   alternates: { canonical: "/contact" },
 };
 
@@ -34,7 +34,7 @@ export default function ContactPage() {
           <FadeReveal>
             <p className="overline-label text-gold">Contact</p>
             <h1 className="mt-7 font-display text-5xl leading-[1.05] text-white sm:text-6xl">
-              Build with Dubzz.
+              Build with Dubbz.
             </h1>
             <p className="mt-7 max-w-md text-base leading-relaxed text-neutral">
               Tell us what you&apos;re building and we&apos;ll route it to the

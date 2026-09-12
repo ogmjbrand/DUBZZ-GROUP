@@ -7,7 +7,7 @@ import FadeReveal from "@/components/motion/FadeReveal";
 export const metadata: Metadata = {
   title: "Resource Vault — Investor Relations",
   description:
-    "The expanded resource vault — reports, governance documents, and division deep-dives for Dubzz Group partners.",
+    "The expanded resource vault — reports, governance documents, and division deep-dives for Dubbz Group partners.",
 };
 
 /**

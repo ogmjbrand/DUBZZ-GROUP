@@ -6,14 +6,14 @@ import FadeReveal from "@/components/motion/FadeReveal";
 import CinematicVideo from "@/components/effects/CinematicVideo";
 
 export const metadata: Metadata = {
-  title: "Dubzz Media — The Creative Engine",
+  title: "Dubbz Media — The Creative Engine",
   description:
-    "Dubzz Media is the Group's flagship creative business — commercial video production, editing, motion graphics, brand identity, social content strategy, event coverage, and creative campaigns.",
+    "Dubbz Media is the Group's flagship creative business — commercial video production, editing, motion graphics, brand identity, social content strategy, event coverage, and creative campaigns.",
   alternates: { canonical: "/media" },
 };
 
 /**
- * The seven services the corporate profile lists for Dubzz Media.
+ * The seven services the corporate profile lists for Dubbz Media.
  *
  * Replaces a four-discipline agency menu — "brand codices", "real-time 3D",
  * "immersive product experiences" — that described a different company.
@@ -68,7 +68,7 @@ export default function MediaPage() {
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>
-            <p className="overline-label text-media">Dubzz Media · 01</p>
+            <p className="overline-label text-media">Dubbz Media · 01</p>
             <h1 className="mt-8 max-w-4xl font-display text-[clamp(2.5rem,7.4vw,6rem)] leading-[1.03] text-white">
               The creative engine
               <span className="italic text-media"> of the Group.</span>
@@ -112,7 +112,7 @@ export default function MediaPage() {
       </Section>
 
       {/* Vision & Future — replaces a "Selected Work" grid of three invented
-          case studies. Dubzz Media has delivered real client work, but the
+          case studies. Dubbz Media has delivered real client work, but the
           profile names none of it, so nothing here can be attributed yet. */}
       <Section id="work" className="border-t border-white/5">
         <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
@@ -124,7 +124,7 @@ export default function MediaPage() {
           </FadeReveal>
           <FadeReveal delay={120} className="space-y-6 text-lg leading-relaxed text-neutral">
             <p>
-              Dubzz Media is the flagship creative company within Dubzz Group,
+              Dubbz Media is the flagship creative company within Dubbz Group,
               and the foundation the Group was built on. It exists to help
               businesses, organisations, entrepreneurs, and institutions
               communicate their ideas — through visual storytelling, strategic

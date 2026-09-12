@@ -22,7 +22,7 @@ export const posts: Post[] = [
     category: "Perspective",
     date: "2026-07-02",
     readTime: "6 min",
-    dek: "Why the most expensive decision in luxury is the one you don't make — and how restraint became the operating system of every Dubzz venture.",
+    dek: "Why the most expensive decision in luxury is the one you don't make — and how restraint became the operating system of every Dubbz venture.",
     visual:
       "linear-gradient(140deg, #14110a 0%, #0a0806 50%, #050505 100%), radial-gradient(70% 50% at 80% 20%, rgba(212,175,55,0.2) 0%, transparent 60%)",
     image: "/imagery/post-restraint.webp",
@@ -30,7 +30,7 @@ export const posts: Post[] = [
       "A sweeping board-formed concrete staircase curving through an empty gallery, lit by a single shaft of warm daylight.",
     body: [
       "Every brand says less is more. Almost none can afford to prove it. Restraint is expensive — it means declining the collaboration, cutting the third colourway, ending the campaign one film early. It means building a hotel with fewer rooms than the land allows.",
-      "At Dubzz, restraint is not an aesthetic preference; it is a governance rule. Each venture operates under a standard we call the single-regret test: every element that ships must be one we would regret removing, not one we would survive removing. The difference sounds subtle. Applied over five ventures and a decade, it compounds into identity.",
+      "At Dubbz, restraint is not an aesthetic preference; it is a governance rule. Each venture operates under a standard we call the single-regret test: every element that ships must be one we would regret removing, not one we would survive removing. The difference sounds subtle. Applied over five ventures and a decade, it compounds into identity.",
       "The gold in our identity system is governed the same way. It appears rarely enough that when it does, it means something — an accent, never a wallpaper. A precious resource, spent deliberately.",
       "This is also why the group grows slowly. A sixth venture will exist the day it can carry the same standard as the first five — and not one quarter sooner.",
     ],
@@ -41,11 +41,11 @@ export const posts: Post[] = [
     category: "Wines Resort",
     date: "2026-06-14",
     readTime: "5 min",
-    dek: "What it takes to plant a wine culture before the first harvest ever happens — and why Dubzz Wines Resort is in no hurry to bottle anything.",
+    dek: "What it takes to plant a wine culture before the first harvest ever happens — and why Dubbz Wines Resort is in no hurry to bottle anything.",
     visual:
       "linear-gradient(150deg, #170b0e 0%, #0c0608 50%, #050505 100%), radial-gradient(70% 55% at 25% 20%, rgba(158,58,77,0.3) 0%, transparent 60%)",
     body: [
-      "A vineyard teaches patience before it teaches anything about wine. Dubzz Wines Resort is still in development — the land, the plantings, and the rituals that will define the estate are being built deliberately, in the order a serious estate is built in, not the order a launch calendar would prefer.",
+      "A vineyard teaches patience before it teaches anything about wine. Dubbz Wines Resort is still in development — the land, the plantings, and the rituals that will define the estate are being built deliberately, in the order a serious estate is built in, not the order a launch calendar would prefer.",
       "The vision is not a hotel with a vineyard attached. It's hospitality organised around wine culture itself — cellar, table, and terrace treated as one experience rather than three amenities bolted together.",
       "We'd rather publish that plainly than invent a harvest we haven't had yet. When the first vintage exists, it will be told properly — sorting tables, rejected fruit, whichever barrel nobody expected to love. Until then, this is the plan, not the diary.",
       "Guests who'd rather watch this get built than arrive after it's finished can register interest through the group — an estate remembers the people who came for the beginning.",
@@ -57,7 +57,7 @@ export const posts: Post[] = [
     category: "Media",
     date: "2026-05-20",
     readTime: "5 min",
-    dek: "Why Dubzz Media storyboards every frame before a single call sheet goes out — especially on the night shoots that don't forgive a second take.",
+    dek: "Why Dubbz Media storyboards every frame before a single call sheet goes out — especially on the night shoots that don't forgive a second take.",
     visual:
       "linear-gradient(160deg, #0b0d14 0%, #060710 50%, #050505 100%), radial-gradient(70% 50% at 70% 25%, rgba(74,109,140,0.35) 0%, transparent 60%)",
     body: [
@@ -73,19 +73,19 @@ export const posts: Post[] = [
     category: "Trade",
     date: "2026-04-08",
     readTime: "6 min",
-    dek: "Traceability used to be a compliance line-item. For Dubzz Trade, it's the product we're building around from day one.",
+    dek: "Traceability used to be a compliance line-item. For Dubbz Trade, it's the product we're building around from day one.",
     visual:
       "linear-gradient(145deg, #0a0f14 0%, #06090d 50%, #050505 100%), radial-gradient(70% 55% at 30% 15%, rgba(74,109,140,0.3) 0%, transparent 60%)",
     body: [
       "Ask a commodity buyer what they pay for and they'll say quality and reliability. Increasingly, a third answer appears: certainty of origin. Documentation is becoming the differentiation, not a compliance line-item.",
-      "That's the standard we're building Dubzz Trade around from the first shipment: product graded and checked against specification before it moves, producer relationships that support the growers we work with rather than squeeze them, and a contract that behaves the way it was written.",
+      "That's the standard we're building Dubbz Trade around from the first shipment: product graded and checked against specification before it moves, producer relationships that support the growers we work with rather than squeeze them, and a contract that behaves the way it was written.",
       "We're early. The desk is building the routes, documentation, and relationships that move palm oil, cocoa, ginger, and charcoal out of Nigeria and into the hands of buyers who need reliable access to them — transparency designed in from the start, not bolted on once something goes wrong.",
       "The bar of chocolate that can prove its own biography will not sit on the same shelf as the one that can't — or at the same price. That's where we intend to arrive. We're telling you the route, not claiming we're already there.",
     ],
   },
   {
-    slug: "designing-dubzz-wear",
-    title: "Designing Dubzz Wear",
+    slug: "designing-dubbz-wear",
+    title: "Designing Dubbz Wear",
     category: "Wear",
     date: "2026-03-11",
     readTime: "4 min",
@@ -109,9 +109,9 @@ export const posts: Post[] = [
     visual:
       "linear-gradient(140deg, #14110a 0%, #0b0906 50%, #050505 100%), radial-gradient(80% 55% at 20% 25%, rgba(212,175,55,0.22) 0%, transparent 60%)",
     body: [
-      "Dubzz Group exists because one conviction kept proving itself true in the creative work we started from: the standard is the strategy. 2026 is the foundation year of formalising that conviction into five businesses — Media, Wear, Wines Resort, Trade, and After Dark — held inside one company.",
+      "Dubbz Group exists because one conviction kept proving itself true in the creative work we started from: the standard is the strategy. 2026 is the foundation year of formalising that conviction into five businesses — Media, Wear, Wines Resort, Trade, and After Dark — held inside one company.",
       "The businesses were designed to strengthen one another rather than to sit beside one another. Media builds the visibility the others go to market with. Wear carries the culture. After Dark gathers the audience. Wines Resort gives that audience somewhere to go. Trade connects the Group to markets well outside the creative economy.",
-      "The next few years are about depth, not breadth: bringing Dubzz Wear properly to launch, developing Wines Resort deliberately rather than quickly, and growing Dubzz Media and Dubzz Trade on relationships built to last. The published roadmap runs to 2030, and we would rather be measured against it than against a headline.",
+      "The next few years are about depth, not breadth: bringing Dubbz Wear properly to launch, developing Wines Resort deliberately rather than quickly, and growing Dubbz Media and Dubbz Trade on relationships built to last. The published roadmap runs to 2030, and we would rather be measured against it than against a headline.",
       `To the partners, clients, and collaborators building this with us: the standard holds. — ${founder.name}, ${founder.role}`,
     ],
   },

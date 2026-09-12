@@ -13,6 +13,8 @@ const notificationPrefs = [
   { id: "reports", label: "IR publications", detail: "Reports and notes as they enter the vault." },
 ];
 
+// Keeps the old spelling on purpose: this is a storage key, not brand
+// surface, and renaming it drops whatever a visitor has already saved.
 const PREFS_KEY = "dubzz-correspondence-prefs-v1";
 
 function Toggle({

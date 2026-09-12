@@ -6,8 +6,8 @@ import AccountShell from "@/components/wear/AccountShell";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
-  title: "Order History — Dubzz Wear",
-  description: "Your Dubzz Wear order history.",
+  title: "Order History — Dubbz Wear",
+  description: "Your Dubbz Wear order history.",
 };
 
 const statusStyles: Record<string, string> = {

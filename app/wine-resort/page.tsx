@@ -10,9 +10,9 @@ import StatusNote from "@/components/ui/StatusNote";
 import { sanctuaries, experiences, resortEvents, diningVenues } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
-  title: "Dubzz Wines Resort — Hospitality & Lifestyle",
+  title: "Dubbz Wines Resort — Hospitality & Lifestyle",
   description:
-    "Dubzz Wines Resort is the Group's hospitality and lifestyle division — a premium destination in development, bringing together wine culture, leisure, events, and luxury experiences.",
+    "Dubbz Wines Resort is the Group's hospitality and lifestyle division — a premium destination in development, bringing together wine culture, leisure, events, and luxury experiences.",
   alternates: { canonical: "/wine-resort" },
 };
 
@@ -35,7 +35,7 @@ export default function WineResortPage() {
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-28 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>
-            <p className="overline-label text-wine">Dubzz Wines Resort · 03</p>
+            <p className="overline-label text-wine">Dubbz Wines Resort · 03</p>
             <h1 className="mt-8 max-w-4xl font-display text-[clamp(2.5rem,7.4vw,6rem)] leading-[1.03] text-white">
               Redefining hospitality
               <span className="italic text-wine"> through experience.</span>

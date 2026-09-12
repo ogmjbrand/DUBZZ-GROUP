@@ -7,8 +7,8 @@ import StatusNote from "@/components/ui/StatusNote";
 import { galleryScenes } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
-  title: "Gallery — Dubzz Wines Resort",
-  description: "Visual studies for Dubzz Wines Resort — the destination as it is being designed, first light to midnight.",
+  title: "Gallery — Dubbz Wines Resort",
+  description: "Visual studies for Dubbz Wines Resort — the destination as it is being designed, first light to midnight.",
 };
 
 const spanClasses: Record<string, string> = {
@@ -35,7 +35,7 @@ export default function GalleryPage() {
           </FadeReveal>
           <FadeReveal delay={140} className="mt-10 max-w-2xl">
             <StatusNote label="In Development">
-              Dubzz Wines Resort is a destination in development. What follows
+              Dubbz Wines Resort is a destination in development. What follows
               is the design vision for it, not a bookable programme.
             </StatusNote>
           </FadeReveal>

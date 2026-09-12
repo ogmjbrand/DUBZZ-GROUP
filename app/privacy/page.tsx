@@ -3,7 +3,7 @@ import LegalArticle from "@/components/ui/LegalArticle";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How Dubzz Group collects, uses, and protects your personal information.",
+  description: "How Dubbz Group collects, uses, and protects your personal information.",
 };
 
 export default function PrivacyPage() {
@@ -16,13 +16,13 @@ export default function PrivacyPage() {
         {
           heading: "Who We Are",
           paragraphs: [
-            "Dubzz Group and its divisions — Dubzz Media, Dubzz Wear, Dubzz Wines Resort, Dubzz Trade, and After Dark — operate this website and the services connected to it. This policy explains what personal information we collect across the ecosystem, why we collect it, and the choices you have.",
+            "Dubbz Group and its divisions — Dubbz Media, Dubbz Wear, Dubbz Wines Resort, Dubbz Trade, and After Dark — operate this website and the services connected to it. This policy explains what personal information we collect across the ecosystem, why we collect it, and the choices you have.",
           ],
         },
         {
           heading: "What We Collect",
           paragraphs: [
-            "Information you give us directly: contact details when you write to us, order and delivery details when you purchase from Dubzz Wear, reservation details when you book with the Wines Resort, and business information when you open a trade inquiry or media commission.",
+            "Information you give us directly: contact details when you write to us, order and delivery details when you purchase from Dubbz Wear, reservation details when you book with the Wines Resort, and business information when you open a trade inquiry or media commission.",
             "Information collected automatically: standard technical data such as device type, browser, and pages visited, used to keep the site fast, secure, and improving. We keep this minimal and never sell it.",
           ],
         },
@@ -42,7 +42,7 @@ export default function PrivacyPage() {
         {
           heading: "Your Rights",
           paragraphs: [
-            "Depending on your jurisdiction, you may have the right to access, correct, export, or delete your personal information, and to object to or restrict certain processing. Write to privacy@dubzzgroup.com and we will respond within thirty days.",
+            "Depending on your jurisdiction, you may have the right to access, correct, export, or delete your personal information, and to object to or restrict certain processing. Write to privacy@dubbzgroup.com and we will respond within thirty days.",
           ],
         },
         {
@@ -54,7 +54,7 @@ export default function PrivacyPage() {
         {
           heading: "Contact",
           paragraphs: [
-            "Questions about this policy or your data: privacy@dubzzgroup.com. We read everything.",
+            "Questions about this policy or your data: privacy@dubbzgroup.com. We read everything.",
           ],
         },
       ]}

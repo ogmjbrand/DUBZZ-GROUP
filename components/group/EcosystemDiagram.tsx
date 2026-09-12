@@ -56,7 +56,7 @@ export default function EcosystemDiagram() {
             <span aria-hidden className="absolute left-[13px] top-8 h-[calc(100%+0.75rem)] w-px bg-gradient-to-b from-gold/60 to-gold/10" />
             <span aria-hidden className="absolute left-2 top-2.5 h-3 w-3 rounded-full bg-gold shadow-[0_0_16px_rgba(212,175,55,0.7)]" />
             <p className="overline-label text-[10px] text-gold">The Holding Company</p>
-            <p className="mt-1 font-display text-2xl text-white">Dubzz Group</p>
+            <p className="mt-1 font-display text-2xl text-white">Dubbz Group</p>
           </li>
 
           {divisions.map((d, i) => {
@@ -151,7 +151,7 @@ export default function EcosystemDiagram() {
               <span aria-hidden className="light-above absolute -inset-16 -z-10" />
               <p className="overline-label text-[10px] text-gold">The Holding Company</p>
               <p className="mt-2 font-display text-4xl leading-none text-white xl:text-5xl">
-                Dubzz
+                Dubbz
                 <br />
                 Group
               </p>

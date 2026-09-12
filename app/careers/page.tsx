@@ -6,7 +6,7 @@ import CareersBoard from "@/components/forms/CareersBoard";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join Dubzz Group — open roles across media, fashion, hospitality, and global trade for people who sign their work.",
+    "Join Dubbz Group — open roles across media, fashion, hospitality, and global trade for people who sign their work.",
 };
 
 const perks = [
@@ -52,7 +52,7 @@ export default function CareersPage() {
         <SectionHeading
           overline="Open Roles"
           title="The current openings."
-          lede="Don't see your role? Exceptional people make their own openings — write to careers@dubzzgroup.com."
+          lede="Don't see your role? Exceptional people make their own openings — write to careers@dubbzgroup.com."
         />
         <FadeReveal>
           <CareersBoard />

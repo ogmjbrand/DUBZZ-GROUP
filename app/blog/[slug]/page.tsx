@@ -73,7 +73,7 @@ export default async function BlogPostPage({ params }: Props) {
           <Link href="/blog" className="overline-label text-[10px] text-white/55 transition-colors hover:text-gold">
             ← All dispatches
           </Link>
-          <p className="overline-label text-[10px] text-white/50">Dubzz Journal</p>
+          <p className="overline-label text-[10px] text-white/50">Dubbz Journal</p>
         </div>
       </div>
 

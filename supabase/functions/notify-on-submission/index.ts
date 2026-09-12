@@ -13,10 +13,10 @@ interface DbWebhookPayload {
 }
 
 const SUBJECTS: Record<string, (r: Record<string, unknown>) => string> = {
-  inquiries: (r) => `New Dubzz Trade inquiry from ${r.company_name}`,
+  inquiries: (r) => `New Dubbz Trade inquiry from ${r.company_name}`,
   contact_messages: (r) => `New contact message: ${r.subject ?? "(no subject)"}`,
   job_applications: (r) => `New job application from ${r.name}`,
-  media_bookings: (r) => `New Dubzz Media booking request from ${r.name}`,
+  media_bookings: (r) => `New Dubbz Media booking request from ${r.name}`,
 };
 
 function renderBody(table: string, record: Record<string, unknown>): string {
@@ -52,7 +52,7 @@ export default {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Dubzz Group <notifications@dubzzgroup.com>",
+        from: "Dubbz Group <notifications@dubbzgroup.com>",
         to: notifyTo,
         subject: subjectFn(payload.record),
         html: renderBody(payload.table, payload.record),
@@ -70,7 +70,7 @@ export default {
 
 /* Setup (one-time, per environment):
 
-  1. supabase secrets set RESEND_API_KEY=re_... NOTIFY_EMAIL_TO=team@dubzzgroup.com
+  1. supabase secrets set RESEND_API_KEY=re_... NOTIFY_EMAIL_TO=team@dubbzgroup.com
   2. supabase functions deploy notify-on-submission
   3. In the Supabase dashboard: Database -> Webhooks -> create one webhook per
      table (inquiries, contact_messages, job_applications, media_bookings),

@@ -45,7 +45,7 @@ const index: SearchEntry[] = [
     description: e.description,
     href: "/wine-resort/experiences",
   })),
-  { type: "Page", title: "About Dubzz Group", description: "The story, the standard, the houses.", href: "/about" },
+  { type: "Page", title: "About Dubbz Group", description: "The story, the standard, the houses.", href: "/about" },
   { type: "Page", title: "Careers", description: "Open roles across the five houses.", href: "/careers" },
   { type: "Page", title: "Contact", description: "Start a conversation with the group.", href: "/contact" },
   { type: "Page", title: "Investor Relations", description: "The portal for the group's partners.", href: "/group/investors" },

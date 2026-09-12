@@ -1,5 +1,5 @@
 /**
- * Corporate content — Dubzz Group Corporate Profile, 2026 Edition.
+ * Corporate content — Dubbz Group Corporate Profile, 2026 Edition.
  *
  * The profile is the source of truth for everything in this file. Nothing here
  * is written for effect: no metrics, no client names, no offices, no awards,
@@ -37,7 +37,7 @@ export const mission = {
 };
 
 /**
- * "Why Dubzz" — the profile's competitive advantage.
+ * "Why Dubbz" — the profile's competitive advantage.
  *
  * The Group's stated position is that the advantage is not the businesses it
  * owns but the way they work together, so each point carries the mechanism
@@ -50,7 +50,7 @@ export const advantages = [
   },
   {
     title: "Creative Excellence",
-    body: "Creativity is the Group's origin and its operating discipline. Every business is built to the standard set inside Dubzz Media.",
+    body: "Creativity is the Group's origin and its operating discipline. Every business is built to the standard set inside Dubbz Media.",
   },
   {
     title: "A Diversified Model",
@@ -105,7 +105,7 @@ export const roadmap = [
     year: "2026",
     phase: "Foundation",
     focus: "Establish operations",
-    body: "Establish the Group's operations, strengthen Dubzz Media, prepare the launch of Dubzz Wear, and introduce the first After Dark experiences.",
+    body: "Establish the Group's operations, strengthen Dubbz Media, prepare the launch of Dubbz Wear, and introduce the first After Dark experiences.",
   },
   {
     year: "2027",
@@ -155,9 +155,9 @@ export const partnershipAudiences = [
  */
 export const founderNarrative = {
   standfirst:
-    "Dubzz Group was founded by a creative who kept asking what came after the work was delivered.",
+    "Dubbz Group was founded by a creative who kept asking what came after the work was delivered.",
   paragraphs: [
-    "Prince Chidubem Nwahiri is a Nigerian entrepreneur and creative strategist. He built Dubzz Media first — visual storytelling, brand identity, and digital content for businesses, institutions, and entrepreneurs — and it remains the discipline the rest of the Group is measured against.",
+    "Prince Chidubem Nwahiri is a Nigerian entrepreneur and creative strategist. He built Dubbz Media first — visual storytelling, brand identity, and digital content for businesses, institutions, and entrepreneurs — and it remains the discipline the rest of the Group is measured against.",
     "What followed was structural rather than opportunistic. Fashion, hospitality, entertainment, and trade were each developed as businesses that could stand alone and be stronger together, held inside a single institution rather than run as separate ventures.",
     "That structure is the point. The Group is being built to outlast the person who started it — an institution, on purpose, from the first year.",
   ],

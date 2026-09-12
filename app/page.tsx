@@ -36,7 +36,7 @@ export default function Home() {
     <>
       {/* ——— HERO ———
           The opening states the Group's own philosophy rather than a
-          decorative claim. Anyone landing here should know what Dubzz Group
+          decorative claim. Anyone landing here should know what Dubbz Group
           is, where it is, and what it operates before scrolling once.
 
           MosaicReveal wraps it rather than replacing it: the hero below is the
@@ -79,7 +79,7 @@ export default function Home() {
         >
           <FadeReveal>
             <p className="overline-label text-gold">
-              Dubzz Group · {contact.city}, {contact.country}
+              Dubbz Group · {contact.city}, {contact.country}
             </p>
           </FadeReveal>
           <FadeReveal delay={120}>
@@ -103,7 +103,7 @@ export default function Home() {
               Explore the Ecosystem
             </Button>
             <Button href="#partnerships" variant="secondary" size="lg">
-              Build With Dubzz
+              Build With Dubbz
             </Button>
           </FadeReveal>
         </div>
@@ -171,7 +171,7 @@ export default function Home() {
           <div className="lg:col-span-7">
             <FadeReveal>
               <p className="text-xl leading-relaxed text-white/85 sm:text-2xl">
-                Dubzz Group is a diversified creative, lifestyle, and business
+                Dubbz Group is a diversified creative, lifestyle, and business
                 holding company headquartered in {contact.city},
                 {" "}{contact.region}. It owns and develops five businesses
                 across media, fashion, hospitality, entertainment, and
@@ -315,13 +315,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ——— WHY DUBZZ ——— */}
+      {/* ——— WHY DUBBZ ——— */}
       <Section id="why" className="border-t border-white/5">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-32">
               <SectionHeading
-                overline="Why Dubzz"
+                overline="Why Dubbz"
                 title="The advantage is structural."
                 lede="Six reasons the Group is built the way it is — each one a mechanism, not a claim."
                 className="mb-0 md:mb-0"
@@ -439,7 +439,7 @@ export default function Home() {
           <div className="lg:col-span-5">
             <SectionHeading
               overline="Strategic Partnerships"
-              title="Build with Dubzz."
+              title="Build with Dubbz."
               lede="The Group is open to partnerships that create long-term value on both sides — commercially, creatively, and institutionally."
               className="mb-0 md:mb-0"
             />

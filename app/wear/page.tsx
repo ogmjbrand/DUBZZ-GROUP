@@ -7,9 +7,9 @@ import ProductCard from "@/components/wear/ProductCard";
 import { products } from "@/lib/data/products";
 
 export const metadata: Metadata = {
-  title: "Dubzz Wear — Lifestyle Fashion",
+  title: "Dubbz Wear — Lifestyle Fashion",
   description:
-    "Dubzz Wear is the Group's lifestyle fashion brand — premium T-shirts, hoodies, polos, joggers, caps, accessories, and limited edition collections built around confidence, creativity, and contemporary African culture.",
+    "Dubbz Wear is the Group's lifestyle fashion brand — premium T-shirts, hoodies, polos, joggers, caps, accessories, and limited edition collections built around confidence, creativity, and contemporary African culture.",
   alternates: { canonical: "/wear" },
 };
 
@@ -30,7 +30,7 @@ export default function WearPage() {
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>
-            <p className="overline-label text-wear">Dubzz Wear · 02</p>
+            <p className="overline-label text-wear">Dubbz Wear · 02</p>
             <h1 className="mt-8 max-w-4xl font-display text-[clamp(2.5rem,7.4vw,6rem)] leading-[1.03] text-white">
               Fashion inspired
               <span className="italic text-wear"> by purpose.</span>

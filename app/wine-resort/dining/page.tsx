@@ -8,9 +8,9 @@ import StatusNote from "@/components/ui/StatusNote";
 import { diningVenues } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
-  title: "Dining — Dubzz Wines Resort",
+  title: "Dining — Dubbz Wines Resort",
   description:
-    "The dining concept planned for Dubzz Wines Resort — fine dining, long-table service, and a wine bar.",
+    "The dining concept planned for Dubbz Wines Resort — fine dining, long-table service, and a wine bar.",
 };
 
 export default function DiningPage() {
@@ -31,7 +31,7 @@ export default function DiningPage() {
           </FadeReveal>
           <FadeReveal delay={140} className="mt-10 max-w-2xl">
             <StatusNote label="In Development">
-              Dubzz Wines Resort is a destination in development. What follows
+              Dubbz Wines Resort is a destination in development. What follows
               is the design vision for it, not a bookable programme.
             </StatusNote>
           </FadeReveal>
