@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Section";
@@ -6,6 +7,7 @@ import FadeReveal from "@/components/motion/FadeReveal";
 import CinematicVideo from "@/components/effects/CinematicVideo";
 import EcosystemCanvas from "@/components/effects/EcosystemCanvas";
 import MosaicReveal from "@/components/effects/MosaicReveal";
+import StatusNote from "@/components/ui/StatusNote";
 import EcosystemDiagram from "@/components/group/EcosystemDiagram";
 import RoadmapTimeline from "@/components/group/RoadmapTimeline";
 import { divisions } from "@/lib/data/divisions";
@@ -18,6 +20,7 @@ import {
   partnershipAudiences,
   philosophy,
   purpose,
+  tower,
   vision,
 } from "@/lib/data/group";
 
@@ -269,6 +272,90 @@ export default function Home() {
           ))}
         </div>
       </Section>
+
+      {/* ——— DUBBZ TOWER ———
+          Placed straight after the businesses because it is the same argument
+          in physical form: the five of them stacked in one building. Labelled
+          a concept throughout — the renders are photoreal, and a photoreal
+          render of a building that does not exist reads as premises unless
+          the page says otherwise. */}
+      <section className="relative overflow-hidden border-t border-white/5">
+        <div aria-hidden className="light-above absolute inset-0" />
+        <div aria-hidden className="grain absolute inset-0" />
+        <div className="relative mx-auto w-full max-w-7xl px-6 py-24 sm:px-10 md:py-32 lg:px-16">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-5">
+              <FadeReveal>
+                <p className="overline-label text-gold">{tower.label}</p>
+                <h2 className="mt-5 font-display text-4xl leading-[1.08] tracking-tight text-white sm:text-5xl">
+                  {tower.heading}
+                </h2>
+                <p className="mt-6 text-lg leading-relaxed text-white/85">{tower.standfirst}</p>
+                <p className="mt-5 leading-relaxed text-neutral">{tower.body}</p>
+              </FadeReveal>
+              <FadeReveal delay={120} className="mt-8">
+                <StatusNote label="Concept Draft">
+                  Dubbz Tower is a design study. The renders below are proposals,
+                  not photographs — nothing here is built, and the Group does not
+                  occupy it.
+                </StatusNote>
+              </FadeReveal>
+
+              <FadeReveal delay={200}>
+                <ol className="mt-12 border-t border-white/10">
+                  {[...tower.floors].reverse().map((floor) => (
+                    <li
+                      key={floor.level}
+                      className="flex items-baseline gap-6 border-b border-white/10 py-4"
+                    >
+                      <span className="w-14 shrink-0 font-display text-sm text-white/50">
+                        {floor.level}
+                      </span>
+                      <span className="text-sm text-white/85 sm:text-base">{floor.name}</span>
+                    </li>
+                  ))}
+                </ol>
+              </FadeReveal>
+            </div>
+
+            <div className="lg:col-span-7">
+              <FadeReveal delay={80}>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-white/10 sm:aspect-[3/2] lg:aspect-[4/5]">
+                  <Image
+                    src={tower.facade.src}
+                    alt={tower.facade.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 55vw"
+                    className="object-cover"
+                  />
+                </div>
+              </FadeReveal>
+
+              {/* All five fit the row at lg. Below that they scroll
+                  horizontally — five interiors across a phone would be
+                  thumbnails, and wrapping five into a grid leaves an orphan. */}
+              <FadeReveal delay={160}>
+                <ul className="-mx-6 mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  {tower.interiors.map((shot) => (
+                    <li
+                      key={shot.src}
+                      className="relative aspect-[3/2] w-[78%] shrink-0 snap-start overflow-hidden rounded-lg border border-white/10 sm:w-[46%] lg:w-[calc((100%-4rem)/5)]"
+                    >
+                      <Image
+                        src={shot.src}
+                        alt={shot.alt}
+                        fill
+                        sizes="(max-width: 640px) 78vw, (max-width: 1024px) 46vw, 18vw"
+                        className="object-cover"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </FadeReveal>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ——— PURPOSE · VISION · MISSION ———
           The page inverts here. Three published statements deserve to be read

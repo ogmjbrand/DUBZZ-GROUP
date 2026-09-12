@@ -30,19 +30,23 @@ interface Tile {
 }
 
 /**
- * Eight stills, arranged around the hole. Alt text is empty because the
- * mosaic is decoration — it makes an argument about range, and every business
- * it gestures at is named in the division strip directly below it.
+ * Eight stills, arranged around the hole: the Dubbz Tower concept renders —
+ * two façades and five interiors — plus one boardroom still.
+ *
+ * Alt text is empty because the mosaic is decoration. It makes an argument
+ * about range, and every business it gestures at is named in the division
+ * strip directly below it; the tower itself is introduced properly, and
+ * labelled as a concept, further down the page.
  */
 const tiles: Tile[] = [
-  { src: "/imagery/case-aureum.webp", alt: "", area: "1 / 1" },
-  { src: "/posters/media-film.jpg", alt: "", area: "2 / 1" },
-  { src: "/imagery/case-penthouse.webp", alt: "", area: "3 / 1" },
-  { src: "/posters/wear-film.jpg", alt: "", area: "1 / 2" },
-  { src: "/posters/trade-film.jpg", alt: "", area: "3 / 2" },
-  { src: "/imagery/case-nightshade.webp", alt: "", area: "1 / 3" },
-  { src: "/posters/resort-film.jpg", alt: "", area: "2 / 3" },
-  { src: "/imagery/post-restraint.webp", alt: "", area: "3 / 3" },
+  { src: "/imagery/tower/facade-1-night.webp", alt: "", area: "1 / 1" },
+  { src: "/imagery/tower/apparel.webp", alt: "", area: "2 / 1" },
+  { src: "/imagery/tower/wines.webp", alt: "", area: "3 / 1" },
+  { src: "/imagery/tower/lobby.webp", alt: "", area: "1 / 2" },
+  { src: "/imagery/tower/photo-studio.webp", alt: "", area: "3 / 2" },
+  { src: "/imagery/case-aureum.webp", alt: "", area: "1 / 3" },
+  { src: "/imagery/tower/podcast-studio.webp", alt: "", area: "2 / 3" },
+  { src: "/imagery/tower/facade-3-dusk.webp", alt: "", area: "3 / 3" },
 ];
 
 /**
@@ -125,21 +129,35 @@ export default function MosaicReveal({ children }: { children: ReactNode }) {
                 style={{ gridColumn: col, gridRow: row }}
                 className="relative overflow-hidden rounded-lg bg-surface"
               >
+                {/* Lower quality than the site default on purpose: every tile
+                    sits behind a 25% scrim, is never larger than a third of
+                    the viewport, and has left the screen within one scroll.
+                    Full quality here is spent on the LCP path for detail
+                    nobody can resolve. */}
                 <Image
                   src={tile.src}
                   alt={tile.alt}
                   fill
                   sizes="34vw"
+                  quality={62}
                   className="object-cover"
                 />
-                {/* Just enough to seat the tiles behind the headline that
-                    crosses them. Heavier than this and the mosaic stops
-                    reading as photography at all. */}
-                <span className="absolute inset-0 bg-background/15" />
+                {/* Seats the tiles into a midnight brand. The renders are
+                    warm and brightly lit, and at full strength they pull the
+                    whole opening away from the palette. */}
+                <span className="absolute inset-0 bg-background/25" />
               </div>
             );
           })}
         </motion.div>
+
+        {/* The header sits over whatever the mosaic puts under it, and the
+            hero's own scrims are tied to --reveal — so at rest there is
+            nothing holding contrast for the nav. This is, and stays put. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background via-background/70 to-transparent"
+        />
       </motion.div>
     </div>
   );

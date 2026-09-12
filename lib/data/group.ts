@@ -162,3 +162,43 @@ export const founderNarrative = {
     "That structure is the point. The Group is being built to outlast the person who started it — an institution, on purpose, from the first year.",
   ],
 };
+
+/**
+ * Dubbz Tower — the conceptual draft.
+ *
+ * A design study, not a building. The deck it comes from is titled
+ * "CONCEPTUAL DRAFT" and nothing here is built, leased, or occupied, so the
+ * page says so plainly rather than letting a photoreal render imply premises
+ * the Group does not have.
+ *
+ * It earns its place because it is the ecosystem argument in physical form:
+ * the businesses stacked in one building, sharing an entrance. The floors
+ * below are the ones labelled in the renders.
+ */
+export const tower = {
+  label: "Dubbz Tower",
+  heading: "The ecosystem, under one roof.",
+  standfirst:
+    "A concept study for a Dubbz Tower — the Group's businesses stacked in a single building, sharing one entrance, one address, and one front desk.",
+  body: "It is the clearest statement of how the Group is meant to work. A visitor arrives once and is inside all of it: the studios that make the work, the shop floor that sells it, the counter that pours, and the offices that run them. Three façade options are under study.",
+  /** Floors as the renders label them, ground up. */
+  floors: [
+    { level: "Ground", name: "Reception & Experience Hub" },
+    { level: "01", name: "Dubbz Clothing" },
+    { level: "02", name: "Dubbz Winery" },
+    { level: "03", name: "Media & Photo Studios" },
+    { level: "04", name: "Offices" },
+  ],
+  /** Interiors from the same study. Façades live in the section's lead image. */
+  interiors: [
+    { src: "/imagery/tower/lobby.webp", alt: "Concept render of the Dubbz Tower lobby: a timber and brass reception desk, lounge seating, and signed entrances to Dubbz Clothing and Dubbz Winery." },
+    { src: "/imagery/tower/apparel.webp", alt: "Concept render of the Dubbz Apparel floor: a panelled retail room with tailoring on display and a stone service counter." },
+    { src: "/imagery/tower/wines.webp", alt: "Concept render of Dubbz Wines & Liquors: lit timber shelving along both walls and a tasting counter at the back." },
+    { src: "/imagery/tower/photo-studio.webp", alt: "Concept render of the photo studio: a lit cyclorama with a shoot in progress, and a lounge and make-up area beyond." },
+    { src: "/imagery/tower/podcast-studio.webp", alt: "Concept render of the podcast studio: a four-seat table with boom microphones, acoustic panelling, and a control room through the glass." },
+  ],
+  facade: {
+    src: "/imagery/tower/facade-1-night.webp",
+    alt: "Night concept render of Dubbz Tower: a perforated brass screen over a dark frame, with the floors lit and labelled behind full-height glazing.",
+  },
+} as const;
