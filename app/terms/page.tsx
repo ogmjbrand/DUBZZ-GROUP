@@ -3,7 +3,7 @@ import LegalArticle from "@/components/ui/LegalArticle";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "The terms governing your use of Dubzz Group's websites and services.",
+  description: "The terms governing your use of Dubbz Group's websites and services.",
 };
 
 export default function TermsPage() {
@@ -16,13 +16,13 @@ export default function TermsPage() {
         {
           heading: "Agreement",
           paragraphs: [
-            "By using the Dubzz Group website and the services of its divisions, you agree to these terms. If you are using the site on behalf of a company — for example, opening a trade inquiry — you confirm you have authority to bind that company.",
+            "By using the Dubbz Group website and the services of its divisions, you agree to these terms. If you are using the site on behalf of a company — for example, opening a trade inquiry — you confirm you have authority to bind that company.",
           ],
         },
         {
           heading: "The Services",
           paragraphs: [
-            "Dubzz Wear sells physical goods in numbered runs; availability is genuinely limited and orders are accepted in sequence. Dubzz Wines Resort accepts reservations subject to its booking conditions provided at the time of booking. Dubzz Media engagements and Dubzz Trade contracts are governed by their own signed agreements, which prevail over these terms where they differ.",
+            "Dubbz Wear sells physical goods in numbered runs; availability is genuinely limited and orders are accepted in sequence. Dubbz Wines Resort accepts reservations subject to its booking conditions provided at the time of booking. Dubbz Media engagements and Dubbz Trade contracts are governed by their own signed agreements, which prevail over these terms where they differ.",
           ],
         },
         {
@@ -40,7 +40,7 @@ export default function TermsPage() {
         {
           heading: "Intellectual Property",
           paragraphs: [
-            "Everything on this site — marks, designs, photography, film, text, and code — belongs to Dubzz Group or its licensors. You may not reproduce or exploit it commercially without written permission.",
+            "Everything on this site — marks, designs, photography, film, text, and code — belongs to Dubbz Group or its licensors. You may not reproduce or exploit it commercially without written permission.",
           ],
         },
         {
@@ -58,7 +58,7 @@ export default function TermsPage() {
         {
           heading: "Changes & Contact",
           paragraphs: [
-            "We may update these terms; material changes will be posted here with a new date. Continued use after changes means acceptance. Questions: legal@dubzzgroup.com.",
+            "We may update these terms; material changes will be posted here with a new date. Continued use after changes means acceptance. Questions: legal@dubbzgroup.com.",
           ],
         },
       ]}

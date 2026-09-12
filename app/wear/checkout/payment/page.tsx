@@ -4,7 +4,7 @@ import { PaymentForm } from "@/components/wear/CheckoutForms";
 
 export const metadata: Metadata = {
   title: "Checkout — Payment",
-  description: "Dubzz Wear checkout — payment terminal.",
+  description: "Dubbz Wear checkout — payment terminal.",
 };
 
 export default function CheckoutPaymentPage() {

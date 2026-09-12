@@ -10,6 +10,13 @@ export async function POST(request: Request) {
   }
 
   const supabase = await createClient();
+  if (!supabase) {
+    return NextResponse.json(
+      { message: "This service is not configured yet. Please try again later." },
+      { status: 503 }
+    );
+  }
+
   const { error } = await supabase
     .from("media_bookings")
     .insert({ name, email, company, project_type, message, preferred_date });

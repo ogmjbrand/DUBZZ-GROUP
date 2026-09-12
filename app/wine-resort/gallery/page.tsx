@@ -3,11 +3,12 @@ import Button from "@/components/ui/Button";
 import Visual from "@/components/ui/Visual";
 import { Section } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
+import StatusNote from "@/components/ui/StatusNote";
 import { galleryScenes } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
-  title: "Gallery — Dubzz Wines Resort",
-  description: "Scenes from the estate — first light on the east slope to midnight on the terrace.",
+  title: "Gallery — Dubbz Wines Resort",
+  description: "Visual studies for Dubbz Wines Resort — the destination as it is being designed, first light to midnight.",
 };
 
 const spanClasses: Record<string, string> = {
@@ -24,12 +25,19 @@ export default function GalleryPage() {
           <FadeReveal>
             <p className="overline-label text-wine">Wines Resort · Gallery</p>
             <h1 className="mt-8 max-w-3xl font-display text-5xl leading-[1.02] text-white sm:text-7xl">
-              Scenes from the estate.
+              The destination, envisioned.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-neutral">
-              A day on the estate, first light to midnight. The photograph
-              undersells it — guests keep telling us so.
+              A day at the destination as it is being designed — first light
+              to midnight. These are visual studies, not photographs of a
+              finished property.
             </p>
+          </FadeReveal>
+          <FadeReveal delay={140} className="mt-10 max-w-2xl">
+            <StatusNote label="In Development">
+              Dubbz Wines Resort is a destination in development. What follows
+              is the design vision for it, not a bookable programme.
+            </StatusNote>
           </FadeReveal>
         </div>
       </section>

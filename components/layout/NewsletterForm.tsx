@@ -36,7 +36,7 @@ export default function NewsletterForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="your@email.com"
-          className="w-full border-0 border-b border-white/15 bg-transparent px-0 py-2.5 text-sm text-white placeholder:text-white/25 transition-colors focus:border-gold focus:outline-none"
+          className="w-full border-0 border-b border-white/15 bg-transparent px-0 py-2.5 text-sm text-white placeholder:text-white/50 transition-colors focus:border-gold focus:outline-none"
         />
       </div>
       <button

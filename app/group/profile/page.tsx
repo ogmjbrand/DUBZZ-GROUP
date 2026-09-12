@@ -6,8 +6,8 @@ import FadeReveal from "@/components/motion/FadeReveal";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
-  title: "Inner Circle Hub — Dubzz Group",
-  description: "Your guest profile across the Dubzz ecosystem — standing, privileges, and activity.",
+  title: "Inner Circle Hub — Dubbz Group",
+  description: "Your guest profile across the Dubbz ecosystem — standing, privileges, and activity.",
 };
 
 /** Program description, not a per-user entitlement claim -- nothing here implies it's active for this account yet. */
@@ -26,6 +26,9 @@ const roleLabel: Record<string, string> = {
 
 export default async function ProfilePage() {
   const supabase = await createClient();
+  // Accounts need Supabase; without it there is no session to read.
+  if (!supabase) redirect("/login?redirect=/group/profile");
+
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -52,7 +55,7 @@ export default async function ProfilePage() {
   return (
     <div className="mx-auto w-full max-w-7xl px-6 pb-28 pt-40 sm:px-10 lg:px-16">
       <FadeReveal>
-        <p className="overline-label text-gold">Dubzz Group · Inner Circle</p>
+        <p className="overline-label text-gold">Dubbz Group · Inner Circle</p>
         <h1 className="mt-6 font-display text-5xl leading-tight text-white sm:text-6xl">
           Welcome back, {displayName}.
         </h1>
@@ -71,13 +74,13 @@ export default async function ProfilePage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               </div>
               <p className="mt-14 font-display text-3xl capitalize text-white">{standing}</p>
-              <p className="mt-1 text-xs text-white/40">{tier} · Since {since}</p>
+              <p className="mt-1 text-xs text-white/55">{tier} · Since {since}</p>
               <div className="mt-10 flex items-end justify-between">
-                <p className="font-label text-[9px] uppercase tracking-[0.24em] text-white/35">
+                <p className="font-label text-[10px] uppercase tracking-[0.24em] text-white/50">
                   Member № {memberNumber}
                 </p>
-                <p className="font-label text-[9px] uppercase tracking-[0.24em] text-gold/70">
-                  Dubzz Group
+                <p className="font-label text-[10px] uppercase tracking-[0.24em] text-gold/70">
+                  Dubbz Group
                 </p>
               </div>
             </div>
@@ -97,7 +100,7 @@ export default async function ProfilePage() {
           <FadeReveal delay={180}>
             <Card static>
               <div className="p-8">
-                <p className="overline-label text-white/45">Privileges Across the Houses</p>
+                <p className="overline-label text-white/60">Privileges Across the Houses</p>
                 <ul className="mt-6 divide-y divide-white/6">
                   {privileges.map((p) => (
                     <li key={p.division} className="flex items-center justify-between gap-4 py-4">
@@ -115,7 +118,7 @@ export default async function ProfilePage() {
           <FadeReveal delay={260}>
             <Card static>
               <div className="p-8">
-                <p className="overline-label text-white/45">Recent Activity</p>
+                <p className="overline-label text-white/60">Recent Activity</p>
                 {bookings && bookings.length > 0 ? (
                   <ol className="mt-6 space-y-5 border-l border-white/10 pl-6">
                     {bookings.map((b) => (
@@ -124,7 +127,7 @@ export default async function ProfilePage() {
                         <p className="text-sm text-white">
                           Booking requested — {(b as { sanctuaries: { name: string } | null }).sanctuaries?.name ?? "Sanctuary"}
                         </p>
-                        <p className="mt-0.5 text-xs text-white/35">
+                        <p className="mt-0.5 text-xs text-white/50">
                           {new Date(b.check_in).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })} —{" "}
                           {new Date(b.check_out).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })} · {b.status}
                         </p>

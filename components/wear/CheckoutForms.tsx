@@ -4,6 +4,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import Button from "@/components/ui/Button";
 import { Field, Input, Select } from "@/components/ui/Field";
+import { contact } from "@/lib/data/site";
 import { useStore } from "@/components/providers/StoreProvider";
 
 /**
@@ -12,6 +13,8 @@ import { useStore } from "@/components/providers/StoreProvider";
  * `fetch('/api/wear/checkout')` call is the single wiring point.
  */
 
+// Keeps the old spelling on purpose: this is a storage key, not brand
+// surface, and renaming it drops whatever a visitor has already saved.
 const CHECKOUT_KEY = "dubzz-checkout-v1";
 
 interface CheckoutDraft {
@@ -101,7 +104,7 @@ export function IdentityForm() {
 const shippingMethods = [
   { id: "standard", label: "Standard — Carbon-neutral courier", eta: "3–5 days", price: "Included" },
   { id: "express", label: "Express — Next-day, signed", eta: "1 day", price: "$30" },
-  { id: "collect", label: "Atelier Collection — Porto", eta: "When you are", price: "Included" },
+  { id: "collect", label: `Collection — ${contact.city}`, eta: "When you are", price: "Included" },
 ];
 
 export function ShippingForm() {
@@ -167,7 +170,7 @@ export function ShippingForm() {
       </div>
 
       <fieldset>
-        <legend className="overline-label mb-4 text-[10px] text-white/45">Delivery Method</legend>
+        <legend className="overline-label mb-4 text-[10px] text-white/60">Delivery Method</legend>
         <div className="space-y-3">
           {shippingMethods.map((m) => (
             <label
@@ -191,7 +194,7 @@ export function ShippingForm() {
               />
               <span className="flex-1">
                 <span className="block text-sm text-white">{m.label}</span>
-                <span className="mt-0.5 block text-xs text-white/40">{m.eta}</span>
+                <span className="mt-0.5 block text-xs text-white/55">{m.eta}</span>
               </span>
               <span className="text-sm text-gold">{m.price}</span>
             </label>
@@ -240,11 +243,11 @@ export function PaymentForm() {
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative flex h-36 flex-col justify-between">
           <div className="flex items-center justify-between">
-            <span className="font-label text-[10px] font-bold tracking-[0.3em] text-gold">DUBZZ PAY</span>
+            <span className="font-label text-[10px] font-bold tracking-[0.3em] text-gold">DUBBZ PAY</span>
             <span aria-hidden className="h-7 w-10 rounded-sm bg-gradient-to-br from-gold/80 to-gold-deep" />
           </div>
           <p className="font-mono text-lg tracking-[0.2em] text-white/80">•••• •••• •••• ••••</p>
-          <div className="flex justify-between font-label text-[9px] uppercase tracking-[0.2em] text-white/40">
+          <div className="flex justify-between font-label text-[10px] uppercase tracking-[0.2em] text-white/55">
             <span>Cardholder</span>
             <span>MM / YY</span>
           </div>
@@ -277,7 +280,7 @@ export function PaymentForm() {
       <Button type="submit" disabled={placing || cart.length === 0} className="w-full">
         {placing ? "Securing the Run Number…" : "Place Order"}
       </Button>
-      <p className="text-center text-xs text-white/30">
+      <p className="text-center text-xs text-white/50">
         By placing this order you agree to the terms of service.
       </p>
     </form>

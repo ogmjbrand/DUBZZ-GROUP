@@ -94,12 +94,15 @@ export default function Navbar() {
       ].join(" ")}
     >
       <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6 sm:px-10 lg:px-16">
-        <Link href="/" aria-label="Dubzz Group — home" className="group flex items-baseline gap-1.5">
-          <span className="font-label text-lg font-bold tracking-[0.3em] text-white">
-            DUBZZ
+        {/* Wide tracking is most of the wordmark's width, so it steps down
+            below sm — at 320px the full lockup plus the action row overran
+            the bar by ~10px. */}
+        <Link href="/" aria-label="Dubbz Group — home" className="group flex shrink-0 items-baseline gap-1 sm:gap-1.5">
+          <span className="font-label text-base font-bold tracking-[0.2em] text-white sm:text-lg sm:tracking-[0.3em]">
+            DUBBZ
           </span>
           <span className="h-1.5 w-1.5 rounded-full bg-gold transition-transform duration-300 group-hover:scale-125" />
-          <span className="font-label text-[10px] font-semibold tracking-[0.3em] text-white/50">
+          <span className="font-label text-[10px] font-semibold tracking-[0.2em] text-white/50 sm:text-[10px] sm:tracking-[0.3em]">
             GROUP
           </span>
         </Link>
@@ -147,7 +150,7 @@ export default function Navbar() {
                   href={d.href}
                   className="group/item flex items-center gap-4 rounded-md px-4 py-3.5 transition-colors duration-200 hover:bg-white/5"
                 >
-                  <span className="font-display text-sm text-white/30">{d.index}</span>
+                  <span className="font-display text-sm text-white/50">{d.index}</span>
                   <span
                     className="h-8 w-px shrink-0"
                     style={{ background: `linear-gradient(to bottom, transparent, ${d.accent}, transparent)` }}
@@ -156,7 +159,7 @@ export default function Navbar() {
                     <span className="block font-label text-[11px] font-semibold uppercase tracking-[0.2em] text-white transition-colors group-hover/item:text-gold">
                       {d.name}
                     </span>
-                    <span className="mt-0.5 block text-xs text-white/40">{d.tagline}</span>
+                    <span className="mt-0.5 block text-xs text-white/55">{d.tagline}</span>
                   </span>
                   <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden className="-translate-x-1 opacity-0 transition-all duration-300 group-hover/item:translate-x-0 group-hover/item:opacity-100">
                     <path d="M9 1l4 4-4 4M13 5H1" stroke="#d4af37" strokeWidth="1.3" />
@@ -173,7 +176,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3.5 sm:gap-5">
           <Link href="/search" aria-label="Search" className="p-1 text-white/60 transition-colors hover:text-gold">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
               <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.4" />
@@ -210,7 +213,7 @@ export default function Navbar() {
                 >
                   <div className="px-4 py-3">
                     <p className="truncate text-sm text-white">{profile?.full_name || "Member"}</p>
-                    <p className="truncate text-xs text-white/40">{user.email}</p>
+                    <p className="truncate text-xs text-white/55">{user.email}</p>
                   </div>
                   <div className="my-1 h-px bg-white/8" />
                   {[
@@ -257,7 +260,7 @@ export default function Navbar() {
               <path d="M6 6V5a3 3 0 016 0v1" stroke="currentColor" strokeWidth="1.4" />
             </svg>
             {hydrated && cartCount > 0 ? (
-              <span className="absolute -right-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-gold px-1 font-label text-[9px] font-bold text-background">
+              <span className="absolute -right-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-gold px-1 font-label text-[10px] font-bold text-background">
                 {cartCount}
               </span>
             ) : null}
@@ -303,8 +306,8 @@ export default function Navbar() {
                   mobileOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
                 ].join(" ")}
               >
-                <span className="font-display text-sm text-white/30">{d.index}</span>
-                <span className="font-display text-3xl text-white">{d.name.replace("Dubzz ", "")}</span>
+                <span className="font-display text-sm text-white/50">{d.index}</span>
+                <span className="font-display text-3xl text-white">{d.name.replace("Dubbz ", "")}</span>
               </Link>
             ))}
           </div>

@@ -7,7 +7,7 @@ import FadeReveal from "@/components/motion/FadeReveal";
 export const metadata: Metadata = {
   title: "After Dark — Entertainment & Lifestyle Experiences",
   description:
-    "After Dark is Dubzz Group's signature entertainment and lifestyle experience platform — curated nights where music, fashion, food, creativity, and connection meet.",
+    "After Dark is Dubbz Group's signature entertainment and lifestyle experience platform — curated nights where music, fashion, food, creativity, and connection meet.",
 };
 
 /** Experience Categories, per the 2026 Corporate Profile. */
@@ -82,7 +82,7 @@ export default function AfterDarkPage() {
           <FadeReveal delay={120} className="space-y-6 text-lg leading-relaxed text-neutral">
             <p>
               After Dark is the signature entertainment and lifestyle experience
-              platform of Dubzz Group — created to celebrate culture, music,
+              platform of Dubbz Group — created to celebrate culture, music,
               fashion, food, creativity, and human connection.
             </p>
             <p>
@@ -114,7 +114,7 @@ export default function AfterDarkPage() {
             <FadeReveal key={e.title} delay={i * 60}>
               <Card static className="h-full">
                 <div className="flex h-full flex-col p-8">
-                  <p className="font-display text-lg text-white/25">
+                  <p className="font-display text-lg text-white/50">
                     {String(i + 1).padStart(2, "0")}
                   </p>
                   <h3 className="mt-4 font-display text-xl text-white">{e.title}</h3>

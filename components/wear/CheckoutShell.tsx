@@ -48,7 +48,7 @@ export default function CheckoutShell({
                         "flex h-8 w-8 items-center justify-center rounded-full border font-label text-[10px] font-bold",
                         state === "current"
                           ? "border-gold text-gold shadow-[0_0_16px_rgba(212,175,55,0.35)]"
-                          : "border-white/15 text-white/30",
+                          : "border-white/15 text-white/50",
                       ].join(" ")}
                     >
                       {i + 1}
@@ -56,7 +56,7 @@ export default function CheckoutShell({
                     <span
                       className={[
                         "hidden font-label text-[10px] font-semibold uppercase tracking-[0.2em] sm:block",
-                        state === "current" ? "text-white" : "text-white/30",
+                        state === "current" ? "text-white" : "text-white/50",
                       ].join(" ")}
                     >
                       {s.label}
@@ -81,7 +81,7 @@ export default function CheckoutShell({
         {/* Order summary */}
         <aside className="lg:col-span-5">
           <div className="rounded-lg glass p-7 lg:sticky lg:top-32">
-            <p className="overline-label text-white/45">Your Order</p>
+            <p className="overline-label text-white/60">Your Order</p>
             {!hydrated ? (
               <div className="mt-6 h-24 animate-pulse rounded-md bg-white/5" aria-hidden />
             ) : cart.length === 0 ? (
@@ -103,7 +103,7 @@ export default function CheckoutShell({
                         <Visual background={product.visual} className="h-14 w-12 shrink-0 rounded-md" />
                         <div className="flex-1">
                           <p className="text-sm text-white">{product.name}</p>
-                          <p className="text-xs text-white/40">
+                          <p className="text-xs text-white/55">
                             {item.size} × {item.qty}
                           </p>
                         </div>

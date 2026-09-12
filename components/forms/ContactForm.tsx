@@ -58,8 +58,8 @@ export default function ContactForm() {
         <p className="mt-3 text-sm leading-relaxed text-neutral">
           Thank you — someone from the right house will reply within two
           business days. For urgent matters, write to{" "}
-          <a href="mailto:hello@dubzzgroup.com" className="text-gold hover:text-gold-bright">
-            hello@dubzzgroup.com
+          <a href="mailto:hello@dubbzgroup.com" className="text-gold hover:text-gold-bright">
+            hello@dubbzgroup.com
           </a>
           .
         </p>

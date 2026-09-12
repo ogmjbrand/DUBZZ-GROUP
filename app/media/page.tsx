@@ -6,27 +6,46 @@ import FadeReveal from "@/components/motion/FadeReveal";
 import CinematicVideo from "@/components/effects/CinematicVideo";
 
 export const metadata: Metadata = {
-  title: "Dubzz Media — Creative Agency",
+  title: "Dubbz Media — The Creative Engine",
   description:
-    "Dubzz Media is a creative agency at the intersection of film, brand, and technology — identities and campaigns for names that intend to last.",
+    "Dubbz Media is the Group's flagship creative business — commercial video production, editing, motion graphics, brand identity, social content strategy, event coverage, and creative campaigns.",
+  alternates: { canonical: "/media" },
 };
 
+/**
+ * The seven services the corporate profile lists for Dubbz Media.
+ *
+ * Replaces a four-discipline agency menu — "brand codices", "real-time 3D",
+ * "immersive product experiences" — that described a different company.
+ */
 const services = [
   {
-    title: "Brand & Identity",
-    body: "Naming, identity systems, motion languages, and brand codices — built from the archive up, made to age well.",
+    title: "Commercial Video Production",
+    body: "Brand films, adverts, and commercial shoots taken from concept and direction through to the finished cut.",
   },
   {
-    title: "Film & Campaign",
-    body: "Directorial campaigns, launch films, and anthologies — strategy through final grade, in-house.",
+    title: "Professional Video Editing",
+    body: "Post-production for brands and creators — assembly, colour, sound, and delivery across every format a campaign needs.",
   },
   {
-    title: "Digital & Experience",
-    body: "Real-time 3D, immersive product experiences, and websites that behave like the brand they carry.",
+    title: "Motion Graphics & Animation",
+    body: "Animated identity, titles, explainers, and graphics that give a brand a way of moving as well as a way of looking.",
   },
   {
-    title: "Strategy",
-    body: "Positioning for companies whose next decade matters more than their next quarter.",
+    title: "Brand Identity Development",
+    body: "Identity systems built to hold up across every surface a business appears on, and to still work several years in.",
+  },
+  {
+    title: "Social Media Content Strategy",
+    body: "Content built for how each platform is actually used, planned as a programme rather than a series of posts.",
+  },
+  {
+    title: "Event Coverage",
+    body: "Full coverage of launches, conferences, and cultural events — the film, the stills, and the edit that follows.",
+  },
+  {
+    title: "Creative Campaign Development",
+    body: "Campaign ideas developed end to end, from the strategic idea through production to the assets that carry it.",
   },
 ];
 
@@ -49,14 +68,15 @@ export default function MediaPage() {
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>
-            <p className="overline-label text-media">Dubzz Media · 02</p>
-            <h1 className="mt-8 max-w-4xl font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.98] text-white">
-              Stories engineered to be
-              <span className="italic text-media"> unforgettable.</span>
+            <p className="overline-label text-media">Dubbz Media · 01</p>
+            <h1 className="mt-8 max-w-4xl font-display text-[clamp(2.5rem,7.4vw,6rem)] leading-[1.03] text-white">
+              The creative engine
+              <span className="italic text-media"> of the Group.</span>
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-neutral">
-              A creative agency at the intersection of film, brand, and
-              technology. We take fewer commissions and finish every one of them.
+              The Group&apos;s flagship creative business — visual storytelling,
+              strategic branding, and digital content for businesses,
+              institutions, and entrepreneurs.
             </p>
           </FadeReveal>
           <FadeReveal delay={200} className="mt-12 flex flex-wrap gap-4">
@@ -74,14 +94,14 @@ export default function MediaPage() {
       <Section>
         <SectionHeading
           overline="What We Do"
-          title="Four disciplines, one signature."
+          title="Seven services, one standard."
         />
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <FadeReveal key={s.title} delay={i * 80}>
               <Card static className="h-full">
                 <div className="flex h-full flex-col p-8">
-                  <p className="font-display text-lg text-white/25">0{i + 1}</p>
+                  <p className="font-display text-lg text-white/50">0{i + 1}</p>
                   <h3 className="mt-4 font-display text-xl text-white">{s.title}</h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral">{s.body}</p>
                 </div>
@@ -92,7 +112,7 @@ export default function MediaPage() {
       </Section>
 
       {/* Vision & Future — replaces a "Selected Work" grid of three invented
-          case studies. Dubzz Media has delivered real client work, but the
+          case studies. Dubbz Media has delivered real client work, but the
           profile names none of it, so nothing here can be attributed yet. */}
       <Section id="work" className="border-t border-white/5">
         <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
@@ -104,7 +124,7 @@ export default function MediaPage() {
           </FadeReveal>
           <FadeReveal delay={120} className="space-y-6 text-lg leading-relaxed text-neutral">
             <p>
-              Dubzz Media is the flagship creative company within Dubzz Group,
+              Dubbz Media is the flagship creative company within Dubbz Group,
               and the foundation the Group was built on. It exists to help
               businesses, organisations, entrepreneurs, and institutions
               communicate their ideas — through visual storytelling, strategic
@@ -128,7 +148,7 @@ export default function MediaPage() {
       <Section className="border-t border-white/5 text-center">
         <FadeReveal>
           <h2 className="mx-auto max-w-2xl font-display text-4xl leading-tight text-white sm:text-5xl">
-            The next commission gets the same obsession as the last.
+            Tell us what you are building.
           </h2>
           <div className="mt-10">
             <Button href="/media/booking" size="lg">

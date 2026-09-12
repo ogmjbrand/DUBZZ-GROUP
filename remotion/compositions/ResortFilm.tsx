@@ -14,7 +14,7 @@ const HORIZON = 430;
 const BANDS = 46;
 
 /**
- * Dubzz Wine Resort — ambient loop.
+ * Dubbz Wine Resort — ambient loop.
  *
  * Golden hour over water. The entire scene is two ideas: a low warm sun, and a
  * surface that breaks its light into bands.

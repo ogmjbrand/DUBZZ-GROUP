@@ -67,7 +67,7 @@ export const Signature: React.FC = () => {
             textIndent: "0.46em",
           }}
         >
-          Dubzz Group
+          Dubbz Group
         </div>
 
         <div

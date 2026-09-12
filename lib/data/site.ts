@@ -1,31 +1,38 @@
 /**
  * Group identity.
  *
- * Source of truth is the 2026 Dubzz Group Corporate Profile. Nothing in this
+ * Source of truth is the 2026 Dubbz Group Corporate Profile. Nothing in this
  * file may be invented: the Group is early-stage, and placeholder metrics or
  * credentials presented as fact are a liability rather than a design detail.
  * If a number or claim is not in the profile, it does not belong here.
  */
 
 export const site = {
-  name: "Dubzz Group",
-  title: "Dubzz Group — Building Brands. Creating Experiences. Inspiring Culture.",
+  name: "Dubbz Group",
+  title: "Dubbz Group — Building Brands. Creating Experiences. Inspiring Culture.",
   description:
-    "Dubzz Group is a diversified creative, lifestyle, and business holding company headquartered in Abuja, Nigeria — operating across media, fashion, hospitality, entertainment, and international trade.",
-  url: "https://dubzzgroup.com",
+    "Dubbz Group is a diversified creative, lifestyle, and business holding company headquartered in Abuja, Nigeria — operating across media, fashion, hospitality, entertainment, and international trade.",
+  /**
+   * Drives canonicals, the sitemap, Open Graph URLs and the Organization
+   * schema's @id, so it has to be a domain the Group actually holds. Renamed
+   * with the brand — a Dubbz-branded site canonicalising to dubzzgroup.com is
+   * incoherent — but confirm the registration before launch: pointing these at
+   * a domain nobody owns is worse than pointing them at the old one.
+   */
+  url: "https://dubbzgroup.com",
   tagline: "Building Brands. Creating Experiences. Inspiring Culture.",
 };
 
 /** Head office, per the profile's Contact page. */
 export const contact = {
-  company: "Dubzz Group",
+  company: "Dubbz Group",
   office: "Head Office",
   city: "Abuja",
   region: "Federal Capital Territory",
   country: "Nigeria",
-  // Marked "to be activated" in the profile — kept because it is the address
-  // the Group publishes, but treat delivery as unverified.
-  email: "hello@dubzzgroup.com",
+  // Marked "to be activated" in the profile, and now on a renamed domain as
+  // well — so treat delivery as unverified on both counts.
+  email: "hello@dubbzgroup.com",
   enquiries: [
     "Partnerships",
     "Corporate Collaborations",
@@ -54,10 +61,10 @@ export const footerColumns = [
   {
     heading: "Divisions",
     links: [
-      { label: "Dubzz Media", href: "/media" },
-      { label: "Dubzz Wear", href: "/wear" },
-      { label: "Dubzz Wines Resort", href: "/wine-resort" },
-      { label: "Dubzz Trade", href: "/trade" },
+      { label: "Dubbz Media", href: "/media" },
+      { label: "Dubbz Wear", href: "/wear" },
+      { label: "Dubbz Wines Resort", href: "/wine-resort" },
+      { label: "Dubbz Trade", href: "/trade" },
       { label: "After Dark", href: "/after-dark" },
     ],
   },
@@ -75,7 +82,7 @@ export const footerColumns = [
     heading: "Experiences",
     links: [
       { label: "The Collection", href: "/wear" },
-      { label: "Book a Stay", href: "/wine-resort/booking/sanctuary" },
+      { label: "Register Interest", href: "/wine-resort/booking/sanctuary" },
       { label: "Start a Project", href: "/media/booking" },
       { label: "Trade Inquiry", href: "/trade/inquiry" },
       { label: "Search", href: "/search" },
@@ -83,10 +90,14 @@ export const footerColumns = [
   },
 ];
 
-/** Only the two channels the profile publishes. */
+/**
+ * Only the two channels the profile publishes. The handles moved with the
+ * brand rename and have not been verified to exist — check before launch,
+ * since a dead social link on a corporate site is read as abandonment.
+ */
 export const socials = [
-  { label: "Instagram", href: "https://instagram.com/dubzzgroup", handle: "@dubzzgroup" },
-  { label: "LinkedIn", href: "https://linkedin.com", handle: "Dubzz Group" },
+  { label: "Instagram", href: "https://instagram.com/dubbzgroup", handle: "@dubbzgroup" },
+  { label: "LinkedIn", href: "https://linkedin.com", handle: "Dubbz Group" },
 ];
 
 /**
@@ -102,7 +113,7 @@ export const milestones = [
   {
     area: "Corporate Development",
     items: [
-      "Established the vision and strategic direction of Dubzz Group.",
+      "Established the vision and strategic direction of Dubbz Group.",
       "Developed a diversified holding company structure.",
       "Created the Group's long-term business ecosystem.",
     ],
@@ -110,7 +121,7 @@ export const milestones = [
   {
     area: "Creative Services",
     items: [
-      "Established Dubzz Media as the Group's flagship creative business.",
+      "Established Dubbz Media as the Group's flagship creative business.",
       "Delivered creative solutions for businesses and international clients.",
       "Continued building expertise across media production, editing, branding, and digital content.",
     ],
@@ -118,10 +129,10 @@ export const milestones = [
   {
     area: "Brand Development",
     items: [
-      "Developed the Dubzz Wear concept and brand identity.",
-      "Established the vision for Dubzz Wines Resort.",
+      "Developed the Dubbz Wear concept and brand identity.",
+      "Established the vision for Dubbz Wines Resort.",
       "Created the After Dark entertainment platform.",
-      "Developed Dubzz Trade as the Group's international commerce division.",
+      "Developed Dubbz Trade as the Group's international commerce division.",
     ],
   },
   {

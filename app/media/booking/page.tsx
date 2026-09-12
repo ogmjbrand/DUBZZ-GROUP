@@ -3,9 +3,9 @@ import FadeReveal from "@/components/motion/FadeReveal";
 import MediaBookingForm from "@/components/forms/MediaBookingForm";
 
 export const metadata: Metadata = {
-  title: "Book a Commission — Dubzz Media",
+  title: "Book a Commission — Dubbz Media",
   description:
-    "Commission Dubzz Media — brand identity, film and campaign, digital experience, and strategy engagements.",
+    "Commission Dubbz Media — brand identity, film and campaign, digital experience, and strategy engagements.",
 };
 
 const expectations = [
@@ -21,7 +21,7 @@ export default function MediaBookingPage() {
       <div className="relative mx-auto grid w-full max-w-7xl gap-16 px-6 pb-28 pt-44 sm:px-10 lg:grid-cols-12 lg:px-16">
         <div className="lg:col-span-5">
           <FadeReveal>
-            <p className="overline-label text-media">Dubzz Media · Booking</p>
+            <p className="overline-label text-media">Dubbz Media · Booking</p>
             <h1 className="mt-7 font-display text-5xl leading-[1.05] text-white sm:text-6xl">
               Commission the studio.
             </h1>

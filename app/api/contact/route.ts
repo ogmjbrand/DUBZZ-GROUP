@@ -12,6 +12,13 @@ export async function POST(request: Request) {
   }
 
   const supabase = await createClient();
+  if (!supabase) {
+    return NextResponse.json(
+      { message: "This service is not configured yet. Please try again later." },
+      { status: 503 }
+    );
+  }
+
   const { error } = await supabase
     .from("contact_messages")
     .insert({ name, email, subject, message, division });

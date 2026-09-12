@@ -6,7 +6,8 @@ import { contact } from "@/lib/data/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a conversation with Dubzz Group — media commissions, trade inquiries, resort reservations, or anything in between.",
+    "Contact Dubbz Group in Abuja, Nigeria — business enquiries, partnerships, corporate collaborations, investment opportunities, media relations, and strategic alliances.",
+  alternates: { canonical: "/contact" },
 };
 
 /**
@@ -33,16 +34,17 @@ export default function ContactPage() {
           <FadeReveal>
             <p className="overline-label text-gold">Contact</p>
             <h1 className="mt-7 font-display text-5xl leading-[1.05] text-white sm:text-6xl">
-              Every project starts as a conversation.
+              Build with Dubbz.
             </h1>
             <p className="mt-7 max-w-md text-base leading-relaxed text-neutral">
-              Tell us what you&apos;re building, and we&apos;ll route you to the
-              right house. Expect a considered reply, not an automated one.
+              Tell us what you&apos;re building and we&apos;ll route it to the
+              right business within the Group. Expect a considered reply, not
+              an automated one.
             </p>
           </FadeReveal>
 
           <FadeReveal delay={150} className="mt-14">
-            <p className="overline-label mb-5 text-white/45">Direct Lines</p>
+            <p className="overline-label mb-5 text-white/60">Direct Lines</p>
             <ul className="space-y-3.5">
               {directLines.map((d) => (
                 <li key={d.label} className="flex flex-wrap items-baseline justify-between gap-2 border-b border-white/8 pb-3.5">
@@ -56,7 +58,7 @@ export default function ContactPage() {
           </FadeReveal>
 
           <FadeReveal delay={250} className="mt-12">
-            <p className="overline-label mb-5 text-white/45">Head Office</p>
+            <p className="overline-label mb-5 text-white/60">Head Office</p>
             <address className="rounded-lg border border-white/8 p-6 not-italic">
               <p className="font-display text-xl text-white">{contact.company}</p>
               <p className="mt-2 text-sm leading-relaxed text-neutral">
@@ -70,12 +72,12 @@ export default function ContactPage() {
           </FadeReveal>
 
           <FadeReveal delay={320} className="mt-12">
-            <p className="overline-label mb-5 text-white/45">Business Enquiries</p>
+            <p className="overline-label mb-5 text-white/60">Business Enquiries</p>
             <ul className="flex flex-wrap gap-2">
               {enquiryTypes.map((e) => (
                 <li
                   key={e}
-                  className="rounded-full border border-white/10 px-4 py-1.5 font-label text-[9px] font-semibold uppercase tracking-[0.16em] text-white/45"
+                  className="rounded-full border border-white/10 px-4 py-1.5 font-label text-[10px] font-semibold uppercase tracking-[0.16em] text-white/60"
                 >
                   {e}
                 </li>

@@ -7,9 +7,9 @@ import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import { growthPillars } from "@/lib/data/site";
 
 export const metadata: Metadata = {
-  title: "Investor Relations — Dubzz Group",
+  title: "Investor Relations — Dubbz Group",
   description:
-    "The Dubzz Group investor relations portal — growth strategy, reporting commitments, and the resource vault for the group's partners.",
+    "The Dubbz Group investor relations portal — growth strategy, reporting commitments, and the resource vault for the group's partners.",
 };
 
 /**
@@ -44,7 +44,7 @@ export default function InvestorsPage() {
         <div aria-hidden className="absolute inset-0 bg-[radial-gradient(75%_55%_at_80%_0%,rgba(212,175,55,0.1)_0%,transparent_60%)]" />
         <div className="relative mx-auto max-w-7xl">
           <FadeReveal>
-            <p className="overline-label text-gold">Dubzz Group · Investor Relations</p>
+            <p className="overline-label text-gold">Dubbz Group · Investor Relations</p>
             <h1 className="mt-8 max-w-3xl font-display text-5xl leading-[1.02] text-white sm:text-7xl">
               The portal for patient capital.
             </h1>
@@ -118,7 +118,7 @@ export default function InvestorsPage() {
                 <span className="font-display text-2xl text-white">{r.title}</span>
                 <span className="flex items-baseline gap-6">
                   <span className="max-w-xs text-sm text-white/50">{r.body}</span>
-                  <span className="shrink-0 rounded-full border border-white/12 px-4 py-1 font-label text-[9px] font-semibold uppercase tracking-[0.18em] text-white/40">
+                  <span className="shrink-0 rounded-full border border-white/12 px-4 py-1 font-label text-[10px] font-semibold uppercase tracking-[0.18em] text-white/55">
                     Not yet published
                   </span>
                 </span>

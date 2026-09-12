@@ -4,7 +4,7 @@ import { IdentityForm } from "@/components/wear/CheckoutForms";
 
 export const metadata: Metadata = {
   title: "Checkout — Identity",
-  description: "Dubzz Wear checkout — identity and bag.",
+  description: "Dubbz Wear checkout — identity and bag.",
 };
 
 export default function CheckoutIdentityPage() {

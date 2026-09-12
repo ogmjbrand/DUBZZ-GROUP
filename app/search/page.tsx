@@ -4,7 +4,7 @@ import SiteSearch from "@/components/forms/SiteSearch";
 
 export const metadata: Metadata = {
   title: "Search",
-  description: "Search across the Dubzz Group ecosystem — products, work, journal entries, and the estate.",
+  description: "Search across the Dubbz Group ecosystem — products, work, journal entries, and the estate.",
 };
 
 export default function SearchPage() {

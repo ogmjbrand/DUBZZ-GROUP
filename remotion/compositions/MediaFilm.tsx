@@ -34,7 +34,7 @@ const ROWS = 5;
 const GUTTER = 18;
 
 /**
- * Dubzz Media — ambient loop.
+ * Dubbz Media — ambient loop.
  *
  * A page laying itself out, forever. Cells fade and re-weight on independent
  * cycles so the composition is continuously reflowing without ever settling —

@@ -51,7 +51,7 @@ const along = (
 const DURATION = 600;
 
 /**
- * Dubzz Trade — ambient loop.
+ * Dubbz Trade — ambient loop.
  *
  * Global logistics as continuous state rather than narrative: the graticule
  * drifts, corridors carry cargo, and a market pulse runs along the floor. Unlike

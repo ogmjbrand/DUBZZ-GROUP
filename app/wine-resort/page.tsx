@@ -6,12 +6,14 @@ import Visual from "@/components/ui/Visual";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
 import CinematicVideo from "@/components/effects/CinematicVideo";
+import StatusNote from "@/components/ui/StatusNote";
 import { sanctuaries, experiences, resortEvents, diningVenues } from "@/lib/data/resort";
 
 export const metadata: Metadata = {
-  title: "Dubzz Wines Resort — Luxury Hospitality",
+  title: "Dubbz Wines Resort — Hospitality & Lifestyle",
   description:
-    "An estate of vineyards, sanctuaries, and fine dining — hospitality composed like cinema, poured like a rare vintage.",
+    "Dubbz Wines Resort is the Group's hospitality and lifestyle division — a premium destination in development, bringing together wine culture, leisure, events, and luxury experiences.",
+  alternates: { canonical: "/wine-resort" },
 };
 
 export default function WineResortPage() {
@@ -33,22 +35,32 @@ export default function WineResortPage() {
         <div aria-hidden className="grain absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-28 pt-44 sm:px-10 lg:px-16">
           <FadeReveal>
-            <p className="overline-label text-wine">Dubzz Wines Resort · 04</p>
-            <h1 className="mt-8 max-w-4xl font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.98] text-white">
-              Where the vine meets
-              <span className="italic text-wine"> the horizon.</span>
+            <p className="overline-label text-wine">Dubbz Wines Resort · 03</p>
+            <h1 className="mt-8 max-w-4xl font-display text-[clamp(2.5rem,7.4vw,6rem)] leading-[1.03] text-white">
+              Redefining hospitality
+              <span className="italic text-wine"> through experience.</span>
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-neutral">
-              A working estate of vineyards, stone sanctuaries, and a cellar
-              that rewards patience. Come for a night; leave with a tradition.
+              The Group&apos;s hospitality and lifestyle division — a premium
+              destination where wine culture, leisure, events, tourism, and
+              luxury experiences come together.
             </p>
           </FadeReveal>
-          <FadeReveal delay={200} className="mt-12 flex flex-wrap gap-4">
+          <FadeReveal delay={160} className="mt-10 max-w-2xl">
+            <StatusNote label="In Development">
+              The destination is being developed. Everything shown here is the
+              design vision for it — planned offerings include a premium wine
+              lounge, a boutique resort, fine dining, corporate retreats,
+              weddings and private events, weekend experiences, and wellness
+              packages.
+            </StatusNote>
+          </FadeReveal>
+          <FadeReveal delay={240} className="mt-10 flex flex-wrap gap-4">
             <Button href="/wine-resort/booking/sanctuary" size="lg">
-              Book Your Stay
+              Register Interest
             </Button>
             <Button href="/wine-resort/experiences" variant="secondary" size="lg">
-              The Experiences
+              The Vision
             </Button>
           </FadeReveal>
         </div>
@@ -59,7 +71,7 @@ export default function WineResortPage() {
         <SectionHeading
           overline="The Sanctuaries"
           title="Three ways to sleep inside a vineyard."
-          lede="Each residence is built from estate stone and set where the view earns its keep."
+          lede="Three residences in the design vision for the destination, each set where the view earns its keep."
         />
         <div className="grid gap-6 lg:grid-cols-3">
           {sanctuaries.map((s, i) => (
@@ -68,18 +80,23 @@ export default function WineResortPage() {
                 <Card className="h-full" innerClassName="flex flex-col">
                   <Visual background={s.visual} zoomOnHover className="h-60" />
                   <div className="flex flex-1 flex-col p-8">
-                    <div className="flex items-baseline justify-between gap-4">
-                      <h3 className="font-display text-2xl text-white">{s.name}</h3>
+                    {/* Stacked below sm: name and price side by side overflow a
+                        320px card once the rate carries its "indicative" note. */}
+                    <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                      <h3 className="font-display text-2xl leading-tight text-white">{s.name}</h3>
                       <p className="shrink-0 font-label text-sm font-semibold text-gold">
                         ${s.rate}
-                        <span className="text-[10px] text-white/40"> /night</span>
+                        <span className="text-[10px] text-white/55"> /night</span>
+                        <span className="ml-2 font-sans text-[10px] font-normal uppercase tracking-widest text-white/50">
+                          indicative
+                        </span>
                       </p>
                     </div>
                     <p className="mt-2 text-sm text-neutral">{s.tagline}</p>
-                    <p className="mt-4 text-xs text-white/40">
+                    <p className="mt-4 text-xs text-white/55">
                       {s.size} · {s.occupancy}
                     </p>
-                    <p className="overline-label mt-auto pt-6 text-[9px] text-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    <p className="overline-label mt-auto pt-6 text-[10px] text-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                       Check availability →
                     </p>
                   </div>
@@ -134,14 +151,14 @@ export default function WineResortPage() {
               <Link href="/wine-resort/dining" className="group block h-full">
                 <Card className="h-full" innerClassName="flex flex-col">
                   <Visual background={v.visual} zoomOnHover className="h-44">
-                    <span className="absolute left-5 top-5 rounded-full border border-white/20 bg-background/50 px-4 py-1.5 font-label text-[9px] font-semibold uppercase tracking-[0.2em] text-white/70 backdrop-blur-sm">
+                    <span className="absolute left-5 top-5 rounded-full border border-white/20 bg-background/50 px-4 py-1.5 font-label text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70 backdrop-blur-sm">
                       {v.type}
                     </span>
                   </Visual>
                   <div className="flex flex-1 flex-col p-7">
                     <h3 className="font-display text-2xl text-white transition-colors group-hover:text-gold-bright">{v.name}</h3>
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral">{v.description}</p>
-                    <p className="mt-5 text-xs text-white/40">{v.detail}</p>
+                    <p className="mt-5 text-xs text-white/55">{v.detail}</p>
                   </div>
                 </Card>
               </Link>
@@ -172,7 +189,7 @@ export default function WineResortPage() {
                   <span className="text-sm text-white/50">
                     {new Date(ev.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
                   </span>
-                  <span className="rounded-full border border-wine/40 bg-wine/10 px-4 py-1 font-label text-[9px] font-semibold uppercase tracking-[0.18em] text-wine">
+                  <span className="rounded-full border border-wine/40 bg-wine/10 px-4 py-1 font-label text-[10px] font-semibold uppercase tracking-[0.18em] text-wine">
                     {ev.status}
                   </span>
                 </div>

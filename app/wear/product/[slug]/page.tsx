@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = getProduct(slug);
   if (!product) return {};
   return {
-    title: `${product.name} — Dubzz Wear`,
+    title: `${product.name} — Dubbz Wear`,
     description: product.description,
   };
 }
@@ -44,7 +44,7 @@ export default async function ProductPage({ params }: Props) {
                 background={product.visual}
                 className="aspect-square rounded-lg"
               >
-                <span className="absolute bottom-3 left-3 font-label text-[8px] font-semibold uppercase tracking-[0.2em] text-white/30">
+                <span className="absolute bottom-3 left-3 font-label text-[8px] font-semibold uppercase tracking-[0.2em] text-white/50">
                   0{i + 2} · {angle}
                 </span>
               </Visual>
@@ -72,7 +72,7 @@ export default async function ProductPage({ params }: Props) {
           </FadeReveal>
 
           <FadeReveal delay={280} className="mt-12 border-t border-white/10 pt-8">
-            <p className="overline-label mb-5 text-[10px] text-white/45">Details</p>
+            <p className="overline-label mb-5 text-[10px] text-white/60">Details</p>
             <ul className="space-y-3">
               {product.details.map((d) => (
                 <li key={d} className="flex items-baseline gap-3 text-sm text-white/70">
@@ -81,7 +81,7 @@ export default async function ProductPage({ params }: Props) {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 grid grid-cols-2 gap-4 text-xs text-white/40">
+            <div className="mt-8 grid grid-cols-2 gap-4 text-xs text-white/55">
               <p>Free carbon-neutral shipping over $250</p>
               <p>14-day returns · archive exchanges</p>
             </div>

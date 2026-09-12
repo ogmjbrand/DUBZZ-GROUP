@@ -6,9 +6,12 @@ import { useRouter } from "next/navigation";
 import Button from "@/components/ui/Button";
 import Visual from "@/components/ui/Visual";
 import { Field, Input, Select } from "@/components/ui/Field";
+import StatusNote from "@/components/ui/StatusNote";
 import { sanctuaries, experiences } from "@/lib/data/resort";
 import { useAuth } from "@/components/providers/AuthProvider";
 
+// Keeps the old spelling on purpose: this is a storage key, not brand
+// surface, and renaming it drops whatever a visitor has already saved.
 const BOOKING_KEY = "dubzz-booking-v1";
 const REVIEW_PATH = "/wine-resort/booking/review";
 
@@ -59,8 +62,16 @@ const steps = [
 export function BookingShell({ step, children }: { step: 0 | 1 | 2; children: ReactNode }) {
   return (
     <div className="mx-auto w-full max-w-6xl px-6 pb-28 pt-36 sm:px-10">
-      <p className="overline-label text-wine">Wine Resort · Booking</p>
-      <nav aria-label="Booking progress" className="mb-12 mt-8">
+      <p className="overline-label text-wine">Wines Resort · Register Interest</p>
+      {/* The destination is not open, so this flow registers interest ahead of
+          it rather than holding a reservation. Saying that at the top of every
+          step is cheaper than saying it once someone has arrived. */}
+      <StatusNote label="In Development" className="mt-6">
+        Dubbz Wines Resort is in development. Submitting this form registers
+        your interest ahead of opening — it does not reserve a stay or take a
+        payment, and the Group will be in touch as the destination progresses.
+      </StatusNote>
+      <nav aria-label="Booking progress" className="mb-12 mt-10">
         <ol className="flex items-center gap-2 sm:gap-4">
           {steps.map((s, i) => {
             const state = i < step ? "done" : i === step ? "current" : "todo";
@@ -82,7 +93,7 @@ export function BookingShell({ step, children }: { step: 0 | 1 | 2; children: Re
                         "flex h-8 w-8 items-center justify-center rounded-full border font-label text-[10px] font-bold",
                         state === "current"
                           ? "border-wine text-wine shadow-[0_0_16px_rgba(212,175,55,0.4)]"
-                          : "border-white/15 text-white/30",
+                          : "border-white/15 text-white/50",
                       ].join(" ")}
                     >
                       {i + 1}
@@ -90,7 +101,7 @@ export function BookingShell({ step, children }: { step: 0 | 1 | 2; children: Re
                     <span
                       className={[
                         "hidden font-label text-[10px] font-semibold uppercase tracking-[0.2em] sm:block",
-                        state === "current" ? "text-white" : "text-white/30",
+                        state === "current" ? "text-white" : "text-white/50",
                       ].join(" ")}
                     >
                       {s.label}
@@ -382,15 +393,15 @@ export function ReviewStep() {
             <p className="mt-2 text-sm text-neutral">{sanctuary.tagline}</p>
             <dl className="mt-6 grid gap-4 border-t border-white/10 pt-6 text-sm sm:grid-cols-3">
               <div>
-                <dt className="text-white/40">Arrival</dt>
+                <dt className="text-white/55">Arrival</dt>
                 <dd className="mt-1 text-white">{fmt(draft.checkIn!)}</dd>
               </div>
               <div>
-                <dt className="text-white/40">Departure</dt>
+                <dt className="text-white/55">Departure</dt>
                 <dd className="mt-1 text-white">{fmt(draft.checkOut!)}</dd>
               </div>
               <div>
-                <dt className="text-white/40">Party</dt>
+                <dt className="text-white/55">Party</dt>
                 <dd className="mt-1 text-white">
                   {guests} {guests === 1 ? "guest" : "guests"} · {nights}{" "}
                   {nights === 1 ? "night" : "nights"}
@@ -401,7 +412,7 @@ export function ReviewStep() {
         </div>
         {chosenExperiences.length > 0 ? (
           <div className="mt-6 rounded-lg border border-white/10 p-8">
-            <p className="overline-label text-white/45">Experiences</p>
+            <p className="overline-label text-white/60">Experiences</p>
             <ul className="mt-5 space-y-3">
               {chosenExperiences.map((e) => (
                 <li key={e.slug} className="flex justify-between text-sm">
@@ -416,7 +427,7 @@ export function ReviewStep() {
 
       <aside className="lg:col-span-5">
         <div className="rounded-lg glass p-8 lg:sticky lg:top-32">
-          <p className="overline-label text-white/45">Estimate</p>
+          <p className="overline-label text-white/60">Estimate</p>
           <dl className="mt-6 space-y-3.5 text-sm">
             <div className="flex justify-between">
               <dt className="text-white/50">
@@ -444,14 +455,14 @@ export function ReviewStep() {
               {status === "confirming"
                 ? "Sending to the House…"
                 : user
-                  ? "Request the Booking"
-                  : "Sign In to Request the Booking"}
+                  ? "Register Interest"
+                  : "Sign In to Register Interest"}
             </Button>
             <Button href="/wine-resort/booking/experience" variant="ghost" className="w-full">
               ← Adjust Experiences
             </Button>
           </div>
-          <p className="mt-5 text-center text-xs text-white/30">
+          <p className="mt-5 text-center text-xs text-white/50">
             Nothing is charged until the house confirms.
           </p>
         </div>

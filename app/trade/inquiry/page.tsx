@@ -3,8 +3,8 @@ import FadeReveal from "@/components/motion/FadeReveal";
 import TradeInquiryForm from "@/components/forms/TradeInquiryForm";
 
 export const metadata: Metadata = {
-  title: "Trade Inquiry — Dubzz Trade",
-  description: "Open a commodity inquiry with the Dubzz Trade desk — spec, volume, destination.",
+  title: "Trade Inquiry — Dubbz Trade",
+  description: "Open a commodity inquiry with the Dubbz Trade desk — spec, volume, destination.",
 };
 
 const process = [
@@ -20,7 +20,7 @@ export default function TradeInquiryPage() {
       <div className="relative mx-auto grid w-full max-w-7xl gap-16 px-6 pb-28 pt-44 sm:px-10 lg:grid-cols-12 lg:px-16">
         <div className="lg:col-span-5">
           <FadeReveal>
-            <p className="overline-label text-trade">Dubzz Trade · Inquiry</p>
+            <p className="overline-label text-trade">Dubbz Trade · Inquiry</p>
             <h1 className="mt-7 font-display text-5xl leading-[1.05] text-white sm:text-6xl">
               Open an inquiry.
             </h1>

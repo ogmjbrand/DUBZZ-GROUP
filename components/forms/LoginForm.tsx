@@ -25,6 +25,11 @@ export default function LoginForm() {
     setStatus("sending");
     setError("");
     const supabase = createClient();
+    if (!supabase) {
+      setStatus("error");
+      setError("Accounts are not available yet. Please try again later.");
+      return;
+    }
     const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
     if (signInError) {
       setStatus("error");
@@ -64,8 +69,8 @@ export default function LoginForm() {
         {status === "sending" ? "Signing In…" : "Sign In"}
       </Button>
 
-      <p className="text-center text-sm text-white/40">
-        New to Dubzz Group?{" "}
+      <p className="text-center text-sm text-white/55">
+        New to Dubbz Group?{" "}
         <Link href={signupHref} className="text-gold hover:text-gold-bright">
           Create an account
         </Link>

@@ -1,9 +1,9 @@
 /**
  * The Group's operating businesses.
  *
- * Per the 2026 Corporate Profile, Dubzz Group is the *holding company* — it
+ * Per the 2026 Corporate Profile, Dubbz Group is the *holding company* — it
  * sits above these five and is not itself one of them. An earlier version
- * listed "Dubzz Group" as division 01, which contradicted the Group's own
+ * listed "Dubbz Group" as division 01, which contradicted the Group's own
  * structure; corporate pages now live under /group/* without a division entry.
  */
 
@@ -37,7 +37,7 @@ export const divisions: Division[] = [
   {
     key: "media",
     index: "01",
-    name: "Dubzz Media",
+    name: "Dubbz Media",
     short: "Media",
     tagline: "Stories engineered to be unforgettable.",
     description:
@@ -50,7 +50,7 @@ export const divisions: Division[] = [
   {
     key: "wear",
     index: "02",
-    name: "Dubzz Wear",
+    name: "Dubbz Wear",
     short: "Wear",
     tagline: "Fashion inspired by purpose.",
     description:
@@ -63,7 +63,7 @@ export const divisions: Division[] = [
   {
     key: "wine-resort",
     index: "03",
-    name: "Dubzz Wines Resort",
+    name: "Dubbz Wines Resort",
     short: "Wines Resort",
     tagline: "Redefining hospitality through lifestyle and experience.",
     description:
@@ -76,7 +76,7 @@ export const divisions: Division[] = [
   {
     key: "trade",
     index: "04",
-    name: "Dubzz Trade",
+    name: "Dubbz Trade",
     short: "Trade",
     tagline: "Connecting African products to global markets.",
     description:
@@ -96,7 +96,7 @@ export const divisions: Division[] = [
       "The Group's signature entertainment and lifestyle experience platform — curated nights where music, fashion, food, creativity, and connection meet.",
     href: "/after-dark",
     accent: "var(--color-afterdark)",
-    accentHex: "#8a6d1d",
+    accentHex: "#a5822a",
     facets: ["Experiences", "Culture", "Nightlife"],
   },
 ];

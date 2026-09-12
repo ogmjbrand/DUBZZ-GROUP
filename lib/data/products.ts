@@ -1,8 +1,25 @@
+/**
+ * The Dubbz Wear collection.
+ *
+ * The product line is the one the corporate profile publishes: premium
+ * T-shirts, hoodies, polo shirts, joggers, caps, accessories, and limited
+ * edition collections. Positioning follows the profile too — confidence,
+ * creativity, ambition, and contemporary African culture.
+ *
+ * An earlier version of this file described a European luxury label that does
+ * not exist: 480gsm Portuguese loopback cotton, matte Japanese ripstop,
+ * Italian wool twill, dry-waxed British cotton, YKK Excella hardware, an
+ * atelier in Porto, and runs "limited to 300 pieces". None of it is in the
+ * profile, none of it is verifiable, and sourcing claims are the kind of
+ * detail a buyer checks. Details now describe design decisions the brand
+ * actually controls — fit, construction, finish — and stop there.
+ */
+
 export interface Product {
   slug: string;
   name: string;
   price: number;
-  category: "Outerwear" | "Essentials" | "Tailoring" | "Accessories";
+  category: "T-Shirts" | "Hoodies" | "Polos" | "Joggers" | "Caps" | "Accessories";
   colorway: string;
   description: string;
   details: string[];
@@ -14,18 +31,18 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    slug: "obsidian-hoodie",
-    name: "Obsidian Hoodie",
-    price: 285,
-    category: "Essentials",
-    colorway: "Obsidian Black",
+    slug: "signature-hoodie",
+    name: "Signature Hoodie",
+    price: 120,
+    category: "Hoodies",
+    colorway: "Midnight Black",
     description:
-      "Our signature heavyweight hoodie in 480gsm loopback cotton, garment-dyed to a depth of black that swallows light. Cut oversized through the body with a sculpted hood and bonded seams.",
+      "The anchor of the collection. A heavyweight hoodie cut with a relaxed body and a structured hood, finished with a tonal Dubbz wordmark that reads as texture before it reads as a logo.",
     details: [
-      "480gsm Portuguese loopback cotton",
-      "Garment-dyed, enzyme-washed",
-      "Bonded interior seams, tonal embroidery",
-      "Limited run of 300 pieces",
+      "Heavyweight brushed-back fleece",
+      "Relaxed fit, dropped shoulder",
+      "Ribbed cuffs and hem",
+      "Tonal embroidered wordmark",
     ],
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
     visual:
@@ -33,127 +50,127 @@ export const products: Product[] = [
     badge: "Signature",
   },
   {
-    slug: "eclipse-bomber",
-    name: "Eclipse Bomber",
-    price: 480,
-    category: "Outerwear",
-    colorway: "Midnight",
+    slug: "ambition-hoodie",
+    name: "Ambition Hoodie",
+    price: 135,
+    category: "Hoodies",
+    colorway: "Black / Gold",
     description:
-      "A technical bomber in matte Japanese nylon with a removable quilted liner. Hardware finished in brushed gold — the only place the light is allowed in.",
+      "The Signature silhouette in its limited-edition finish — gold embroidery at the chest and cuff, produced as a numbered collection rather than a standing line.",
     details: [
-      "Matte Japanese ripstop nylon",
-      "Removable quilted liner",
-      "Brushed-gold YKK Excella hardware",
-      "Interior passport pocket",
+      "Heavyweight brushed-back fleece",
+      "Gold embroidery at chest and cuff",
+      "Relaxed fit, dropped shoulder",
+      "Released as a numbered collection",
     ],
     sizes: ["S", "M", "L", "XL"],
     visual:
-      "radial-gradient(130% 100% at 70% 15%, #23262e 0%, #101116 50%, #050507 100%)",
-    badge: "New",
+      "radial-gradient(130% 100% at 70% 15%, #2b2718 0%, #14120c 50%, #050505 100%)",
+    badge: "Limited Edition",
   },
   {
-    slug: "aurum-tee",
-    name: "Aurum Tee",
-    price: 120,
-    category: "Essentials",
+    slug: "essential-tee",
+    name: "Essential Tee",
+    price: 45,
+    category: "T-Shirts",
     colorway: "Bone",
     description:
-      "A 240gsm supima tee in washed bone, with a single thread of gold embroidery at the hem. The quietest flex in the collection.",
+      "The everyday piece the rest of the collection is built around. A boxy, mid-weight tee in washed bone with a single line of gold thread at the hem.",
     details: [
-      "240gsm supima cotton",
-      "Washed bone colorway",
+      "Mid-weight combed cotton",
+      "Boxy fit, reinforced neckline",
       "Single gold hem thread",
-      "Pre-shrunk, boxy fit",
+      "Pre-shrunk",
     ],
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
     visual:
       "radial-gradient(120% 90% at 40% 25%, #3a3733 0%, #1d1b18 50%, #0a0908 100%)",
   },
   {
-    slug: "noir-overshirt",
-    name: "Noir Overshirt",
-    price: 320,
-    category: "Tailoring",
-    colorway: "Ink",
+    slug: "statement-tee",
+    name: "Statement Tee",
+    price: 55,
+    category: "T-Shirts",
+    colorway: "Obsidian",
     description:
-      "Part shirt, part jacket, entirely deliberate. Brushed wool-blend twill with horn buttons and a chest pocket set at a cartographer's angle.",
+      "Built for the loud version of the brand. A heavier tee in deep black with an oversized front graphic drawn from the Dubbz mark — confidence worn plainly.",
     details: [
-      "Italian wool-blend twill",
-      "Genuine horn buttons",
-      "Double-needle topstitching",
-      "Cut for layering",
+      "Heavier-weight combed cotton",
+      "Oversized front graphic",
+      "Straight body, standard sleeve",
+      "Unisex sizing",
     ],
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
     visual:
       "radial-gradient(120% 100% at 25% 30%, #1c1f26 0%, #0e1014 55%, #050506 100%)",
   },
   {
-    slug: "midnight-cargo",
-    name: "Midnight Cargo",
-    price: 240,
-    category: "Tailoring",
-    colorway: "Midnight Black",
+    slug: "heritage-polo",
+    name: "Heritage Polo",
+    price: 75,
+    category: "Polos",
+    colorway: "Charcoal",
     description:
-      "Tailored cargo trousers that answer the question nobody dared ask: what if utility dressed for dinner? Tapered, pressed, and pocketed with intent.",
+      "A polo cut closer to tailoring than to sportswear. Ribbed collar, three-button placket, and a clean drop through the body — as comfortable in a meeting as out of one.",
     details: [
-      "Stretch cotton-nylon twill",
-      "Pressed front crease",
-      "Six-pocket configuration",
-      "Adjustable bungee hem",
-    ],
-    sizes: ["28", "30", "32", "34", "36"],
-    visual:
-      "radial-gradient(140% 100% at 60% 20%, #202024 0%, #101012 50%, #050505 100%)",
-  },
-  {
-    slug: "gilt-crewneck",
-    name: "Gilt Crewneck",
-    price: 210,
-    category: "Essentials",
-    colorway: "Charcoal / Gold",
-    description:
-      "A merino-blend crewneck in deep charcoal with a gilt-tipped collar seam. Warm enough for the harbour, sharp enough for the boardroom above it.",
-    details: [
-      "Extra-fine merino blend",
-      "Gilt-tipped collar seam",
-      "Fully-fashioned knit",
-      "Naturally temperature-regulating",
+      "Fine-gauge piqué knit",
+      "Ribbed collar and cuffs",
+      "Three-button placket",
+      "Tailored through the body",
     ],
     sizes: ["S", "M", "L", "XL", "XXL"],
     visual:
       "radial-gradient(120% 90% at 35% 20%, #26241e 0%, #131210 50%, #060505 100%)",
   },
   {
-    slug: "shadow-trousers",
-    name: "Shadow Trousers",
-    price: 260,
-    category: "Tailoring",
+    slug: "gold-line-polo",
+    name: "Gold Line Polo",
+    price: 85,
+    category: "Polos",
+    colorway: "Black / Gold",
+    description:
+      "The Heritage Polo with a gold tipping line at the collar and cuff. One accent, placed once — the whole argument for how the brand uses gold.",
+    details: [
+      "Fine-gauge piqué knit",
+      "Gold tipping at collar and cuff",
+      "Three-button placket",
+      "Tailored through the body",
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    visual:
+      "radial-gradient(140% 100% at 60% 20%, #262218 0%, #14120d 50%, #050505 100%)",
+  },
+  {
+    slug: "movement-joggers",
+    name: "Movement Joggers",
+    price: 95,
+    category: "Joggers",
     colorway: "Graphite",
     description:
-      "Wide-leg trousers in fluid graphite wool that move half a second after you do. Waistband finished with a hidden gold bar-tack — for you, not for them.",
+      "Tapered joggers with a clean front and a considered break at the ankle. Designed to hold their shape through the day rather than only through the morning.",
     details: [
-      "Fluid tropical wool",
-      "Wide-leg, cropped break",
-      "Hidden gold bar-tack",
-      "Side-adjuster waistband",
+      "Brushed-back fleece",
+      "Tapered leg, elasticated cuff",
+      "Drawcord waist, side pockets",
+      "Zip back pocket",
     ],
-    sizes: ["28", "30", "32", "34", "36"],
+    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
     visual:
       "radial-gradient(130% 100% at 50% 15%, #232326 0%, #111113 55%, #050505 100%)",
   },
   {
-    slug: "veil-cap",
-    name: "Veil Cap",
-    price: 95,
-    category: "Accessories",
+    slug: "emblem-cap",
+    name: "Emblem Cap",
+    price: 40,
+    category: "Caps",
     colorway: "Black on Black",
     description:
-      "A six-panel cap in dry-waxed cotton with tonal embroidery you only catch in raking light. The logo whispers; the silhouette doesn't have to.",
+      "A six-panel cap with tonal embroidery you only catch in raking light. The mark whispers; the silhouette does the rest.",
     details: [
-      "Dry-waxed British cotton",
-      "Tonal 3D embroidery",
-      "Antique-brass closure",
-      "One size, adjustable",
+      "Structured six-panel crown",
+      "Tonal raised embroidery",
+      "Metal closure, adjustable",
+      "One size",
     ],
     sizes: ["OS"],
     visual:

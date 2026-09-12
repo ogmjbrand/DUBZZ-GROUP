@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand + newsletter */}
           <div className="lg:col-span-5">
             <Link href="/" className="inline-flex items-baseline gap-1.5">
-              <span className="font-label text-xl font-bold tracking-[0.3em] text-white">DUBZZ</span>
+              <span className="font-label text-xl font-bold tracking-[0.3em] text-white">DUBBZ</span>
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               <span className="font-label text-[11px] font-semibold tracking-[0.3em] text-white/50">GROUP</span>
             </Link>
@@ -19,9 +19,9 @@ export default function Footer() {
               uncompromising standard.
             </p>
             <div className="mt-10">
-              <p className="overline-label mb-4 text-white/45">The Inner Circle</p>
+              <p className="overline-label mb-4 text-white/60">The Inner Circle</p>
               <NewsletterForm />
-              <p className="mt-3 text-xs text-white/30">
+              <p className="mt-3 text-xs text-white/50">
                 A quiet dispatch, a few times a year. No noise.
               </p>
             </div>
@@ -31,7 +31,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:col-span-7">
             {footerColumns.map((col) => (
               <div key={col.heading}>
-                <p className="overline-label mb-5 text-white/45">{col.heading}</p>
+                <p className="overline-label mb-5 text-white/60">{col.heading}</p>
                 <ul className="space-y-3">
                   {col.links.map((l) => (
                     <li key={l.href + l.label}>
@@ -56,24 +56,24 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="group flex items-baseline gap-2"
             >
-              <span className="font-label text-[10px] font-semibold uppercase tracking-[0.24em] text-white/40 transition-colors group-hover:text-gold">
+              <span className="font-label text-[10px] font-semibold uppercase tracking-[0.24em] text-white/55 transition-colors group-hover:text-gold">
                 {s.label}
               </span>
-              <span className="text-xs text-white/25">{s.handle}</span>
+              <span className="text-xs text-white/50">{s.handle}</span>
             </a>
           ))}
         </div>
 
         {/* Legal */}
         <div className="mt-10 flex flex-col gap-4 border-t border-white/8 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} Dubzz Group. All rights reserved.
+          <p className="text-xs text-white/50">
+            © {new Date().getFullYear()} Dubbz Group. All rights reserved.
           </p>
           <div className="flex gap-8">
-            <Link href="/privacy" className="text-xs text-white/30 transition-colors hover:text-white/70">
+            <Link href="/privacy" className="text-xs text-white/50 transition-colors hover:text-white/70">
               Privacy
             </Link>
-            <Link href="/terms" className="text-xs text-white/30 transition-colors hover:text-white/70">
+            <Link href="/terms" className="text-xs text-white/50 transition-colors hover:text-white/70">
               Terms
             </Link>
           </div>

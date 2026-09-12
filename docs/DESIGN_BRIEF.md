@@ -1,4 +1,4 @@
-# GOD-TIER STITCH PROMPT — DUBZZ GROUP DIGITAL EMPIRE
+# GOD-TIER STITCH PROMPT — DUBBZ GROUP DIGITAL EMPIRE
 
 You are the world's greatest product designer, creative director, UX architect, brand strategist, motion designer, and luxury web experience designer.
 
@@ -14,17 +14,17 @@ The final experience should feel like a living luxury brand—not just a website
 
 ## PROJECT
 
-Design a premium website for **Dubzz Group**.
+Design a premium website for **Dubbz Group**.
 
-Dubzz Group is a multi-venture creative and lifestyle ecosystem.
+Dubbz Group is a multi-venture creative and lifestyle ecosystem.
 
 It contains five major divisions:
 
-- Dubzz Group (Corporate)
-- Dubzz Media
-- Dubzz Wear
-- Dubzz Wine Resort
-- Dubzz Trade
+- Dubbz Group (Corporate)
+- Dubbz Media
+- Dubbz Wear
+- Dubbz Wine Resort
+- Dubbz Trade
 
 The website must present them as one powerful ecosystem while giving each division its own unique identity.
 
@@ -225,7 +225,7 @@ Animated background.
 
 Visual representing the five divisions.
 
-2. About Dubzz
+2. About Dubbz
 
 Luxury storytelling.
 
@@ -309,13 +309,13 @@ Design premium concepts for:
 
 About
 
-Dubzz Media
+Dubbz Media
 
-Dubzz Wear
+Dubbz Wear
 
-Dubzz Wine Resort
+Dubbz Wine Resort
 
-Dubzz Trade
+Dubbz Trade
 
 Blog
 
@@ -335,7 +335,7 @@ Terms
 
 ## E-COMMERCE
 
-Dubzz Wear should feel like a luxury fashion brand.
+Dubbz Wear should feel like a luxury fashion brand.
 
 Premium product grid.
 

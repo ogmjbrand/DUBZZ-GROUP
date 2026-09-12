@@ -1,11 +1,11 @@
-# Kimi Frontend Execution Brief — Dubzz Group Digital Empire
+# Kimi Frontend Execution Brief — Dubbz Group Digital Empire
 
 This is the execution bridge between the master creative brief (`docs/DESIGN_BRIEF.md` — read that first, in full, before anything here) and the actual codebase. Claude owns project scaffolding, backend, CI/CD, and git; **everything below is Kimi's scope**: design system, Tailwind, components, pages, motion, accessibility.
 
 ## 1. What's already in place (do not re-scaffold)
 
 - Next.js **16.2.11** (Turbopack) + React **19.2.4** + TypeScript, App Router, ESLint — already runs (`npm run build` / `npm run dev`) at the repo root.
-- Tailwind **v4**, CSS-first config (no `tailwind.config.ts`) — tokens live in `app/globals.css` via `@theme inline`, currently the untouched default (Geist fonts, light/dark placeholder colors). **This is the first thing to replace** with the Cinematic Noir / Dubzz Group system below.
+- Tailwind **v4**, CSS-first config (no `tailwind.config.ts`) — tokens live in `app/globals.css` via `@theme inline`, currently the untouched default (Geist fonts, light/dark placeholder colors). **This is the first thing to replace** with the Cinematic Noir / Dubbz Group system below.
 - `app/layout.tsx` currently loads placeholder Geist fonts and has default metadata — replace with Playfair Display / Inter / Montserrat and real site metadata.
 - **Next.js 16 has breaking changes vs. older training data.** Before using any Next.js API you're not 100% sure of, check `node_modules/next/dist/docs/01-app/` in this repo — it ships the version-matched docs.
 - No component library, pages, or content exist yet beyond the default starter page — this is a clean slate.
@@ -92,13 +92,13 @@ void main() {
 
 ## 5. Route map
 
-The original Stitch export (36 screens, project "Dubzz Digital Empire") only covers the 5 division sub-pages/flows — it has **no** homepage-as-ecosystem-hub, About, Blog, Careers, Contact, Search, Privacy, Terms, or 404. Those are net-new per the master brief's "Inner Pages" section and should be designed fresh from `DESIGN_BRIEF.md`, not derived from Stitch. Where a route does map to an original Stitch screen, treat that screen as **content/reference only** (real copy, structure ideas) — the brief's quality bar supersedes the original screen's visual design; don't just port it 1:1.
+The original Stitch export (36 screens, project "Dubbz Digital Empire") only covers the 5 division sub-pages/flows — it has **no** homepage-as-ecosystem-hub, About, Blog, Careers, Contact, Search, Privacy, Terms, or 404. Those are net-new per the master brief's "Inner Pages" section and should be designed fresh from `DESIGN_BRIEF.md`, not derived from Stitch. Where a route does map to an original Stitch screen, treat that screen as **content/reference only** (real copy, structure ideas) — the brief's quality bar supersedes the original screen's visual design; don't just port it 1:1.
 
 Stitch had separate desktop/mobile screens per concept — collapse each pair into **one responsive route** (Tailwind breakpoints), not separate pages.
 
 | Route | Source | Notes |
 |---|---|---|
-| `/` | New (brief §HOMEPAGE STRUCTURE) | Hero, About Dubzz, Five Divisions, Featured Work, Statistics, Testimonials, Latest News, Final CTA |
+| `/` | New (brief §HOMEPAGE STRUCTURE) | Hero, About Dubbz, Five Divisions, Featured Work, Statistics, Testimonials, Latest News, Final CTA |
 | `/about` | New | Extended editorial story, separate from homepage's About section |
 | `/blog`, `/blog/[slug]` | New | Luxury blog cards + post template |
 | `/careers` | New | |
@@ -106,12 +106,12 @@ Stitch had separate desktop/mobile screens per concept — collapse each pair in
 | `/search` | New | |
 | `/privacy`, `/terms` | New | |
 | `app/not-found.tsx` (404) | New | Custom-designed, on-brand |
-| `/group/story` | Stitch: "Dubzz Group \| Our Story & Vision" | |
-| `/group/investors` | Stitch: "Dubzz Group \| Investor Relations Portal" | |
+| `/group/story` | Stitch: "Dubbz Group \| Our Story & Vision" | |
+| `/group/investors` | Stitch: "Dubbz Group \| Investor Relations Portal" | |
 | `/group/investors/vault` | Stitch: "...Expanded Resource Vault" | |
 | `/group/profile` | Stitch: "...Guest Profile: Inner Circle Hub" | |
 | `/group/settings` | Stitch: "...Investor Account Settings" | |
-| `/wear` | Stitch: "Dubzz Wear \| Luxury Fashion Store" | product grid |
+| `/wear` | Stitch: "Dubbz Wear \| Luxury Fashion Store" | product grid |
 | `/wear/product/[slug]` | Stitch: "...Obsidian Hoodie" (1 of N products) | |
 | `/wear/bag` | Stitch: "...Your Bag & Identity" | |
 | `/wear/wishlist` | New (brief §E-COMMERCE) | |
@@ -120,21 +120,21 @@ Stitch had separate desktop/mobile screens per concept — collapse each pair in
 | `/wear/checkout/payment` | Stitch: "...Checkout: Payment Terminal" | |
 | `/wear/order-confirmed` | Stitch: "...Order Confirmed" | |
 | `/wear/account`, `/wear/account/orders` | New (brief: account dashboard, order history) | |
-| `/media` | Stitch: "Dubzz Media \| Creative Agency Portfolio" | |
+| `/media` | Stitch: "Dubbz Media \| Creative Agency Portfolio" | |
 | `/media/case-studies/aureum-global-rebrand` | Stitch case study | |
 | `/media/case-studies/project-nightshade` | Stitch case study | |
 | `/media/case-studies/obsidian-penthouse` | Stitch: "...Virtual Experience" | |
 | `/media/booking` | New (brief lists "Booking" under Media) | |
-| `/trade` | Stitch: "Dubzz Trade \| Global Commerce & Logistics" | + commodity showcase, global map (new) |
+| `/trade` | Stitch: "Dubbz Trade \| Global Commerce & Logistics" | + commodity showcase, global map (new) |
 | `/trade/dashboard` | Stitch: "...Global Commerce Dashboard" | |
 | `/trade/inquiry` | New | |
-| `/wine-resort` | Stitch: "Dubzz Wine Resort \| Luxury Hospitality" | |
+| `/wine-resort` | Stitch: "Dubbz Wine Resort \| Luxury Hospitality" | |
 | `/wine-resort/experiences`, `/events`, `/dining`, `/gallery` | New (brief §WINE RESORT) | |
 | `/wine-resort/booking/sanctuary` | Stitch: "...Select Your Sanctuary" | |
 | `/wine-resort/booking/experience` | Stitch: "...Tailor Your Experience" | |
 | `/wine-resort/booking/review` | Stitch: "...Review Your Stay" | |
 
-**Getting the original Stitch reference content:** the Stitch project is "Dubzz Digital Empire" (owned, private). Ask Claude (in the Claude Code session that has Stitch MCP access) to pull fresh screenshots/HTML for any specific screen if you need the original reference — download links are signed/short-lived so they aren't reproduced here. The route map and titles above are stable regardless.
+**Getting the original Stitch reference content:** the Stitch project is "Dubbz Digital Empire" (owned, private). Ask Claude (in the Claude Code session that has Stitch MCP access) to pull fresh screenshots/HTML for any specific screen if you need the original reference — download links are signed/short-lived so they aren't reproduced here. The route map and titles above are stable regardless.
 
 ## 6. Forms are UI-only for now
 

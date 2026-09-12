@@ -1,5 +1,5 @@
 /**
- * Dubzz Trade.
+ * Dubbz Trade.
  *
  * Content is bound to the 2026 Corporate Profile. The earlier version of this
  * file carried an invented commodity list (coffee, cashew, shea, sesame, fine

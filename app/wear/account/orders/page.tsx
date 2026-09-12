@@ -6,8 +6,8 @@ import AccountShell from "@/components/wear/AccountShell";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
-  title: "Order History — Dubzz Wear",
-  description: "Your Dubzz Wear order history.",
+  title: "Order History — Dubbz Wear",
+  description: "Your Dubbz Wear order history.",
 };
 
 const statusStyles: Record<string, string> = {
@@ -33,6 +33,9 @@ interface OrderRow {
 
 export default async function OrdersPage() {
   const supabase = await createClient();
+  // Accounts need Supabase; without it there is no session to read.
+  if (!supabase) redirect("/login?redirect=/wear/account/orders");
+
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -69,7 +72,7 @@ export default async function OrdersPage() {
                 <thead>
                   <tr className="border-b border-white/10">
                     {["Order", "Date", "Pieces", "Total", "Status"].map((h) => (
-                      <th key={h} className="overline-label px-6 py-4 text-[9px] text-white/40">
+                      <th key={h} className="overline-label px-6 py-4 text-[10px] text-white/55">
                         {h}
                       </th>
                     ))}
@@ -102,7 +105,7 @@ export default async function OrdersPage() {
                       </td>
                       <td className="px-6 py-5">
                         <span
-                          className={`rounded-full border px-3 py-1 text-xs capitalize ${statusStyles[o.status] ?? "border-white/15 bg-white/5 text-white/45"}`}
+                          className={`rounded-full border px-3 py-1 text-xs capitalize ${statusStyles[o.status] ?? "border-white/15 bg-white/5 text-white/60"}`}
                         >
                           {o.status}
                         </span>

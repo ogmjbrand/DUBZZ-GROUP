@@ -13,6 +13,8 @@ const notificationPrefs = [
   { id: "reports", label: "IR publications", detail: "Reports and notes as they enter the vault." },
 ];
 
+// Keeps the old spelling on purpose: this is a storage key, not brand
+// surface, and renaming it drops whatever a visitor has already saved.
 const PREFS_KEY = "dubzz-correspondence-prefs-v1";
 
 function Toggle({
@@ -95,6 +97,11 @@ export default function SettingsPanel() {
     setSaving(true);
     setError("");
     const supabase = createClient();
+    if (!supabase) {
+      setSaving(false);
+      setError("Account settings are unavailable right now.");
+      return;
+    }
 
     const results: { error: { message: string } | null }[] = [];
     if (fullName !== (profile?.full_name ?? "")) {
@@ -137,6 +144,11 @@ export default function SettingsPanel() {
     setPwStatus("saving");
     setPwError("");
     const supabase = createClient();
+    if (!supabase) {
+      setPwStatus("error");
+      setPwError("Account settings are unavailable right now.");
+      return;
+    }
     const { error: updateError } = await supabase.auth.updateUser({ password });
     if (updateError) {
       setPwStatus("error");
@@ -155,7 +167,7 @@ export default function SettingsPanel() {
     <form onSubmit={onSave} className="space-y-8">
       {/* Identity */}
       <section className="rounded-lg glass p-8 sm:p-10">
-        <p className="overline-label text-white/45">Identity</p>
+        <p className="overline-label text-white/60">Identity</p>
         <div className="mt-7 grid gap-7 sm:grid-cols-2">
           <Field label="Display Name" htmlFor="set-name">
             <Input id="set-name" name="name" defaultValue={profile?.full_name ?? ""} autoComplete="name" />
@@ -183,13 +195,13 @@ export default function SettingsPanel() {
 
       {/* Correspondence */}
       <section className="rounded-lg glass p-8 sm:p-10">
-        <p className="overline-label text-white/45">Correspondence</p>
+        <p className="overline-label text-white/60">Correspondence</p>
         <ul className="mt-4 divide-y divide-white/6">
           {notificationPrefs.map((n) => (
             <li key={n.id} className="flex items-center justify-between gap-6 py-5">
               <div>
                 <p className="text-sm text-white">{n.label}</p>
-                <p className="mt-0.5 text-xs text-white/40">{n.detail}</p>
+                <p className="mt-0.5 text-xs text-white/55">{n.detail}</p>
               </div>
               <Toggle enabled={prefs[n.id]} label={n.label} onToggle={() => togglePref(n.id)} />
             </li>
@@ -199,13 +211,13 @@ export default function SettingsPanel() {
 
       {/* Security */}
       <section className="rounded-lg glass p-8 sm:p-10">
-        <p className="overline-label text-white/45">Security</p>
+        <p className="overline-label text-white/60">Security</p>
         <div className="mt-6 space-y-4">
           <div className="rounded-lg border border-white/8 p-5">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
                 <p className="text-sm text-white">Password</p>
-                <p className="mt-0.5 text-xs text-white/40">
+                <p className="mt-0.5 text-xs text-white/55">
                   {pwStatus === "done" ? "Password updated." : "Change your account password."}
                 </p>
               </div>
@@ -233,7 +245,7 @@ export default function SettingsPanel() {
           <div className="flex flex-wrap items-center justify-between gap-4 rounded-lg border border-white/8 p-5">
             <div>
               <p className="text-sm text-white">Two-Factor Authentication</p>
-              <p className="mt-0.5 text-xs text-white/40">Not yet available.</p>
+              <p className="mt-0.5 text-xs text-white/55">Not yet available.</p>
             </div>
             <Button variant="secondary" size="sm" disabled>
               Enable

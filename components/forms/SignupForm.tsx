@@ -33,6 +33,11 @@ export default function SignupForm() {
     setStatus("sending");
     setError("");
     const supabase = createClient();
+    if (!supabase) {
+      setStatus("error");
+      setError("Accounts are not available yet. Please try again later.");
+      return;
+    }
     const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
@@ -111,7 +116,7 @@ export default function SignupForm() {
         {status === "sending" ? "Creating Account…" : "Create Account"}
       </Button>
 
-      <p className="text-center text-sm text-white/40">
+      <p className="text-center text-sm text-white/55">
         Already have an account?{" "}
         <Link href={loginHref} className="text-gold hover:text-gold-bright">
           Sign in

@@ -1,73 +1,121 @@
+import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
-import Card from "@/components/ui/Card";
-import Visual from "@/components/ui/Visual";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import FadeReveal from "@/components/motion/FadeReveal";
 import CinematicVideo from "@/components/effects/CinematicVideo";
 import EcosystemCanvas from "@/components/effects/EcosystemCanvas";
+import MosaicReveal from "@/components/effects/MosaicReveal";
+import StatusNote from "@/components/ui/StatusNote";
+import EcosystemDiagram from "@/components/group/EcosystemDiagram";
+import RoadmapTimeline from "@/components/group/RoadmapTimeline";
 import { divisions } from "@/lib/data/divisions";
 import { posts } from "@/lib/data/posts";
-import { milestones } from "@/lib/data/site";
+import { contact, founder, growthPillars, site } from "@/lib/data/site";
+import {
+  advantages,
+  founderNarrative,
+  mission,
+  partnershipAudiences,
+  philosophy,
+  purpose,
+  tower,
+  vision,
+} from "@/lib/data/group";
 
-/**
- * The profile's Five-Year Strategic Roadmap.
- *
- * Replaces an invented corporate history (a 2016 founding, a 2019 sell-out
- * run, a corridor opened in 2022, an estate acquired in 2024). The Group is
- * in its foundation year: Wear is preparing to launch and the resort is still
- * being developed, so a past-tense timeline was fiction. Forward-looking
- * phases are what the Group has actually published.
- */
-const timeline = [
-  { year: "2026", event: "Foundation — establish operations, strengthen Dubzz Media, prepare the launch of Dubzz Wear, and introduce the first After Dark experiences." },
-  { year: "2027", event: "Expansion — grow across Nigeria through stronger partnerships, brand visibility, and momentum in every division." },
-  { year: "2028", event: "Regional Growth — enter key African markets while building hospitality, lifestyle experiences, and export." },
-  { year: "2029", event: "Institutional Growth — flagship hospitality developments and larger-scale entertainment, under operational excellence." },
-  { year: "2030", event: "Global Positioning — one of Africa's leading creative and lifestyle holding companies." },
-];
+export const metadata: Metadata = {
+  description: site.description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: site.title,
+    description: site.description,
+    url: "/",
+  },
+};
 
 export default function Home() {
   return (
     <>
-      {/* ——— HERO ——— */}
-      <section className="relative flex min-h-svh flex-col justify-end overflow-hidden">
-        {/* Base layer: the flagship film. Decorative, so it carries no label —
-            the headline below states everything the footage says. */}
-        <CinematicVideo name="hero-film" poster="/posters/hero-film.jpg" />
+      {/* ——— HERO ———
+          The opening states the Group's own philosophy rather than a
+          decorative claim. Anyone landing here should know what Dubbz Group
+          is, where it is, and what it operates before scrolling once.
+
+          MosaicReveal wraps it rather than replacing it: the hero below is the
+          whole hero, rendered at full size from the first frame, and the
+          mosaic is a frame that scrolls off it. Under reduced motion the
+          wrapper returns the hero untouched. */}
+      <MosaicReveal>
+      <section className="relative flex h-svh flex-col justify-end overflow-hidden">
+        {/* Decorative: the headline below carries everything the footage says. */}
+        {/* 23.3s is the poster's own frame, in the film's brightest chapter —
+            so the mosaic's window opens onto something, and the poster hands
+            over to the first decoded frame without a visible cut. */}
+        <CinematicVideo name="hero-film" poster="/posters/hero-film.jpg" startAt={23.3} />
         <EcosystemCanvas />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
+        {/* Two scrims rather than one flat veil: a lateral wash that protects
+            the type on the left, and a base fade that carries the composition
+            into the division strip. A single 70% overlay was hiding the film
+            it was supposed to be sitting on. */}
+        {/* Both scrims exist to hold contrast under the headline, so they
+            track `--reveal` with it. While the mosaic is closed there is no
+            type to protect and a 92% veil would only black out the window. */}
+        <div
+          aria-hidden
+          style={{ opacity: "var(--reveal, 1)" }}
+          className="absolute inset-0 bg-[linear-gradient(100deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.72)_38%,rgba(0,0,0,0.25)_75%,rgba(0,0,0,0.15)_100%)]"
+        />
+        <div
+          aria-hidden
+          style={{ opacity: "var(--reveal, 1)" }}
+          className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent to-background"
+        />
         <div aria-hidden className="grain absolute inset-0" />
 
-        <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-44 sm:px-10 lg:px-16">
+        {/* Opacity tracks MosaicReveal's `--reveal`; the fallback of 1 keeps
+            the copy visible with no JS, and under reduced motion where the
+            mosaic never mounts. */}
+        <div
+          style={{ opacity: "var(--reveal, 1)" }}
+          className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-36 sm:px-10 sm:pb-24 sm:pt-40 lg:px-16"
+        >
           <FadeReveal>
-            <p className="overline-label text-gold">A Multi-Venture Luxury Ecosystem</p>
+            <p className="overline-label text-gold">
+              Dubbz Group · {contact.city}, {contact.country}
+            </p>
           </FadeReveal>
           <FadeReveal delay={120}>
-            <h1 className="mt-8 max-w-5xl font-display text-[clamp(3rem,9vw,7.5rem)] leading-[0.98] tracking-tight text-white">
-              Five houses.
+            <h1 className="mt-7 max-w-5xl font-display text-[clamp(2.5rem,7.4vw,6rem)] leading-[1.03] tracking-tight text-white sm:mt-8">
+              {philosophy.words[0]}
               <br />
-              <span className="text-gradient-gold">One standard.</span>
+              {philosophy.words[1]}
+              <br />
+              <span className="text-gradient-gold">{philosophy.words[2]}</span>
             </h1>
           </FadeReveal>
           <FadeReveal delay={240}>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-neutral">
-              Media, fashion, hospitality, and global trade — built as one
-              ecosystem, governed by a single uncompromising idea of quality.
+            <p className="mt-7 max-w-xl text-base leading-relaxed text-neutral sm:mt-8 sm:text-lg">
+              A diversified holding company operating across media, fashion,
+              hospitality, entertainment, and international trade — built as
+              one ecosystem rather than five separate ventures.
             </p>
           </FadeReveal>
-          <FadeReveal delay={360} className="mt-12 flex flex-wrap gap-4">
-            <Button href="#divisions" size="lg">
+          <FadeReveal delay={360} className="mt-9 flex flex-wrap gap-4 sm:mt-11">
+            <Button href="#ecosystem" size="lg">
               Explore the Ecosystem
             </Button>
-            <Button href="/about" variant="secondary" size="lg">
-              Our Story
+            <Button href="#partnerships" variant="secondary" size="lg">
+              Build With Dubbz
             </Button>
           </FadeReveal>
         </div>
 
         {/* Division index strip */}
-        <div className="relative border-t border-white/10 bg-background/40 backdrop-blur-sm">
+        <div
+          style={{ opacity: "var(--reveal, 1)" }}
+          className="relative z-10 border-t border-white/10 bg-background/40 backdrop-blur-sm"
+        >
           <div className="mx-auto grid w-full max-w-7xl grid-cols-2 sm:grid-cols-5">
             {divisions.map((d) => (
               <Link
@@ -75,7 +123,7 @@ export default function Home() {
                 href={d.href}
                 className="group flex items-baseline gap-3 border-r border-white/5 px-6 py-5 transition-colors duration-300 last:border-r-0 hover:bg-white/[0.03] sm:px-8"
               >
-                <span className="font-display text-xs text-white/30 transition-colors group-hover:text-gold">
+                <span className="font-display text-xs text-white/50 transition-colors group-hover:text-gold">
                   {d.index}
                 </span>
                 <span className="font-label text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 transition-colors group-hover:text-white">
@@ -86,6 +134,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </MosaicReveal>
 
       {/* ——— MARQUEE DIVIDER ——— */}
       <div aria-hidden className="overflow-hidden border-b border-white/5 py-5">
@@ -94,7 +143,7 @@ export default function Home() {
             <div key={half} className="flex gap-12">
               {divisions.map((d) => (
                 <span key={d.key} className="flex items-center gap-12">
-                  <span className="font-label text-[11px] font-semibold uppercase tracking-[0.4em] text-white/20">
+                  <span className="font-label text-[11px] font-semibold uppercase tracking-[0.4em] text-white/50">
                     {d.name}
                   </span>
                   <span className="h-1 w-1 rounded-full bg-gold/40" />
@@ -105,86 +154,75 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ——— ABOUT ——— */}
-      <Section id="about">
-        <div className="grid gap-16 lg:grid-cols-12">
+      {/* ——— THE GROUP ——— */}
+      <Section id="group">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-32">
               <SectionHeading
                 overline="The Group"
-                title="Built slowly. Held to one standard."
+                title="A holding company, built as an institution."
                 className="mb-0 md:mb-0"
               />
               <FadeReveal delay={150} className="mt-10">
                 <Button href="/about" variant="secondary">
-                  Read the Full Story
+                  Read the Corporate Story
                 </Button>
               </FadeReveal>
             </div>
           </div>
           <div className="lg:col-span-7">
             <FadeReveal>
-              <p className="text-xl leading-relaxed text-white/80 sm:text-2xl">
-                Dubzz Group exists on one simple refusal — to ship anything we
-                wouldn&apos;t sign. That refusal now spans five ventures across
-                media, fashion, hospitality, and trade, and the work of
-                building each one properly is only just beginning.
+              <p className="text-xl leading-relaxed text-white/85 sm:text-2xl">
+                Dubbz Group is a diversified creative, lifestyle, and business
+                holding company headquartered in {contact.city},
+                {" "}{contact.region}. It owns and develops five businesses
+                across media, fashion, hospitality, entertainment, and
+                international trade.
               </p>
-              <p className="mt-6 text-base leading-relaxed text-neutral sm:text-lg">
-                Each house operates with its own identity and its own craft.
-                What they share is governance: patient capital, deliberate
-                growth, and the single-regret test applied to every decision
-                that ships.
+            </FadeReveal>
+            <FadeReveal delay={100}>
+              <p className="mt-6 leading-relaxed text-neutral sm:text-lg">
+                The Group was founded on creative work and structured
+                deliberately as a holding company — so that each business can
+                be run with its own identity and standards while drawing on
+                shared creativity, audience, and infrastructure. It is early in
+                that journey, and says so: 2026 is its foundation year.
               </p>
             </FadeReveal>
 
-            <div className="mt-14 grid gap-4 sm:grid-cols-2">
-              <FadeReveal delay={100}>
-                <Card static className="h-full">
-                  <div className="p-8">
-                    <p className="overline-label text-gold">Mission</p>
-                    <p className="mt-4 text-sm leading-relaxed text-white/70">
-                      To build ventures worth keeping — businesses whose quality
-                      compounds across decades, not quarters.
-                    </p>
-                  </div>
-                </Card>
-              </FadeReveal>
-              <FadeReveal delay={200}>
-                <Card static className="h-full">
-                  <div className="p-8">
-                    <p className="overline-label text-gold">Vision</p>
-                    <p className="mt-4 text-sm leading-relaxed text-white/70">
-                      An ecosystem where each house sharpens the others — and
-                      the standard is the only strategy that never changes.
-                    </p>
-                  </div>
-                </Card>
-              </FadeReveal>
-            </div>
-
-            {/* Timeline */}
-            <ol className="mt-16 border-l border-white/10 pl-8">
-              {timeline.map((t, i) => (
-                <FadeReveal key={t.year} delay={i * 90}>
-                  <li className="relative pb-10 last:pb-0">
-                    <span aria-hidden className="absolute -left-[37px] top-1.5 h-2 w-2 rounded-full bg-gold shadow-[0_0_12px_rgba(212,175,55,0.6)]" />
-                    <p className="font-display text-2xl text-gold">{t.year}</p>
-                    <p className="mt-2 max-w-md text-sm leading-relaxed text-neutral">{t.event}</p>
-                  </li>
-                </FadeReveal>
+            <dl className="mt-14 grid gap-px overflow-hidden rounded-lg bg-white/10 sm:grid-cols-3">
+              {[
+                { term: "Headquarters", detail: `${contact.city}, ${contact.country}` },
+                { term: "Structure", detail: "Diversified holding company" },
+                { term: "Businesses", detail: `${divisions.length} operating divisions` },
+              ].map((item) => (
+                <div key={item.term} className="bg-surface p-7">
+                  <dt className="overline-label text-[10px] text-gold">{item.term}</dt>
+                  <dd className="mt-3 font-display text-lg leading-snug text-white">{item.detail}</dd>
+                </div>
               ))}
-            </ol>
+            </dl>
           </div>
         </div>
       </Section>
 
-      {/* ——— FIVE DIVISIONS ——— */}
-      <Section id="divisions" className="border-t border-white/5">
+      {/* ——— ECOSYSTEM ——— */}
+      <Section id="ecosystem" className="border-t border-white/5">
         <SectionHeading
           overline="The Ecosystem"
-          title="Five ventures, one ambition."
-          lede="Each division is a house in its own right — explore what they build."
+          title="One vision. Multiple businesses. Shared growth."
+          lede="The businesses are designed to strengthen one another — visibility, identity, experience, destination, and commerce, held inside a single institution."
+        />
+        <EcosystemDiagram />
+      </Section>
+
+      {/* ——— THE BUSINESSES ——— */}
+      <Section id="businesses" className="border-t border-white/5">
+        <SectionHeading
+          overline="The Businesses"
+          title="Five houses, one standard of execution."
+          lede="Each division operates with its own identity, market, and craft. Explore what they build."
         />
         <div className="border-t border-white/10">
           {divisions.map((d, i) => (
@@ -200,11 +238,11 @@ export default function Home() {
                     background: `radial-gradient(60% 100% at 20% 50%, color-mix(in srgb, ${d.accent} 10%, transparent) 0%, transparent 70%)`,
                   }}
                 />
-                <span className="relative font-display text-lg text-white/30 transition-colors duration-300 group-hover:text-gold sm:w-16">
+                <span className="relative font-display text-lg text-white/50 transition-colors duration-300 group-hover:text-gold sm:w-16">
                   {d.index}
                 </span>
                 <span className="relative flex-1">
-                  <span className="block font-display text-3xl text-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-2 sm:text-5xl">
+                  <span className="block font-display text-3xl text-white transition-transform duration-500 ease-luxe group-hover:translate-x-2 sm:text-5xl">
                     {d.name}
                   </span>
                   <span className="mt-2 block text-sm text-neutral sm:text-base">{d.tagline}</span>
@@ -213,7 +251,7 @@ export default function Home() {
                   {d.facets.map((f) => (
                     <span
                       key={f}
-                      className="rounded-full border border-white/10 px-4 py-1.5 font-label text-[9px] font-semibold uppercase tracking-[0.18em] text-white/40 transition-colors duration-300 group-hover:border-gold/30 group-hover:text-white/70"
+                      className="rounded-full border border-white/10 px-4 py-1.5 font-label text-[10px] font-semibold uppercase tracking-[0.18em] text-white/55 transition-colors duration-300 group-hover:border-gold/30 group-hover:text-white/70"
                     >
                       {f}
                     </span>
@@ -225,7 +263,7 @@ export default function Home() {
                   viewBox="0 0 22 16"
                   fill="none"
                   aria-hidden
-                  className="relative shrink-0 -translate-x-2 text-white/30 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:text-gold group-hover:opacity-100"
+                  className="relative shrink-0 -translate-x-2 text-white/50 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:text-gold group-hover:opacity-100"
                 >
                   <path d="M14 1l7 7-7 7M21 8H1" stroke="currentColor" strokeWidth="1.4" />
                 </svg>
@@ -235,42 +273,293 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ——— MILESTONES ———
-          Replaces a "Featured Work" grid of invented case studies, a counter
-          row of invented metrics, and three invented client testimonials. The
-          Group is early-stage; what it has are foundations laid, and the
-          profile states them plainly. Restore richer proof here only when
-          there is real work to show. */}
-      <Section className="border-t border-white/5">
-        <SectionHeading
-          overline="Key Milestones"
-          title="Building momentum."
-          lede="Every enduring institution begins with deliberate progress. These are the foundations already in place."
-        />
-        <div className="grid gap-4 sm:grid-cols-2">
-          {milestones.map((m, i) => (
-            <FadeReveal key={m.area} delay={i * 90}>
-              <Card static className="h-full">
-                <div className="flex h-full flex-col p-9">
-                  <p className="overline-label text-gold">{m.area}</p>
-                  <ul className="mt-6 space-y-4">
-                    {m.items.map((item) => (
-                      <li key={item} className="flex gap-4 text-sm leading-relaxed text-neutral">
-                        <span aria-hidden className="mt-2 h-px w-5 shrink-0 bg-gold/40" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+      {/* ——— DUBBZ TOWER ———
+          Placed straight after the businesses because it is the same argument
+          in physical form: the five of them stacked in one building. Labelled
+          a concept throughout — the renders are photoreal, and a photoreal
+          render of a building that does not exist reads as premises unless
+          the page says otherwise. */}
+      <section className="relative overflow-hidden border-t border-white/5">
+        <div aria-hidden className="light-above absolute inset-0" />
+        <div aria-hidden className="grain absolute inset-0" />
+        <div className="relative mx-auto w-full max-w-7xl px-6 py-24 sm:px-10 md:py-32 lg:px-16">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-5">
+              <FadeReveal>
+                <p className="overline-label text-gold">{tower.label}</p>
+                <h2 className="mt-5 font-display text-4xl leading-[1.08] tracking-tight text-white sm:text-5xl">
+                  {tower.heading}
+                </h2>
+                <p className="mt-6 text-lg leading-relaxed text-white/85">{tower.standfirst}</p>
+                <p className="mt-5 leading-relaxed text-neutral">{tower.body}</p>
+              </FadeReveal>
+              <FadeReveal delay={120} className="mt-8">
+                <StatusNote label="Concept Draft">
+                  Dubbz Tower is a design study. The renders below are proposals,
+                  not photographs — nothing here is built, and the Group does not
+                  occupy it.
+                </StatusNote>
+              </FadeReveal>
+
+              <FadeReveal delay={200}>
+                <ol className="mt-12 border-t border-white/10">
+                  {[...tower.floors].reverse().map((floor) => (
+                    <li
+                      key={floor.level}
+                      className="flex items-baseline gap-6 border-b border-white/10 py-4"
+                    >
+                      <span className="w-14 shrink-0 font-display text-sm text-white/50">
+                        {floor.level}
+                      </span>
+                      <span className="text-sm text-white/85 sm:text-base">{floor.name}</span>
+                    </li>
+                  ))}
+                </ol>
+              </FadeReveal>
+            </div>
+
+            <div className="lg:col-span-7">
+              <FadeReveal delay={80}>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-white/10 sm:aspect-[3/2] lg:aspect-[4/5]">
+                  <Image
+                    src={tower.facade.src}
+                    alt={tower.facade.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 55vw"
+                    className="object-cover"
+                  />
                 </div>
-              </Card>
-            </FadeReveal>
-          ))}
+              </FadeReveal>
+
+              {/* All five fit the row at lg. Below that they scroll
+                  horizontally — five interiors across a phone would be
+                  thumbnails, and wrapping five into a grid leaves an orphan. */}
+              <FadeReveal delay={160}>
+                <ul className="-mx-6 mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  {tower.interiors.map((shot) => (
+                    <li
+                      key={shot.src}
+                      className="relative aspect-[3/2] w-[78%] shrink-0 snap-start overflow-hidden rounded-lg border border-white/10 sm:w-[46%] lg:w-[calc((100%-4rem)/5)]"
+                    >
+                      <Image
+                        src={shot.src}
+                        alt={shot.alt}
+                        fill
+                        sizes="(max-width: 640px) 78vw, (max-width: 1024px) 46vw, 18vw"
+                        className="object-cover"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </FadeReveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ——— PURPOSE · VISION · MISSION ———
+          The page inverts here. Three published statements deserve to be read
+          as a document, and the break in ground is what stops the site
+          reading as one uninterrupted dark scroll. */}
+      <section className="on-paper relative bg-paper px-6 py-24 sm:px-10 md:py-36 lg:px-16">
+        <div className="mx-auto w-full max-w-7xl">
+          <FadeReveal>
+            <p className="overline-label text-gold-deep">Purpose · Vision · Mission</p>
+          </FadeReveal>
+          <div className="mt-14 space-y-16 md:mt-20 md:space-y-24">
+            {[purpose, vision, mission].map((statement, i) => (
+              <FadeReveal key={statement.label} delay={i * 90}>
+                <div className="grid gap-6 border-t border-ink/12 pt-8 md:grid-cols-12 md:gap-10">
+                  <div className="md:col-span-3">
+                    <p className="font-label text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/62">
+                      {String(i + 1).padStart(2, "0")} — {statement.label}
+                    </p>
+                  </div>
+                  <p className="font-display text-[clamp(1.75rem,4.2vw,3.25rem)] leading-[1.12] tracking-tight text-ink md:col-span-9">
+                    {statement.statement}
+                  </p>
+                </div>
+              </FadeReveal>
+            ))}
+          </div>
+
+          {/* Philosophy */}
+          <FadeReveal delay={120}>
+            <div className="mt-24 border-t border-ink/12 pt-10 md:mt-32">
+              <p className="font-label text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/62">
+                Our Philosophy
+              </p>
+              <p className="mt-8 font-display text-[clamp(2rem,6vw,4.5rem)] leading-[1.05] tracking-tight text-ink">
+                {philosophy.words.map((word, i) => (
+                  <span key={word} className={i === 2 ? "text-gold-deep" : undefined}>
+                    {word}{" "}
+                  </span>
+                ))}
+              </p>
+              <p className="mt-8 max-w-xl leading-relaxed text-ink-soft sm:text-lg">{philosophy.body}</p>
+            </div>
+          </FadeReveal>
+        </div>
+      </section>
+
+      {/* ——— WHY DUBBZ ——— */}
+      <Section id="why" className="border-t border-white/5">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <div className="lg:sticky lg:top-32">
+              <SectionHeading
+                overline="Why Dubbz"
+                title="The advantage is structural."
+                lede="Six reasons the Group is built the way it is — each one a mechanism, not a claim."
+                className="mb-0 md:mb-0"
+              />
+            </div>
+          </div>
+          <ol className="lg:col-span-8">
+            {advantages.map((item, i) => (
+              <FadeReveal key={item.title} delay={i * 70}>
+                <li className="group flex gap-6 border-t border-white/10 py-8 last:border-b sm:gap-10">
+                  <span className="font-display text-sm text-white/50 transition-colors duration-500 group-hover:text-gold">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className="font-display text-2xl leading-snug text-white sm:text-3xl">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 max-w-xl leading-relaxed text-neutral">{item.body}</p>
+                  </div>
+                </li>
+              </FadeReveal>
+            ))}
+          </ol>
         </div>
       </Section>
 
-      {/* ——— LATEST NEWS ——— */}
+      {/* ——— GROWTH STRATEGY + ROADMAP ——— */}
+      <section className="on-paper relative bg-paper px-6 py-24 sm:px-10 md:py-36 lg:px-16">
+        <div className="mx-auto w-full max-w-7xl">
+          <FadeReveal>
+            <p className="overline-label text-gold-deep">Growth Strategy</p>
+            <h2 className="mt-5 max-w-3xl font-display text-4xl leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-6xl">
+              Five pillars, then five years.
+            </h2>
+          </FadeReveal>
+
+          {/* The reveal sits inside each cell, not around it. Wrapping the cell
+              fades its background out too, so the grid's own separator colour
+              shows through as a solid block until the reveal fires. */}
+          <ol className="mt-14 grid gap-px overflow-hidden rounded-lg bg-ink/12 md:mt-16 md:grid-cols-5">
+            {growthPillars.map((pillar, i) => (
+              <li key={pillar.title} className="flex h-full flex-col bg-paper p-7">
+                <FadeReveal delay={i * 70}>
+                  <span className="font-display text-sm text-ink/62">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="mt-4 font-display text-xl leading-snug text-ink">{pillar.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">{pillar.body}</p>
+                </FadeReveal>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mt-24 border-t border-ink/12 pt-14 md:mt-32">
+            <FadeReveal>
+              <p className="overline-label text-gold-deep">Five-Year Roadmap</p>
+              <h2 className="mt-5 max-w-2xl font-display text-3xl leading-[1.08] tracking-tight text-ink sm:text-4xl md:text-5xl">
+                Foundation. Nigeria. Africa. Institution. Global.
+              </h2>
+            </FadeReveal>
+            <div className="mt-14">
+              <RoadmapTimeline />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ——— FOUNDER ——— */}
+      <section className="relative overflow-hidden border-t border-white/5">
+        <div aria-hidden className="light-above absolute inset-0" />
+        <div aria-hidden className="grain absolute inset-0" />
+        <div className="relative mx-auto w-full max-w-7xl px-6 py-24 sm:px-10 md:py-36 lg:px-16">
+          <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-5">
+              <FadeReveal>
+                <p className="overline-label text-gold">Leadership</p>
+                {/* A monogram rather than a stock portrait: the Group has not
+                    published a photograph, and borrowing someone else's face
+                    for its founder is not a design decision. */}
+                <div className="mt-10 flex aspect-[4/5] max-w-sm items-center justify-center rounded-lg border border-white/10 bg-gradient-to-b from-surface-2 to-background">
+                  <span aria-hidden className="font-display text-[clamp(5rem,18vw,9rem)] leading-none text-gradient-gold">
+                    CN
+                  </span>
+                </div>
+                <p className="mt-8 font-display text-3xl leading-tight text-white">{founder.name}</p>
+                <p className="mt-2 font-label text-[10px] font-semibold uppercase tracking-[0.24em] text-gold">
+                  {founder.role}
+                </p>
+              </FadeReveal>
+            </div>
+            <div className="lg:col-span-7">
+              <FadeReveal delay={120}>
+                <blockquote className="border-l-2 border-gold pl-6 sm:pl-8">
+                  <p className="font-display text-[clamp(1.5rem,3.4vw,2.5rem)] leading-[1.2] text-white">
+                    “{founder.quote}”
+                  </p>
+                </blockquote>
+              </FadeReveal>
+              <FadeReveal delay={200}>
+                <p className="mt-12 font-display text-xl leading-snug text-white/80 sm:text-2xl">
+                  {founderNarrative.standfirst}
+                </p>
+              </FadeReveal>
+              {founderNarrative.paragraphs.map((para, i) => (
+                <FadeReveal key={i} delay={260 + i * 70}>
+                  <p className="mt-6 leading-relaxed text-neutral">{para}</p>
+                </FadeReveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ——— PARTNERSHIPS ——— */}
+      <Section id="partnerships" className="border-t border-white/5">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionHeading
+              overline="Strategic Partnerships"
+              title="Build with Dubbz."
+              lede="The Group is open to partnerships that create long-term value on both sides — commercially, creatively, and institutionally."
+              className="mb-0 md:mb-0"
+            />
+            <FadeReveal delay={150} className="mt-10 flex flex-wrap gap-4">
+              <Button href="/contact" size="lg">
+                Start a Partnership
+              </Button>
+            </FadeReveal>
+          </div>
+          <div className="lg:col-span-7">
+            <div className="grid gap-px overflow-hidden rounded-lg bg-white/10 sm:grid-cols-2">
+              {partnershipAudiences.map((audience, i) => (
+                <div key={audience.group} className="h-full bg-surface p-7">
+                  <FadeReveal delay={i * 70}>
+                    <p className="overline-label text-[10px] text-gold">{audience.group}</p>
+                    <ul className="mt-5 space-y-2.5">
+                      {audience.items.map((item) => (
+                        <li key={item} className="text-sm leading-relaxed text-neutral">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </FadeReveal>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ——— JOURNAL ——— */}
       <Section className="border-t border-white/5">
-        <div className="mb-14 flex flex-wrap items-end justify-between gap-6 md:mb-20">
+        <div className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
           <SectionHeading overline="The Journal" title="Latest dispatches." className="mb-0 md:mb-0" />
           <FadeReveal delay={150}>
             <Button href="/blog" variant="secondary">
@@ -278,50 +567,44 @@ export default function Home() {
             </Button>
           </FadeReveal>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-px overflow-hidden rounded-lg bg-white/10 md:grid-cols-3">
           {posts.slice(0, 3).map((p, i) => (
-            <FadeReveal key={p.slug} delay={i * 100}>
-              <Link href={`/blog/${p.slug}`} className="group block h-full">
-                <Card className="h-full" innerClassName="flex flex-col">
-                  <Visual
-                    background={p.visual}
-                    src={p.image}
-                    alt={p.imageAlt}
-                    zoomOnHover
-                    sizes="(max-width: 768px) 100vw, 420px"
-                    className="h-44"
-                  />
-                  <div className="flex flex-1 flex-col p-7">
-                    <p className="overline-label text-gold">{p.category}</p>
-                    <h3 className="mt-3 font-display text-xl leading-snug text-white transition-colors group-hover:text-gold-bright">
-                      {p.title}
-                    </h3>
-                    <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-neutral">{p.dek}</p>
-                    <p className="mt-auto pt-6 text-xs text-white/35">
-                      {new Date(p.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })} · {p.readTime}
-                    </p>
-                  </div>
-                </Card>
-              </Link>
-            </FadeReveal>
+            <Link
+              key={p.slug}
+              href={`/blog/${p.slug}`}
+              className="group flex h-full flex-col bg-surface p-8"
+            >
+              <FadeReveal delay={i * 100} className="flex h-full flex-col">
+                <p className="overline-label text-[10px] text-gold">{p.category}</p>
+                <h3 className="mt-4 font-display text-xl leading-snug text-white transition-colors group-hover:text-gold-bright">
+                  {p.title}
+                </h3>
+                <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-neutral">{p.dek}</p>
+                <p className="mt-auto pt-8 text-xs text-white/50">
+                  {new Date(p.date).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}{" "}
+                  · {p.readTime}
+                </p>
+              </FadeReveal>
+            </Link>
           ))}
         </div>
       </Section>
 
-      {/* ——— FINAL CTA ——— */}
+      {/* ——— CLOSING ——— */}
       <section className="relative overflow-hidden border-t border-white/5">
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-[radial-gradient(70%_100%_at_50%_120%,rgba(212,175,55,0.16)_0%,transparent_60%)]"
-        />
+        <div aria-hidden className="light-below absolute inset-0" />
         <div aria-hidden className="grain absolute inset-0" />
-        <div className="relative mx-auto max-w-4xl px-6 py-32 text-center md:py-44">
+        <div className="relative mx-auto max-w-4xl px-6 py-28 text-center md:py-40">
           <FadeReveal>
-            <p className="overline-label text-gold">The Invitation</p>
-            <h2 className="mt-6 font-display text-5xl leading-[1.05] text-white sm:text-6xl md:text-7xl">
-              Let&apos;s build something
+            <p className="overline-label text-gold">{contact.city} · {contact.country}</p>
+            <h2 className="mt-6 font-display text-4xl leading-[1.05] text-white sm:text-6xl md:text-7xl">
+              An institution is built
               <br />
-              <span className="text-gradient-gold">that outlasts us.</span>
+              <span className="text-gradient-gold">one decision at a time.</span>
             </h2>
           </FadeReveal>
           <FadeReveal delay={200} className="mt-12">
